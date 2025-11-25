@@ -52,18 +52,6 @@ export default function FeaturedDish() {
                             that defines the essence of Pure India.
                         </p>
 
-                        <div className="flex items-center gap-8 pt-4">
-                            <div className="text-center">
-                                <span className="block font-cinzel text-3xl text-gold">$45</span>
-                                <span className="text-xs text-gray-500 uppercase tracking-widest font-montserrat">Per Serving</span>
-                            </div>
-                            <div className="h-12 w-px bg-white/10" />
-                            <div className="text-center">
-                                <span className="block font-cinzel text-3xl text-gold">25</span>
-                                <span className="text-xs text-gray-500 uppercase tracking-widest font-montserrat">Mins Prep</span>
-                            </div>
-                        </div>
-
                         <div className="pt-8">
                             <Link href="/menu" className="inline-block border-b border-gold text-gold pb-1 font-montserrat uppercase tracking-widest hover:text-white hover:border-white transition-all duration-300">
                                 View Full Menu

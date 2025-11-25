@@ -17,8 +17,8 @@ const config: Config = {
                 "card-bg": "var(--card-bg)",
             },
             fontFamily: {
-                playfair: ["var(--font-playfair)"],
-                inter: ["var(--font-inter)"],
+                cinzel: ["var(--font-cinzel)"],
+                montserrat: ["var(--font-montserrat)"],
             },
         },
     },

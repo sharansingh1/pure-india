@@ -40,7 +40,7 @@ export default function Navbar() {
         >
             <div className="container mx-auto px-4 flex justify-between items-center">
                 {/* Logo */}
-                <Link href="/" className="relative z-50 group">
+                <Link href="/" className={`relative z-50 group transition-opacity duration-300 ${isOpen ? 'opacity-0 lg:opacity-100' : 'opacity-100'}`}>
                     <h1 className="font-cinzel text-2xl md:text-3xl font-bold text-white tracking-widest group-hover:text-gold transition-colors duration-300">
                         PURE <span className="text-gold-gradient">INDIA</span>
                     </h1>
