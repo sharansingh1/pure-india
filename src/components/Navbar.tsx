@@ -10,8 +10,6 @@ const navLinks = [
     { name: "Home", href: "/" },
     { name: "Menu", href: "/menu" },
     { name: "Our Story", href: "/about" },
-    { name: "Reservations", href: "/reservations" },
-    { name: "Private Dining", href: "/private-dining" },
     { name: "Gallery", href: "/gallery" },
     { name: "Contact", href: "/contact" },
 ];

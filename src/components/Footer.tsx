@@ -12,8 +12,7 @@ export default function Footer() {
                 <div className="flex flex-wrap justify-center gap-6 md:gap-8 mb-6 md:mb-0 text-sm text-gray-400 font-montserrat">
                     <Link href="/menu" className="hover:text-gold transition-colors">Menu</Link>
                     <Link href="/about" className="hover:text-gold transition-colors">Our Story</Link>
-                    <Link href="/reservations" className="hover:text-gold transition-colors">Reservations</Link>
-                    <Link href="/private-dining" className="hover:text-gold transition-colors">Private Dining</Link>
+
                     <Link href="/gallery" className="hover:text-gold transition-colors">Gallery</Link>
                     <Link href="/contact" className="hover:text-gold transition-colors">Contact</Link>
                 </div>

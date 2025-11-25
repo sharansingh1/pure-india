@@ -62,11 +62,11 @@ export default function Hero() {
                     className="flex flex-col sm:flex-row gap-4"
                 >
                     <a
-                        href="/reservations"
+                        href="/contact"
                         className="group relative px-10 py-4 bg-gold overflow-hidden transition-all duration-500 hover:shadow-lg hover:shadow-gold/30"
                     >
                         <span className="relative z-10 font-montserrat font-bold tracking-[0.2em] uppercase text-black transition-colors duration-300">
-                            Reserve a Table
+                            Contact Us
                         </span>
                     </a>
 

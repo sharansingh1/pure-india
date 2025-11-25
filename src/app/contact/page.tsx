@@ -56,7 +56,7 @@ export default function ContactPage() {
                                     <div>
                                         <h3 className="font-cinzel text-xl text-white mb-2">Email</h3>
                                         <p className="text-gray-400 font-montserrat">
-                                            reservations@pureindia.com
+                                            info@pureindia.com
                                         </p>
                                     </div>
                                 </div>
