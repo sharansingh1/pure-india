@@ -51,52 +51,14 @@ export default function AboutPage() {
                         className="relative h-[500px] w-full border border-gold/20 p-4"
                     >
                         <div className="absolute inset-0 bg-gradient-to-tr from-gold/10 to-transparent pointer-events-none" />
-                        <div className="w-full h-full bg-gray-900 flex items-center justify-center relative overflow-hidden">
-                            {/* Placeholder for interior shot */}
-                            <span className="font-cinzel text-gold/20 text-4xl uppercase">Interior Shot</span>
+                        <div className="w-full h-full relative overflow-hidden">
+                            <Image
+                                src="/images/restaurant-interior.png"
+                                alt="Pure India Restaurant Interior"
+                                fill
+                                className="object-cover"
+                            />
                             <div className="absolute inset-0 border border-gold/10 m-4" />
-                        </div>
-                    </motion.div>
-                </section>
-
-                {/* The Chef Section */}
-                <section className="grid md:grid-cols-2 gap-16 items-center mb-20">
-                    <motion.div
-                        initial={{ opacity: 0, scale: 0.9 }}
-                        whileInView={{ opacity: 1, scale: 1 }}
-                        viewport={{ once: true }}
-                        transition={{ duration: 0.8 }}
-                        className="relative h-[600px] w-full order-2 md:order-1"
-                    >
-                        <div className="w-full h-full bg-gray-900 grayscale hover:grayscale-0 transition-all duration-700 flex items-center justify-center relative overflow-hidden group">
-                            {/* Placeholder for Chef Image */}
-                            <span className="font-cinzel text-white/20 text-4xl uppercase group-hover:text-gold/40 transition-colors">Chef Portrait</span>
-                        </div>
-                        <div className="absolute -bottom-6 -left-6 w-48 h-48 border-l-2 border-b-2 border-gold/30" />
-                    </motion.div>
-
-                    <motion.div
-                        initial={{ opacity: 0, x: 50 }}
-                        whileInView={{ opacity: 1, x: 0 }}
-                        viewport={{ once: true }}
-                        transition={{ duration: 0.8 }}
-                        className="order-1 md:order-2"
-                    >
-                        <SectionHeading title="Culinary Artistry" subtitle="Meet The Chef" centered={false} />
-                        <div className="prose prose-invert max-w-none font-montserrat text-gray-300 leading-loose">
-                            <p className="mb-6">
-                                Executive Chef <span className="text-gold">Aarav Sharma</span> brings over two decades of culinary excellence to Pure India.
-                                Trained in the royal kitchens of Rajasthan and refined in the Michelin-starred restaurants of London,
-                                Chef Sharma masters the art of blending ancient techniques with contemporary presentation.
-                            </p>
-                            <blockquote className="border-l-2 border-gold pl-6 italic text-xl text-white my-8 font-cinzel">
-                                "Cooking is not just about feeding the body, it's about touching the soul.
-                                Every spice tells a story, every dish is a memory."
-                            </blockquote>
-                            <p>
-                                His philosophy is simple: respect the ingredients. We source our spices directly from organic farms in Kerala
-                                and partner with local Nevada producers for the freshest seasonal produce.
-                            </p>
                         </div>
                     </motion.div>
                 </section>

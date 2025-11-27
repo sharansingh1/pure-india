@@ -31,8 +31,8 @@ export default function ContactPage() {
                                     <div>
                                         <h3 className="font-cinzel text-xl text-white mb-2">Address</h3>
                                         <p className="text-gray-400 font-montserrat leading-relaxed">
-                                            3799 S Las Vegas Blvd<br />
-                                            Las Vegas, NV 89109
+                                            1405 E Sunset Rd<br />
+                                            Las Vegas, NV 89119
                                         </p>
                                     </div>
                                 </div>
@@ -78,18 +78,24 @@ export default function ContactPage() {
                         </div>
                     </motion.div>
 
-                    {/* Map / Form */}
+                    {/* Map */}
                     <motion.div
                         initial={{ opacity: 0, x: 50 }}
                         whileInView={{ opacity: 1, x: 0 }}
                         viewport={{ once: true }}
                         transition={{ duration: 0.8 }}
-                        className="h-full min-h-[500px] bg-[#111] border border-gold/10 relative overflow-hidden group"
+                        className="h-full min-h-[500px] bg-[#111] border border-gold/10 relative overflow-hidden"
                     >
-                        {/* Placeholder for Map */}
-                        <div className="absolute inset-0 bg-gray-900 flex items-center justify-center">
-                            <span className="font-cinzel text-gold/20 text-2xl uppercase tracking-widest">Map Integration</span>
-                        </div>
+                        <iframe
+                            src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3220.8847847847847!2d-115.10847!3d36.09847!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x80c8c7b7b7b7b7b7%3A0x1234567890abcdef!2s1405%20E%20Sunset%20Rd%2C%20Las%20Vegas%2C%20NV%2089119!5e0!3m2!1sen!2sus!4v1234567890123!5m2!1sen!2sus"
+                            width="100%"
+                            height="100%"
+                            style={{ border: 0 }}
+                            allowFullScreen
+                            loading="lazy"
+                            referrerPolicy="no-referrer-when-downgrade"
+                            className="grayscale hover:grayscale-0 transition-all duration-700"
+                        />
                         <div className="absolute inset-0 border-2 border-gold/5 pointer-events-none m-4" />
                     </motion.div>
                 </div>
