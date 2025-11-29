@@ -44,7 +44,8 @@ export default function ContactPage() {
                                     <div>
                                         <h3 className="font-cinzel text-xl text-white mb-2">Phone</h3>
                                         <p className="text-gray-400 font-montserrat">
-                                            +1 (702) 555-0123
+                                            (702) 897-5555<br />
+                                            725-999-2736
                                         </p>
                                     </div>
                                 </div>
@@ -56,7 +57,7 @@ export default function ContactPage() {
                                     <div>
                                         <h3 className="font-cinzel text-xl text-white mb-2">Email</h3>
                                         <p className="text-gray-400 font-montserrat">
-                                            info@pureindia.com
+                                            info@pureindiancuisine.com
                                         </p>
                                     </div>
                                 </div>

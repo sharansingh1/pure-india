@@ -56,10 +56,7 @@ export default function Testimonials() {
                                 "{testimonial.content}"
                             </p>
 
-                            <div className="border-t border-white/5 pt-6">
-                                <h4 className="font-cinzel text-white text-lg">{testimonial.name}</h4>
-                                <p className="text-gold/60 text-xs uppercase tracking-widest font-montserrat">{testimonial.role}</p>
-                            </div>
+                            {/* Author info removed as per request */}
                         </motion.div>
                     ))}
                 </div>

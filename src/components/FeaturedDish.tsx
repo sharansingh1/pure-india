@@ -23,7 +23,7 @@ export default function FeaturedDish() {
                             <div className="absolute inset-0 bg-gradient-to-t from-black/80 via-transparent to-transparent z-10" />
                             <Image
                                 src="https://images.unsplash.com/photo-1631452180519-c014fe946bc7?q=80&w=1000&auto=format&fit=crop"
-                                alt="Signature Lamb Chops"
+                                alt="Chicken Tikka Masala"
                                 fill
                                 className="object-cover transition-transform duration-1000 group-hover:scale-110"
                             />
@@ -43,18 +43,18 @@ export default function FeaturedDish() {
                     >
                         <h2 className="font-cinzel text-4xl md:text-6xl text-white font-bold leading-tight">
                             The Royal <br />
-                            <span className="text-gold-gradient">Lamb Chops</span>
+                            <span className="text-gold-gradient">Chicken Tikka Masala</span>
                         </h2>
 
                         <p className="text-gray-400 font-montserrat text-lg leading-loose">
-                            Marinated for 24 hours in a secret blend of Kashmiri spices, yogurt, and saffron.
-                            Slow-cooked in our clay tandoor to perfection, delivering a smoky, melt-in-your-mouth experience
-                            that defines the essence of Pure India.
+                            Tender pieces of chicken marinated in yogurt and spices, roasted in our clay tandoor,
+                            and simmered in a rich, creamy tomato sauce infused with fenugreek and cardamom.
+                            A timeless classic that embodies the soul of Indian cuisine.
                         </p>
 
                         <div className="pt-8">
                             <Link href="/menu" className="inline-block border-b border-gold text-gold pb-1 font-montserrat uppercase tracking-widest hover:text-white hover:border-white transition-all duration-300">
-                                View Full Menu
+                                View Full Buffet
                             </Link>
                         </div>
                     </motion.div>

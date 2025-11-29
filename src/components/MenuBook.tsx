@@ -6,39 +6,112 @@ import { menuItems } from "@/data/menu";
 import { motion } from "framer-motion";
 import SectionHeading from "@/components/ui/SectionHeading";
 
-// Page Component - Cream/Ivory pages with gold accents
+// Page Component - Royal cream pages with vibrant gold and burgundy accents
 const Page = forwardRef<HTMLDivElement, { children: React.ReactNode; number?: number; title?: string; className?: string }>((props, ref) => {
     return (
-        <div className={`demoPage bg-gradient-to-br from-[#f8f6f0] to-[#f0ebe0] h-full w-full shadow-2xl ${props.className}`} ref={ref}>
-            <div className="h-full w-full p-10 flex flex-col relative overflow-hidden">
-                {/* Subtle Paper Texture */}
-                <div className="absolute inset-0 opacity-[0.15] pointer-events-none bg-[url('https://www.transparenttextures.com/patterns/old-mathematics.png')]"></div>
+        <div className={`demoPage bg-gradient-to-br from-[#faf8f3] via-[#f5f0e8] to-[#f0e8dc] h-full w-full shadow-2xl ${props.className}`} ref={ref}>
+            <div className="h-full w-full p-10 flex flex-col relative overflow-y-auto scrollbar-thin scrollbar-thumb-gold scrollbar-track-transparent">
+                {/* Vibrant Paper Texture */}
+                <div className="absolute inset-0 opacity-20 pointer-events-none bg-[url('https://www.transparenttextures.com/patterns/old-mathematics.png')]"></div>
 
-                {/* Ornate Corner Decorations */}
-                <div className="absolute top-6 left-6 w-12 h-12 border-l-2 border-t-2 border-gold/40 pointer-events-none"></div>
-                <div className="absolute top-6 right-6 w-12 h-12 border-r-2 border-t-2 border-gold/40 pointer-events-none"></div>
-                <div className="absolute bottom-6 left-6 w-12 h-12 border-l-2 border-b-2 border-gold/40 pointer-events-none"></div>
-                <div className="absolute bottom-6 right-6 w-12 h-12 border-r-2 border-b-2 border-gold/40 pointer-events-none"></div>
+                {/* Ornate Corner Decorations with Gold */}
+                <div className="absolute top-4 left-4 w-16 h-16 pointer-events-none">
+                    <div className="absolute inset-0 border-l-[3px] border-t-[3px] border-gold"></div>
+                    <div className="absolute top-0 left-0 w-4 h-4 bg-gold rounded-full"></div>
+                    <div className="absolute top-2 left-2 w-8 h-8 border border-amber-600 rotate-45"></div>
+                </div>
+                <div className="absolute top-4 right-4 w-16 h-16 pointer-events-none">
+                    <div className="absolute inset-0 border-r-[3px] border-t-[3px] border-gold"></div>
+                    <div className="absolute top-0 right-0 w-4 h-4 bg-gold rounded-full"></div>
+                    <div className="absolute top-2 right-2 w-8 h-8 border border-amber-600 rotate-45"></div>
+                </div>
+                <div className="absolute bottom-4 left-4 w-16 h-16 pointer-events-none">
+                    <div className="absolute inset-0 border-l-[3px] border-b-[3px] border-gold"></div>
+                    <div className="absolute bottom-0 left-0 w-4 h-4 bg-gold rounded-full"></div>
+                    <div className="absolute bottom-2 left-2 w-8 h-8 border border-amber-600 rotate-45"></div>
+                </div>
+                <div className="absolute bottom-4 right-4 w-16 h-16 pointer-events-none">
+                    <div className="absolute inset-0 border-r-[3px] border-b-[3px] border-gold"></div>
+                    <div className="absolute bottom-0 right-0 w-4 h-4 bg-gold rounded-full"></div>
+                    <div className="absolute bottom-2 right-2 w-8 h-8 border border-amber-600 rotate-45"></div>
+                </div>
 
-                {/* Inner decorative border */}
-                <div className="absolute top-8 left-8 right-8 bottom-8 border border-gold/20 pointer-events-none"></div>
+                {/* Vibrant decorative border with gradient */}
+                <div className="absolute top-6 left-6 right-6 bottom-6 border-2 border-gold/60 pointer-events-none shadow-[inset_0_0_20px_rgba(212,175,55,0.3)]"></div>
+                <div className="absolute top-8 left-8 right-8 bottom-8 border border-amber-600/40 pointer-events-none"></div>
+
+                {/* Ornate mandala pattern - much more visible */}
+                <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-80 h-80 opacity-[0.12] pointer-events-none">
+                    <svg viewBox="0 0 200 200" className="w-full h-full">
+                        {/* Outer circles with gradient effect */}
+                        <circle cx="100" cy="100" r="90" fill="none" stroke="#D4AF37" strokeWidth="2" opacity="0.6" />
+                        <circle cx="100" cy="100" r="75" fill="none" stroke="#B8860B" strokeWidth="1.5" opacity="0.5" />
+                        <circle cx="100" cy="100" r="60" fill="none" stroke="#D4AF37" strokeWidth="2" opacity="0.6" />
+                        <circle cx="100" cy="100" r="45" fill="none" stroke="#B8860B" strokeWidth="1.5" opacity="0.5" />
+                        <circle cx="100" cy="100" r="30" fill="none" stroke="#D4AF37" strokeWidth="2" opacity="0.6" />
+
+                        {/* Radiating petals */}
+                        {[...Array(16)].map((_, i) => (
+                            <g key={i} transform={`rotate(${i * 22.5} 100 100)`}>
+                                <line x1="100" y1="10" x2="100" y2="35" stroke="#D4AF37" strokeWidth="3" strokeLinecap="round" />
+                                <circle cx="100" cy="8" r="4" fill="#B8860B" />
+                                <path d="M 95 35 Q 100 45 105 35" fill="none" stroke="#D4AF37" strokeWidth="2" />
+                                <ellipse cx="100" cy="55" rx="8" ry="15" fill="#D4AF37" opacity="0.3" />
+                            </g>
+                        ))}
+
+                        {/* Center ornament */}
+                        <circle cx="100" cy="100" r="15" fill="#D4AF37" opacity="0.4" />
+                        <circle cx="100" cy="100" r="10" fill="none" stroke="#8B4513" strokeWidth="2" />
+                        <circle cx="100" cy="100" r="5" fill="#B8860B" />
+                    </svg>
+                </div>
+
+                {/* Side decorative flourishes */}
+                <div className="absolute top-1/4 left-2 w-8 h-32 opacity-20 pointer-events-none">
+                    <svg viewBox="0 0 40 150" className="w-full h-full">
+                        <path d="M 20 0 Q 30 25 20 50 Q 10 75 20 100 Q 30 125 20 150" fill="none" stroke="#D4AF37" strokeWidth="3" />
+                        <circle cx="20" cy="25" r="5" fill="#B8860B" />
+                        <circle cx="20" cy="75" r="5" fill="#B8860B" />
+                        <circle cx="20" cy="125" r="5" fill="#B8860B" />
+                    </svg>
+                </div>
+                <div className="absolute top-1/4 right-2 w-8 h-32 opacity-20 pointer-events-none">
+                    <svg viewBox="0 0 40 150" className="w-full h-full">
+                        <path d="M 20 0 Q 10 25 20 50 Q 30 75 20 100 Q 10 125 20 150" fill="none" stroke="#D4AF37" strokeWidth="3" />
+                        <circle cx="20" cy="25" r="5" fill="#B8860B" />
+                        <circle cx="20" cy="75" r="5" fill="#B8860B" />
+                        <circle cx="20" cy="125" r="5" fill="#B8860B" />
+                    </svg>
+                </div>
 
                 <div className="relative z-10 h-full">
                     {props.title && (
-                        <div className="text-center mb-8">
-                            <div className="w-16 h-[1px] bg-gradient-to-r from-transparent via-gold to-transparent mx-auto mb-4"></div>
-                            <h3 className="font-cinzel text-3xl text-red-900 font-bold tracking-wide">
+                        <div className="text-center mb-8 relative">
+                            {/* Ornate header decoration */}
+                            <div className="flex items-center justify-center gap-3 mb-4">
+                                <div className="w-20 h-[2px] bg-gradient-to-r from-transparent via-gold to-gold"></div>
+                                <div className="w-3 h-3 bg-gold rotate-45"></div>
+                                <div className="w-20 h-[2px] bg-gradient-to-l from-transparent via-gold to-gold"></div>
+                            </div>
+                            <h3 className="font-cinzel text-3xl font-bold tracking-wide bg-gradient-to-r from-red-900 via-amber-800 to-red-900 bg-clip-text text-transparent drop-shadow-sm">
                                 {props.title}
                             </h3>
-                            <div className="w-16 h-[1px] bg-gradient-to-r from-transparent via-gold to-transparent mx-auto mt-4"></div>
+                            <div className="flex items-center justify-center gap-3 mt-4">
+                                <div className="w-20 h-[2px] bg-gradient-to-r from-transparent via-gold to-gold"></div>
+                                <div className="w-3 h-3 bg-gold rotate-45"></div>
+                                <div className="w-20 h-[2px] bg-gradient-to-l from-transparent via-gold to-gold"></div>
+                            </div>
                         </div>
                     )}
                     {props.children}
                 </div>
 
                 {props.number && (
-                    <div className="absolute bottom-8 right-10 text-sm text-gold/60 font-cinzel italic">
-                        — {props.number} —
+                    <div className="absolute bottom-8 right-10 flex items-center gap-2">
+                        <div className="w-8 h-[1px] bg-gold/60"></div>
+                        <span className="text-sm text-gold font-cinzel italic font-bold">{props.number}</span>
+                        <div className="w-8 h-[1px] bg-gold/60"></div>
                     </div>
                 )}
             </div>
@@ -76,19 +149,68 @@ Cover.displayName = "Cover";
 export default function MenuBook() {
     // @ts-ignore
     const bookRef = useRef(null);
+    const [isCoverOpen, setIsCoverOpen] = React.useState(false);
+
+    // Continuous Pagination Logic
+    const PAGE_CAPACITY = 580;
+    const HEADER_COST = 100;
+    const ITEM_COST = 65;
+    const NOTE_COST = 30;
+    const PRICING_COST = 120; // Cost for pricing info page
+
+    const getContinuousPages = () => {
+        const pages: any[] = [];
+        let currentPage: any[] = [];
+        let currentSlots = 0;
+
+        // Add pricing page as first page
+        pages.push([{ type: 'pricing' }]);
+
+        menuItems.forEach((cat: any) => {
+            const headerNeeded = HEADER_COST + (cat.note ? NOTE_COST : 0);
+
+            if (currentSlots + headerNeeded > PAGE_CAPACITY) {
+                pages.push(currentPage);
+                currentPage = [];
+                currentSlots = 0;
+            }
+
+            currentPage.push({ type: 'header', content: cat.category, note: cat.note });
+            currentSlots += headerNeeded;
+
+            cat.items.forEach((item: any) => {
+                if (currentSlots + ITEM_COST > PAGE_CAPACITY) {
+                    pages.push(currentPage);
+                    currentPage = [];
+                    currentSlots = 0;
+                }
+                currentPage.push({ type: 'item', content: item });
+                currentSlots += ITEM_COST;
+            });
+        });
+
+        if (currentPage.length > 0) {
+            pages.push(currentPage);
+        }
+
+        return pages;
+    };
+
+    const continuousPages = getContinuousPages();
+
+    const onFlip = (e: any) => {
+        setIsCoverOpen(e.data > 0);
+    };
 
     return (
         <section id="menu-section" className="py-32 bg-gradient-to-b from-black via-[#0a0505] to-black flex flex-col items-center justify-center min-h-screen relative overflow-hidden">
-            {/* Rich dark background with subtle texture */}
             <div className="absolute inset-0 opacity-20 bg-[url('https://www.transparenttextures.com/patterns/dark-matter.png')] mix-blend-overlay pointer-events-none" />
-
-            {/* Warm ambient glow */}
             <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[1000px] h-[1000px] bg-gradient-radial from-amber-900/10 via-red-900/5 to-transparent rounded-full blur-3xl pointer-events-none" />
 
-            <div className="relative z-10 mb-20 w-full max-w-4xl px-4">
+            <div className="relative z-10 mb-10 w-full max-w-4xl px-4">
                 <SectionHeading
-                    title="Our Menu"
-                    subtitle="A Culinary Journey"
+                    title="Buffet Selection"
+                    subtitle="Today's Feast"
                     centered={true}
                 />
                 <p className="text-gray-400 text-center max-w-lg mx-auto -mt-6 font-montserrat font-light text-sm">
@@ -96,29 +218,31 @@ export default function MenuBook() {
                 </p>
             </div>
 
-            <div className="relative flex justify-center items-center w-full max-w-6xl px-4 h-[650px] md:h-[750px] perspective-[2500px]">
-                {/* Soft shadow beneath book */}
-                <div className="absolute bottom-0 w-[500px] h-8 bg-black/40 blur-2xl rounded-full"></div>
+            <div
+                className="relative flex justify-center items-center w-full px-4 h-[650px] md:h-[750px] transition-transform duration-700 ease-in-out"
+                style={{ transform: isCoverOpen ? 'translateX(0)' : 'translateX(-240px)' }}
+            >
+                <div className="absolute bottom-10 w-[500px] h-8 bg-black/40 blur-2xl rounded-full"></div>
 
-                {/* @ts-ignore - react-pageflip types issue */}
+                {/* @ts-ignore */}
                 <HTMLFlipBook
                     width={480}
                     height={680}
-                    size="stretch"
+                    size="fixed"
                     minWidth={320}
-                    maxWidth={580}
+                    maxWidth={480}
                     minHeight={420}
-                    maxHeight={780}
-                    maxShadowOpacity={0.8}
+                    maxHeight={680}
+                    maxShadowOpacity={0.5}
                     showCover={true}
                     mobileScrollSupport={true}
-                    className="shadow-2xl shadow-black/90"
+                    className="shadow-2xl shadow-black/90 mx-auto"
                     ref={bookRef}
+                    onFlip={onFlip}
                 >
                     {/* Front Cover */}
                     <Cover>
                         <div className="flex flex-col items-center justify-center h-full py-12">
-                            {/* Ornate top decoration */}
                             <div className="mb-8">
                                 <div className="w-20 h-20 border-2 border-gold/50 rotate-45 mx-auto flex items-center justify-center">
                                     <div className="w-14 h-14 border-2 border-gold/30 flex items-center justify-center">
@@ -127,67 +251,135 @@ export default function MenuBook() {
                                 </div>
                             </div>
 
-                            {/* Main title */}
                             <div className="text-center space-y-3">
                                 <h1 className="font-cinzel text-6xl md:text-7xl font-bold tracking-wider text-gold drop-shadow-[0_0_25px_rgba(212,175,55,0.5)]">
                                     PURE
                                 </h1>
                                 <div className="w-32 h-[2px] bg-gradient-to-r from-transparent via-gold to-transparent mx-auto"></div>
-                                <h1 className="font-cinzel text-6xl md:text-7xl font-bold tracking-wider text-gold drop-shadow-[0_0_25px_rgba(212,175,55,0.5)]">
-                                    INDIA
+                                <h1 className="font-cinzel text-4xl md:text-5xl font-bold tracking-wider text-gold drop-shadow-[0_0_25px_rgba(212,175,55,0.5)]">
+                                    INDIAN CUISINE
                                 </h1>
                             </div>
 
-                            {/* Subtitle */}
                             <p className="text-gold-light/90 text-xs tracking-[0.4em] uppercase mt-6 font-montserrat">
-                                Las Vegas
+                                Las Vegas • Royal Buffet
                             </p>
 
-                            {/* Bottom decoration */}
                             <div className="mt-auto pt-12">
                                 <div className="w-full h-[1px] bg-gradient-to-r from-transparent via-gold/50 to-transparent mb-3"></div>
                                 <p className="text-[10px] uppercase tracking-[0.3em] text-gold/50 font-montserrat">
                                     Authentic Indian Cuisine
                                 </p>
                                 <p className="text-[9px] uppercase tracking-widest text-gold/30 mt-1 font-montserrat">
-                                    Est. 2024
+                                    Est. 2025
                                 </p>
                             </div>
                         </div>
                     </Cover>
 
                     {/* Menu Pages */}
-                    {menuItems.map((category, index) => (
-                        <Page key={index} number={index + 1} title={category.category}>
-                            <div className="space-y-5 mt-3">
-                                {category.items.map((item, idx) => (
-                                    <div key={idx} className="group relative pb-4 border-b border-gold/10 last:border-0">
-                                        <div className="flex justify-between items-start mb-2">
-                                            <h4 className="font-cinzel text-lg font-bold text-[#3d0a0a] group-hover:text-red-900 transition-colors duration-300 flex-1 pr-4">
-                                                {item.name}
-                                            </h4>
-                                            <span className="font-montserrat font-bold text-gold text-lg whitespace-nowrap">
-                                                {item.price}
-                                            </span>
-                                        </div>
-                                        <p className="text-sm text-gray-700 font-montserrat leading-relaxed pl-3 border-l-2 border-gold/30">
-                                            {item.description}
-                                        </p>
-                                    </div>
-                                ))}
+                    {continuousPages.map((pageContent, index) => (
+                        <Page key={index} number={index + 1}>
+                            <div className="space-y-4 mt-2">
+                                {pageContent.map((block: any, idx: number) => {
+                                    if (block.type === 'pricing') {
+                                        return (
+                                            <div key={idx} className="flex flex-col items-center justify-center h-full py-12">
+                                                <div className="text-center space-y-8">
+                                                    <div>
+                                                        <div className="flex items-center justify-center gap-3 mb-6">
+                                                            <div className="w-16 h-[2px] bg-gradient-to-r from-transparent via-gold to-gold"></div>
+                                                            <div className="w-4 h-4 bg-gold rotate-45"></div>
+                                                            <div className="w-16 h-[2px] bg-gradient-to-l from-transparent via-gold to-gold"></div>
+                                                        </div>
+                                                        <h2 className="font-cinzel text-4xl font-bold bg-gradient-to-r from-red-900 via-amber-700 to-red-900 bg-clip-text text-transparent mb-6">
+                                                            All-You-Can-Eat Buffet
+                                                        </h2>
+                                                        <div className="flex items-center justify-center gap-3 mt-6">
+                                                            <div className="w-16 h-[2px] bg-gradient-to-r from-transparent via-gold to-gold"></div>
+                                                            <div className="w-4 h-4 bg-gold rotate-45"></div>
+                                                            <div className="w-16 h-[2px] bg-gradient-to-l from-transparent via-gold to-gold"></div>
+                                                        </div>
+                                                    </div>
+
+                                                    <div className="space-y-6 mt-12">
+                                                        <div className="bg-gradient-to-r from-amber-50 to-orange-50 border-2 border-gold/40 p-6 rounded-lg shadow-lg">
+                                                            <p className="font-montserrat text-sm uppercase tracking-widest text-amber-900 mb-2">Lunch Buffet</p>
+                                                            <p className="font-cinzel text-5xl font-bold text-red-900">$17</p>
+                                                            <p className="font-montserrat text-xs text-amber-800 mt-2">Per Person</p>
+                                                        </div>
+
+                                                        <div className="bg-gradient-to-r from-red-50 to-amber-50 border-2 border-gold/40 p-6 rounded-lg shadow-lg">
+                                                            <p className="font-montserrat text-sm uppercase tracking-widest text-amber-900 mb-2">Dinner Buffet</p>
+                                                            <p className="font-cinzel text-5xl font-bold text-red-900">$20</p>
+                                                            <p className="font-montserrat text-xs text-amber-800 mt-2">Per Person</p>
+                                                        </div>
+                                                    </div>
+
+                                                    <div className="mt-8 pt-6 border-t border-gold/30">
+                                                        <p className="font-montserrat text-xs text-amber-900 italic">
+                                                            Unlimited servings of all menu items
+                                                        </p>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        );
+                                    } else if (block.type === 'header') {
+                                        return (
+                                            <div key={idx} className="pt-4 first:pt-0">
+                                                <div className="text-center mb-6">
+                                                    <div className="flex items-center justify-center gap-2 mb-3">
+                                                        <div className="w-12 h-[2px] bg-gradient-to-r from-transparent via-gold to-gold"></div>
+                                                        <div className="w-2 h-2 bg-gold rotate-45"></div>
+                                                        <div className="w-12 h-[2px] bg-gradient-to-l from-transparent via-gold to-gold"></div>
+                                                    </div>
+                                                    <h3 className="font-cinzel text-2xl font-bold bg-gradient-to-r from-red-900 via-amber-800 to-red-900 bg-clip-text text-transparent tracking-wide">
+                                                        {block.content}
+                                                    </h3>
+                                                    {block.note && (
+                                                        <p className="text-center text-amber-800 text-[10px] font-montserrat mt-2 tracking-widest uppercase italic">
+                                                            {block.note}
+                                                        </p>
+                                                    )}
+                                                    <div className="flex items-center justify-center gap-2 mt-3">
+                                                        <div className="w-12 h-[2px] bg-gradient-to-r from-transparent via-gold to-gold"></div>
+                                                        <div className="w-2 h-2 bg-gold rotate-45"></div>
+                                                        <div className="w-12 h-[2px] bg-gradient-to-l from-transparent via-gold to-gold"></div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        );
+                                    } else {
+                                        const item = block.content;
+                                        return (
+                                            <div key={idx} className="group relative pb-3 border-b border-gold/20 last:border-0">
+                                                <div className="mb-1">
+                                                    <h4 className="font-cinzel text-base font-bold text-[#3d0a0a] group-hover:text-red-900 transition-colors duration-300">
+                                                        {item.name}
+                                                    </h4>
+                                                </div>
+                                                {item.description && (
+                                                    <p className="text-xs text-gray-700 font-montserrat leading-relaxed pl-3 border-l-2 border-amber-600/40">
+                                                        {item.description}
+                                                    </p>
+                                                )}
+                                            </div>
+                                        );
+                                    }
+                                })}
                             </div>
                         </Page>
                     ))}
 
-                    {/* Filler page if odd number of categories */}
-                    {menuItems.length % 2 !== 0 ? (
-                        <Page number={menuItems.length + 1}>
-                            <div className="flex flex-col items-center justify-center h-full text-gray-500">
+                    {/* Filler page if odd */}
+                    {continuousPages.length % 2 !== 0 ? (
+                        <Page number={continuousPages.length + 1}>
+                            <div className="flex flex-col items-center justify-center h-full">
                                 <div className="w-20 h-20 border-2 border-gold/30 rotate-45 mb-6 flex items-center justify-center">
                                     <div className="w-12 h-12 border border-gold/20"></div>
                                 </div>
                                 <p className="font-cinzel text-xl italic text-gold/60">Culinary Excellence</p>
-                                <p className="font-montserrat text-xs text-gray-400 mt-2 tracking-widest">PURE INDIA</p>
+                                <p className="font-montserrat text-xs text-amber-800 mt-2 tracking-widest">PURE INDIAN CUISINE</p>
                             </div>
                         </Page>
                     ) : (
@@ -201,23 +393,23 @@ export default function MenuBook() {
                                 <div className="w-10 h-10 border border-gold/30"></div>
                             </div>
 
-                            <h2 className="font-cinzel text-4xl mb-4 text-gold tracking-wide">Pure India</h2>
+                            <h2 className="font-cinzel text-4xl mb-4 text-gold tracking-wide">Pure Indian Cuisine</h2>
 
                             <div className="w-24 h-[1px] bg-gradient-to-r from-transparent via-gold/50 to-transparent my-6"></div>
 
                             <div className="text-center space-y-2">
                                 <p className="text-xs text-gold-light/80 font-montserrat tracking-[0.3em] uppercase">
-                                    3799 S Las Vegas Blvd
+                                    1405 E Sunset Rd
                                 </p>
                                 <p className="text-xs text-gold-light/80 font-montserrat tracking-[0.3em] uppercase">
-                                    Las Vegas, NV 89109
+                                    Las Vegas, NV 89119
                                 </p>
                             </div>
 
                             <div className="w-24 h-[1px] bg-gradient-to-r from-transparent via-gold/50 to-transparent my-6"></div>
 
                             <p className="text-[10px] text-gold/60 font-montserrat tracking-widest uppercase">
-                                www.pureindia.com
+                                www.pureindiancuisine.com
                             </p>
                         </div>
                     </Cover>

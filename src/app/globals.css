@@ -63,3 +63,21 @@ h6 {
   border-image: var(--gold-metallic);
   border-image-slice: 1;
 }
+
+/* Custom Scrollbar */
+::-webkit-scrollbar {
+  width: 6px;
+}
+
+::-webkit-scrollbar-track {
+  background: transparent;
+}
+
+::-webkit-scrollbar-thumb {
+  background: rgba(212, 175, 55, 0.3);
+  border-radius: 3px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: rgba(212, 175, 55, 0.6);
+}

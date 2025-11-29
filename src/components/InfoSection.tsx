@@ -15,13 +15,13 @@ export default function InfoSection() {
 
                 <div className="container mx-auto px-4 relative z-10">
                     <SectionHeading
-                        title="Experience Pure India"
+                        title="Experience Pure Indian Cuisine"
                         subtitle="What Makes Us Special"
                         centered={true}
                     />
 
-                    <div className="grid md:grid-cols-3 gap-8 mt-16">
-                        {/* Menu Card */}
+                    <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-8 mt-16">
+                        {/* Royal Buffet Card */}
                         <motion.div
                             initial={{ opacity: 0, y: 30 }}
                             whileInView={{ opacity: 1, y: 0 }}
@@ -31,38 +31,7 @@ export default function InfoSection() {
                         >
                             <div className="relative h-64 overflow-hidden">
                                 <Image
-                                    src="/menu-highlight.png"
-                                    alt="Exquisite Menu"
-                                    fill
-                                    className="object-cover group-hover:scale-110 transition-transform duration-700"
-                                />
-                                <div className="absolute inset-0 bg-gradient-to-t from-black via-black/50 to-transparent"></div>
-                            </div>
-                            <div className="p-8">
-                                <h3 className="font-cinzel text-2xl text-white mb-3 group-hover:text-gold transition-colors">Exquisite Menu</h3>
-                                <p className="text-gray-400 font-montserrat text-sm leading-relaxed mb-6">
-                                    A curated selection of authentic dishes, crafted with premium spices and modern techniques.
-                                </p>
-                                <Link
-                                    href="/menu"
-                                    className="inline-block font-montserrat text-xs tracking-widest uppercase text-gold hover:text-white transition-colors border-b border-gold/30 hover:border-white pb-1"
-                                >
-                                    View Menu
-                                </Link>
-                            </div>
-                        </motion.div>
-
-                        {/* Buffet Card */}
-                        <motion.div
-                            initial={{ opacity: 0, y: 30 }}
-                            whileInView={{ opacity: 1, y: 0 }}
-                            transition={{ duration: 0.6, delay: 0.2 }}
-                            viewport={{ once: true }}
-                            className="group relative overflow-hidden bg-card-bg border border-gold/10 hover:border-gold/30 transition-all duration-500"
-                        >
-                            <div className="relative h-64 overflow-hidden">
-                                <Image
-                                    src="/buffet-highlight.png"
+                                    src="/images/indian-buffet-food-real.png"
                                     alt="Royal Buffet"
                                     fill
                                     className="object-cover group-hover:scale-110 transition-transform duration-700"
@@ -72,7 +41,7 @@ export default function InfoSection() {
                             <div className="p-8">
                                 <h3 className="font-cinzel text-2xl text-white mb-3 group-hover:text-gold transition-colors">Royal Buffet</h3>
                                 <p className="text-gray-400 font-montserrat text-sm leading-relaxed mb-6">
-                                    Indulge in a lavish spread of traditional favorites, perfect for tasting the diversity of India.
+                                    Indulge in a lavish spread of traditional favorites, offering an unlimited journey through India's culinary heritage.
                                 </p>
                                 <Link
                                     href="/menu"
@@ -83,11 +52,73 @@ export default function InfoSection() {
                             </div>
                         </motion.div>
 
-                        {/* Views Card */}
+                        {/* Premium Bar Card */}
+                        <motion.div
+                            initial={{ opacity: 0, y: 30 }}
+                            whileInView={{ opacity: 1, y: 0 }}
+                            transition={{ duration: 0.6, delay: 0.2 }}
+                            viewport={{ once: true }}
+                            className="group relative overflow-hidden bg-card-bg border border-gold/10 hover:border-gold/30 transition-all duration-500"
+                        >
+                            <div className="relative h-64 overflow-hidden">
+                                <Image
+                                    src="https://images.unsplash.com/photo-1514933651103-005eec06c04b?q=80&w=1000&auto=format&fit=crop"
+                                    alt="Premium Bar"
+                                    fill
+                                    className="object-cover group-hover:scale-110 transition-transform duration-700"
+                                />
+                                <div className="absolute inset-0 bg-gradient-to-t from-black via-black/50 to-transparent"></div>
+                            </div>
+                            <div className="p-8">
+                                <h3 className="font-cinzel text-2xl text-white mb-3 group-hover:text-gold transition-colors">Premium Bar</h3>
+                                <p className="text-gray-400 font-montserrat text-sm leading-relaxed mb-6">
+                                    Enjoy handcrafted cocktails, fine wines, and premium spirits in our sophisticated bar. Perfect for pre-dinner drinks or a relaxing evening.
+                                </p>
+                                <Link
+                                    href="/contact"
+                                    className="inline-block font-montserrat text-xs tracking-widest uppercase text-gold hover:text-white transition-colors border-b border-gold/30 hover:border-white pb-1"
+                                >
+                                    Explore Drinks
+                                </Link>
+                            </div>
+                        </motion.div>
+
+                        {/* Banquet Hall Card */}
                         <motion.div
                             initial={{ opacity: 0, y: 30 }}
                             whileInView={{ opacity: 1, y: 0 }}
                             transition={{ duration: 0.6, delay: 0.4 }}
+                            viewport={{ once: true }}
+                            className="group relative overflow-hidden bg-card-bg border border-gold/10 hover:border-gold/30 transition-all duration-500"
+                        >
+                            <div className="relative h-64 overflow-hidden">
+                                <Image
+                                    src="/images/banquet-hall.png"
+                                    alt="Banquet Hall"
+                                    fill
+                                    className="object-cover group-hover:scale-110 transition-transform duration-700"
+                                />
+                                <div className="absolute inset-0 bg-gradient-to-t from-black via-black/50 to-transparent"></div>
+                            </div>
+                            <div className="p-8">
+                                <h3 className="font-cinzel text-2xl text-white mb-3 group-hover:text-gold transition-colors">Private Banquet Hall</h3>
+                                <p className="text-gray-400 font-montserrat text-sm leading-relaxed mb-6">
+                                    Host your special occasions in our elegant banquet hall. Perfect for weddings, birthdays, corporate events, and celebrations of all kinds.
+                                </p>
+                                <Link
+                                    href="/contact"
+                                    className="inline-block font-montserrat text-xs tracking-widest uppercase text-gold hover:text-white transition-colors border-b border-gold/30 hover:border-white pb-1"
+                                >
+                                    Book Your Event
+                                </Link>
+                            </div>
+                        </motion.div>
+
+                        {/* Runway Views Card */}
+                        <motion.div
+                            initial={{ opacity: 0, y: 30 }}
+                            whileInView={{ opacity: 1, y: 0 }}
+                            transition={{ duration: 0.6, delay: 0.6 }}
                             viewport={{ once: true }}
                             className="group relative overflow-hidden bg-card-bg border border-gold/10 hover:border-gold/30 transition-all duration-500"
                         >
@@ -152,8 +183,8 @@ export default function InfoSection() {
                                         </div>
                                         <div>
                                             <h3 className="font-cinzel text-2xl font-bold mb-3 text-white group-hover:text-gold transition-colors">Location</h3>
-                                            <p className="text-white font-montserrat font-medium text-lg">3799 S Las Vegas Blvd</p>
-                                            <p className="text-gray-400 font-montserrat">Las Vegas, NV 89109 • Next to Airport</p>
+                                            <p className="text-white font-montserrat font-medium text-lg">1405 E Sunset Rd</p>
+                                            <p className="text-gray-400 font-montserrat">Las Vegas, NV 89119 • Next to Airport</p>
                                             <Link
                                                 href="/contact"
                                                 className="inline-block mt-4 font-montserrat text-xs tracking-widest uppercase text-gold hover:text-white transition-colors border-b border-gold/30 hover:border-white pb-1"
@@ -177,7 +208,7 @@ export default function InfoSection() {
                             <div className="relative h-full w-full bg-card-bg border border-gold/10 overflow-hidden">
                                 <Image
                                     src="/interior-highlight.png"
-                                    alt="Pure India Interior"
+                                    alt="Pure Indian Cuisine Interior"
                                     fill
                                     className="object-cover group-hover:scale-105 transition-transform duration-700"
                                 />

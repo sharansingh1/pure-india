@@ -32,7 +32,7 @@ export default function AboutPage() {
                         <SectionHeading title="The Vision" subtitle="Est. 2024" centered={false} />
                         <div className="prose prose-invert max-w-none font-montserrat text-gray-300 leading-loose">
                             <p className="mb-6">
-                                Pure India was born from a desire to redefine the Indian dining experience in Las Vegas.
+                                Pure Indian Cuisine was born from a desire to redefine the Indian dining experience in Las Vegas.
                                 We believe that Indian cuisine is an art form—a delicate balance of spices, textures, and aromas
                                 that deserves to be presented with the same elegance and sophistication as the world's finest cuisines.
                             </p>
@@ -54,7 +54,7 @@ export default function AboutPage() {
                         <div className="w-full h-full relative overflow-hidden">
                             <Image
                                 src="/images/restaurant-interior.png"
-                                alt="Pure India Restaurant Interior"
+                                alt="Pure Indian Cuisine Restaurant Interior"
                                 fill
                                 className="object-cover"
                             />

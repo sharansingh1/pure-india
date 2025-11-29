@@ -11,8 +11,21 @@ export default function Hero() {
 
     return (
         <section className="relative min-h-screen w-full overflow-hidden bg-black">
-            {/* Subtle Golden Glow Overlay */}
-            <div className="absolute inset-0 bg-[radial-gradient(circle_at_50%_50%,rgba(212,175,55,0.05),transparent_70%)] pointer-events-none" />
+            {/* Hero Background Image */}
+            <div className="absolute inset-0 z-0">
+                <Image
+                    src="/images/hero-background.jpg"
+                    alt="Hero Background"
+                    fill
+                    className="object-cover opacity-75"
+                    priority
+                    quality={100}
+                    sizes="100vw"
+                />
+                {/* Gradient Fade for Text Readability */}
+                <div className="absolute inset-0 bg-gradient-to-r from-black/60 via-black/40 to-transparent" />
+                <div className="absolute inset-0 bg-gradient-to-t from-black/70 via-transparent to-black/30" />
+            </div>
 
             {/* Main Content Grid */}
             <div className="relative z-10 container mx-auto px-4 min-h-screen flex items-center">
@@ -38,11 +51,10 @@ export default function Hero() {
                             <h1 className="font-cinzel text-6xl md:text-7xl lg:text-8xl font-bold leading-none">
                                 <span className="text-white">Experience</span>
                                 <br />
-                                <span className="text-gold-gradient">Pure India</span>
+                                <span className="text-gold-gradient">A Grand Indian Buffet</span>
                             </h1>
                             <p className="text-gray-400 text-lg md:text-xl font-montserrat leading-relaxed max-w-lg">
-                                Savor the rich flavors of traditional Indian cuisine in the heart of Las Vegas.
-                                Every dish tells a story of heritage, spice, and passion.
+                                The Complete Taste of India, North to South. Indulge in an exquisite, all-you-can-eat journey through the finest flavors.
                             </p>
                         </div>
 
@@ -80,7 +92,7 @@ export default function Hero() {
                                 <div className="absolute inset-0 border-2 border-gold/50 group-hover:border-gold transition-colors duration-500" />
                                 <div className="absolute inset-0 bg-gold/10 scale-x-0 group-hover:scale-x-100 transition-transform duration-500 origin-left" />
                                 <span className="relative z-10 font-montserrat font-medium tracking-[0.2em] uppercase text-gold-light group-hover:text-white transition-colors duration-300">
-                                    View Menu
+                                    View Buffet
                                 </span>
                             </button>
                         </motion.div>
@@ -127,8 +139,8 @@ export default function Hero() {
                                 {/* Image Container */}
                                 <div className="relative w-full h-full rounded-full overflow-hidden border-4 border-gold/40 shadow-2xl shadow-gold/20">
                                     <Image
-                                        src="https://images.unsplash.com/photo-1585937421612-70a008356fbe?q=80&w=800"
-                                        alt="Signature Indian Dish"
+                                        src="/images/tandoori-chicken-leg-real.png"
+                                        alt="Tandoori Chicken Leg"
                                         fill
                                         className="object-cover"
                                         priority
@@ -136,53 +148,28 @@ export default function Hero() {
                                     <div className="absolute inset-0 bg-gradient-to-t from-black/30 via-transparent to-transparent" />
                                 </div>
 
-                                {/* Decorative Badge - Top Right (Lotus) */}
+                                {/* Decorative Badge - Top Right (Paisley/Ambi) */}
                                 <motion.div
                                     className="absolute -top-6 -right-6 w-24 h-24 bg-gradient-to-br from-gold via-amber-500 to-gold rounded-full flex items-center justify-center shadow-xl shadow-gold/30 border-2 border-amber-600"
                                     animate={{ rotate: 360 }}
                                     transition={{ duration: 20, repeat: Infinity, ease: "linear" }}
                                 >
-                                    <svg viewBox="0 0 100 100" className="w-14 h-14">
-                                        {[...Array(6)].map((_, i) => (
-                                            <ellipse
-                                                key={i}
-                                                cx="50"
-                                                cy="50"
-                                                rx="15"
-                                                ry="28"
-                                                fill="#000"
-                                                opacity="0.8"
-                                                transform={`rotate(${i * 60} 50 50)`}
-                                            />
-                                        ))}
-                                        <circle cx="50" cy="50" r="10" fill="#D4AF37" />
-                                        <circle cx="50" cy="50" r="6" fill="#000" opacity="0.3" />
+                                    <svg viewBox="0 0 100 100" className="w-14 h-14 fill-black/80">
+                                        <path d="M50,85 C30,85 15,70 15,50 C15,30 35,15 50,5 C65,15 85,30 85,50 C85,70 70,85 50,85 Z M50,25 C40,35 35,45 35,55 C35,65 45,70 50,70 C55,70 65,65 65,55 C65,45 60,35 50,25 Z" />
+                                        <circle cx="50" cy="55" r="5" fill="#D4AF37" />
                                     </svg>
                                 </motion.div>
 
-                                {/* Decorative Badge - Bottom Left (Mandala) */}
+                                {/* Decorative Badge - Bottom Left (Diya/Lamp) */}
                                 <motion.div
                                     className="absolute -bottom-6 -left-6 w-28 h-28 bg-gradient-to-br from-amber-600 via-gold to-amber-500 rounded-full flex items-center justify-center shadow-xl shadow-gold/30 border-2 border-amber-700"
                                     animate={{ rotate: -360 }}
                                     transition={{ duration: 25, repeat: Infinity, ease: "linear" }}
                                 >
-                                    <svg viewBox="0 0 100 100" className="w-16 h-16">
-                                        {/* Mandala pattern */}
-                                        <circle cx="50" cy="50" r="8" fill="#000" opacity="0.8" />
-                                        <circle cx="50" cy="50" r="15" fill="none" stroke="#000" strokeWidth="2" opacity="0.8" />
-                                        <circle cx="50" cy="50" r="22" fill="none" stroke="#000" strokeWidth="1" opacity="0.6" />
-                                        {[...Array(8)].map((_, i) => (
-                                            <line
-                                                key={i}
-                                                x1="50"
-                                                y1="50"
-                                                x2={50 + 25 * Math.cos((i * 45 * Math.PI) / 180)}
-                                                y2={50 + 25 * Math.sin((i * 45 * Math.PI) / 180)}
-                                                stroke="#000"
-                                                strokeWidth="1.5"
-                                                opacity="0.7"
-                                            />
-                                        ))}
+                                    <svg viewBox="0 0 100 100" className="w-16 h-16 fill-black/80">
+                                        <path d="M10,60 Q50,90 90,60 Q90,50 80,50 L20,50 Q10,50 10,60 Z" />
+                                        <path d="M50,10 Q30,30 30,50 L70,50 Q70,30 50,10 Z" fill="#D4AF37" />
+                                        <circle cx="50" cy="30" r="5" fill="#FFD700" opacity="0.8" />
                                     </svg>
                                 </motion.div>
                             </motion.div>

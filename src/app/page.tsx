@@ -14,7 +14,7 @@ export default function Home() {
       <MenuBook />
       <FeaturedDish />
       <Testimonials />
-      <Newsletter />
+
       <Footer />
     </main>
   );

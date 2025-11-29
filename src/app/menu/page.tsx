@@ -9,8 +9,10 @@ export default function MenuPage() {
         <main className="min-h-screen pt-32 pb-20 bg-black text-white">
             <div className="container mx-auto px-4 max-w-4xl">
                 <div className="text-center mb-20">
-                    <h1 className="font-cinzel text-5xl md:text-7xl text-white font-bold mb-4">Our Menu</h1>
+                    <h1 className="font-cinzel text-5xl md:text-7xl text-white font-bold mb-4">What We Offer</h1>
                     <p className="text-gold font-montserrat tracking-[0.3em] uppercase text-sm">Experience Authentic Flavors</p>
+                    <p className="text-gold font-montserrat tracking-[0.3em] uppercase text-xs mt-2">Please note that this is our complete menu catalog. Our daily buffet features a curated selection from these dishes, which may vary each day.</p>
+
                 </div>
 
                 {menuItems.map((category, index) => (
@@ -24,7 +26,16 @@ export default function MenuPage() {
                     >
                         <div className="flex items-center gap-4 mb-10 justify-center">
                             <div className="h-[1px] w-12 bg-gold/30" />
-                            <h2 className="font-cinzel text-3xl md:text-4xl text-gold-gradient">{category.category}</h2>
+                            <div className="text-center">
+                                <h2 className="font-cinzel text-3xl md:text-4xl text-gold-gradient">{category.category}</h2>
+                                {/* @ts-ignore */}
+                                {category.note && (
+                                    <p className="text-gold/60 text-xs font-montserrat mt-2 tracking-widest uppercase">
+                                        {/* @ts-ignore */}
+                                        {category.note}
+                                    </p>
+                                )}
+                            </div>
                             <div className="h-[1px] w-12 bg-gold/30" />
                         </div>
 

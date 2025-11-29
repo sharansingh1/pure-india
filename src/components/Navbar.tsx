@@ -8,7 +8,7 @@ import { Menu, X } from "lucide-react";
 
 const navLinks = [
     { name: "Home", href: "/" },
-    { name: "Menu", href: "/menu" },
+    { name: "Buffet", href: "/menu" },
     { name: "Our Story", href: "/about" },
     { name: "Gallery", href: "/gallery" },
     { name: "Contact", href: "/contact" },
@@ -42,7 +42,7 @@ export default function Navbar() {
                 {/* Logo */}
                 <Link href="/" className={`relative z-50 group transition-opacity duration-300 ${isOpen ? 'opacity-0 lg:opacity-100' : 'opacity-100'}`}>
                     <h1 className="font-cinzel text-2xl md:text-3xl font-bold text-white tracking-widest group-hover:text-gold transition-colors duration-300">
-                        PURE <span className="text-gold-gradient">INDIA</span>
+                        PURE <span className="text-gold-gradient">INDIAN CUISINE</span>
                     </h1>
                 </Link>
 

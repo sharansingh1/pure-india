@@ -16,7 +16,7 @@ const montserrat = Montserrat({
 });
 
 export const metadata: Metadata = {
-  title: "Pure India | Premium Indian Cuisine in Las Vegas",
+  title: "Pure Indian Cuisine | Premium Indian Cuisine in Las Vegas",
   description: "Experience the essence of India in the heart of Las Vegas. Authentic flavors, premium dining.",
 };
 
