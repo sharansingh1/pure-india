@@ -1,9 +1,27 @@
 "use client";
 
 import { motion } from "framer-motion";
-import { MapPin, Phone, Mail, Clock } from "lucide-react";
+import { MapPin, Phone, Send } from "lucide-react";
+import { useState } from "react";
+import { sendEmail } from "./action";
 
 export default function ContactPage() {
+    const [status, setStatus] = useState<"idle" | "submitting" | "success" | "error">("idle");
+
+    async function handleSubmit(formData: FormData) {
+        setStatus("submitting");
+        try {
+            const result = await sendEmail(formData);
+            if (result.success) {
+                setStatus("success");
+            } else {
+                setStatus("error");
+            }
+        } catch (e) {
+            setStatus("error");
+        }
+    }
+
     return (
         <main className="min-h-screen pt-32 pb-20 bg-black text-white">
             <div className="container mx-auto px-4 max-w-6xl">
@@ -44,37 +62,71 @@ export default function ContactPage() {
                                     <div>
                                         <h3 className="font-cinzel text-xl text-white mb-2">Phone</h3>
                                         <p className="text-gray-400 font-montserrat">
-                                            (702) 897-5555<br />
+                                            702-897-5555<br />
                                             725-999-2736
-                                        </p>
-                                    </div>
-                                </div>
-
-                                <div className="flex items-start gap-6">
-                                    <div className="p-4 border border-gold/20 rounded-sm text-gold">
-                                        <Mail size={24} />
-                                    </div>
-                                    <div>
-                                        <h3 className="font-cinzel text-xl text-white mb-2">Email</h3>
-                                        <p className="text-gray-400 font-montserrat">
-                                            info@pureindiancuisine.com
                                         </p>
                                     </div>
                                 </div>
                             </div>
                         </div>
 
+                        {/* Contact Form Section */}
+                        <div>
+                            <h2 className="font-cinzel text-3xl text-gold-gradient mb-8">Send a Message</h2>
+                            {status === "success" ? (
+                                <div className="p-6 border border-green-500/30 bg-green-500/10 text-center">
+                                    <h3 className="font-cinzel text-xl text-green-400 mb-2">Message Sent</h3>
+                                    <p className="text-gray-400 text-sm">Thank you for contacting us. We'll get back to you shortly.</p>
+                                    <button onClick={() => setStatus("idle")} className="mt-4 text-gold underline text-sm">Send another</button>
+                                </div>
+                            ) : (
+                                <form action={handleSubmit} className="space-y-4">
+                                    <div>
+                                        <input 
+                                            type="text" 
+                                            name="name"
+                                            placeholder="Your Name" 
+                                            required
+                                            className="w-full bg-white/5 border border-white/10 p-4 text-white placeholder:text-gray-500 focus:border-gold focus:outline-none transition-colors"
+                                        />
+                                    </div>
+                                    <div>
+                                        <input 
+                                            type="email" 
+                                            name="email"
+                                            placeholder="Your Email" 
+                                            required
+                                            className="w-full bg-white/5 border border-white/10 p-4 text-white placeholder:text-gray-500 focus:border-gold focus:outline-none transition-colors"
+                                        />
+                                    </div>
+                                    <div>
+                                        <textarea 
+                                            name="message"
+                                            placeholder="Your Message" 
+                                            required
+                                            rows={4}
+                                            className="w-full bg-white/5 border border-white/10 p-4 text-white placeholder:text-gray-500 focus:border-gold focus:outline-none transition-colors resize-none"
+                                        />
+                                    </div>
+                                    <button 
+                                        type="submit" 
+                                        disabled={status === "submitting"}
+                                        className="w-full bg-gold text-black font-bold uppercase tracking-widest py-4 hover:bg-white transition-colors disabled:opacity-50 disabled:cursor-not-allowed flex items-center justify-center gap-2"
+                                    >
+                                        {status === "submitting" ? "Sending..." : "Send Message"}
+                                        {!status.startsWith("submit") && <Send size={18} />}
+                                    </button>
+                                    {status === "error" && (
+                                        <p className="text-red-400 text-sm text-center">Something went wrong. Please try again.</p>
+                                    )}
+                                </form>
+                            )}
+                        </div>
+
                         <div>
                             <h2 className="font-cinzel text-3xl text-gold-gradient mb-8">Hours</h2>
-                            <div className="grid grid-cols-2 gap-8">
-                                <div>
-                                    <h4 className="font-montserrat font-bold text-white mb-2">Dinner</h4>
-                                    <p className="text-gray-400 text-sm font-montserrat">Daily: 5pm - 11pm</p>
-                                </div>
-                                <div>
-                                    <h4 className="font-montserrat font-bold text-white mb-2">Happy Hour</h4>
-                                    <p className="text-gray-400 text-sm font-montserrat">Daily: 4pm - 6pm</p>
-                                </div>
+                            <div>
+                                <p className="text-gray-400 text-sm font-montserrat">Daily: 11 AM - 10 PM</p>
                             </div>
                         </div>
                     </motion.div>

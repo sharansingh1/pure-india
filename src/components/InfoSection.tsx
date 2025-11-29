@@ -173,7 +173,7 @@ export default function InfoSection() {
                                         <div>
                                             <h3 className="font-cinzel text-2xl font-bold mb-3 text-white group-hover:text-gold transition-colors">Opening Hours</h3>
                                             <p className="text-gray-400 font-montserrat mb-1">Monday - Sunday</p>
-                                            <p className="text-white font-montserrat font-medium text-lg">11:00 AM - 11:00 PM</p>
+                                            <p className="text-white font-montserrat font-medium text-lg">11:00 AM - 10:00 PM</p>
                                         </div>
                                     </div>
 

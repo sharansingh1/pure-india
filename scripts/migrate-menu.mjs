@@ -1,7 +1,16 @@
-export const menuItems = [
+import { createClient } from '@sanity/client';
+
+// --- CONFIGURATION ---
+// Please fill these in from your sanity.config.ts or .env file
+const PROJECT_ID = '60d79hgh' //ce this!
+const DATASET = 'production'; // Usually 'production'
+const TOKEN = 'skUfc8QMMzz1SOPKamVRlqm7Fiyo1nyc3Eyigr5QQLLf1cOfoJD9GdEVpF48IjO5HlGp3jm68vr8QZqgbUu4aCsGu0CWs15dcoYoXMZHURaj6ZmduxJ55RGJWXhoJDeCpb1XDhV4rMx8V9iN6AhNqlD0ca1UauJFUYX8fBq4gXHj8cFpkzVF'
+
+// --- MENU DATA ---
+const menuItems = [
     {
         category: "APPETIZERS – VEG",
-        items: [
+        items: [ 
             { name: "Masala Papad", price: "", description: "" },
             { name: "Paani Poori", price: "", description: "" },
             { name: "Veg Samosa", price: "", description: "" },
@@ -137,3 +146,52 @@ export const menuItems = [
         ]
     }
 ];
+
+// --- SCRIPT ---
+
+if (PROJECT_ID === 'YOUR_PROJECT_ID' || TOKEN === 'YOUR_SANITY_TOKEN') {
+    console.error("❌ You must set PROJECT_ID and TOKEN in the script first!");
+    process.exit(1);
+}
+
+const client = createClient({
+    projectId: PROJECT_ID,
+    dataset: DATASET,
+    apiVersion: '2023-05-03',
+    token: TOKEN,
+    useCdn: false,
+});
+
+async function importData() {
+    console.log("🚀 Starting import...");
+    
+    let count = 0;
+    const transaction = client.transaction();
+
+    for (const category of menuItems) {
+        for (const item of category.items) {
+            const doc = {
+                _type: 'menuItem',
+                name: item.name,
+                price: item.price,
+                description: item.description,
+                category: category.category
+            };
+            transaction.create(doc);
+            count++;
+            console.log(`Preparing: ${item.name}`);
+        }
+    }
+
+    console.log(`\n📦 Committing ${count} items to Sanity...`);
+    
+    try {
+        await transaction.commit();
+        console.log("✅ Import successful!");
+    } catch (error) {
+        console.error("❌ Import failed:", error);
+    }
+}
+
+importData();
+

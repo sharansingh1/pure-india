@@ -188,11 +188,11 @@ export default function BanquetPage() {
                     >
                         <div className="grid grid-cols-2 gap-4 text-center">
                             <div className="p-4 bg-black/40">
-                                <div className="font-cinzel text-3xl text-gold mb-1">150</div>
+                                <div className="font-cinzel text-3xl text-gold mb-1">500</div>
                                 <div className="text-xs text-gray-400 uppercase tracking-widest">Guest Capacity</div>
                             </div>
                             <div className="p-4 bg-black/40">
-                                <div className="font-cinzel text-3xl text-gold mb-1">3000</div>
+                                <div className="font-cinzel text-3xl text-gold mb-1">10000</div>
                                 <div className="text-xs text-gray-400 uppercase tracking-widest">Square Feet</div>
                             </div>
                             <div className="p-4 bg-black/40 col-span-2">
@@ -294,12 +294,12 @@ export default function BanquetPage() {
                     
                     <div className="flex flex-col sm:flex-row items-center justify-center gap-6">
                         <a 
-                            href="tel:+17025550123" 
+                            href="tel:+17028975555" 
                             className="group relative px-10 py-5 bg-gold overflow-hidden transition-all duration-500 hover:shadow-lg hover:shadow-gold/30"
                         >
                             <div className="absolute inset-0 bg-gradient-to-r from-amber-500 to-gold opacity-0 group-hover:opacity-100 transition-opacity duration-500" />
                             <span className="relative z-10 font-montserrat font-bold tracking-[0.2em] uppercase text-black flex items-center gap-3">
-                                <Phone size={20} /> (702) 555-0123
+                                <Phone size={20} /> (702) 897-5555
                             </span>
                         </a>
                         
