@@ -1,9 +1,34 @@
 "use client";
 
-import { motion } from "framer-motion";
+import { motion, AnimatePresence } from "framer-motion";
 import Image from "next/image";
+import { useState, useEffect } from "react";
+
+const carouselImages = [
+    {
+        src: "/butterchicken.jpg",
+        alt: "Butter Chicken with Naan"
+    },
+    {
+        src: "/chickenbiryani.jpg",
+        alt: "Chicken Biryani"
+    },
+    {
+        src: "/dosa.jpeg",
+        alt: "Masala Dosa"
+    }
+];
 
 export default function Hero() {
+    const [currentImageIndex, setCurrentImageIndex] = useState(0);
+
+    useEffect(() => {
+        const interval = setInterval(() => {
+            setCurrentImageIndex((prev) => (prev + 1) % carouselImages.length);
+        }, 4000);
+        return () => clearInterval(interval);
+    }, []);
+
     const scrollToMenu = () => {
         const menuSection = document.getElementById("menu-section");
         menuSection?.scrollIntoView({ behavior: "smooth" });
@@ -137,15 +162,26 @@ export default function Hero() {
                                 <div className="absolute inset-0 bg-gradient-to-br from-gold/20 to-amber-600/10 rounded-full blur-2xl" />
 
                                 {/* Image Container */}
-                                <div className="relative w-full h-full rounded-full overflow-hidden border-4 border-gold/40 shadow-2xl shadow-gold/20">
-                                    <Image
-                                        src="/images/tandoori-chicken-leg-real.png"
-                                        alt="Tandoori Chicken Leg"
-                                        fill
-                                        className="object-cover"
-                                        priority
-                                    />
-                                    <div className="absolute inset-0 bg-gradient-to-t from-black/30 via-transparent to-transparent" />
+                                <div className="relative w-full h-full rounded-full overflow-hidden border-4 border-gold/40 shadow-2xl shadow-gold/20 bg-black">
+                                    <AnimatePresence mode="wait">
+                                        <motion.div
+                                            key={currentImageIndex}
+                                            initial={{ opacity: 0 }}
+                                            animate={{ opacity: 1 }}
+                                            exit={{ opacity: 0 }}
+                                            transition={{ duration: 1 }}
+                                            className="absolute inset-0 w-full h-full"
+                                        >
+                                            <Image
+                                                src={carouselImages[currentImageIndex].src}
+                                                alt={carouselImages[currentImageIndex].alt}
+                                                fill
+                                                className="object-cover scale-110"
+                                                priority
+                                            />
+                                            <div className="absolute inset-0 bg-gradient-to-t from-black/30 via-transparent to-transparent" />
+                                        </motion.div>
+                                    </AnimatePresence>
                                 </div>
 
                                 {/* Decorative Badge - Top Right (Paisley/Ambi) */}

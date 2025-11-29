@@ -11,8 +11,46 @@ export default function MenuPage() {
                 <div className="text-center mb-20">
                     <h1 className="font-cinzel text-5xl md:text-7xl text-white font-bold mb-4">What We Offer</h1>
                     <p className="text-gold font-montserrat tracking-[0.3em] uppercase text-sm">Experience Authentic Flavors</p>
-                    <p className="text-gold font-montserrat tracking-[0.3em] uppercase text-xs mt-2">Please note that this is our complete menu catalog. Our daily buffet features a curated selection from these dishes, which may vary each day.</p>
+                    <p className="text-gold font-montserrat tracking-[0.3em] uppercase text-xs mt-2">Please note that this is our complete menu catalog. Our daily buffet features a curated selection from these dishes, which may vary each day. Includes fountain drinks.</p>
+                </div>
 
+                {/* Buffet Pricing */}
+                <div className="grid md:grid-cols-2 gap-8 max-w-2xl mx-auto mb-20">
+                    {/* Lunch Price Card */}
+                    <motion.div
+                        initial={{ opacity: 0, x: -20 }}
+                        whileInView={{ opacity: 1, x: 0 }}
+                        viewport={{ once: true }}
+                        transition={{ duration: 0.6 }}
+                        className="relative p-8 border border-gold/20 bg-gradient-to-b from-white/5 to-transparent text-center group hover:border-gold/40 transition-all duration-500"
+                    >
+                        <div className="absolute top-0 left-1/2 -translate-x-1/2 w-1/2 h-[1px] bg-gradient-to-r from-transparent via-gold/50 to-transparent" />
+                        
+                        <h3 className="font-cinzel text-2xl text-white mb-3">Lunch Buffet</h3>
+                        <div className="font-cinzel text-gold text-5xl font-bold mb-3 tracking-tight">$17</div>
+                        
+                        {/* Decorative Corners */}
+                        <div className="absolute top-0 left-0 w-6 h-6 border-t border-l border-gold/20 group-hover:border-gold/60 transition-colors duration-500" />
+                        <div className="absolute bottom-0 right-0 w-6 h-6 border-b border-r border-gold/20 group-hover:border-gold/60 transition-colors duration-500" />
+                    </motion.div>
+
+                    {/* Dinner Price Card */}
+                    <motion.div
+                        initial={{ opacity: 0, x: 20 }}
+                        whileInView={{ opacity: 1, x: 0 }}
+                        viewport={{ once: true }}
+                        transition={{ duration: 0.6 }}
+                        className="relative p-8 border border-gold/20 bg-gradient-to-b from-white/5 to-transparent text-center group hover:border-gold/40 transition-all duration-500"
+                    >
+                        <div className="absolute top-0 left-1/2 -translate-x-1/2 w-1/2 h-[1px] bg-gradient-to-r from-transparent via-gold/50 to-transparent" />
+                        
+                        <h3 className="font-cinzel text-2xl text-white mb-3">Dinner Buffet</h3>
+                        <div className="font-cinzel text-gold text-5xl font-bold mb-3 tracking-tight">$20</div>
+                        
+                        {/* Decorative Corners */}
+                        <div className="absolute top-0 left-0 w-6 h-6 border-t border-l border-gold/20 group-hover:border-gold/60 transition-colors duration-500" />
+                        <div className="absolute bottom-0 right-0 w-6 h-6 border-b border-r border-gold/20 group-hover:border-gold/60 transition-colors duration-500" />
+                    </motion.div>
                 </div>
 
                 {menuItems.map((category, index) => (
