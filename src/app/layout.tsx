@@ -39,6 +39,9 @@ export const metadata: Metadata = {
   alternates: {
     canonical: "https://pureindiacuisine.com",
   },
+  verification: {
+    google: "7eenxrb-UaXIQ4DLnFxcxULAkx959LSRrOj2nN5tX3o",
+  },
 };
 
 export default function RootLayout({
