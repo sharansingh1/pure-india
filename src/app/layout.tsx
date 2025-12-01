@@ -29,10 +29,10 @@ export const metadata: Metadata = {
     siteName: "Pure Indian Cuisine",
     images: [
       {
-        url: "/images/hero-background.jpg", // Ensure this image exists
+        url: "/icon.jpg", // Your brand logo
         width: 1200,
-        height: 630,
-        alt: "Pure Indian Cuisine Las Vegas Buffet",
+        height: 1200,
+        alt: "Pure Indian Cuisine Logo",
       },
     ],
   },
