@@ -16,8 +16,29 @@ const montserrat = Montserrat({
 });
 
 export const metadata: Metadata = {
-  title: "Pure Indian Cuisine | Premium Indian Cuisine in Las Vegas",
-  description: "Experience the essence of India in the heart of Las Vegas. Authentic flavors, premium dining.",
+  title: {
+    default: "Pure Indian Cuisine | Best Indian Buffet & Banquet Hall in Las Vegas",
+    template: "%s | Pure Indian Cuisine Las Vegas"
+  },
+  description: "Experience the best Indian food in Las Vegas. All-you-can-eat lunch & dinner buffet, fine dining a la carte menu, and premier banquet hall for weddings and events. Located near the airport.",
+  keywords: ["Indian Buffet Las Vegas", "Best Indian Restaurant Las Vegas", "Banquet Hall Las Vegas", "Indian Food Near Airport", "Wedding Venue Las Vegas", "Pure Indian Cuisine", "All You Can Eat Indian"],
+  openGraph: {
+    type: "website",
+    locale: "en_US",
+    url: "https://pureindiancuisine.com",
+    siteName: "Pure Indian Cuisine",
+    images: [
+      {
+        url: "/images/hero-background.jpg", // Ensure this image exists
+        width: 1200,
+        height: 630,
+        alt: "Pure Indian Cuisine Las Vegas Buffet",
+      },
+    ],
+  },
+  alternates: {
+    canonical: "https://pureindiancuisine.com",
+  },
 };
 
 export default function RootLayout({

@@ -6,6 +6,14 @@ import Link from "next/link";
 import SectionHeading from "@/components/ui/SectionHeading";
 import { Phone, Music, Wifi, Mic2, Car, Palette, Users } from "lucide-react";
 
+import { Metadata } from "next";
+
+export const metadata: Metadata = {
+  title: "Banquet Hall & Party Venue Las Vegas | Pure Indian Cuisine",
+  description: "Host your wedding, corporate event, or party at our elegant banquet hall in Las Vegas. Capacity for 500 guests with full catering services.",
+  keywords: ["Banquet Hall Las Vegas", "Wedding Venue Las Vegas", "Party Hall Rental", "Indian Wedding Venue", "Corporate Event Space Las Vegas"],
+};
+
 export default function BanquetPage() {
     return (
         <main className="min-h-screen pt-24 pb-20 bg-black text-white overflow-hidden">

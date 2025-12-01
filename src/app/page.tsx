@@ -10,6 +10,48 @@ export default function Home() {
   return (
     <main className="min-h-screen bg-black">
       <Hero />
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{
+          __html: JSON.stringify({
+            "@context": "https://schema.org",
+            "@type": "Restaurant",
+            name: "Pure Indian Cuisine",
+            image: "https://pureindiancuisine.com/images/hero-background.jpg",
+            "@id": "https://pureindiancuisine.com",
+            url: "https://pureindiancuisine.com",
+            telephone: "+17028975555",
+            menu: "https://pureindiancuisine.com/menu",
+            servesCuisine: "Indian",
+            priceRange: "$$",
+            address: {
+              "@type": "PostalAddress",
+              streetAddress: "1405 E Sunset Rd",
+              addressLocality: "Las Vegas",
+              addressRegion: "NV",
+              postalCode: "89119",
+              addressCountry: "US"
+            },
+            geo: {
+              "@type": "GeoCoordinates",
+              latitude: 36.0719, 
+              longitude: -115.1337 
+            },
+            openingHoursSpecification: [
+              {
+                "@type": "OpeningHoursSpecification",
+                dayOfWeek: ["Monday", "Tuesday", "Wednesday", "Thursday", "Friday", "Saturday", "Sunday"],
+                opens: "11:00",
+                closes: "22:00"
+              }
+            ],
+            sameAs: [
+              "https://www.facebook.com/pureindiancuisinelv",
+              "https://www.instagram.com/pureindiancuisinelv"
+            ]
+          })
+        }}
+      />
       <InfoSection />
       <MenuBook />
       <FeaturedDish />

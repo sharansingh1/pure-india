@@ -6,6 +6,12 @@ import Link from "next/link";
 import SectionHeading from "@/components/ui/SectionHeading";
 import { Phone, Check, Star, ChefHat, Truck, UtensilsCrossed } from "lucide-react";
 
+export const metadata = {
+  title: "Indian Food Catering Las Vegas | Wedding & Party Catering",
+  description: "Premier Indian catering services in Las Vegas. Live tandoor stations, chaat counters, and customized menus for weddings, corporate events, and parties.",
+  keywords: ["Indian Catering Las Vegas", "Wedding Catering Las Vegas", "Live Food Stations Las Vegas", "Corporate Catering Indian Food", "Party Catering Las Vegas"],
+};
+
 export default function CateringPage() {
     return (
         <main className="min-h-screen pt-24 pb-20 bg-black text-white overflow-hidden">

@@ -1,0 +1,4 @@
+User-agent: *
+Allow: /
+Sitemap: https://pureindiancuisine.com/sitemap.xml
+

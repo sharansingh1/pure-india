@@ -1,12 +1,11 @@
 import { client } from "@/sanity/lib/client";
 import { defineQuery } from "next-sanity";
-import MenuPageContent from "./MenuPageContent";
+import BuffetPageContent from "./BuffetPageContent";
 
 export const dynamic = 'force-dynamic';
 
-const MENU_QUERY = defineQuery(`*[_type == "menuItem"]{
+const BUFFET_QUERY = defineQuery(`*[_type == "buffetItem"]{
   name,
-  price,
   description,
   category,
   "imageUrl": image.asset->url,
@@ -15,13 +14,13 @@ const MENU_QUERY = defineQuery(`*[_type == "menuItem"]{
 }`);
 
 export const metadata = {
-  title: "Indian Restaurant Menu Las Vegas | Authentic A La Carte Dining",
-  description: "Explore our extensive menu of authentic Indian dishes. From butter chicken to lamb vindaloo, every dish is prepared fresh to order.",
-  keywords: ["Indian Menu Las Vegas", "Authentic Indian Food", "Best Butter Chicken Las Vegas", "Vegetarian Indian Food", "Halal Indian Food Las Vegas"],
+  title: "Best Indian Buffet in Las Vegas | All-You-Can-Eat Lunch & Dinner",
+  description: "Indulge in Las Vegas's premier Indian buffet. Unlimited servings of authentic curries, tandoori dishes, and desserts. Lunch and dinner options available daily.",
+  keywords: ["Indian Buffet Las Vegas", "All You Can Eat Las Vegas", "Best Buffet Near Airport", "Unlimited Indian Food", "Lunch Buffet Las Vegas", "Dinner Buffet Las Vegas"],
 };
 
-export default async function MenuPage() {
-  const menuItems = await client.fetch(MENU_QUERY, {}, { next: { revalidate: 0 } });
+export default async function BuffetPage() {
+  const buffetItems = await client.fetch(BUFFET_QUERY, {}, { next: { revalidate: 0 } });
 
   // Define the preferred order for categories
   const order = [
@@ -38,7 +37,7 @@ export default async function MenuPage() {
   ];
 
   // 1. Get all unique categories that actually exist in the data
-  const existingCategories = Array.from(new Set(menuItems.map((item: any) => item.category)));
+  const existingCategories = Array.from(new Set(buffetItems.map((item: any) => item.category)));
 
   // 2. Sort these categories based on our preferred order
   existingCategories.sort((a: any, b: any) => {
@@ -53,12 +52,13 @@ export default async function MenuPage() {
   });
 
   // 3. Build the grouped menu
-  const groupedMenu = existingCategories.map(category => ({
+  const groupedBuffet = existingCategories.map(category => ({
     category,
-    items: menuItems.filter((item: any) => item.category === category)
+    items: buffetItems.filter((item: any) => item.category === category)
   }));
 
   return (
-    <MenuPageContent groupedMenu={groupedMenu} />
+    <BuffetPageContent groupedBuffet={groupedBuffet} />
   );
 }
+

@@ -39,15 +39,15 @@ export default function InfoSection() {
                                 <div className="absolute inset-0 bg-gradient-to-t from-black via-black/50 to-transparent"></div>
                             </div>
                             <div className="p-8">
-                                <h3 className="font-cinzel text-2xl text-white mb-3 group-hover:text-gold transition-colors">Royal Buffet</h3>
+                                <h3 className="font-cinzel text-2xl text-white mb-3 group-hover:text-gold transition-colors">Royal Indian Buffet</h3>
                                 <p className="text-gray-400 font-montserrat text-sm leading-relaxed mb-6">
-                                    Indulge in a lavish spread of traditional favorites, offering an unlimited journey through India's culinary heritage.
+                                    Indulge in Las Vegas's best all-you-can-eat Indian buffet. Featuring unlimited tandoori chicken, butter chicken, goat curry, and more. Lunch & Dinner daily.
                                 </p>
                                 <Link
-                                    href="/menu"
+                                    href="/buffet"
                                     className="inline-block font-montserrat text-xs tracking-widest uppercase text-gold hover:text-white transition-colors border-b border-gold/30 hover:border-white pb-1"
                                 >
-                                    Learn More
+                                    View Buffet Menu
                                 </Link>
                             </div>
                         </motion.div>
