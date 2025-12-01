@@ -25,7 +25,7 @@ export const metadata: Metadata = {
   openGraph: {
     type: "website",
     locale: "en_US",
-    url: "https://pureindiancuisine.com",
+    url: "https://pureindiacuisine.com",
     siteName: "Pure Indian Cuisine",
     images: [
       {
@@ -37,7 +37,7 @@ export const metadata: Metadata = {
     ],
   },
   alternates: {
-    canonical: "https://pureindiancuisine.com",
+    canonical: "https://pureindiacuisine.com",
   },
 };
 

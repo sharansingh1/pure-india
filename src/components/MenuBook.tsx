@@ -409,7 +409,7 @@ export default function MenuBook() {
                             <div className="w-24 h-[1px] bg-gradient-to-r from-transparent via-gold/50 to-transparent my-6"></div>
 
                             <p className="text-[10px] text-gold/60 font-montserrat tracking-widest uppercase">
-                                www.pureindiancuisine.com
+                                www.pureindiacuisine.com
                             </p>
                         </div>
                     </Cover>

@@ -1,4 +1,4 @@
 User-agent: *
 Allow: /
-Sitemap: https://pureindiancuisine.com/sitemap.xml
+Sitemap: https://pureindiacuisine.com/sitemap.xml
 
