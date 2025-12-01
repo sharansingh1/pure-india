@@ -6,7 +6,7 @@ import SectionHeading from "@/components/ui/SectionHeading";
 
 export default function AboutPage() {
     return (
-        <main className="min-h-screen pt-24 pb-20 bg-black text-white overflow-hidden">
+        <main className="min-h-screen pt-28 pb-20 bg-black text-white overflow-hidden">
             {/* Header */}
             <div className="relative h-[40vh] w-full mb-20 flex items-center justify-center">
                 <div className="absolute inset-0 z-0">

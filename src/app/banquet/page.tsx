@@ -253,13 +253,13 @@ export default function BanquetPage() {
 
                     <div className="grid grid-cols-2 md:grid-cols-4 gap-6">
                         {[
-                            { icon: <Mic2 className="w-6 h-6" />, label: "Premium Sound", detail: "Professional JBL System" },
+                            { icon: <Mic2 className="w-6 h-6" />, label: "Premium Sound", detail: "High-Fidelity Audio System" },
+                            { icon: <div className="w-6 h-6 flex items-center justify-center font-serif text-lg">🍸</div>, label: "Full Bar", detail: "Fully Stocked & Staffed" },
+                            { icon: <Users className="w-6 h-6" />, label: "Grand Stage", detail: "Elevated Platform" },
                             { icon: <Palette className="w-6 h-6" />, label: "Mood Lighting", detail: "Customizable LED Colors" },
-                            { icon: <Users className="w-6 h-6" />, label: "Bridal Suite", detail: "Private Changing Area" },
-                            { icon: <Wifi className="w-6 h-6" />, label: "High-Speed Wi-Fi", detail: "Gigabit Connectivity" },
                             { icon: <Car className="w-6 h-6" />, label: "Ample Parking", detail: "Valet Options Available" },
                             { icon: <Music className="w-6 h-6" />, label: "Dance Floor", detail: "Spacious Wooden Floor" },
-                            { icon: <div className="w-6 h-6 flex items-center justify-center font-serif text-lg">🍽️</div>, label: "Banquet Tables", detail: "Round or Rectangular" },
+                            { icon: <div className="w-6 h-6 flex items-center justify-center font-serif text-lg">🍽️</div>, label: "Tables & Seating", detail: "Flexible Arrangements" },
                             { icon: <div className="w-6 h-6 flex items-center justify-center font-serif text-lg">✨</div>, label: "Cleanup Team", detail: "Full Service Included" },
                         ].map((item, idx) => (
                             <motion.div 

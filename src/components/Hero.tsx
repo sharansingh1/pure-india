@@ -76,7 +76,7 @@ export default function Hero() {
                             <h1 className="font-cinzel text-6xl md:text-7xl lg:text-8xl font-bold leading-none">
                                 <span className="text-white">Experience</span>
                                 <br />
-                                <span className="text-gold-gradient">A Grand Indian Buffet</span>
+                                <span className="text-gold-gradient">Pure Indian Cuisine</span>
                             </h1>
                             <p className="text-gray-400 text-lg md:text-xl font-montserrat leading-relaxed max-w-lg">
                                 The Complete Taste of India, North to South. Indulge in an exquisite, all-you-can-eat journey through the finest flavors.

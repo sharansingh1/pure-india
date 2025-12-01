@@ -6,10 +6,27 @@ export default function MenuPageContent({ groupedMenu }: { groupedMenu: any[] })
     return (
         <main className="min-h-screen pt-32 pb-20 bg-black text-white">
             <div className="container mx-auto px-4 max-w-4xl">
-                <div className="text-center mb-20">
-                    <h1 className="font-cinzel text-5xl md:text-7xl text-white font-bold mb-4">What We Offer</h1>
-                    <p className="text-gold font-montserrat tracking-[0.3em] uppercase text-sm">Experience Authentic Flavors</p>
-                    <p className="text-gold font-montserrat tracking-[0.3em] uppercase text-xs mt-2">Please note that this is our complete menu catalog. Our daily buffet features a curated selection from these dishes, which may vary each day. Includes fountain drinks.</p>
+                <div className="text-center mb-16">
+                    <h1 className="font-cinzel text-5xl md:text-7xl text-white font-bold mb-6">Our Menu</h1>
+                    <p className="text-gold font-montserrat tracking-[0.3em] uppercase text-sm mb-12">Experience Authentic Flavors</p>
+                    
+                    <div className="grid md:grid-cols-2 gap-8 max-w-4xl mx-auto">
+                        <div className="p-8 border border-gold/20 bg-white/5 backdrop-blur-sm">
+                            <h2 className="font-cinzel text-2xl text-gold mb-4">All-You-Can-Eat Buffet</h2>
+                            <p className="text-gray-300 font-montserrat text-sm leading-relaxed mb-4">
+                                Please note: The buffet features a <strong>rotating selection</strong> of dishes from our full menu, not the entire menu. Items vary daily to bring you a variety of authentic tastes.
+                            </p>
+                            <p className="text-gold/80 text-xs uppercase tracking-widest font-semibold">Includes Fountain Drinks</p>
+                        </div>
+                        
+                        <div className="p-8 border border-gold/20 bg-white/5 backdrop-blur-sm">
+                            <h2 className="font-cinzel text-2xl text-gold mb-4">A La Carte Dining</h2>
+                            <p className="text-gray-300 font-montserrat text-sm leading-relaxed mb-4">
+                                Select from our full menu below. Each dish is prepared fresh to order, allowing you to explore our complete culinary range.
+                            </p>
+                            <p className="text-gold/80 text-xs uppercase tracking-widest font-semibold">Full Menu Available Below</p>
+                        </div>
+                    </div>
                 </div>
 
                 {/* Buffet Pricing */}

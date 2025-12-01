@@ -2,7 +2,7 @@
 
 import { Resend } from "resend";
 
-const resend = new Resend("re_3dM7hua9_Cw15So97LLqTaeyU5MmDQG38");
+const resend = new Resend(process.env.RESEND_API_KEY);
 
 export async function sendEmail(formData: FormData) {
   const name = formData.get("name") as string;
@@ -16,9 +16,9 @@ export async function sendEmail(formData: FormData) {
   try {
     const data = await resend.emails.send({
       from: "Pure India Contact <onboarding@resend.dev>",
-      to: "shranjeetsingh03@gmail.com",
+      to: "infopureindiancuisine@gmail.com",
       subject: `New Contact from ${name}`,
-      reply_to: email,
+      replyTo: email,
       text: `Name: ${name}\nEmail: ${email}\nMessage:\n${message}`,
     });
 

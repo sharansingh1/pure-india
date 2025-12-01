@@ -4,11 +4,12 @@ export const menuItems = [
         items: [
             { name: "Masala Papad", price: "", description: "" },
             { name: "Paani Poori", price: "", description: "" },
-            { name: "Veg Samosa", price: "", description: "" },
-            { name: "Bread Pakora", price: "", description: "" },
+            { name: "Veg Pakora Basket", price: "", description: "" },
+            { name: "Veg Samosa (2 pcs)", price: "", description: "" },
+            { name: "Bread Pakora(2 pcs)", price: "", description: "" },
             { name: "Samosa Chaat", price: "", description: "" },
-            { name: "Bhelpuri Chaat", price: "", description: "" },
-            { name: "Chole Puri/Bhature", price: "", description: "" },
+            { name: "Bhailpuri Chaat", price: "", description: "" },
+            { name: "Chole Puri/Bhature(2 pcs)", price: "", description: "" },
             { name: "Gobi Manchurian", price: "", description: "" },
             { name: "Chilli Paneer", price: "", description: "" },
         ]
@@ -18,11 +19,15 @@ export const menuItems = [
         items: [
             { name: "Egg Bhurji", price: "", description: "" },
             { name: "Egg Masala Omelette", price: "", description: "" },
+            { name: "Veg Samosa (2 pcs)", price: "", description: "" },
             { name: "Chilli Chicken", price: "", description: "" },
+            { name: "Chicken Pakora Basket", price: "", description: "" },
+            { name: "Fish Pakora Basket", price: "", description: "" },
             { name: "Chicken Malai Tikka", price: "", description: "" },
             { name: "Chicken Sheekh Kabab", price: "", description: "" },
             { name: "Lamb Sheekh Kabab", price: "", description: "" },
-            { name: "Tandoori Chicken", price: "", description: "" },
+            { name: "Tandoori Chicken Leg Quarter (4 pcs)", price: "", description: "" },
+            { name: "Royal Grill Platter", price: "", description: "" },
         ]
     },
     {
@@ -49,13 +54,12 @@ export const menuItems = [
             { name: "Aloo Palak", price: "", description: "" },
             { name: "Aloo Baingan", price: "", description: "" },
             { name: "Aloo Methi", price: "", description: "" },
-            { name: "Aloo Mushroom Curry", price: "", description: "" },
+            { name: "Aloo Mushrom Curry", price: "", description: "" },
         ]
     },
     {
         category: "NON-VEG CURRY",
         items: [
-            { name: "Egg Curry", price: "", description: "" },
             { name: "Chicken Curry", price: "", description: "" },
             { name: "Chicken Vindaloo", price: "", description: "" },
             { name: "Mango Chicken", price: "", description: "" },
@@ -72,6 +76,8 @@ export const menuItems = [
             { name: "Goat Vindaloo", price: "", description: "" },
             { name: "Shrimp Curry", price: "", description: "" },
             { name: "Fish Curry", price: "", description: "" },
+            { name: "Egg Curry", price: "", description: "" },
+            { name: "Chicken Sausage Curry", price: "", description: "" },
         ]
     },
     {
@@ -122,8 +128,9 @@ export const menuItems = [
             { name: "Water Bottle", price: "", description: "" },
             { name: "Soda (Coke, Sprite, Fanta)", price: "", description: "" },
             { name: "Mango Lassi", price: "", description: "" },
-            { name: "Salti Lassi", price: "", description: "" },
+            { name: "Salty Lassi", price: "", description: "" },
             { name: "Sweet Lassi", price: "", description: "" },
+            { name: "Lemon Lassi", price: "", description: "" },
             { name: "Chai", price: "", description: "" },
             { name: "Milk Coffee", price: "", description: "" },
         ]
@@ -134,6 +141,8 @@ export const menuItems = [
             { name: "Gulab Jamun", price: "", description: "" },
             { name: "Ras Malai", price: "", description: "" },
             { name: "Ras Gulla", price: "", description: "" },
+            { name: "Kheer", price: "", description: "" },
+            { name: "Gajar Ka Halwa", price: "", description: "" },
         ]
     }
 ];

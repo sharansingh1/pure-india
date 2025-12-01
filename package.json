@@ -9,13 +9,16 @@
     "lint": "eslint"
   },
   "dependencies": {
+    "@sanity/client": "^7.13.1",
     "@sanity/image-url": "^1.2.0",
     "@sanity/vision": "^3.0.0",
+    "@sanity/visual-editing": "^4.0.2",
     "clsx": "^2.1.1",
+    "dotenv": "^17.2.3",
     "framer-motion": "^12.4.7",
     "lucide-react": "^0.475.0",
     "next": "14.2.15",
-    "next-sanity": "9.8.54",
+    "next-sanity": "^9.8.54",
     "react": "^18",
     "react-dom": "^18",
     "react-pageflip": "^2.0.3",
