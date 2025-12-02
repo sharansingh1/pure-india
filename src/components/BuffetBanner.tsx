@@ -12,7 +12,7 @@ export default function BuffetBanner() {
           transition={{
             repeat: Infinity,
             ease: "linear",
-            duration: 20,
+            duration: 35,
           }}
         >
           {Array.from({ length: 10 }).map((_, i) => (
