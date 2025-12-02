@@ -4,7 +4,7 @@ import { motion } from "framer-motion";
 
 export default function BuffetBanner() {
   return (
-    <div className="fixed top-0 left-0 w-full h-10 bg-gradient-to-r from-yellow-600 via-yellow-500 to-yellow-600 z-[60] flex items-center overflow-hidden shadow-md border-b border-yellow-400/50">
+    <div className="fixed top-0 left-0 w-full h-12 bg-gradient-to-r from-yellow-600 via-yellow-500 to-yellow-600 z-[60] flex items-center overflow-hidden shadow-md border-b border-yellow-400/50">
       <div className="flex whitespace-nowrap">
         <motion.div
           className="flex whitespace-nowrap"

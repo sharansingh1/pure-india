@@ -39,7 +39,7 @@ export default function Navbar() {
     return (
         <>
         <header
-            className={`fixed top-10 left-0 w-full z-50 transition-all duration-300 ${scrolled ? "bg-black/90 backdrop-blur-md py-4 shadow-lg border-b border-gold/10 h-20" : "bg-transparent py-6 h-24"
+            className={`fixed top-12 left-0 w-full z-50 transition-all duration-300 ${scrolled ? "bg-black/90 backdrop-blur-md py-4 shadow-lg border-b border-gold/10 h-20" : "bg-transparent py-6 h-24"
                 }`}
         >
             <div className="container mx-auto px-4 flex justify-between items-center h-full">
