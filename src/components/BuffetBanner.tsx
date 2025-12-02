@@ -4,7 +4,7 @@ import { motion } from "framer-motion";
 
 export default function BuffetBanner() {
   return (
-    <div className="fixed top-0 left-0 w-full h-12 bg-gradient-to-r from-yellow-600 via-yellow-500 to-yellow-600 z-[60] flex items-center overflow-hidden shadow-md border-b border-yellow-400/50">
+    <div className="fixed top-0 left-0 w-full h-12 bg-gradient-to-r from-red-900 via-red-700 to-red-900 z-[60] flex items-center overflow-hidden shadow-md border-b border-gold/30">
       <div className="flex whitespace-nowrap">
         <motion.div
           className="flex whitespace-nowrap"
@@ -16,10 +16,10 @@ export default function BuffetBanner() {
           }}
         >
           {Array.from({ length: 10 }).map((_, i) => (
-            <span key={i} className="mx-8 font-montserrat font-bold text-black text-sm tracking-wider uppercase flex items-center gap-4">
-              <span>★</span>
+            <span key={i} className="mx-8 font-montserrat font-bold text-white text-sm tracking-wider uppercase flex items-center gap-4">
+              <span className="text-gold">★</span>
               <span>Opening Soon: The ONLY Lunch & Dinner Indian Buffet in Las Vegas</span>
-              <span>★</span>
+              <span className="text-gold">★</span>
               <span>Serving You Day & Night</span>
             </span>
           ))}
