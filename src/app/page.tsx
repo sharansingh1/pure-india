@@ -46,8 +46,8 @@ export default function Home() {
               }
             ],
             sameAs: [
-              "https://www.facebook.com/pureindiancuisinelv",
-              "https://www.instagram.com/pureindiancuisinelv"
+              "https://www.instagram.com/pureindiancuisinevegas/",
+              "https://www.tiktok.com/@pureindiancuisinevegas"
             ]
           })
         }}

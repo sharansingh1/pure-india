@@ -2,6 +2,7 @@ import type { Metadata } from "next";
 import { Cinzel, Montserrat } from "next/font/google";
 import "./globals.css";
 import NavbarWrapper from "@/components/NavbarWrapper";
+import BuffetBanner from "@/components/BuffetBanner";
 
 const cinzel = Cinzel({
   variable: "--font-cinzel",
@@ -54,6 +55,7 @@ export default function RootLayout({
       <body
         className={`${cinzel.variable} ${montserrat.variable} antialiased bg-black text-white`}
       >
+        <BuffetBanner />
         <NavbarWrapper />
         {children}
       </body>
