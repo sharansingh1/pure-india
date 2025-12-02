@@ -114,18 +114,31 @@ export default function Hero() {
                                     </div>
 
                                     {/* Christmas Party Section */}
-                                    <div className="flex items-center gap-4">
-                                        <div className="flex-shrink-0 w-16 h-16 bg-red-600 rounded-full flex items-center justify-center shadow-lg shadow-red-600/30 border border-gold/50">
-                                            <span className="text-white font-bold text-2xl font-cinzel">20</span>
-                                            <span className="text-white text-[10px] font-montserrat absolute mt-8 uppercase font-bold">DEC</span>
+                                    <div className="flex flex-col gap-4">
+                                        <div className="flex items-center gap-4">
+                                            <div className="flex-shrink-0 w-16 h-16 bg-red-600 rounded-full flex items-center justify-center shadow-lg shadow-red-600/30 border border-gold/50">
+                                                <span className="text-white font-bold text-2xl font-cinzel">20</span>
+                                                <span className="text-white text-[10px] font-montserrat absolute mt-8 uppercase font-bold">DEC</span>
+                                            </div>
+                                            <div>
+                                                <h3 className="text-red-500 font-cinzel text-2xl font-bold leading-tight drop-shadow-md">
+                                                    CHRISTMAS PARTY
+                                                </h3>
+                                                <p className="text-gray-300 font-montserrat text-sm mt-1">
+                                                    Celebrate the season with our festive feast!
+                                                </p>
+                                            </div>
                                         </div>
-                                        <div>
-                                            <h3 className="text-red-500 font-cinzel text-2xl font-bold leading-tight drop-shadow-md">
-                                                CHRISTMAS PARTY
-                                            </h3>
-                                            <p className="text-gray-300 font-montserrat text-sm mt-1">
-                                                Celebrate the season with our festive feast!
-                                            </p>
+                                        <div className="pl-20">
+                                            <a 
+                                                href="/contact"
+                                                className="inline-flex items-center gap-2 px-6 py-2 bg-gradient-to-r from-red-700 to-red-900 text-white font-montserrat text-xs font-bold tracking-wider uppercase rounded-full shadow-lg shadow-red-900/50 border border-red-500/30 hover:scale-105 hover:shadow-red-600/30 transition-all duration-300 group"
+                                            >
+                                                <span>Book Your Table</span>
+                                                <svg className="w-4 h-4 group-hover:translate-x-1 transition-transform" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M17 8l4 4m0 0l-4 4m4-4H3" />
+                                                </svg>
+                                            </a>
                                         </div>
                                     </div>
                                 </div>
