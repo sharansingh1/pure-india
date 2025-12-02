@@ -83,65 +83,56 @@ export default function Hero() {
                             </p>
                         </div>
 
-                        {/* Buffet Promo Box */}
+                        {/* Grand Opening & Christmas Announcement Box */}
                         <motion.div 
                             initial={{ opacity: 0, scale: 0.9 }}
                             animate={{ opacity: 1, scale: 1 }}
                             transition={{ delay: 0.5, duration: 0.5 }}
-                            className="inline-block"
+                            className="inline-block w-full max-w-xl"
                         >
-                            <div className="relative overflow-hidden bg-gradient-to-r from-gold/10 to-transparent border border-gold/30 rounded-xl p-6 backdrop-blur-md group hover:border-gold/50 transition-colors">
-                                <div className="absolute top-0 right-0 p-2 opacity-10">
-                                    <svg className="w-16 h-16 text-gold" fill="currentColor" viewBox="0 0 20 20">
-                                        <path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z" />
-                                    </svg>
+                            <div className="relative overflow-hidden bg-gradient-to-br from-red-900/90 to-black border-2 border-gold rounded-2xl p-8 backdrop-blur-md shadow-[0_0_30px_rgba(212,175,55,0.3)] group hover:shadow-[0_0_50px_rgba(212,175,55,0.5)] transition-all duration-500">
+                                {/* Decorative Sparkles */}
+                                <div className="absolute top-0 left-0 w-full h-full overflow-hidden pointer-events-none">
+                                    <div className="absolute top-[-50%] left-[-50%] w-[200%] h-[200%] bg-[radial-gradient(circle,rgba(255,215,0,0.1)_1px,transparent_1px)] bg-[length:20px_20px] opacity-30 animate-[spin_60s_linear_infinite]" />
                                 </div>
-                                <div className="flex items-start gap-4 relative z-10">
-                                    <div className="p-3 bg-gold/20 rounded-full text-gold animate-pulse">
-                                        <svg className="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                                            <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M12 8v4l3 3m6-3a9 9 0 11-18 0 9 9 0 0118 0z" />
-                                        </svg>
+                                
+                                <div className="relative z-10 flex flex-col gap-6">
+                                    {/* Grand Opening Section */}
+                                    <div className="flex items-center gap-4 border-b border-gold/30 pb-4">
+                                        <div className="flex-shrink-0 w-16 h-16 bg-gold rounded-full flex items-center justify-center shadow-lg shadow-gold/20">
+                                            <span className="text-black font-bold text-2xl font-cinzel">14</span>
+                                            <span className="text-black text-[10px] font-montserrat absolute mt-8 uppercase font-bold">DEC</span>
+                                        </div>
+                                        <div>
+                                            <h3 className="text-gold font-cinzel text-2xl font-bold leading-tight">
+                                                GRAND OPENING BUFFET
+                                            </h3>
+                                            <p className="text-white font-montserrat font-semibold text-sm mt-1">
+                                                <span className="text-green-400">★ SPECIAL OFFER:</span> First 25 Guests Eat for <span className="text-gold text-lg font-bold">$12!</span>
+                                            </p>
+                                        </div>
                                     </div>
-                                    <div>
-                                        <h3 className="text-gold font-cinzel text-lg font-bold mb-1">
-                                            Las Vegas' Only Night Buffet
-                                        </h3>
-                                        <p className="text-gray-300 text-sm font-montserrat leading-relaxed max-w-xs">
-                                            Enjoy our massive all-you-can-eat feast for Lunch AND Dinner!
-                                        </p>
+
+                                    {/* Christmas Party Section */}
+                                    <div className="flex items-center gap-4">
+                                        <div className="flex-shrink-0 w-16 h-16 bg-red-600 rounded-full flex items-center justify-center shadow-lg shadow-red-600/30 border border-gold/50">
+                                            <span className="text-white font-bold text-2xl font-cinzel">20</span>
+                                            <span className="text-white text-[10px] font-montserrat absolute mt-8 uppercase font-bold">DEC</span>
+                                        </div>
+                                        <div>
+                                            <h3 className="text-red-500 font-cinzel text-2xl font-bold leading-tight drop-shadow-md">
+                                                CHRISTMAS PARTY
+                                            </h3>
+                                            <p className="text-gray-300 font-montserrat text-sm mt-1">
+                                                Celebrate the season with our festive feast!
+                                            </p>
+                                        </div>
                                     </div>
                                 </div>
                             </div>
                         </motion.div>
 
-                        {/* CTA Buttons */}
-                        <motion.div
-                            initial={{ opacity: 0, y: 20 }}
-                            animate={{ opacity: 1, y: 0 }}
-                            transition={{ duration: 1, delay: 0.4 }}
-                            className="flex flex-col sm:flex-row gap-4 pt-4"
-                        >
-                            <a
-                                href="/contact"
-                                className="group relative px-8 py-4 bg-gold overflow-hidden transition-all duration-500 hover:shadow-lg hover:shadow-gold/30"
-                            >
-                                <div className="absolute inset-0 bg-gradient-to-r from-amber-500 to-gold opacity-0 group-hover:opacity-100 transition-opacity duration-500" />
-                                <span className="relative z-10 font-montserrat font-bold tracking-[0.2em] uppercase text-black">
-                                    Contact Us
-                                </span>
-                            </a>
-
-                            <button
-                                onClick={scrollToMenu}
-                                className="group relative px-8 py-4 bg-transparent overflow-hidden transition-all duration-500"
-                            >
-                                <div className="absolute inset-0 border-2 border-gold/50 group-hover:border-gold transition-colors duration-500" />
-                                <div className="absolute inset-0 bg-gold/10 scale-x-0 group-hover:scale-x-100 transition-transform duration-500 origin-left" />
-                                <span className="relative z-10 font-montserrat font-medium tracking-[0.2em] uppercase text-gold-light group-hover:text-white transition-colors duration-300">
-                                    View Buffet
-                                </span>
-                            </button>
-                        </motion.div>
+                        {/* CTA Buttons - Moved to Right Column */}
                     </motion.div>
 
                     {/* Right Side - Food Showcase */}
@@ -235,6 +226,35 @@ export default function Hero() {
                         {/* Decorative Corner Elements */}
                         <div className="absolute top-0 right-0 w-32 h-32 border-t-2 border-r-2 border-gold/30" />
                         <div className="absolute bottom-0 left-0 w-32 h-32 border-b-2 border-l-2 border-gold/30" />
+
+                        {/* CTA Buttons - Repositioned under image */}
+                        <motion.div
+                            initial={{ opacity: 0, y: 20 }}
+                            animate={{ opacity: 1, y: 0 }}
+                            transition={{ duration: 1, delay: 0.6 }}
+                            className="absolute -bottom-24 left-1/2 -translate-x-1/2 w-full flex justify-center gap-4 z-30"
+                        >
+                            <a
+                                href="/contact"
+                                className="group relative px-8 py-4 bg-gold overflow-hidden transition-all duration-500 hover:shadow-lg hover:shadow-gold/30 min-w-[160px] text-center"
+                            >
+                                <div className="absolute inset-0 bg-gradient-to-r from-amber-500 to-gold opacity-0 group-hover:opacity-100 transition-opacity duration-500" />
+                                <span className="relative z-10 font-montserrat font-bold tracking-[0.2em] uppercase text-black text-sm">
+                                    Contact Us
+                                </span>
+                            </a>
+
+                            <button
+                                onClick={scrollToMenu}
+                                className="group relative px-8 py-4 bg-transparent overflow-hidden transition-all duration-500 min-w-[160px]"
+                            >
+                                <div className="absolute inset-0 border-2 border-gold/50 group-hover:border-gold transition-colors duration-500" />
+                                <div className="absolute inset-0 bg-gold/10 scale-x-0 group-hover:scale-x-100 transition-transform duration-500 origin-left" />
+                                <span className="relative z-10 font-montserrat font-medium tracking-[0.2em] uppercase text-gold-light group-hover:text-white transition-colors duration-300 text-sm">
+                                    View Buffet
+                                </span>
+                            </button>
+                        </motion.div>
                     </motion.div>
                 </div>
             </div>
