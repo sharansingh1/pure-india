@@ -18,9 +18,11 @@ export default function BuffetBanner() {
           {Array.from({ length: 10 }).map((_, i) => (
             <span key={i} className="mx-8 font-montserrat font-bold text-white text-sm tracking-wider uppercase flex items-center gap-4">
               <span className="text-gold">★</span>
-              <span>Opening Soon: The ONLY Lunch & Dinner Indian Buffet in Las Vegas</span>
+              <span>Las Vegas' Only Lunch & Dinner Indian Buffet</span>
               <span className="text-gold">★</span>
-              <span>Serving You Day & Night</span>
+              <span>Unbeatable Prices & Best Value</span>
+              <span className="text-gold">★</span>
+              <span>Exclusive Rates for Tourist Buses & Groups</span>
             </span>
           ))}
         </motion.div>
