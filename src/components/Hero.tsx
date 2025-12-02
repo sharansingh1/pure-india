@@ -83,15 +83,36 @@ export default function Hero() {
                             </p>
                         </div>
 
-                        {/* Location Badge */}
-                        <div className="inline-flex items-center gap-3 bg-white/5 backdrop-blur-sm border border-gold/20 px-6 py-3 rounded-full">
-                            <svg className="w-5 h-5 text-gold" fill="currentColor" viewBox="0 0 20 20">
-                                <path fillRule="evenodd" d="M5.05 4.05a7 7 0 119.9 9.9L10 18.9l-4.95-4.95a7 7 0 010-9.9zM10 11a2 2 0 100-4 2 2 0 000 4z" clipRule="evenodd" />
-                            </svg>
-                            <span className="text-white font-montserrat text-sm tracking-wider">
-                                Las Vegas, NV • Next to Airport
-                            </span>
-                        </div>
+                        {/* Buffet Promo Box */}
+                        <motion.div 
+                            initial={{ opacity: 0, scale: 0.9 }}
+                            animate={{ opacity: 1, scale: 1 }}
+                            transition={{ delay: 0.5, duration: 0.5 }}
+                            className="inline-block"
+                        >
+                            <div className="relative overflow-hidden bg-gradient-to-r from-gold/10 to-transparent border border-gold/30 rounded-xl p-6 backdrop-blur-md group hover:border-gold/50 transition-colors">
+                                <div className="absolute top-0 right-0 p-2 opacity-10">
+                                    <svg className="w-16 h-16 text-gold" fill="currentColor" viewBox="0 0 20 20">
+                                        <path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z" />
+                                    </svg>
+                                </div>
+                                <div className="flex items-start gap-4 relative z-10">
+                                    <div className="p-3 bg-gold/20 rounded-full text-gold animate-pulse">
+                                        <svg className="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                            <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M12 8v4l3 3m6-3a9 9 0 11-18 0 9 9 0 0118 0z" />
+                                        </svg>
+                                    </div>
+                                    <div>
+                                        <h3 className="text-gold font-cinzel text-lg font-bold mb-1">
+                                            Las Vegas' Only Night Buffet
+                                        </h3>
+                                        <p className="text-gray-300 text-sm font-montserrat leading-relaxed max-w-xs">
+                                            Enjoy our massive all-you-can-eat feast for Lunch AND Dinner!
+                                        </p>
+                                    </div>
+                                </div>
+                            </div>
+                        </motion.div>
 
                         {/* CTA Buttons */}
                         <motion.div
@@ -184,16 +205,16 @@ export default function Hero() {
                                     </AnimatePresence>
                                 </div>
 
-                                {/* Decorative Badge - Top Right (Paisley/Ambi) */}
+                                {/* Decorative Badge - Top Right (Text) */}
                                 <motion.div
-                                    className="absolute -top-6 -right-6 w-24 h-24 bg-gradient-to-br from-gold via-amber-500 to-gold rounded-full flex items-center justify-center shadow-xl shadow-gold/30 border-2 border-amber-600"
-                                    animate={{ rotate: 360 }}
-                                    transition={{ duration: 20, repeat: Infinity, ease: "linear" }}
+                                    className="absolute -top-8 -right-8 w-32 h-32 bg-gradient-to-br from-gold via-amber-500 to-gold rounded-full flex items-center justify-center shadow-xl shadow-gold/30 border-4 border-black z-20"
+                                    animate={{ rotate: [0, 5, -5, 0] }}
+                                    transition={{ duration: 6, repeat: Infinity, ease: "easeInOut" }}
                                 >
-                                    <svg viewBox="0 0 100 100" className="w-14 h-14 fill-black/80">
-                                        <path d="M50,85 C30,85 15,70 15,50 C15,30 35,15 50,5 C65,15 85,30 85,50 C85,70 70,85 50,85 Z M50,25 C40,35 35,45 35,55 C35,65 45,70 50,70 C55,70 65,65 65,55 C65,45 60,35 50,25 Z" />
-                                        <circle cx="50" cy="55" r="5" fill="#D4AF37" />
-                                    </svg>
+                                    <div className="text-center transform -rotate-12">
+                                        <div className="font-cinzel font-bold text-black text-sm leading-none mb-1">OPENING</div>
+                                        <div className="font-black text-black text-xl leading-none">SOON</div>
+                                    </div>
                                 </motion.div>
 
                                 {/* Decorative Badge - Bottom Left (Diya/Lamp) */}
