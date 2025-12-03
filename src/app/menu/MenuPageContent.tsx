@@ -6,14 +6,75 @@ export default function MenuPageContent({ groupedMenu }: { groupedMenu: any[] })
     return (
         <main className="min-h-screen pt-32 pb-20 bg-black text-white">
             <div className="container mx-auto px-4 max-w-4xl">
-                <div className="text-center mb-16">
-                    <h1 className="font-cinzel text-5xl md:text-7xl text-white font-bold mb-6">Our Menu</h1>
-                    <p className="text-gold font-montserrat tracking-[0.3em] uppercase text-sm mb-12">A La Carte Dining</p>
+                <div className="text-center mb-12">
+                    <h1 className="font-cinzel text-5xl md:text-7xl text-white font-bold mb-6">Family Style Dinner</h1>
+                    <p className="text-gold font-montserrat tracking-[0.3em] uppercase text-sm mb-8">Authentic Indian Cuisine • Shared Dining Experience</p>
                     
-                    <div className="max-w-3xl mx-auto">
-                        <p className="text-gray-300 font-montserrat text-sm leading-relaxed">
-                             Explore our complete culinary range. Each dish is prepared fresh to order using authentic spices and traditional techniques.
-                        </p>
+                    {/* Description Section */}
+                    <div className="max-w-3xl mx-auto mb-12">
+                        <div className="relative bg-gradient-to-b from-white/5 to-transparent border-t border-b border-gold/30 p-8 backdrop-blur-md shadow-[0_0_20px_rgba(212,175,55,0.1)]">
+                            <div className="absolute top-0 left-1/2 -translate-x-1/2 -translate-y-1/2 w-10 h-10 bg-black flex items-center justify-center border border-gold/50 rotate-45 shadow-[0_0_15px_rgba(212,175,55,0.3)]">
+                                <div className="w-6 h-6 border border-gold/30" />
+                            </div>
+                            
+                            <p className="text-transparent bg-clip-text bg-gradient-to-r from-gold via-amber-300 to-gold font-cinzel text-xl md:text-2xl leading-relaxed italic mb-6 pt-2 drop-shadow-sm font-bold">
+                                "We are known for our Grand Family Portions"
+                            </p>
+                            <p className="text-gray-200 font-montserrat text-sm md:text-base leading-relaxed tracking-wide">
+                                Come experience the true spirit of Indian hospitality with our signature Large Portion Dining. We love serving generous, family-style feasts that are made to be shared and enjoyed together. Forget about ordering individual plates. Our communal dining brings everyone closer and turns every meal into a royal celebration.
+                            </p>
+                            
+                            <div className="mt-6 flex items-center justify-center gap-4">
+                                <div className="h-[1px] w-16 bg-gradient-to-r from-transparent to-gold" />
+                                <span className="text-gold text-xs uppercase tracking-[0.3em] font-bold glow-text">Dinner Only</span>
+                                <div className="h-[1px] w-16 bg-gradient-to-l from-transparent to-gold" />
+                            </div>
+                        </div>
+                    </div>
+
+                    {/* Portion Sizes Cards */}
+                    <div className="grid md:grid-cols-2 gap-8 max-w-2xl mx-auto mb-16">
+                        {/* Card 1 - Small Feast */}
+                        <div className="relative group">
+                            {/* Card Background with Gradient & Blur */}
+                            <div className="relative p-6 border border-gold/30 bg-gradient-to-b from-white/5 to-transparent text-center rounded-sm backdrop-blur-sm group-hover:border-gold/60 group-hover:bg-white/10 transition-all duration-500 shadow-[0_4px_20px_rgba(0,0,0,0.5)]">
+                                {/* Decorative Corner Accents */}
+                                <div className="absolute top-0 left-0 w-8 h-8 border-t-2 border-l-2 border-gold/30 group-hover:border-gold transition-colors duration-500"></div>
+                                <div className="absolute bottom-0 right-0 w-8 h-8 border-b-2 border-r-2 border-gold/30 group-hover:border-gold transition-colors duration-500"></div>
+
+                                <h3 className="font-cinzel text-2xl text-gold mb-1 group-hover:text-white transition-colors duration-300">Small Feast</h3>
+                                <p className="font-montserrat text-gray-400 text-[10px] tracking-[0.2em] uppercase mb-4">Intimate Gatherings</p>
+                                
+                                <div className="flex items-center justify-center gap-3 mb-1">
+                                    <div className="w-8 h-[1px] bg-gold/30"></div>
+                                    <span className="font-cinzel text-3xl text-white font-bold">2-3</span>
+                                    <div className="w-8 h-[1px] bg-gold/30"></div>
+                                </div>
+                                
+                                <p className="text-gold/80 text-[10px] font-montserrat uppercase tracking-widest">People Served</p>
+                            </div>
+                        </div>
+                        
+                        {/* Card 2 - Grand Feast */}
+                        <div className="relative group">
+                            {/* Card Background with Gradient & Blur */}
+                            <div className="relative p-6 border border-gold/30 bg-gradient-to-b from-white/5 to-transparent text-center rounded-sm backdrop-blur-sm group-hover:border-gold/60 group-hover:bg-white/10 transition-all duration-500 shadow-[0_4px_20px_rgba(0,0,0,0.5)]">
+                                {/* Decorative Corner Accents */}
+                                <div className="absolute top-0 left-0 w-8 h-8 border-t-2 border-l-2 border-gold/30 group-hover:border-gold transition-colors duration-500"></div>
+                                <div className="absolute bottom-0 right-0 w-8 h-8 border-b-2 border-r-2 border-gold/30 group-hover:border-gold transition-colors duration-500"></div>
+
+                                <h3 className="font-cinzel text-2xl text-gold mb-1 group-hover:text-white transition-colors duration-300">Grand Feast</h3>
+                                <p className="font-montserrat text-gray-400 text-[10px] tracking-[0.2em] uppercase mb-4">Large Celebrations</p>
+                                
+                                <div className="flex items-center justify-center gap-3 mb-1">
+                                    <div className="w-8 h-[1px] bg-gold/30"></div>
+                                    <span className="font-cinzel text-3xl text-white font-bold">5-6</span>
+                                    <div className="w-8 h-[1px] bg-gold/30"></div>
+                                </div>
+                                
+                                <p className="text-gold/80 text-[10px] font-montserrat uppercase tracking-widest">People Served</p>
+                            </div>
+                        </div>
                     </div>
                 </div>
 

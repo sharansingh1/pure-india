@@ -19,8 +19,54 @@ export const metadata = {
   keywords: ["Indian Buffet Las Vegas", "All You Can Eat Las Vegas", "Best Buffet Near Airport", "Unlimited Indian Food", "Lunch Buffet Las Vegas", "Dinner Buffet Las Vegas"],
 };
 
+const PLACEHOLDER_KIDS_ITEMS = [
+  {
+    name: "French Fries",
+    description: "Crispy golden fries",
+    category: "KIDS MENU",
+    isVegetarian: true,
+    isSpicy: false
+  },
+  {
+    name: "Chicken Nuggets",
+    description: "Breaded chicken breast nuggets",
+    category: "KIDS MENU",
+    isVegetarian: false,
+    isSpicy: false
+  },
+  {
+    name: "Cheese Naan",
+    description: "Freshly baked naan stuffed with mild cheese",
+    category: "KIDS MENU",
+    isVegetarian: true,
+    isSpicy: false
+  },
+  {
+    name: "Mac & Cheese",
+    description: "Creamy macaroni and cheese",
+    category: "KIDS MENU",
+    isVegetarian: true,
+    isSpicy: false
+  }
+];
+
+// Helper to determine meat priority
+const getMeatPriority = (name: string) => {
+  const lowerName = name.toLowerCase();
+  if (lowerName.includes('chicken')) return 1;
+  if (lowerName.includes('goat')) return 2;
+  if (lowerName.includes('lamb')) return 3;
+  if (lowerName.includes('shrimp') || lowerName.includes('prawn')) return 4;
+  if (lowerName.includes('fish')) return 5;
+  if (lowerName.includes('egg')) return 6;
+  return 99; // All others
+};
+
 export default async function BuffetPage() {
-  const buffetItems = await client.fetch(BUFFET_QUERY, {}, { next: { revalidate: 0 } });
+  const fetchedBuffetItems = await client.fetch(BUFFET_QUERY, {}, { next: { revalidate: 0 } });
+  
+  // Merge fetched items with placeholder kids items
+  const buffetItems = [...fetchedBuffetItems, ...PLACEHOLDER_KIDS_ITEMS];
 
   // Define the preferred order for categories
   const order = [
@@ -32,6 +78,7 @@ export default async function BuffetPage() {
     "RICE",
     "DOSA",
     "BREAD",
+    "KIDS MENU",
     "DRINKS",
     "DESSERT"
   ];
@@ -51,14 +98,24 @@ export default async function BuffetPage() {
     return 0;
   });
 
-  // 3. Build the grouped menu
-  const groupedBuffet = existingCategories.map(category => ({
-    category,
-    items: buffetItems.filter((item: any) => item.category === category)
-  }));
+  // 3. Build the grouped menu with sorted items for NON-VEG CURRY
+  const groupedBuffet = existingCategories.map(category => {
+    let items = buffetItems.filter((item: any) => item.category === category);
+    
+    // Apply special sorting for NON-VEG CURRY
+    if (category === "NON-VEG CURRY") {
+      items.sort((a: any, b: any) => {
+        return getMeatPriority(a.name) - getMeatPriority(b.name);
+      });
+    }
+    
+    return {
+      category,
+      items
+    };
+  });
 
   return (
     <BuffetPageContent groupedBuffet={groupedBuffet} />
   );
 }
-

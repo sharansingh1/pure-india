@@ -5,11 +5,11 @@ export const menuItems = [
             { name: "Masala Papad", price: "", description: "" },
             { name: "Paani Poori", price: "", description: "" },
             { name: "Veg Pakora Basket", price: "", description: "" },
-            { name: "Veg Samosa (2 pcs)", price: "", description: "" },
-            { name: "Bread Pakora(2 pcs)", price: "", description: "" },
+            { name: "Veg Samosa", price: "", description: "" },
+            { name: "Bread Pakora", price: "", description: "" },
             { name: "Samosa Chaat", price: "", description: "" },
             { name: "Bhailpuri Chaat", price: "", description: "" },
-            { name: "Chole Puri/Bhature(2 pcs)", price: "", description: "" },
+            { name: "Chole Puri/Bhature", price: "", description: "" },
             { name: "Gobi Manchurian", price: "", description: "" },
             { name: "Chilli Paneer", price: "", description: "" },
         ]
@@ -19,14 +19,14 @@ export const menuItems = [
         items: [
             { name: "Egg Bhurji", price: "", description: "" },
             { name: "Egg Masala Omelette", price: "", description: "" },
-            { name: "Veg Samosa (2 pcs)", price: "", description: "" },
+            { name: "Veg Samosa", price: "", description: "" },
             { name: "Chilli Chicken", price: "", description: "" },
             { name: "Chicken Pakora Basket", price: "", description: "" },
             { name: "Fish Pakora Basket", price: "", description: "" },
             { name: "Chicken Malai Tikka", price: "", description: "" },
             { name: "Chicken Sheekh Kabab", price: "", description: "" },
             { name: "Lamb Sheekh Kabab", price: "", description: "" },
-            { name: "Tandoori Chicken Leg Quarter (4 pcs)", price: "", description: "" },
+            { name: "Tandoori Chicken Leg Quarter", price: "", description: "" },
             { name: "Royal Grill Platter", price: "", description: "" },
         ]
     },
@@ -68,16 +68,16 @@ export const menuItems = [
             { name: "Butter Chicken", price: "", description: "" },
             { name: "Chicken Tikka Masala", price: "", description: "" },
             { name: "Chicken Kadai", price: "", description: "" },
-            { name: "Lamb Curry", price: "", description: "" },
-            { name: "Lamb Kadai", price: "", description: "" },
-            { name: "Lamb Vindaloo", price: "", description: "" },
+            { name: "Chicken Sausage Curry", price: "", description: "" },
             { name: "Goat Curry", price: "", description: "" },
             { name: "Goat Kadai", price: "", description: "" },
             { name: "Goat Vindaloo", price: "", description: "" },
+            { name: "Lamb Curry", price: "", description: "" },
+            { name: "Lamb Kadai", price: "", description: "" },
+            { name: "Lamb Vindaloo", price: "", description: "" },
             { name: "Shrimp Curry", price: "", description: "" },
             { name: "Fish Curry", price: "", description: "" },
             { name: "Egg Curry", price: "", description: "" },
-            { name: "Chicken Sausage Curry", price: "", description: "" },
         ]
     },
     {
@@ -120,6 +120,15 @@ export const menuItems = [
             { name: "Garlic Naan", price: "", description: "" },
             { name: "Aloo/Gobi Parantha", price: "", description: "" },
             { name: "Paneer Paratha", price: "", description: "" },
+        ]
+    },
+    {
+        category: "KIDS MENU",
+        items: [
+            { name: "French Fries", price: "", description: "" },
+            { name: "Chicken Nuggets", price: "", description: "" },
+            { name: "Cheese Naan", price: "", description: "" },
+            { name: "Mac & Cheese", price: "", description: "" },
         ]
     },
     {

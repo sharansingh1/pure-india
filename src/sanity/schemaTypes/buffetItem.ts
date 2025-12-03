@@ -30,6 +30,7 @@ export const buffetItem = defineType({
           { title: 'Rice', value: 'RICE' },
           { title: 'Dosa', value: 'DOSA' },
           { title: 'Bread', value: 'BREAD' },
+          { title: 'Kids Menu', value: 'KIDS MENU' },
           { title: 'Drinks', value: 'DRINKS' },
           { title: 'Dessert', value: 'DESSERT' },
         ],

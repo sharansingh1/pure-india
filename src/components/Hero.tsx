@@ -73,14 +73,25 @@ export default function Hero() {
 
                         {/* Main Heading */}
                         <div className="space-y-4">
-                            <h1 className="font-cinzel text-6xl md:text-7xl lg:text-8xl font-bold leading-none">
-                                <span className="text-white">Experience</span>
+                            <h1 className="font-cinzel text-5xl md:text-6xl lg:text-7xl font-bold leading-none">
+                                <span className="text-white">Las Vegas' Premier</span>
                                 <br />
-                                <span className="text-gold-gradient">A Grand Indian Buffet</span>
+                                <span className="text-transparent bg-clip-text bg-gradient-to-r from-gold via-yellow-300 to-gold glow-text">Family Style Dinner</span>
+                                <br />
+                                <span className="text-white text-4xl md:text-5xl">&</span>
+                                <br />
+                                <span className="text-transparent bg-clip-text bg-gradient-to-r from-gold via-yellow-300 to-gold glow-text">Lunch Buffet</span>
                             </h1>
-                            <p className="text-gray-400 text-lg md:text-xl font-montserrat leading-relaxed max-w-lg">
-                                The Complete Taste of India, North to South. Indulge in an exquisite, all-you-can-eat journey through the finest flavors.
-                            </p>
+                            
+                            <div className="relative mt-8 pl-8 border-l-4 border-gold/60 py-2">
+                                <div className="absolute -left-[9px] top-0 w-4 h-4 rounded-full bg-black border-2 border-gold/60" />
+                                <div className="absolute -left-[9px] bottom-0 w-4 h-4 rounded-full bg-black border-2 border-gold/60" />
+                                
+                                <p className="text-gray-200 text-lg md:text-xl font-montserrat leading-relaxed max-w-lg">
+                                    Two unique ways to dine. <br/>
+                                    Enjoy our unlimited <strong className="text-gold">Lunch Buffet</strong> by day, or gather for our exclusive <strong className="text-gold">Family Style Dinner</strong> by night featuring massive, shareable portions of our finest a la carte dishes.
+                                </p>
+                            </div>
                         </div>
 
                         {/* Grand Opening & Christmas Announcement Box */}
@@ -131,10 +142,12 @@ export default function Hero() {
                                         </div>
                                         <div className="pl-20">
                                             <a 
-                                                href="/contact"
+                                                href="https://forms.gle/wV3KSQJKFYufgybN6"
+                                                target="_blank"
+                                                rel="noopener noreferrer"
                                                 className="inline-flex items-center gap-2 px-6 py-2 bg-gradient-to-r from-red-700 to-red-900 text-white font-montserrat text-xs font-bold tracking-wider uppercase rounded-full shadow-lg shadow-red-900/50 border border-red-500/30 hover:scale-105 hover:shadow-red-600/30 transition-all duration-300 group"
                                             >
-                                                <span>Book Your Table</span>
+                                                <span>Get Tickets</span>
                                                 <svg className="w-4 h-4 group-hover:translate-x-1 transition-transform" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                                                     <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M17 8l4 4m0 0l-4 4m4-4H3" />
                                                 </svg>

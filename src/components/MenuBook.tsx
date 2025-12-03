@@ -305,14 +305,8 @@ export default function MenuBook() {
                                                     <div className="space-y-6 mt-12">
                                                         <div className="bg-gradient-to-r from-amber-50 to-orange-50 border-2 border-gold/40 p-6 rounded-lg shadow-lg">
                                                             <p className="font-montserrat text-sm uppercase tracking-widest text-amber-900 mb-2">Lunch Buffet</p>
-                                                            <p className="font-cinzel text-5xl font-bold text-red-900">$17</p>
-                                                            <p className="font-montserrat text-xs text-amber-800 mt-2">Per Person</p>
-                                                        </div>
-
-                                                        <div className="bg-gradient-to-r from-red-50 to-amber-50 border-2 border-gold/40 p-6 rounded-lg shadow-lg">
-                                                            <p className="font-montserrat text-sm uppercase tracking-widest text-amber-900 mb-2">Dinner Buffet</p>
-                                                            <p className="font-cinzel text-5xl font-bold text-red-900">$20</p>
-                                                            <p className="font-montserrat text-xs text-amber-800 mt-2">Per Person</p>
+                                                            <p className="font-cinzel text-5xl font-bold text-red-900">$17.99</p>
+                                                            <p className="font-montserrat text-xs text-amber-800 mt-2 tracking-widest uppercase">11:00 AM - 3:00 PM</p>
                                                         </div>
                                                     </div>
 
