@@ -14,12 +14,58 @@ const BUFFET_QUERY = defineQuery(`*[_type == "buffetItem"]{
 }`);
 
 export const metadata = {
-  title: "Best Indian Buffet in Las Vegas | All-You-Can-Eat Lunch & Dinner",
-  description: "Indulge in Las Vegas's premier Indian buffet. Unlimited servings of authentic curries, tandoori dishes, and desserts. Lunch and dinner options available daily.",
-  keywords: ["Indian Buffet Las Vegas", "All You Can Eat Las Vegas", "Best Buffet Near Airport", "Unlimited Indian Food", "Lunch Buffet Las Vegas", "Dinner Buffet Las Vegas"],
+  title: "Best Indian Buffet in Las Vegas | All-You-Can-Eat Lunch",
+  description: "Indulge in Las Vegas's premier Indian buffet. Unlimited servings of authentic curries, tandoori dishes, and desserts. Lunch buffet available daily.",
+  keywords: ["Indian Buffet Las Vegas", "All You Can Eat Las Vegas", "Best Buffet Near Airport", "Unlimited Indian Food", "Lunch Buffet Las Vegas"],
 };
 
-const PLACEHOLDER_KIDS_ITEMS = [
+const PLACEHOLDER_NEW_SECTIONS = [
+  // Indo-Chinese
+  {
+    name: "Veg Manchurian",
+    description: "Crispy vegetable balls in tangy Indo-Chinese sauce",
+    category: "INDO-CHINESE",
+    isVegetarian: true,
+    isSpicy: true
+  },
+  {
+    name: "Chicken Manchurian",
+    description: "Crispy chicken in tangy Indo-Chinese sauce",
+    category: "INDO-CHINESE",
+    isVegetarian: false,
+    isSpicy: true
+  },
+  // Indian Burgers
+  {
+    name: "Tandoori Chicken Burger",
+    description: "Juicy tandoori chicken patty with mint chutney and fresh vegetables",
+    category: "INDIAN BURGERS",
+    isVegetarian: false,
+    isSpicy: false
+  },
+  {
+    name: "Paneer Tikka Burger",
+    description: "Grilled paneer patty with Indian spices and tamarind sauce",
+    category: "INDIAN BURGERS",
+    isVegetarian: true,
+    isSpicy: false
+  },
+  // Grilled
+  {
+    name: "Tandoori Chicken (Full)",
+    description: "Whole chicken marinated in yogurt and spices, grilled to perfection",
+    category: "GRILLED",
+    isVegetarian: false,
+    isSpicy: true
+  },
+  {
+    name: "Tandoori Chicken (Half)",
+    description: "Half chicken marinated in yogurt and spices, grilled to perfection",
+    category: "GRILLED",
+    isVegetarian: false,
+    isSpicy: true
+  },
+  // Kids Menu
   {
     name: "French Fries",
     description: "Crispy golden fries",
@@ -65,19 +111,35 @@ const getMeatPriority = (name: string) => {
 export default async function BuffetPage() {
   const fetchedBuffetItems = await client.fetch(BUFFET_QUERY, {}, { next: { revalidate: 0 } });
   
-  // Merge fetched items with placeholder kids items
-  const buffetItems = [...fetchedBuffetItems, ...PLACEHOLDER_KIDS_ITEMS];
+  // Map old category names to new ones
+  const mappedItems = fetchedBuffetItems.map((item: any) => {
+    let category = item.category;
+    // Combine both appetizer categories into one
+    if (category === "APPETIZERS – VEG" || category === "APPETIZERS – NON-VEG") {
+      category = "APPETIZERS";
+    }
+    // Rename BREAD to BREADS
+    if (category === "BREAD") {
+      category = "BREADS";
+    }
+    return { ...item, category };
+  });
+
+  // Merge with placeholder items for new sections
+  const buffetItems = [...mappedItems, ...PLACEHOLDER_NEW_SECTIONS];
 
   // Define the preferred order for categories
   const order = [
-    "APPETIZERS – VEG",
-    "APPETIZERS – NON-VEG",
+    "APPETIZERS",
+    "INDO-CHINESE",
+    "INDIAN BURGERS",
+    "GRILLED",
     "VEG CURRY",
     "NON-VEG CURRY",
     "BIRYANI",
     "RICE",
     "DOSA",
-    "BREAD",
+    "BREADS",
     "KIDS MENU",
     "DRINKS",
     "DESSERT"

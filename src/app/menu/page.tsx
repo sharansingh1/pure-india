@@ -20,7 +20,59 @@ export const metadata = {
   keywords: ["Indian Menu Las Vegas", "Authentic Indian Food", "Best Butter Chicken Las Vegas", "Vegetarian Indian Food", "Halal Indian Food Las Vegas"],
 };
 
-const PLACEHOLDER_KIDS_ITEMS = [
+const PLACEHOLDER_NEW_SECTIONS = [
+  // Indo-Chinese
+  {
+    name: "Veg Manchurian",
+    price: "$12 / $20",
+    description: "Crispy vegetable balls in tangy Indo-Chinese sauce",
+    category: "INDO-CHINESE",
+    isVegetarian: true,
+    isSpicy: true
+  },
+  {
+    name: "Chicken Manchurian",
+    price: "$14 / $24",
+    description: "Crispy chicken in tangy Indo-Chinese sauce",
+    category: "INDO-CHINESE",
+    isVegetarian: false,
+    isSpicy: true
+  },
+  // Indian Burgers
+  {
+    name: "Tandoori Chicken Burger",
+    price: "$12",
+    description: "Juicy tandoori chicken patty with mint chutney and fresh vegetables",
+    category: "INDIAN BURGERS",
+    isVegetarian: false,
+    isSpicy: false
+  },
+  {
+    name: "Paneer Tikka Burger",
+    price: "$10",
+    description: "Grilled paneer patty with Indian spices and tamarind sauce",
+    category: "INDIAN BURGERS",
+    isVegetarian: true,
+    isSpicy: false
+  },
+  // Grilled
+  {
+    name: "Tandoori Chicken (Full)",
+    price: "$24 / $40",
+    description: "Whole chicken marinated in yogurt and spices, grilled to perfection",
+    category: "GRILLED",
+    isVegetarian: false,
+    isSpicy: true
+  },
+  {
+    name: "Tandoori Chicken (Half)",
+    price: "$14 / $24",
+    description: "Half chicken marinated in yogurt and spices, grilled to perfection",
+    category: "GRILLED",
+    isVegetarian: false,
+    isSpicy: true
+  },
+  // Kids Menu
   {
     name: "French Fries",
     price: "$4.99",
@@ -70,19 +122,35 @@ const getMeatPriority = (name: string) => {
 export default async function MenuPage() {
   const fetchedMenuItems = await client.fetch(MENU_QUERY, {}, { next: { revalidate: 0 } });
 
-  // Merge fetched items with placeholder kids items
-  const menuItems = [...fetchedMenuItems, ...PLACEHOLDER_KIDS_ITEMS];
+  // Map old category names to new ones
+  const mappedItems = fetchedMenuItems.map((item: any) => {
+    let category = item.category;
+    // Combine both appetizer categories into one
+    if (category === "APPETIZERS – VEG" || category === "APPETIZERS – NON-VEG") {
+      category = "APPETIZERS";
+    }
+    // Rename BREAD to BREADS
+    if (category === "BREAD") {
+      category = "BREADS";
+    }
+    return { ...item, category };
+  });
+
+  // Merge with placeholder items for new sections
+  const menuItems = [...mappedItems, ...PLACEHOLDER_NEW_SECTIONS];
 
   // Define the preferred order for categories
   const order = [
-    "APPETIZERS – VEG",
-    "APPETIZERS – NON-VEG",
+    "APPETIZERS",
+    "INDO-CHINESE",
+    "INDIAN BURGERS",
+    "GRILLED",
     "VEG CURRY",
     "NON-VEG CURRY",
     "BIRYANI",
     "RICE",
     "DOSA",
-    "BREAD",
+    "BREADS",
     "KIDS MENU",
     "DRINKS",
     "DESSERT"

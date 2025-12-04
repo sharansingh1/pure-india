@@ -28,14 +28,16 @@ export const menuItem = defineType({
       type: 'string',
       options: {
         list: [
-          { title: 'Appetizers - Veg', value: 'APPETIZERS – VEG' },
-          { title: 'Appetizers - Non-Veg', value: 'APPETIZERS – NON-VEG' },
+          { title: 'Appetizers', value: 'APPETIZERS' },
+          { title: 'Indo-Chinese', value: 'INDO-CHINESE' },
+          { title: 'Indian Burgers', value: 'INDIAN BURGERS' },
+          { title: 'Grilled', value: 'GRILLED' },
           { title: 'Veg Curry', value: 'VEG CURRY' },
           { title: 'Non-Veg Curry', value: 'NON-VEG CURRY' },
           { title: 'Biryani', value: 'BIRYANI' },
           { title: 'Rice', value: 'RICE' },
           { title: 'Dosa', value: 'DOSA' },
-          { title: 'Bread', value: 'BREAD' },
+          { title: 'Breads', value: 'BREADS' },
           { title: 'Kids Menu', value: 'KIDS MENU' },
           { title: 'Drinks', value: 'DRINKS' },
           { title: 'Dessert', value: 'DESSERT' },
@@ -72,4 +74,3 @@ export const menuItem = defineType({
     },
   },
 })
-

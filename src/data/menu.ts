@@ -1,7 +1,8 @@
 export const menuItems = [
     {
-        category: "APPETIZERS – VEG",
+        category: "APPETIZERS",
         items: [
+            // Veg
             { name: "Masala Papad", price: "", description: "" },
             { name: "Paani Poori", price: "", description: "" },
             { name: "Veg Pakora Basket", price: "", description: "" },
@@ -12,14 +13,9 @@ export const menuItems = [
             { name: "Chole Puri/Bhature", price: "", description: "" },
             { name: "Gobi Manchurian", price: "", description: "" },
             { name: "Chilli Paneer", price: "", description: "" },
-        ]
-    },
-    {
-        category: "APPETIZERS – NON-VEG",
-        items: [
+            // Non-Veg
             { name: "Egg Bhurji", price: "", description: "" },
             { name: "Egg Masala Omelette", price: "", description: "" },
-            { name: "Veg Samosa", price: "", description: "" },
             { name: "Chilli Chicken", price: "", description: "" },
             { name: "Chicken Pakora Basket", price: "", description: "" },
             { name: "Fish Pakora Basket", price: "", description: "" },
@@ -28,6 +24,24 @@ export const menuItems = [
             { name: "Lamb Sheekh Kabab", price: "", description: "" },
             { name: "Tandoori Chicken Leg Quarter", price: "", description: "" },
             { name: "Royal Grill Platter", price: "", description: "" },
+        ]
+    },
+    {
+        category: "INDO-CHINESE",
+        items: [
+            { name: "Veg Manchurian", price: "", description: "Crispy vegetable balls in tangy Indo-Chinese sauce" },
+        ]
+    },
+    {
+        category: "INDIAN BURGERS",
+        items: [
+            { name: "Tandoori Chicken Burger", price: "", description: "Juicy tandoori chicken patty with mint chutney" },
+        ]
+    },
+    {
+        category: "GRILLED",
+        items: [
+            { name: "Tandoori Chicken (Full)", price: "", description: "Whole chicken marinated in yogurt and spices, grilled to perfection" },
         ]
     },
     {
@@ -111,7 +125,7 @@ export const menuItems = [
         ]
     },
     {
-        category: "BREAD",
+        category: "BREADS",
         items: [
             { name: "Butter Tava Roti", price: "", description: "" },
             { name: "Butter Tandoor Roti", price: "", description: "" },
