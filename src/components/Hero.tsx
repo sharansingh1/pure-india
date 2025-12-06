@@ -142,7 +142,7 @@ export default function Hero() {
                                         </div>
                                         <div className="pl-20">
                                             <a 
-                                                href="https://buy.stripe.com/8x200lcsL6O62CJgVE2Ji00"
+                                                href="https://buy.stripe.com/bJe9AVakD8We1yF20K2Ji01"
                                                 target="_blank"
                                                 rel="noopener noreferrer"
                                                 className="inline-flex items-center gap-2 px-6 py-2 bg-gradient-to-r from-red-700 to-red-900 text-white font-montserrat text-xs font-bold tracking-wider uppercase rounded-full shadow-lg shadow-red-900/50 border border-red-500/30 hover:scale-105 hover:shadow-red-600/30 transition-all duration-300 group"
