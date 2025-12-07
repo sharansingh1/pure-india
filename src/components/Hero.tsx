@@ -116,7 +116,7 @@ export default function Hero() {
                                         </div>
                                         <div>
                                             <h3 className="text-gold font-cinzel text-2xl font-bold leading-tight">
-                                                GRAND OPENING BUFFET
+                                                SOFT OPENING BUFFET
                                             </h3>
                                             <p className="text-white font-montserrat font-semibold text-sm mt-1">
                                                 <span className="text-green-400">★ SPECIAL OFFER:</span> First 25 Guests Eat for <span className="text-gold text-lg font-bold">$12!</span>

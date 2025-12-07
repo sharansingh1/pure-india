@@ -54,14 +54,14 @@ const PLACEHOLDER_NEW_SECTIONS = [
   {
     name: "Tandoori Chicken (Full)",
     description: "Whole chicken marinated in yogurt and spices, grilled to perfection",
-    category: "GRILLED",
+    category: "GRILLES",
     isVegetarian: false,
     isSpicy: true
   },
   {
     name: "Tandoori Chicken (Half)",
     description: "Half chicken marinated in yogurt and spices, grilled to perfection",
-    category: "GRILLED",
+    category: "GRILLES",
     isVegetarian: false,
     isSpicy: true
   },
@@ -133,7 +133,7 @@ export default async function BuffetPage() {
     "APPETIZERS",
     "INDO-CHINESE",
     "INDIAN BURGERS",
-    "GRILLED",
+    "GRILLES",
     "VEG CURRY",
     "NON-VEG CURRY",
     "BIRYANI",

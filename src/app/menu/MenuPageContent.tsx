@@ -42,7 +42,7 @@ export default function MenuPageContent({ groupedMenu }: { groupedMenu: any[] })
                                 <div className="absolute top-0 left-0 w-8 h-8 border-t-2 border-l-2 border-gold/30 group-hover:border-gold transition-colors duration-500"></div>
                                 <div className="absolute bottom-0 right-0 w-8 h-8 border-b-2 border-r-2 border-gold/30 group-hover:border-gold transition-colors duration-500"></div>
 
-                                <h3 className="font-cinzel text-2xl text-gold mb-1 group-hover:text-white transition-colors duration-300">Small Feast</h3>
+                                <h3 className="font-cinzel text-2xl text-gold mb-1 group-hover:text-white transition-colors duration-300">Large</h3>
                                 <p className="font-montserrat text-gray-400 text-[10px] tracking-[0.2em] uppercase mb-4">Intimate Gatherings</p>
                                 
                                 <div className="flex items-center justify-center gap-3 mb-1">
@@ -63,7 +63,7 @@ export default function MenuPageContent({ groupedMenu }: { groupedMenu: any[] })
                                 <div className="absolute top-0 left-0 w-8 h-8 border-t-2 border-l-2 border-gold/30 group-hover:border-gold transition-colors duration-500"></div>
                                 <div className="absolute bottom-0 right-0 w-8 h-8 border-b-2 border-r-2 border-gold/30 group-hover:border-gold transition-colors duration-500"></div>
 
-                                <h3 className="font-cinzel text-2xl text-gold mb-1 group-hover:text-white transition-colors duration-300">Grand Feast</h3>
+                                <h3 className="font-cinzel text-2xl text-gold mb-1 group-hover:text-white transition-colors duration-300">Extra Large</h3>
                                 <p className="font-montserrat text-gray-400 text-[10px] tracking-[0.2em] uppercase mb-4">Large Celebrations</p>
                                 
                                 <div className="flex items-center justify-center gap-3 mb-1">
@@ -90,12 +90,20 @@ export default function MenuPageContent({ groupedMenu }: { groupedMenu: any[] })
                         <div className="flex items-center gap-4 mb-10 justify-center">
                             <div className="h-[1px] w-12 bg-gold/30" />
                             <div className="text-center">
-                                <h2 className="font-cinzel text-3xl md:text-4xl text-gold-gradient">{category.category}</h2>
+                                <h2 className="font-cinzel text-3xl md:text-4xl text-gold-gradient">{category.category === "GRILLES" || category.category === "GRILLED" ? "GRILLES" : category.category}</h2>
                             </div>
                             <div className="h-[1px] w-12 bg-gold/30" />
                         </div>
 
                         <div className="grid gap-10">
+                            {/* Price Size Indicator - Only show if items have two prices, positioned above prices */}
+                            {category.items.some((item: any) => item.price && item.price.includes('/')) && (
+                                <div className="flex justify-end mb-2">
+                                    <p className="font-montserrat text-xs text-gold/80 uppercase tracking-wider">
+                                        <span className="text-gold">Large</span> / <span className="text-gold">Extra Large</span>
+                                    </p>
+                                </div>
+                            )}
                             {category.items.map((item: any, idx: number) => (
                                 <div key={idx} className="group relative">
                                     <div className="flex justify-between items-baseline mb-2">

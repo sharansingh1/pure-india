@@ -60,7 +60,7 @@ const PLACEHOLDER_NEW_SECTIONS = [
     name: "Tandoori Chicken (Full)",
     price: "$24 / $40",
     description: "Whole chicken marinated in yogurt and spices, grilled to perfection",
-    category: "GRILLED",
+    category: "GRILLES",
     isVegetarian: false,
     isSpicy: true
   },
@@ -68,7 +68,7 @@ const PLACEHOLDER_NEW_SECTIONS = [
     name: "Tandoori Chicken (Half)",
     price: "$14 / $24",
     description: "Half chicken marinated in yogurt and spices, grilled to perfection",
-    category: "GRILLED",
+    category: "GRILLES",
     isVegetarian: false,
     isSpicy: true
   },
@@ -144,7 +144,7 @@ export default async function MenuPage() {
     "APPETIZERS",
     "INDO-CHINESE",
     "INDIAN BURGERS",
-    "GRILLED",
+    "GRILLES",
     "VEG CURRY",
     "NON-VEG CURRY",
     "BIRYANI",

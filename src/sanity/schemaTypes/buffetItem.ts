@@ -25,7 +25,7 @@ export const buffetItem = defineType({
           { title: 'Appetizers', value: 'APPETIZERS' },
           { title: 'Indo-Chinese', value: 'INDO-CHINESE' },
           { title: 'Indian Burgers', value: 'INDIAN BURGERS' },
-          { title: 'Grilled', value: 'GRILLED' },
+          { title: 'Grilles', value: 'GRILLES' },
           { title: 'Veg Curry', value: 'VEG CURRY' },
           { title: 'Non-Veg Curry', value: 'NON-VEG CURRY' },
           { title: 'Biryani', value: 'BIRYANI' },
