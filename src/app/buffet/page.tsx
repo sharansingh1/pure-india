@@ -50,50 +50,6 @@ const PLACEHOLDER_NEW_SECTIONS = [
     isVegetarian: true,
     isSpicy: false
   },
-  // Grilled
-  {
-    name: "Tandoori Chicken (Full)",
-    description: "Whole chicken marinated in yogurt and spices, grilled to perfection",
-    category: "GRILLES",
-    isVegetarian: false,
-    isSpicy: true
-  },
-  {
-    name: "Tandoori Chicken (Half)",
-    description: "Half chicken marinated in yogurt and spices, grilled to perfection",
-    category: "GRILLES",
-    isVegetarian: false,
-    isSpicy: true
-  },
-  // Kids Menu
-  {
-    name: "French Fries",
-    description: "Crispy golden fries",
-    category: "KIDS MENU",
-    isVegetarian: true,
-    isSpicy: false
-  },
-  {
-    name: "Chicken Nuggets",
-    description: "Breaded chicken breast nuggets",
-    category: "KIDS MENU",
-    isVegetarian: false,
-    isSpicy: false
-  },
-  {
-    name: "Cheese Naan",
-    description: "Freshly baked naan stuffed with mild cheese",
-    category: "KIDS MENU",
-    isVegetarian: true,
-    isSpicy: false
-  },
-  {
-    name: "Mac & Cheese",
-    description: "Creamy macaroni and cheese",
-    category: "KIDS MENU",
-    isVegetarian: true,
-    isSpicy: false
-  }
 ];
 
 // Helper to determine meat priority
@@ -133,7 +89,6 @@ export default async function BuffetPage() {
     "APPETIZERS",
     "INDO-CHINESE",
     "INDIAN BURGERS",
-    "GRILLES",
     "VEG CURRY",
     "NON-VEG CURRY",
     "BIRYANI",

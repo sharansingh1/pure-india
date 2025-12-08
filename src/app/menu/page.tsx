@@ -21,90 +21,6 @@ export const metadata = {
 };
 
 const PLACEHOLDER_NEW_SECTIONS = [
-  // Indo-Chinese
-  {
-    name: "Veg Manchurian",
-    price: "$12 / $20",
-    description: "Crispy vegetable balls in tangy Indo-Chinese sauce",
-    category: "INDO-CHINESE",
-    isVegetarian: true,
-    isSpicy: true
-  },
-  {
-    name: "Chicken Manchurian",
-    price: "$14 / $24",
-    description: "Crispy chicken in tangy Indo-Chinese sauce",
-    category: "INDO-CHINESE",
-    isVegetarian: false,
-    isSpicy: true
-  },
-  // Indian Burgers
-  {
-    name: "Tandoori Chicken Burger",
-    price: "$12",
-    description: "Juicy tandoori chicken patty with mint chutney and fresh vegetables",
-    category: "INDIAN BURGERS",
-    isVegetarian: false,
-    isSpicy: false
-  },
-  {
-    name: "Paneer Tikka Burger",
-    price: "$10",
-    description: "Grilled paneer patty with Indian spices and tamarind sauce",
-    category: "INDIAN BURGERS",
-    isVegetarian: true,
-    isSpicy: false
-  },
-  // Grilled
-  {
-    name: "Tandoori Chicken (Full)",
-    price: "$24 / $40",
-    description: "Whole chicken marinated in yogurt and spices, grilled to perfection",
-    category: "GRILLES",
-    isVegetarian: false,
-    isSpicy: true
-  },
-  {
-    name: "Tandoori Chicken (Half)",
-    price: "$14 / $24",
-    description: "Half chicken marinated in yogurt and spices, grilled to perfection",
-    category: "GRILLES",
-    isVegetarian: false,
-    isSpicy: true
-  },
-  // Kids Menu
-  {
-    name: "French Fries",
-    price: "$4.99",
-    description: "Crispy golden fries",
-    category: "KIDS MENU",
-    isVegetarian: true,
-    isSpicy: false
-  },
-  {
-    name: "Chicken Nuggets",
-    price: "$6.99",
-    description: "Breaded chicken breast nuggets",
-    category: "KIDS MENU",
-    isVegetarian: false,
-    isSpicy: false
-  },
-  {
-    name: "Cheese Naan",
-    price: "$4.99",
-    description: "Freshly baked naan stuffed with mild cheese",
-    category: "KIDS MENU",
-    isVegetarian: true,
-    isSpicy: false
-  },
-  {
-    name: "Mac & Cheese",
-    price: "$5.99",
-    description: "Creamy macaroni and cheese",
-    category: "KIDS MENU",
-    isVegetarian: true,
-    isSpicy: false
-  }
 ];
 
 // Helper to determine meat priority
@@ -144,7 +60,7 @@ export default async function MenuPage() {
     "APPETIZERS",
     "INDO-CHINESE",
     "INDIAN BURGERS",
-    "GRILLES",
+    "GRILLS",
     "VEG CURRY",
     "NON-VEG CURRY",
     "BIRYANI",

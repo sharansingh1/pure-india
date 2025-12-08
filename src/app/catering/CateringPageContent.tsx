@@ -4,7 +4,7 @@ import { motion } from "framer-motion";
 import Image from "next/image";
 import Link from "next/link";
 import SectionHeading from "@/components/ui/SectionHeading";
-import { Phone, Check, Star, ChefHat, Truck, UtensilsCrossed } from "lucide-react";
+import { Phone, Check, Star, ChefHat, Truck } from "lucide-react";
 
 export default function CateringPageContent() {
     return (
@@ -83,61 +83,6 @@ export default function CateringPageContent() {
                                 <p className="font-montserrat text-gray-400 text-sm leading-relaxed">{feature.desc}</p>
                             </motion.div>
                         ))}
-                    </div>
-                </section>
-
-                {/* Live Stations Section */}
-                <section className="mb-32 relative">
-                    <div className="absolute inset-0 bg-gold/5 skew-y-3 transform -z-10 rounded-3xl" />
-                    <div className="grid md:grid-cols-2 gap-16 items-center py-12 px-6">
-                         <motion.div
-                            initial={{ opacity: 0, x: -30 }}
-                            whileInView={{ opacity: 1, x: 0 }}
-                            viewport={{ once: true }}
-                            className="relative h-[500px] w-full rounded-lg overflow-hidden border-2 border-gold/20"
-                        >
-                             <Image 
-                                src="https://images.unsplash.com/photo-1601050690597-df0568f70950?q=80&w=1000&auto=format&fit=crop" 
-                                alt="Live Food Station" 
-                                fill 
-                                className="object-cover"
-                            />
-                            <div className="absolute inset-0 bg-gradient-to-t from-black via-transparent to-transparent" />
-                            <div className="absolute bottom-8 left-8">
-                                <span className="bg-gold text-black px-4 py-1 text-xs font-bold uppercase tracking-widest mb-2 inline-block">Crowd Favorite</span>
-                                <h3 className="font-cinzel text-3xl text-white">Live Action Stations</h3>
-                            </div>
-                        </motion.div>
-                        
-                        <motion.div
-                            initial={{ opacity: 0, x: 30 }}
-                            whileInView={{ opacity: 1, x: 0 }}
-                            viewport={{ once: true }}
-                        >
-                            <h2 className="font-cinzel text-4xl text-white mb-6">Add Wow Factor</h2>
-                            <p className="text-gray-300 font-montserrat leading-loose mb-8">
-                                Nothing brings a party to life like fresh food being prepared right before your eyes. Our live stations are interactive, aromatic, and absolutely delicious.
-                            </p>
-                            
-                            <ul className="space-y-6">
-                                {[
-                                    { name: "Chaat Station", desc: "Pani Puri, Sev Puri & Papdi Chaat made to order." },
-                                    { name: "Tandoor Station", desc: "Fresh Naan breads and kebabs straight from the clay oven." },
-                                    { name: "Dosa Station", desc: "Crispy South Indian crepes with variety of fillings." },
-                                    { name: "Jalebi Station", desc: "Hot, crispy sweet spirals served with rabri." }
-                                ].map((station, i) => (
-                                    <li key={i} className="flex gap-4 items-start group">
-                                        <div className="w-12 h-12 shrink-0 rounded-full bg-white/5 flex items-center justify-center text-gold border border-gold/20 group-hover:bg-gold group-hover:text-black transition-colors">
-                                            <UtensilsCrossed size={20} />
-                                        </div>
-                                        <div>
-                                            <h4 className="font-cinzel text-xl text-gold group-hover:text-white transition-colors">{station.name}</h4>
-                                            <p className="text-sm text-gray-500 font-montserrat mt-1">{station.desc}</p>
-                                        </div>
-                                    </li>
-                                ))}
-                            </ul>
-                        </motion.div>
                     </div>
                 </section>
 

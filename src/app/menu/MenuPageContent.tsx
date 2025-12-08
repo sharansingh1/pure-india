@@ -90,7 +90,12 @@ export default function MenuPageContent({ groupedMenu }: { groupedMenu: any[] })
                         <div className="flex items-center gap-4 mb-10 justify-center">
                             <div className="h-[1px] w-12 bg-gold/30" />
                             <div className="text-center">
-                                <h2 className="font-cinzel text-3xl md:text-4xl text-gold-gradient">{category.category === "GRILLES" || category.category === "GRILLED" ? "GRILLES" : category.category}</h2>
+                                <h2 className="font-cinzel text-3xl md:text-4xl text-gold-gradient">{category.category === "GRILLS" || category.category === "GRILLED" || category.category === "GRILLES" ? "GRILLS" : category.category}</h2>
+                                {category.category === "BREADS" && (
+                                    <p className="font-montserrat text-sm text-gold/70 mt-2 italic">
+                                        Large is 4 pieces • Extra Large is 8 pieces
+                                    </p>
+                                )}
                             </div>
                             <div className="h-[1px] w-12 bg-gold/30" />
                         </div>

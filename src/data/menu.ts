@@ -39,7 +39,7 @@ export const menuItems = [
         ]
     },
     {
-        category: "GRILLES",
+        category: "GRILLS",
         items: [
             { name: "Tandoori Chicken (Full)", price: "", description: "Whole chicken marinated in yogurt and spices, grilled to perfection" },
         ]

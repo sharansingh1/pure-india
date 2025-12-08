@@ -6,7 +6,7 @@ import { useState, useEffect } from "react";
 
 const carouselImages = [
     {
-        src: "/butterchicken.jpg",
+        src: "/butterchickenmain.jpg",
         alt: "Butter Chicken with Naan"
     },
     {
@@ -14,8 +14,16 @@ const carouselImages = [
         alt: "Chicken Biryani"
     },
     {
-        src: "/dosa.jpeg",
-        alt: "Masala Dosa"
+        src: "/machurian.jpg",
+        alt: "Manchurian"
+    },
+    {
+        src: "/dessert.png",
+        alt: "Dessert"
+    },
+    {
+        src: "/mithai.png",
+        alt: "Mithai - Indian Sweets"
     }
 ];
 
@@ -152,6 +160,23 @@ export default function Hero() {
                                                     <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M17 8l4 4m0 0l-4 4m4-4H3" />
                                                 </svg>
                                             </a>
+                                        </div>
+                                    </div>
+
+                                    {/* Grand Opening Section */}
+                                    <div className="flex flex-col gap-4 border-t border-gold/30 pt-4 mt-4">
+                                        <div className="flex items-center gap-4">
+                                            <div className="flex-shrink-0 w-16 h-16 bg-gold rounded-full flex items-center justify-center shadow-lg shadow-gold/30 border border-gold/50">
+                                                <span className="text-black text-xs font-montserrat uppercase font-bold">TBA</span>
+                                            </div>
+                                            <div>
+                                                <h3 className="text-gold font-cinzel text-2xl font-bold leading-tight drop-shadow-md">
+                                                    GRAND OPENING IN JANUARY
+                                                </h3>
+                                                <p className="text-gray-300 font-montserrat text-sm mt-1">
+                                                    Join us for our grand opening celebration!
+                                                </p>
+                                            </div>
                                         </div>
                                     </div>
                                 </div>
