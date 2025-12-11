@@ -20,7 +20,7 @@ export const metadata = {
   keywords: ["Indian Menu Las Vegas", "Authentic Indian Food", "Best Butter Chicken Las Vegas", "Vegetarian Indian Food", "Halal Indian Food Las Vegas"],
 };
 
-const PLACEHOLDER_NEW_SECTIONS = [
+const PLACEHOLDER_NEW_SECTIONS: any[] = [
 ];
 
 // Helper to determine meat priority
