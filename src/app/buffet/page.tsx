@@ -35,21 +35,6 @@ const PLACEHOLDER_NEW_SECTIONS = [
     isVegetarian: false,
     isSpicy: true
   },
-  // Indian Burgers
-  {
-    name: "Tandoori Chicken Burger",
-    description: "Juicy tandoori chicken patty with mint chutney and fresh vegetables",
-    category: "INDIAN BURGERS",
-    isVegetarian: false,
-    isSpicy: false
-  },
-  {
-    name: "Paneer Tikka Burger",
-    description: "Grilled paneer patty with Indian spices and tamarind sauce",
-    category: "INDIAN BURGERS",
-    isVegetarian: true,
-    isSpicy: false
-  },
 ];
 
 // Helper to determine meat priority
@@ -82,13 +67,14 @@ export default async function BuffetPage() {
   });
 
   // Merge with placeholder items for new sections
-  const buffetItems = [...mappedItems, ...PLACEHOLDER_NEW_SECTIONS];
+  const buffetItems = [...mappedItems, ...PLACEHOLDER_NEW_SECTIONS].filter(
+    (item: any) => item.category !== "INDIAN BURGERS"
+  );
 
   // Define the preferred order for categories
   const order = [
     "APPETIZERS",
     "INDO-CHINESE",
-    "INDIAN BURGERS",
     "VEG CURRY",
     "NON-VEG CURRY",
     "BIRYANI",

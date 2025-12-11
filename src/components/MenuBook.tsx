@@ -2,7 +2,6 @@
 
 import React, { forwardRef, useRef } from "react";
 import HTMLFlipBook from "react-pageflip";
-import { menuItems } from "@/data/menu";
 import { motion } from "framer-motion";
 import SectionHeading from "@/components/ui/SectionHeading";
 
@@ -146,7 +145,22 @@ const Cover = forwardRef<HTMLDivElement, { children: React.ReactNode; className?
 
 Cover.displayName = "Cover";
 
-export default function MenuBook() {
+interface MenuItem {
+    name: string;
+    price: string;
+    description: string;
+}
+
+interface MenuCategory {
+    category: string;
+    items: MenuItem[];
+}
+
+interface MenuBookProps {
+    menuItems: MenuCategory[];
+}
+
+export default function MenuBook({ menuItems }: MenuBookProps) {
     // @ts-ignore
     const bookRef = useRef(null);
     const [isCoverOpen, setIsCoverOpen] = React.useState(false);
@@ -352,11 +366,6 @@ export default function MenuBook() {
                                                         {item.name}
                                                     </h4>
                                                 </div>
-                                                {item.description && (
-                                                    <p className="text-xs text-gray-700 font-montserrat leading-relaxed pl-3 border-l-2 border-amber-600/40">
-                                                        {item.description}
-                                                    </p>
-                                                )}
                                             </div>
                                         );
                                     }
