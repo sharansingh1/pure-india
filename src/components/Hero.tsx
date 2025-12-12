@@ -48,7 +48,7 @@ export default function Hero() {
             <div className="absolute inset-0 z-0">
                 <Image
                     src="/images/hero-background.jpg"
-                    alt="Hero Background"
+                    alt="Pure Indian Cuisine Restaurant - Authentic Indian Food in Las Vegas featuring butter chicken, tandoori, and traditional Indian dishes"
                     fill
                     className="object-cover opacity-75"
                     priority
@@ -97,7 +97,8 @@ export default function Hero() {
                                 
                                 <p className="text-gray-200 text-lg md:text-xl font-montserrat leading-relaxed max-w-lg">
                                     Two unique ways to dine. <br/>
-                                    Enjoy our unlimited <strong className="text-gold">Lunch Buffet</strong> by day, or gather for our exclusive <strong className="text-gold">Family Style Dinner</strong> by night featuring massive, shareable portions of our finest a la carte dishes.
+                                    Enjoy our unlimited <strong className="text-gold">Lunch Buffet</strong> by day, or gather for our exclusive <strong className="text-gold">Family Style Dinner</strong> by night featuring massive, shareable portions of our finest a la carte dishes. <br/>
+                                    <span className="text-sm text-gray-400 mt-2 block">Best Indian food in Las Vegas near the airport. Authentic North Indian cuisine, vegetarian options, and halal certified.</span>
                                 </p>
                             </div>
                         </div>

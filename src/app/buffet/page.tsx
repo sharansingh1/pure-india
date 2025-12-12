@@ -1,6 +1,7 @@
 import { client } from "@/sanity/lib/client";
 import { defineQuery } from "next-sanity";
 import BuffetPageContent from "./BuffetPageContent";
+import { generateBreadcrumbSchema, breadcrumbs } from "@/lib/breadcrumbs";
 
 export const dynamic = 'force-dynamic';
 
@@ -13,10 +14,33 @@ const BUFFET_QUERY = defineQuery(`*[_type == "buffetItem"]{
   isSpicy
 }`);
 
-export const metadata = {
-  title: "Best Indian Buffet in Las Vegas | All-You-Can-Eat Lunch",
-  description: "Indulge in Las Vegas's premier Indian buffet. Unlimited servings of authentic curries, tandoori dishes, and desserts. Lunch buffet available daily.",
-  keywords: ["Indian Buffet Las Vegas", "All You Can Eat Las Vegas", "Best Buffet Near Airport", "Unlimited Indian Food", "Lunch Buffet Las Vegas"],
+import { Metadata } from "next";
+
+export const metadata: Metadata = {
+  title: "Indian Buffet Las Vegas | All-You-Can-Eat Lunch Buffet | Pure Indian Cuisine",
+  description: "Best Indian buffet in Las Vegas! All-you-can-eat lunch buffet with unlimited servings of authentic curries, tandoori, biryani, dosa, and desserts. Located at 1405 E Sunset Rd near Las Vegas airport. Open daily 11am-10pm.",
+  keywords: ["Indian Buffet Las Vegas", "All You Can Eat Las Vegas", "Best Buffet Near Airport", "Unlimited Indian Food", "Lunch Buffet Las Vegas", "Indian Lunch Buffet", "Buffet Near Airport Las Vegas", "Vegetarian Buffet Las Vegas"],
+  openGraph: {
+    title: "Best Indian Buffet in Las Vegas | All-You-Can-Eat Lunch",
+    description: "Indulge in Las Vegas's premier Indian buffet. Unlimited servings of authentic curries, tandoori dishes, and desserts. Lunch buffet available daily.",
+    images: [
+      {
+        url: "/buffet-highlight.png",
+        width: 1200,
+        height: 630,
+        alt: "Pure Indian Cuisine Buffet Spread - All-You-Can-Eat Indian Food",
+      },
+    ],
+  },
+  twitter: {
+    card: "summary_large_image",
+    title: "Best Indian Buffet in Las Vegas | All-You-Can-Eat Lunch",
+    description: "Indulge in Las Vegas's premier Indian buffet. Unlimited servings of authentic curries, tandoori dishes, and desserts.",
+    images: ["/buffet-highlight.png"],
+  },
+  alternates: {
+    canonical: "https://pureindiacuisine.com/buffet",
+  },
 };
 
 const PLACEHOLDER_NEW_SECTIONS = [
@@ -119,6 +143,41 @@ export default async function BuffetPage() {
   });
 
   return (
-    <BuffetPageContent groupedBuffet={groupedBuffet} />
+    <>
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{
+          __html: JSON.stringify({
+            "@context": "https://schema.org",
+            "@type": "Restaurant",
+            "@id": "https://pureindiacuisine.com/buffet",
+            name: "Pure Indian Cuisine - Buffet",
+            description: "All-you-can-eat Indian buffet in Las Vegas. Unlimited servings of authentic curries, tandoori dishes, biryani, dosa, and desserts.",
+            url: "https://pureindiacuisine.com/buffet",
+            image: "https://pureindiacuisine.com/buffet-highlight.png",
+            servesCuisine: "Indian",
+            priceRange: "$$",
+            hasMenu: {
+              "@type": "Menu",
+              name: "Daily Buffet Menu",
+              description: "All-you-can-eat Indian buffet with rotating selection of dishes"
+            },
+            offers: {
+              "@type": "Offer",
+              name: "Lunch Buffet",
+              description: "All-you-can-eat Indian buffet available daily",
+              availability: "https://schema.org/InStock"
+            }
+          })
+        }}
+      />
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{
+          __html: JSON.stringify(generateBreadcrumbSchema(breadcrumbs.buffet))
+        }}
+      />
+      <BuffetPageContent groupedBuffet={groupedBuffet} />
+    </>
   );
 }

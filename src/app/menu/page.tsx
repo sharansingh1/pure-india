@@ -1,6 +1,7 @@
 import { client } from "@/sanity/lib/client";
 import { defineQuery } from "next-sanity";
 import MenuPageContent from "./MenuPageContent";
+import { generateBreadcrumbSchema, breadcrumbs } from "@/lib/breadcrumbs";
 
 export const dynamic = 'force-dynamic';
 
@@ -14,10 +15,33 @@ const MENU_QUERY = defineQuery(`*[_type == "menuItem"]{
   isSpicy
 }`);
 
-export const metadata = {
-  title: "Indian Restaurant Menu Las Vegas | Authentic A La Carte Dining",
-  description: "Explore our extensive menu of authentic Indian dishes. From butter chicken to lamb vindaloo, every dish is prepared fresh to order.",
-  keywords: ["Indian Menu Las Vegas", "Authentic Indian Food", "Best Butter Chicken Las Vegas", "Vegetarian Indian Food", "Halal Indian Food Las Vegas"],
+import { Metadata } from "next";
+
+export const metadata: Metadata = {
+  title: "Indian Food Menu Las Vegas | Butter Chicken, Tandoori, Biryani | Pure Indian Cuisine",
+  description: "View our complete Indian food menu in Las Vegas. Authentic dishes including butter chicken, tandoori, biryani, lamb vindaloo, paneer tikka, and vegetarian options. Family-style portions. Located at 1405 E Sunset Rd.",
+  keywords: ["Indian Menu Las Vegas", "Authentic Indian Food", "Best Butter Chicken Las Vegas", "Vegetarian Indian Food", "Halal Indian Food Las Vegas", "Indian Restaurant Menu", "Tandoori Las Vegas", "Biryani Las Vegas"],
+  openGraph: {
+    title: "Indian Restaurant Menu Las Vegas | Authentic A La Carte Dining",
+    description: "Explore our extensive menu of authentic Indian dishes. From butter chicken to lamb vindaloo, every dish is prepared fresh to order.",
+    images: [
+      {
+        url: "/menu-highlight.png",
+        width: 1200,
+        height: 630,
+        alt: "Pure Indian Cuisine Menu - Authentic Indian Dishes",
+      },
+    ],
+  },
+  twitter: {
+    card: "summary_large_image",
+    title: "Indian Restaurant Menu Las Vegas | Authentic A La Carte Dining",
+    description: "Explore our extensive menu of authentic Indian dishes. From butter chicken to lamb vindaloo, every dish is prepared fresh to order.",
+    images: ["/menu-highlight.png"],
+  },
+  alternates: {
+    canonical: "https://pureindiacuisine.com/menu",
+  },
 };
 
 const PLACEHOLDER_NEW_SECTIONS: any[] = [
@@ -105,6 +129,41 @@ export default async function MenuPage() {
   });
 
   return (
-    <MenuPageContent groupedMenu={groupedMenu} />
+    <>
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{
+          __html: JSON.stringify({
+            "@context": "https://schema.org",
+            "@type": "Menu",
+            "@id": "https://pureindiacuisine.com/menu",
+            name: "Pure Indian Cuisine Menu",
+            description: "Extensive menu of authentic Indian dishes including butter chicken, lamb vindaloo, biryani, tandoori, and vegetarian options.",
+            url: "https://pureindiacuisine.com/menu",
+            image: "https://pureindiacuisine.com/menu-highlight.png",
+            hasMenuSection: groupedMenu.map((category: any) => ({
+              "@type": "MenuSection",
+              name: category.category,
+              hasMenuItem: category.items.map((item: any) => ({
+                "@type": "MenuItem",
+                name: item.name,
+                description: item.description || "",
+                offers: {
+                  "@type": "Offer",
+                  price: item.price || "Contact for pricing"
+                }
+              }))
+            }))
+          })
+        }}
+      />
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{
+          __html: JSON.stringify(generateBreadcrumbSchema(breadcrumbs.menu))
+        }}
+      />
+      <MenuPageContent groupedMenu={groupedMenu} />
+    </>
   );
 }
