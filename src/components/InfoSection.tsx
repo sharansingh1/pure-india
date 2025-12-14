@@ -20,41 +20,7 @@ export default function InfoSection() {
                         centered={true}
                     />
 
-                    <div className="grid md:grid-cols-2 lg:grid-cols-5 gap-6 mt-16">
-                        {/* Large Portion Dinner Card - New Specialty Highlight */}
-                        <motion.div
-                            initial={{ opacity: 0, y: 30 }}
-                            whileInView={{ opacity: 1, y: 0 }}
-                            transition={{ duration: 0.6, delay: 0 }}
-                            viewport={{ once: true }}
-                            className="group relative overflow-hidden bg-card-bg border border-gold/30 hover:border-gold/60 transition-all duration-500 shadow-[0_0_30px_rgba(212,175,55,0.05)]"
-                        >
-                            <div className="absolute top-2 right-2 z-10">
-                                <span className="bg-gold text-black text-[10px] font-bold uppercase tracking-widest py-1 px-2 font-montserrat">New Specialty</span>
-                            </div>
-                            <div className="relative h-64 overflow-hidden">
-                                <Image
-                                    src="/butterchickenlarge.jpg" 
-                                    alt="Large Portion Family Dinner"
-                                    fill
-                                    className="object-cover group-hover:scale-110 transition-transform duration-700"
-                                />
-                                <div className="absolute inset-0 bg-gradient-to-t from-black via-black/50 to-transparent"></div>
-                            </div>
-                            <div className="p-8">
-                                <h3 className="font-cinzel text-2xl text-white mb-3 group-hover:text-gold transition-colors">Family Style Dinner</h3>
-                                <p className="text-gray-400 font-montserrat text-sm leading-relaxed mb-6">
-                                    Vegas' only large-format Indian dinner. Massive portions designed for sharing, bringing the family together over a royal feast.
-                                </p>
-                                <Link
-                                    href="/menu"
-                                    className="inline-block font-montserrat text-xs tracking-widest uppercase text-gold hover:text-white transition-colors border-b border-gold/30 hover:border-white pb-1"
-                                >
-                                    View Menu
-                                </Link>
-                            </div>
-                        </motion.div>
-
+                    <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-6 mt-16">
                         {/* Royal Buffet Card */}
                         <motion.div
                             initial={{ opacity: 0, y: 30 }}

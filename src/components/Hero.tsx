@@ -84,11 +84,7 @@ export default function Hero() {
                             <h1 className="font-cinzel text-5xl md:text-6xl lg:text-7xl font-bold leading-none">
                                 <span className="text-white">Las Vegas' Premier</span>
                                 <br />
-                                <span className="text-transparent bg-clip-text bg-gradient-to-r from-gold via-yellow-300 to-gold glow-text">Family Style Dinner</span>
-                                <br />
-                                <span className="text-white text-4xl md:text-5xl">&</span>
-                                <br />
-                                <span className="text-transparent bg-clip-text bg-gradient-to-r from-gold via-yellow-300 to-gold glow-text">Lunch Buffet</span>
+                                <span className="text-transparent bg-clip-text bg-gradient-to-r from-gold via-yellow-300 to-gold glow-text">All-Day Indian Buffet</span>
                             </h1>
                             
                             <div className="relative mt-8 pl-8 border-l-4 border-gold/60 py-2">
@@ -96,8 +92,7 @@ export default function Hero() {
                                 <div className="absolute -left-[9px] bottom-0 w-4 h-4 rounded-full bg-black border-2 border-gold/60" />
                                 
                                 <p className="text-gray-200 text-lg md:text-xl font-montserrat leading-relaxed max-w-lg">
-                                    Two unique ways to dine. <br/>
-                                    Enjoy our unlimited <strong className="text-gold">Lunch Buffet</strong> by day, or gather for our exclusive <strong className="text-gold">Family Style Dinner</strong> by night featuring massive, shareable portions of our finest a la carte dishes. <br/>
+                                    Indulge in an authentic all-you-can-eat Indian buffet experience. From aromatic curries to sizzling tandoori, enjoy unlimited servings of our finest dishes all day long. <br/>
                                     <span className="text-sm text-gray-400 mt-2 block">Best Indian food in Las Vegas near the airport. Authentic North Indian cuisine, vegetarian options, and halal certified.</span>
                                 </p>
                             </div>

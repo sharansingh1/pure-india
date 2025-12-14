@@ -225,8 +225,8 @@ export default async function Home() {
                   "@type": "Offer",
                   itemOffered: {
                     "@type": "Service",
-                    name: "Family Style Dinner",
-                    description: "Shareable portions of a la carte dishes"
+                    name: "Dinner Buffet",
+                    description: "All-you-can-eat dinner buffet from 5pm-10pm"
                   }
                 },
                 {

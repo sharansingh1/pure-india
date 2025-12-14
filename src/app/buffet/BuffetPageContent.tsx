@@ -44,7 +44,7 @@ export default function BuffetPageContent({ groupedBuffet }: { groupedBuffet: an
                     </div>
 
                     {/* Buffet Pricing */}
-                    <div className="flex justify-center mb-20">
+                    <div className="flex flex-col md:flex-row justify-center gap-8 mb-20">
                         {/* Lunch Price Card */}
                         <motion.div
                             initial={{ opacity: 0, y: 20 }}
@@ -59,6 +59,28 @@ export default function BuffetPageContent({ groupedBuffet }: { groupedBuffet: an
                             <p className="font-montserrat text-gold text-sm tracking-[0.2em] uppercase mb-8 font-medium">11:00 AM - 3:00 PM</p>
                             
                             <div className="font-cinzel text-transparent bg-clip-text bg-gradient-to-b from-gold via-amber-300 to-gold text-7xl font-bold mb-6 tracking-tight drop-shadow-lg">$17.99</div>
+                            
+                            {/* Decorative Corners */}
+                            <div className="absolute top-0 left-0 w-8 h-8 border-t-2 border-l-2 border-gold/30 group-hover:border-gold group-hover:shadow-[0_0_15px_rgba(212,175,55,0.3)] transition-all duration-500" />
+                            <div className="absolute bottom-0 right-0 w-8 h-8 border-b-2 border-r-2 border-gold/30 group-hover:border-gold group-hover:shadow-[0_0_15px_rgba(212,175,55,0.3)] transition-all duration-500" />
+                            <div className="absolute top-0 right-0 w-8 h-8 border-t-2 border-r-2 border-gold/30 group-hover:border-gold group-hover:shadow-[0_0_15px_rgba(212,175,55,0.3)] transition-all duration-500" />
+                            <div className="absolute bottom-0 left-0 w-8 h-8 border-b-2 border-l-2 border-gold/30 group-hover:border-gold group-hover:shadow-[0_0_15px_rgba(212,175,55,0.3)] transition-all duration-500" />
+                        </motion.div>
+
+                        {/* Dinner Price Card */}
+                        <motion.div
+                            initial={{ opacity: 0, y: 20 }}
+                            whileInView={{ opacity: 1, y: 0 }}
+                            viewport={{ once: true }}
+                            transition={{ duration: 0.6, delay: 0.2 }}
+                            className="relative p-12 border border-gold/30 bg-gradient-to-b from-white/10 to-transparent text-center group hover:border-gold/60 hover:bg-white/15 transition-all duration-500 w-full max-w-md shadow-[0_10px_40px_rgba(0,0,0,0.5)]"
+                        >
+                            <div className="absolute top-0 left-1/2 -translate-x-1/2 w-2/3 h-[1px] bg-gradient-to-r from-transparent via-gold to-transparent opacity-50" />
+                            
+                            <h3 className="font-cinzel text-4xl text-white mb-3 drop-shadow-lg">Dinner Buffet</h3>
+                            <p className="font-montserrat text-gold text-sm tracking-[0.2em] uppercase mb-8 font-medium">5:00 PM - 10:00 PM</p>
+                            
+                            <div className="font-cinzel text-transparent bg-clip-text bg-gradient-to-b from-gold via-amber-300 to-gold text-7xl font-bold mb-6 tracking-tight drop-shadow-lg">$23.99</div>
                             
                             {/* Decorative Corners */}
                             <div className="absolute top-0 left-0 w-8 h-8 border-t-2 border-l-2 border-gold/30 group-hover:border-gold group-hover:shadow-[0_0_15px_rgba(212,175,55,0.3)] transition-all duration-500" />

@@ -322,6 +322,11 @@ export default function MenuBook({ menuItems }: MenuBookProps) {
                                                             <p className="font-cinzel text-5xl font-bold text-red-900">$17.99</p>
                                                             <p className="font-montserrat text-xs text-amber-800 mt-2 tracking-widest uppercase">11:00 AM - 3:00 PM</p>
                                                         </div>
+                                                        <div className="bg-gradient-to-r from-amber-50 to-orange-50 border-2 border-gold/40 p-6 rounded-lg shadow-lg">
+                                                            <p className="font-montserrat text-sm uppercase tracking-widest text-amber-900 mb-2">Dinner Buffet</p>
+                                                            <p className="font-cinzel text-5xl font-bold text-red-900">$23.99</p>
+                                                            <p className="font-montserrat text-xs text-amber-800 mt-2 tracking-widest uppercase">5:00 PM - 10:00 PM</p>
+                                                        </div>
                                                     </div>
 
                                                     <div className="mt-8 pt-6 border-t border-gold/30">

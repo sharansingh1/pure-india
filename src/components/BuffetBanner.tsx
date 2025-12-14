@@ -18,9 +18,9 @@ export default function BuffetBanner() {
           {Array.from({ length: 10 }).map((_, i) => (
             <span key={i} className="mx-8 font-montserrat font-bold text-white text-sm tracking-wider uppercase flex items-center gap-4">
               <span className="text-gold">★</span>
-              <span>Las Vegas' Only Family Style Indian Dinner</span>
+              <span>All-Day Indian Buffet - Unlimited Servings</span>
               <span className="text-gold">★</span>
-              <span>Best Indian Lunch Buffet</span>
+              <span>Best Indian Buffet in Las Vegas</span>
               <span className="text-gold">★</span>
               <span>Discounts for Truck/Taxi/Uber Drivers</span>
             </span>
