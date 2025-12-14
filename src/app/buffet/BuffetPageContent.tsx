@@ -40,6 +40,7 @@ export default function BuffetPageContent({ groupedBuffet }: { groupedBuffet: an
                         </div>
                          <p className="text-gray-500 font-montserrat text-[10px] mt-4 tracking-wide">
                              * The menu below represents our full rotation of dishes. Actual selection features a curated variety of these items.
+                             Drinks are not included in the price.
                         </p>
                     </div>
 
@@ -129,7 +130,7 @@ export default function BuffetPageContent({ groupedBuffet }: { groupedBuffet: an
 
                 <div className="text-center mt-20 pt-10 border-t border-white/10">
                     <p className="text-gray-500 text-sm font-montserrat italic mb-6">
-                        * Includes Fountain Drinks <br />
+                         <br />
                         * Please inform your server of any allergies.
                     </p>
                 </div>
