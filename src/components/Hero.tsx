@@ -62,7 +62,7 @@ export default function Hero() {
 
             {/* Main Content Grid */}
             <div className="relative z-10 container mx-auto px-4 min-h-screen flex items-center">
-                <div className="grid lg:grid-cols-2 gap-12 items-center w-full py-32">
+                <div className="grid lg:grid-cols-2 gap-12 items-center w-full py-20 md:py-32">
 
                     {/* Left Side - Text Content */}
                     <motion.div
@@ -81,25 +81,25 @@ export default function Hero() {
 
                         {/* Main Heading */}
                         <div className="space-y-4">
-                            <h1 className="font-cinzel text-5xl md:text-6xl lg:text-7xl font-bold leading-none">
+                            <h1 className="font-cinzel text-4xl md:text-6xl lg:text-7xl font-bold leading-none">
                                 <span className="text-white">Las Vegas' Premier</span>
                                 <br />
                                 <span className="text-transparent bg-clip-text bg-gradient-to-r from-gold via-yellow-300 to-gold glow-text">All-Day Indian Buffet</span>
                             </h1>
-                            
+
                             <div className="relative mt-8 pl-8 border-l-4 border-gold/60 py-2">
                                 <div className="absolute -left-[9px] top-0 w-4 h-4 rounded-full bg-black border-2 border-gold/60" />
                                 <div className="absolute -left-[9px] bottom-0 w-4 h-4 rounded-full bg-black border-2 border-gold/60" />
-                                
-                                <p className="text-gray-200 text-lg md:text-xl font-montserrat leading-relaxed max-w-lg">
-                                    Indulge in an authentic all-you-can-eat Indian buffet experience. From aromatic curries to sizzling tandoori, enjoy unlimited servings of our finest dishes all day long. <br/>
+
+                                <p className="text-gray-200 text-base md:text-xl font-montserrat leading-relaxed max-w-lg">
+                                    Indulge in an authentic all-you-can-eat Indian buffet experience. From aromatic curries to sizzling tandoori, enjoy unlimited servings of our finest dishes all day long. <br />
                                     <span className="text-sm text-gray-400 mt-2 block">Best Indian food in Las Vegas near the airport. Authentic North Indian cuisine, vegetarian options, and halal certified.</span>
                                 </p>
                             </div>
                         </div>
 
-                        {/* Grand Opening & Christmas Announcement Box */}
-                        <motion.div 
+                        {/* Grand Opening Announcement Box */}
+                        <motion.div
                             initial={{ opacity: 0, scale: 0.9 }}
                             animate={{ opacity: 1, scale: 1 }}
                             transition={{ delay: 0.5, duration: 0.5 }}
@@ -110,69 +110,20 @@ export default function Hero() {
                                 <div className="absolute top-0 left-0 w-full h-full overflow-hidden pointer-events-none">
                                     <div className="absolute top-[-50%] left-[-50%] w-[200%] h-[200%] bg-[radial-gradient(circle,rgba(255,215,0,0.1)_1px,transparent_1px)] bg-[length:20px_20px] opacity-30 animate-[spin_60s_linear_infinite]" />
                                 </div>
-                                
+
                                 <div className="relative z-10 flex flex-col gap-6">
                                     {/* Grand Opening Section */}
-                                    <div className="flex items-center gap-4 border-b border-gold/30 pb-4">
-                                        <div className="flex-shrink-0 w-16 h-16 bg-gold rounded-full flex items-center justify-center shadow-lg shadow-gold/20">
-                                            <span className="text-black font-bold text-2xl font-cinzel">14</span>
-                                            <span className="text-black text-[10px] font-montserrat absolute mt-8 uppercase font-bold">DEC</span>
+                                    <div className="flex items-center gap-4">
+                                        <div className="flex-shrink-0 w-16 h-16 bg-gold rounded-full flex items-center justify-center shadow-lg shadow-gold/30 border border-gold/50">
+                                            <span className="text-black text-xs font-montserrat uppercase font-bold">TBA</span>
                                         </div>
                                         <div>
-                                            <h3 className="text-gold font-cinzel text-2xl font-bold leading-tight">
-                                                SOFT OPENING BUFFET
+                                            <h3 className="text-gold font-cinzel text-2xl font-bold leading-tight drop-shadow-md">
+                                                GRAND OPENING IN JANUARY
                                             </h3>
-                                            <p className="text-white font-montserrat font-semibold text-sm mt-1">
-                                                <span className="text-green-400">★ SPECIAL OFFER:</span> First 25 Guests Eat for <span className="text-gold text-lg font-bold">$12!</span>
+                                            <p className="text-gray-300 font-montserrat text-sm mt-1">
+                                                Join us for our grand opening celebration!
                                             </p>
-                                        </div>
-                                    </div>
-
-                                    {/* Christmas Party Section */}
-                                    <div className="flex flex-col gap-4">
-                                        <div className="flex items-center gap-4">
-                                            <div className="flex-shrink-0 w-16 h-16 bg-red-600 rounded-full flex items-center justify-center shadow-lg shadow-red-600/30 border border-gold/50">
-                                                <span className="text-white font-bold text-2xl font-cinzel">20</span>
-                                                <span className="text-white text-[10px] font-montserrat absolute mt-8 uppercase font-bold">DEC</span>
-                                            </div>
-                                            <div>
-                                                <h3 className="text-red-500 font-cinzel text-2xl font-bold leading-tight drop-shadow-md">
-                                                    CHRISTMAS PARTY
-                                                </h3>
-                                                <p className="text-gray-300 font-montserrat text-sm mt-1">
-                                                    Celebrate the season with our festive feast!
-                                                </p>
-                                            </div>
-                                        </div>
-                                        <div className="pl-20">
-                                            <a 
-                                                href="https://buy.stripe.com/eVq4gB8cvgoG0uBdJs2Ji03"
-                                                target="_blank"
-                                                rel="noopener noreferrer"
-                                                className="inline-flex items-center gap-2 px-6 py-2 bg-gradient-to-r from-red-700 to-red-900 text-white font-montserrat text-xs font-bold tracking-wider uppercase rounded-full shadow-lg shadow-red-900/50 border border-red-500/30 hover:scale-105 hover:shadow-red-600/30 transition-all duration-300 group"
-                                            >
-                                                <span>Get Tickets</span>
-                                                <svg className="w-4 h-4 group-hover:translate-x-1 transition-transform" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                                                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M17 8l4 4m0 0l-4 4m4-4H3" />
-                                                </svg>
-                                            </a>
-                                        </div>
-                                    </div>
-
-                                    {/* Grand Opening Section */}
-                                    <div className="flex flex-col gap-4 border-t border-gold/30 pt-4 mt-4">
-                                        <div className="flex items-center gap-4">
-                                            <div className="flex-shrink-0 w-16 h-16 bg-gold rounded-full flex items-center justify-center shadow-lg shadow-gold/30 border border-gold/50">
-                                                <span className="text-black text-xs font-montserrat uppercase font-bold">TBA</span>
-                                            </div>
-                                            <div>
-                                                <h3 className="text-gold font-cinzel text-2xl font-bold leading-tight drop-shadow-md">
-                                                    GRAND OPENING IN JANUARY
-                                                </h3>
-                                                <p className="text-gray-300 font-montserrat text-sm mt-1">
-                                                    Join us for our grand opening celebration!
-                                                </p>
-                                            </div>
                                         </div>
                                     </div>
                                 </div>
@@ -320,7 +271,7 @@ export default function Hero() {
                                     aria-label="Follow us on Instagram"
                                 >
                                     <svg className="w-6 h-6 text-white group-hover:scale-110 transition-transform duration-300" fill="currentColor" viewBox="0 0 24 24">
-                                        <path d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zm0-2.163c-3.259 0-3.667.014-4.947.072-4.358.2-6.78 2.618-6.98 6.98-.059 1.281-.073 1.689-.073 4.948 0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98 1.281.058 1.689.072 4.948.072 3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98-1.281-.059-1.69-.073-4.949-.073zm0 5.838c-3.403 0-6.162 2.759-6.162 6.162s2.759 6.163 6.162 6.163 6.162-2.759 6.162-6.163c0-3.403-2.759-6.162-6.162-6.162zm0 10.162c-2.209 0-4-1.79-4-4 0-2.209 1.791-4 4-4s4 1.791 4 4c0 2.21-1.791 4-4 4zm6.406-11.845c-.796 0-1.441.645-1.441 1.44s.645 1.44 1.441 1.44c.795 0 1.439-.645 1.439-1.44s-.644-1.44-1.439-1.44z"/>
+                                        <path d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zm0-2.163c-3.259 0-3.667.014-4.947.072-4.358.2-6.78 2.618-6.98 6.98-.059 1.281-.073 1.689-.073 4.948 0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98 1.281.058 1.689.072 4.948.072 3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98-1.281-.059-1.69-.073-4.949-.073zm0 5.838c-3.403 0-6.162 2.759-6.162 6.162s2.759 6.163 6.162 6.163 6.162-2.759 6.162-6.163c0-3.403-2.759-6.162-6.162-6.162zm0 10.162c-2.209 0-4-1.79-4-4 0-2.209 1.791-4 4-4s4 1.791 4 4c0 2.21-1.791 4-4 4zm6.406-11.845c-.796 0-1.441.645-1.441 1.44s.645 1.44 1.441 1.44c.795 0 1.439-.645 1.439-1.44s-.644-1.44-1.439-1.44z" />
                                     </svg>
                                 </a>
                                 <a
@@ -331,7 +282,7 @@ export default function Hero() {
                                     aria-label="Follow us on TikTok"
                                 >
                                     <svg className="w-6 h-6 text-[#00f2ea] group-hover:scale-110 transition-transform duration-300" fill="currentColor" viewBox="0 0 24 24">
-                                        <path d="M19.59 6.69a4.83 4.83 0 0 1-3.77-4.25V2h-3.45v13.67a2.89 2.89 0 0 1-5.2 1.74 2.89 2.89 0 0 1 2.31-4.64 2.93 2.93 0 0 1 .88.13V9.4a6.07 6.07 0 0 0-1-.05A6.12 6.12 0 0 0 5 20.1a6.12 6.12 0 0 0 10.86-3.94v-7a8.16 8.16 0 0 0 4.77 1.52v-3.4a4.85 4.85 0 0 1-1-.1z"/>
+                                        <path d="M19.59 6.69a4.83 4.83 0 0 1-3.77-4.25V2h-3.45v13.67a2.89 2.89 0 0 1-5.2 1.74 2.89 2.89 0 0 1 2.31-4.64 2.93 2.93 0 0 1 .88.13V9.4a6.07 6.07 0 0 0-1-.05A6.12 6.12 0 0 0 5 20.1a6.12 6.12 0 0 0 10.86-3.94v-7a8.16 8.16 0 0 0 4.77 1.52v-3.4a4.85 4.85 0 0 1-1-.1z" />
                                     </svg>
                                 </a>
                                 <div className="h-[1px] w-12 bg-gradient-to-l from-transparent to-gold/50"></div>

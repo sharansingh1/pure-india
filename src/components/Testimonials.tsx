@@ -6,21 +6,21 @@ import SectionHeading from "@/components/ui/SectionHeading";
 
 const testimonials = [
     {
-        name: "James Wilson",
-        role: "Food Critic",
-        content: "An absolute masterpiece of culinary art. The flavors are authentic yet surprisingly modern. A must-visit in Las Vegas.",
-        rating: 5,
-    },
-    {
-        name: "Sarah Jenkins",
+        name: "Verified Diner",
         role: "Local Guide",
-        content: "The ambiance is unmatched. From the moment you step in, you are transported to a world of luxury. The service is impeccable.",
+        content: "Amazing food and great service! Every dish I tried was full of flavor and cooked perfectly. Pure Indian Cuisine is now my go-to spot.",
         rating: 5,
     },
     {
-        name: "Michael Chen",
-        role: "Verified Diner",
-        content: "Best Indian cuisine I've had outside of Mumbai. The Butter Chicken is to die for, and the wine selection is exquisite.",
+        name: "Verified Diner",
+        role: "Local Guide",
+        content: "Dining with a view of planes landing adds to the memorable ambiance. It feels like stepping into another world while enjoying authentic food.",
+        rating: 5,
+    },
+    {
+        name: "Verified Diner",
+        role: "Local Guide",
+        content: "Authentic flavors and dishes that truly capture the essence of India. A must-visit! The chicken tikka masala is velvety and delicious.",
         rating: 5,
     },
 ];

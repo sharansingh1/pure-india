@@ -164,6 +164,16 @@ export default function MenuBook({ menuItems }: MenuBookProps) {
     // @ts-ignore
     const bookRef = useRef(null);
     const [isCoverOpen, setIsCoverOpen] = React.useState(false);
+    const [isMobile, setIsMobile] = React.useState(false);
+
+    React.useEffect(() => {
+        const handleResize = () => {
+            setIsMobile(window.innerWidth < 768);
+        };
+        handleResize(); // Check on mount
+        window.addEventListener('resize', handleResize);
+        return () => window.removeEventListener('resize', handleResize);
+    }, []);
 
     // Continuous Pagination Logic
     const PAGE_CAPACITY = 580;
@@ -217,35 +227,35 @@ export default function MenuBook({ menuItems }: MenuBookProps) {
     };
 
     return (
-        <section id="menu-section" className="py-32 bg-gradient-to-b from-black via-[#0a0505] to-black flex flex-col items-center justify-center min-h-screen relative overflow-hidden">
+        <section id="menu-section" className="py-20 md:py-32 bg-gradient-to-b from-black via-[#0a0505] to-black flex flex-col items-center justify-center min-h-screen relative overflow-hidden">
             <div className="absolute inset-0 opacity-20 bg-[url('https://www.transparenttextures.com/patterns/dark-matter.png')] mix-blend-overlay pointer-events-none" />
             <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[1000px] h-[1000px] bg-gradient-radial from-amber-900/10 via-red-900/5 to-transparent rounded-full blur-3xl pointer-events-none" />
 
             <div className="relative z-10 mb-10 w-full max-w-4xl px-4">
                 <SectionHeading
                     title="Buffet Selection"
-                    subtitle="Today's Feast"
+                    subtitle="Rotating Menu"
                     centered={true}
                 />
                 <p className="text-gray-400 text-center max-w-lg mx-auto -mt-6 font-montserrat font-light text-sm">
-                    Flip through the pages to discover our authentic Indian cuisine, crafted with passion and tradition.
+                    This book displays our full collection of dishes. Please note that items rotate regularly - not every dish is available every time.
                 </p>
             </div>
 
             <div
-                className="relative flex justify-center items-center w-full px-4 h-[650px] md:h-[750px] transition-transform duration-700 ease-in-out"
-                style={{ transform: isCoverOpen ? 'translateX(0)' : 'translateX(-240px)' }}
+                className="relative flex justify-center items-center w-full px-4 h-[550px] md:h-[750px] transition-transform duration-700 ease-in-out"
+                style={{ transform: !isMobile && isCoverOpen ? 'translateX(0)' : !isMobile ? 'translateX(-240px)' : 'translateX(0)' }}
             >
-                <div className="absolute bottom-10 w-[500px] h-8 bg-black/40 blur-2xl rounded-full"></div>
+                <div className="absolute bottom-10 w-[300px] md:w-[500px] h-8 bg-black/40 blur-2xl rounded-full"></div>
 
                 {/* @ts-ignore */}
                 <HTMLFlipBook
-                    width={480}
-                    height={680}
+                    width={isMobile ? 320 : 480}
+                    height={isMobile ? 500 : 680}
                     size="fixed"
-                    minWidth={320}
+                    minWidth={300}
                     maxWidth={480}
-                    minHeight={420}
+                    minHeight={400}
                     maxHeight={680}
                     maxShadowOpacity={0.5}
                     showCover={true}
@@ -331,7 +341,7 @@ export default function MenuBook({ menuItems }: MenuBookProps) {
 
                                                     <div className="mt-8 pt-6 border-t border-gold/30">
                                                         <p className="font-montserrat text-xs text-amber-900 italic">
-                                                            Unlimited servings of all menu items
+                                                            Menu rotates regularly • Selected items available
                                                         </p>
                                                     </div>
                                                 </div>
