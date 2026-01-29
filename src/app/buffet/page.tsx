@@ -18,7 +18,7 @@ import { Metadata } from "next";
 
 export const metadata: Metadata = {
   title: "Indian Buffet Las Vegas | All-You-Can-Eat Lunch Buffet | Pure Indian Cuisine",
-  description: "Best Indian buffet in Las Vegas! All-you-can-eat lunch buffet with unlimited servings of authentic curries, tandoori, biryani, dosa, and desserts. Located at 1405 E Sunset Rd near Las Vegas airport. Open daily 11am-10pm.",
+  description: "Best Indian buffet in Las Vegas! All-you-can-eat lunch buffet with unlimited servings of authentic curries, tandoori, biryani, dosa, and desserts. Located at 1405 E Sunset Rd near Las Vegas airport. Open Mon-Sat 11am-9pm, Sun 11am-8pm.",
   keywords: ["Indian Buffet Las Vegas", "All You Can Eat Las Vegas", "Best Buffet Near Airport", "Unlimited Indian Food", "Lunch Buffet Las Vegas", "Indian Lunch Buffet", "Buffet Near Airport Las Vegas", "Vegetarian Buffet Las Vegas"],
   openGraph: {
     title: "Best Indian Buffet in Las Vegas | All-You-Can-Eat Lunch",
@@ -75,7 +75,7 @@ const getMeatPriority = (name: string) => {
 
 export default async function BuffetPage() {
   const fetchedBuffetItems = await client.fetch(BUFFET_QUERY, {}, { next: { revalidate: 0 } });
-  
+
   // Map old category names to new ones
   const mappedItems = fetchedBuffetItems.map((item: any) => {
     let category = item.category;
@@ -128,14 +128,14 @@ export default async function BuffetPage() {
   // 3. Build the grouped menu with sorted items for NON-VEG CURRY
   const groupedBuffet = existingCategories.map(category => {
     let items = buffetItems.filter((item: any) => item.category === category);
-    
+
     // Apply special sorting for NON-VEG CURRY
     if (category === "NON-VEG CURRY") {
       items.sort((a: any, b: any) => {
         return getMeatPriority(a.name) - getMeatPriority(b.name);
       });
     }
-    
+
     return {
       category,
       items

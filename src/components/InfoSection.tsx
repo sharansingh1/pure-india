@@ -68,15 +68,18 @@ export default function InfoSection() {
                                             <div className="grid sm:grid-cols-2 gap-6">
                                                 <div className="bg-black/40 p-4 rounded border-l-2 border-gold/50">
                                                     <h4 className="font-cinzel text-gold text-lg mb-1">Lunch</h4>
-                                                    <p className="text-white font-bold font-montserrat">11:00 AM - 5:00 PM</p>
+                                                    <p className="text-white font-bold font-montserrat">Daily: 11:00 AM - 5:00 PM</p>
                                                     <p className="text-2xl text-gold font-bold font-montserrat mt-2">$17.99</p>
                                                 </div>
                                                 <div className="bg-black/40 p-4 rounded border-l-2 border-gold/50">
                                                     <h4 className="font-cinzel text-gold text-lg mb-1">Dinner</h4>
-                                                    <p className="text-white font-bold font-montserrat">5:00 PM - 10:00 PM</p>
+                                                    <p className="text-white font-bold font-montserrat">5:00 PM - Closing</p>
                                                     <p className="text-2xl text-gold font-bold font-montserrat mt-2">$23.99</p>
                                                 </div>
                                             </div>
+                                            <p className="text-gray-400 font-montserrat text-sm mt-4 font-medium uppercase tracking-wider">
+                                                Mon-Sat: 11AM - 9PM | Sun: 11AM - 8PM
+                                            </p>
                                             <p className="text-gray-500 font-montserrat text-xs mt-4 italic">
                                                 *Prices subject to change on holidays. Walk-ins always welcome.
                                             </p>

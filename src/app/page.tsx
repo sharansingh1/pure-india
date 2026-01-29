@@ -13,7 +13,7 @@ export const dynamic = 'force-dynamic';
 
 export const metadata: Metadata = {
   title: "Pure Indian Cuisine Las Vegas | Best Indian Food Restaurant Near Airport | Buffet & Banquet Hall",
-  description: "Best Indian food in Las Vegas! Authentic North Indian cuisine, all-you-can-eat buffet, family-style dinner, and banquet hall. Located at 1405 E Sunset Rd near Las Vegas airport. Open daily 11am-10pm. Butter chicken, tandoori, biryani, vegetarian & halal options.",
+  description: "Best Indian food in Las Vegas! Authentic North Indian cuisine, all-you-can-eat buffet, family-style dinner, and banquet hall. Located at 1405 E Sunset Rd near Las Vegas airport. Open Mon-Sat 11am-9pm, Sun 11am-8pm. Butter chicken, tandoori, biryani, vegetarian & halal options.",
   keywords: ["Indian food Las Vegas", "Indian restaurant Las Vegas", "Best Indian food Las Vegas", "Indian buffet Las Vegas", "Indian food near me", "Indian restaurant near airport", "Butter chicken Las Vegas", "Tandoori Las Vegas", "Biryani Las Vegas", "Indian food delivery Las Vegas", "Vegetarian Indian food Las Vegas", "Halal Indian food Las Vegas", "North Indian food Las Vegas", "Indian catering Las Vegas", "Banquet hall Las Vegas", "Wedding venue Las Vegas", "Pure Indian Cuisine", "1405 E Sunset Rd", "Indian food 89119"],
   openGraph: {
     title: "Pure Indian Cuisine Las Vegas | Best Indian Food Restaurant Near Airport",
@@ -74,7 +74,7 @@ const getMeatPriority = (name: string) => {
 export default async function Home() {
   // Fetch buffet items (same as buffet page)
   const fetchedBuffetItems = await client.fetch(BUFFET_QUERY, {}, { next: { revalidate: 0 } });
-  
+
   // Map old category names to new ones
   const mappedItems = fetchedBuffetItems.map((item: any) => {
     let category = item.category;
@@ -127,14 +127,14 @@ export default async function Home() {
   // Build the grouped menu with sorted items for NON-VEG CURRY
   const groupedBuffet = existingCategories.map(category => {
     let items = buffetItems.filter((item: any) => item.category === category);
-    
+
     // Apply special sorting for NON-VEG CURRY
     if (category === "NON-VEG CURRY") {
       items.sort((a: any, b: any) => {
         return getMeatPriority(a.name) - getMeatPriority(b.name);
       });
     }
-    
+
     return {
       category,
       items
@@ -187,8 +187,8 @@ export default async function Home() {
             },
             geo: {
               "@type": "GeoCoordinates",
-              latitude: 36.0719, 
-              longitude: -115.1337 
+              latitude: 36.0719,
+              longitude: -115.1337
             },
             containedInPlace: {
               "@type": "City",
@@ -198,9 +198,15 @@ export default async function Home() {
             openingHoursSpecification: [
               {
                 "@type": "OpeningHoursSpecification",
-                dayOfWeek: ["Monday", "Tuesday", "Wednesday", "Thursday", "Friday", "Saturday", "Sunday"],
+                dayOfWeek: ["Monday", "Tuesday", "Wednesday", "Thursday", "Friday", "Saturday"],
                 opens: "11:00",
-                closes: "22:00"
+                closes: "21:00"
+              },
+              {
+                "@type": "OpeningHoursSpecification",
+                dayOfWeek: ["Sunday"],
+                opens: "11:00",
+                closes: "20:00"
               }
             ],
             hasMenu: {
@@ -226,7 +232,7 @@ export default async function Home() {
                   itemOffered: {
                     "@type": "Service",
                     name: "Dinner Buffet",
-                    description: "All-you-can-eat dinner buffet from 5pm-10pm"
+                    description: "All-you-can-eat dinner buffet from 5pm-closing"
                   }
                 },
                 {
@@ -319,7 +325,7 @@ export default async function Home() {
                 name: "What are Pure Indian Cuisine's hours?",
                 acceptedAnswer: {
                   "@type": "Answer",
-                  text: "Pure Indian Cuisine is open daily from 11:00 AM to 10:00 PM. We serve lunch buffet and dinner service throughout the day."
+                  text: "Pure Indian Cuisine is open Monday through Saturday from 11:00 AM to 9:00 PM, and Sundays from 11:00 AM to 8:00 PM. We serve lunch buffet and dinner service throughout the day."
                 }
               },
               {

@@ -98,37 +98,75 @@ export default function Hero() {
                             </div>
                         </div>
 
-                        {/* Grand Opening Announcement Box */}
+                        {/* Now Open Announcement Box */}
                         <motion.div
                             initial={{ opacity: 0, scale: 0.9 }}
                             animate={{ opacity: 1, scale: 1 }}
-                            transition={{ delay: 0.5, duration: 0.5 }}
+                            transition={{ delay: 0.6, duration: 0.8 }}
                             className="inline-block w-full max-w-xl"
                         >
-                            <div className="relative overflow-hidden bg-gradient-to-br from-red-900/90 to-black border-2 border-gold rounded-2xl p-8 backdrop-blur-md shadow-[0_0_30px_rgba(212,175,55,0.3)] group hover:shadow-[0_0_50px_rgba(212,175,55,0.5)] transition-all duration-500">
+                            <div className="relative overflow-hidden bg-gradient-to-br from-amber-900/40 to-black border-2 border-gold rounded-2xl p-8 backdrop-blur-md shadow-[0_0_30px_rgba(212,175,55,0.3)] group hover:shadow-[0_0_50px_rgba(212,175,55,0.5)] transition-all duration-500">
                                 {/* Decorative Sparkles */}
                                 <div className="absolute top-0 left-0 w-full h-full overflow-hidden pointer-events-none">
                                     <div className="absolute top-[-50%] left-[-50%] w-[200%] h-[200%] bg-[radial-gradient(circle,rgba(255,215,0,0.1)_1px,transparent_1px)] bg-[length:20px_20px] opacity-30 animate-[spin_60s_linear_infinite]" />
                                 </div>
 
                                 <div className="relative z-10 flex flex-col gap-6">
-                                    {/* Grand Opening Section */}
-                                    <div className="flex items-center gap-4">
-                                        <div className="flex-shrink-0 w-16 h-16 bg-gold rounded-full flex items-center justify-center shadow-lg shadow-gold/30 border border-gold/50">
-                                            <span className="text-black text-xs font-montserrat uppercase font-bold">TBA</span>
+                                    {/* Now Open Section */}
+                                    <div className="flex items-center gap-6">
+                                        <div className="flex-shrink-0 relative">
+                                            <div className="w-20 h-20 bg-gradient-to-br from-gold via-amber-400 to-gold rounded-full flex flex-col items-center justify-center shadow-lg shadow-gold/30 border-2 border-black">
+                                                <span className="text-black text-[10px] font-montserrat uppercase font-black leading-tight text-center">WE ARE</span>
+                                                <span className="text-black text-xl font-montserrat font-black leading-none">OPEN</span>
+                                            </div>
+                                            {/* Pulse Effect */}
+                                            <div className="absolute inset-0 w-20 h-20 bg-gold rounded-full animate-ping opacity-20" />
                                         </div>
                                         <div>
-                                            <h3 className="text-gold font-cinzel text-2xl font-bold leading-tight drop-shadow-md">
-                                                GRAND OPENING IN JANUARY
+                                            <h3 className="text-white font-cinzel text-2xl md:text-3xl font-bold leading-tight drop-shadow-md">
+                                                NOW <span className="text-gold glow-text">FULLY OPEN</span>
                                             </h3>
-                                            <p className="text-gray-300 font-montserrat text-sm mt-1">
-                                                Join us for our grand opening celebration!
-                                            </p>
+                                            <div className="flex flex-col gap-1 mt-2">
+                                                <p className="text-gray-200 font-montserrat text-base">
+                                                    Professional service and authentic Indian flavours are back!
+                                                </p>
+                                            </div>
                                         </div>
+                                    </div>
+
+                                    {/* Divider */}
+                                    <div className="w-full h-[1px] bg-gradient-to-r from-transparent via-gold/50 to-transparent" />
+
+                                    {/* Daily Specials Section */}
+                                    <div className="grid grid-cols-2 gap-4">
+                                        <div className="bg-black/60 border border-gold/30 rounded-xl p-4 flex flex-col items-center justify-center text-center group-hover:border-gold/60 transition-colors">
+                                            <span className="text-gold text-[10px] font-montserrat uppercase font-bold tracking-widest mb-1">LUNCH BUFFET</span>
+                                            <div className="flex items-baseline gap-1">
+                                                <span className="text-white text-2xl font-cinzel font-bold">$17</span>
+                                                <span className="text-gold text-lg font-cinzel font-bold">.99</span>
+                                            </div>
+                                        </div>
+                                        <div className="bg-black/60 border border-gold/30 rounded-xl p-4 flex flex-col items-center justify-center text-center group-hover:border-gold/60 transition-colors">
+                                            <span className="text-gold text-[10px] font-montserrat uppercase font-bold tracking-widest mb-1">DINNER BUFFET</span>
+                                            <div className="flex items-baseline gap-1">
+                                                <span className="text-white text-2xl font-cinzel font-bold">$23</span>
+                                                <span className="text-gold text-lg font-cinzel font-bold">.99</span>
+                                            </div>
+                                        </div>
+                                    </div>
+
+                                    <div className="flex flex-col gap-1 items-center">
+                                        <p className="text-gray-300 font-montserrat text-sm font-medium">
+                                            MON-SAT: 11AM–9PM • SUN: 11AM–8PM
+                                        </p>
+                                        <p className="text-gold/80 font-montserrat text-[10px] italic uppercase tracking-wider">
+                                            *Located at 1405 E Sunset Rd, Las Vegas
+                                        </p>
                                     </div>
                                 </div>
                             </div>
                         </motion.div>
+
 
                         {/* CTA Buttons - Moved to Right Column */}
                     </motion.div>
@@ -201,8 +239,8 @@ export default function Hero() {
                                     transition={{ duration: 6, repeat: Infinity, ease: "easeInOut" }}
                                 >
                                     <div className="text-center transform -rotate-12">
-                                        <div className="font-cinzel font-bold text-black text-sm leading-none mb-1">OPENING</div>
-                                        <div className="font-black text-black text-xl leading-none">SOON</div>
+                                        <div className="font-cinzel font-bold text-black text-sm leading-none mb-1">WE ARE</div>
+                                        <div className="font-black text-black text-xl leading-none">OPEN</div>
                                     </div>
                                 </motion.div>
 
@@ -263,6 +301,17 @@ export default function Hero() {
                                 className="flex items-center gap-6 pt-4"
                             >
                                 <div className="h-[1px] w-12 bg-gradient-to-r from-transparent to-gold/50"></div>
+                                <a
+                                    href="https://www.facebook.com/profile.php?id=61585347796529"
+                                    target="_blank"
+                                    rel="noopener noreferrer"
+                                    className="group relative w-12 h-12 flex items-center justify-center rounded-full bg-[#1877F2] hover:bg-[#166fe5] hover:scale-110 transition-all duration-300 shadow-lg hover:shadow-blue-500/50 border-2 border-blue-400/30 hover:border-blue-300"
+                                    aria-label="Follow us on Facebook"
+                                >
+                                    <svg className="w-6 h-6 text-white group-hover:scale-110 transition-transform duration-300" fill="currentColor" viewBox="0 0 24 24">
+                                        <path d="M24 12.073c0-6.627-5.373-12-12-12s-12 5.373-12 12c0 5.99 4.388 10.954 10.954 11.854v-8.385H7.078v-3.47h3.047V9.43c0-3.007 1.791-4.669 4.533-4.669 1.312 0 2.686.235 2.686.235v2.953H15.83c-1.491 0-1.956.925-1.956 1.874v2.25h3.328l-.532 3.47h-2.796v8.385C19.612 23.027 24 18.062 24 12.073z" />
+                                    </svg>
+                                </a>
                                 <a
                                     href="https://www.instagram.com/pureindiancuisinevegas/"
                                     target="_blank"

@@ -82,34 +82,34 @@ export default function ContactPageContent() {
                             ) : (
                                 <form action={handleSubmit} className="space-y-4">
                                     <div>
-                                        <input 
-                                            type="text" 
+                                        <input
+                                            type="text"
                                             name="name"
-                                            placeholder="Your Name" 
+                                            placeholder="Your Name"
                                             required
                                             className="w-full bg-white/5 border border-white/10 p-4 text-white placeholder:text-gray-500 focus:border-gold focus:outline-none transition-colors"
                                         />
                                     </div>
                                     <div>
-                                        <input 
-                                            type="email" 
+                                        <input
+                                            type="email"
                                             name="email"
-                                            placeholder="Your Email" 
+                                            placeholder="Your Email"
                                             required
                                             className="w-full bg-white/5 border border-white/10 p-4 text-white placeholder:text-gray-500 focus:border-gold focus:outline-none transition-colors"
                                         />
                                     </div>
                                     <div>
-                                        <textarea 
+                                        <textarea
                                             name="message"
-                                            placeholder="Your Message" 
+                                            placeholder="Your Message"
                                             required
                                             rows={4}
                                             className="w-full bg-white/5 border border-white/10 p-4 text-white placeholder:text-gray-500 focus:border-gold focus:outline-none transition-colors resize-none"
                                         />
                                     </div>
-                                    <button 
-                                        type="submit" 
+                                    <button
+                                        type="submit"
                                         disabled={status === "submitting"}
                                         className="w-full bg-gold text-black font-bold uppercase tracking-widest py-4 hover:bg-white transition-colors disabled:opacity-50 disabled:cursor-not-allowed flex items-center justify-center gap-2"
                                     >
@@ -126,7 +126,8 @@ export default function ContactPageContent() {
                         <div>
                             <h2 className="font-cinzel text-3xl text-gold-gradient mb-8">Hours</h2>
                             <div>
-                                <p className="text-gray-400 text-sm font-montserrat">Daily: 11 AM - 10 PM</p>
+                                <p className="text-gray-400 text-sm font-montserrat">Mon - Sat: 11 AM - 9 PM</p>
+                                <p className="text-gray-400 text-sm font-montserrat">Sunday: 11 AM - 8 PM</p>
                             </div>
                         </div>
                     </motion.div>

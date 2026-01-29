@@ -22,7 +22,7 @@ export const metadata: Metadata = {
     default: "Pure Indian Cuisine Las Vegas | Best Indian Food Restaurant Near Airport | Buffet & Banquet Hall",
     template: "%s | Pure Indian Cuisine Las Vegas"
   },
-  description: "Best Indian food in Las Vegas! Authentic North Indian cuisine, all-you-can-eat buffet, family-style dinner, and banquet hall. Located at 1405 E Sunset Rd near Las Vegas airport. Open daily 11am-10pm. Butter chicken, tandoori, biryani, vegetarian & halal options.",
+  description: "Best Indian food in Las Vegas! Authentic North Indian cuisine, all-you-can-eat buffet, family-style dinner, and banquet hall. Located at 1405 E Sunset Rd near Las Vegas airport. Open Mon-Sat 11am-9pm, Sun 11am-8pm. Butter chicken, tandoori, biryani, vegetarian & halal options.",
   keywords: ["Indian food Las Vegas", "Indian restaurant Las Vegas", "Best Indian food Las Vegas", "Indian buffet Las Vegas", "Indian food near me", "Indian restaurant near airport", "Butter chicken Las Vegas", "Tandoori Las Vegas", "Biryani Las Vegas", "Indian food delivery Las Vegas", "Vegetarian Indian food Las Vegas", "Halal Indian food Las Vegas", "North Indian food Las Vegas", "Indian catering Las Vegas", "Banquet hall Las Vegas", "Wedding venue Las Vegas", "Pure Indian Cuisine", "1405 E Sunset Rd", "Indian food 89119"],
   authors: [{ name: "Pure Indian Cuisine" }],
   creator: "Pure Indian Cuisine",
@@ -54,7 +54,7 @@ export const metadata: Metadata = {
     url: "https://pureindiacuisine.com",
     siteName: "Pure Indian Cuisine",
     title: "Pure Indian Cuisine Las Vegas | Best Indian Food Restaurant Near Airport",
-    description: "Best Indian food in Las Vegas! Authentic North Indian cuisine, all-you-can-eat buffet, family-style dinner, and banquet hall. Located at 1405 E Sunset Rd near Las Vegas airport. Open daily 11am-10pm.",
+    description: "Best Indian food in Las Vegas! Authentic North Indian cuisine, all-you-can-eat buffet, family-style dinner, and banquet hall. Located at 1405 E Sunset Rd near Las Vegas airport. Open Mon-Sat 11am-9pm, Sun 11am-8pm.",
     images: [
       {
         url: "/icon.jpg",
@@ -73,7 +73,7 @@ export const metadata: Metadata = {
   twitter: {
     card: "summary_large_image",
     title: "Pure Indian Cuisine Las Vegas | Best Indian Food Restaurant Near Airport",
-    description: "Best Indian food in Las Vegas! Authentic North Indian cuisine, all-you-can-eat buffet, family-style dinner, and banquet hall. Open daily 11am-10pm.",
+    description: "Best Indian food in Las Vegas! Authentic North Indian cuisine, all-you-can-eat buffet, family-style dinner, and banquet hall. Open Mon-Sat 11am-9pm, Sun 11am-8pm.",
     images: ["/icon.jpg", "/images/hero-background.jpg"],
     creator: "@pureindiancuisinevegas",
     site: "@pureindiancuisinevegas",
