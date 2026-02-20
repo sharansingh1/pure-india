@@ -35,8 +35,8 @@ export default function CateringPageContent() {
                             Elevate your event with the authentic taste of India. From intimate gatherings to grand weddings, we bring the royal feast to you.
                         </p>
                         <div className="flex flex-col sm:flex-row items-center justify-center gap-6">
-                            <a 
-                                href="tel:+17025550123" 
+                            <a
+                                href="tel:+17029164083"
                                 className="px-8 py-4 bg-gold text-black font-bold uppercase tracking-widest hover:bg-white transition-colors duration-300 flex items-center gap-3"
                             >
                                 <Phone size={20} /> Call to Cater
@@ -47,25 +47,25 @@ export default function CateringPageContent() {
             </div>
 
             <div className="container mx-auto px-4">
-                
+
                 {/* Why Choose Us Grid */}
                 <section className="mb-32">
                     <div className="grid md:grid-cols-3 gap-8">
                         {[
-                            { 
-                                icon: <ChefHat className="w-10 h-10" />, 
-                                title: "Master Chefs", 
-                                desc: "Culinary experts with decades of experience in authentic regional Indian cuisine." 
+                            {
+                                icon: <ChefHat className="w-10 h-10" />,
+                                title: "Master Chefs",
+                                desc: "Culinary experts with decades of experience in authentic regional Indian cuisine."
                             },
-                            { 
-                                icon: <Star className="w-10 h-10" />, 
-                                title: "Premium Quality", 
-                                desc: "We use only the freshest ingredients and hand-ground spices for unmatched flavor." 
+                            {
+                                icon: <Star className="w-10 h-10" />,
+                                title: "Premium Quality",
+                                desc: "We use only the freshest ingredients and hand-ground spices for unmatched flavor."
                             },
-                            { 
-                                icon: <Truck className="w-10 h-10" />, 
-                                title: "Seamless Service", 
-                                desc: "Professional delivery, setup, and service staff available to ensure a flawless event." 
+                            {
+                                icon: <Truck className="w-10 h-10" />,
+                                title: "Seamless Service",
+                                desc: "Professional delivery, setup, and service staff available to ensure a flawless event."
                             }
                         ].map((feature, idx) => (
                             <motion.div
@@ -89,10 +89,10 @@ export default function CateringPageContent() {
                 {/* Catering Packages */}
                 <section className="mb-32" id="packages">
                     <SectionHeading title="Catering Packages" subtitle="Curated Menus" />
-                    
+
                     <div className="grid md:grid-cols-3 gap-8 mt-16 max-w-7xl mx-auto">
                         {/* Silver Package */}
-                        <motion.div 
+                        <motion.div
                             initial={{ opacity: 0, y: 20 }}
                             whileInView={{ opacity: 1, y: 0 }}
                             viewport={{ once: true }}
@@ -101,9 +101,9 @@ export default function CateringPageContent() {
                             <h3 className="font-cinzel text-2xl text-white mb-2 group-hover:text-gold transition-colors">Silver Package</h3>
                             <div className="text-gold font-montserrat font-bold text-3xl mb-6">$25 <span className="text-sm font-normal text-gray-500">/ person</span></div>
                             <p className="text-gray-500 text-xs mb-8 font-montserrat uppercase tracking-wider">Perfect for Luncheons</p>
-                            
+
                             <div className="w-full h-[1px] bg-white/10 mb-8" />
-                            
+
                             <ul className="space-y-4 text-gray-400 font-montserrat text-sm mb-10">
                                 <li className="flex gap-3"><Check className="text-gold w-4 h-4 shrink-0" /> 2 Appetizers</li>
                                 <li className="flex gap-3"><Check className="text-gold w-4 h-4 shrink-0" /> 2 Main Curries (Veg/Non-Veg)</li>
@@ -115,7 +115,7 @@ export default function CateringPageContent() {
                         </motion.div>
 
                         {/* Gold Package */}
-                        <motion.div 
+                        <motion.div
                             initial={{ opacity: 0, y: 20 }}
                             whileInView={{ opacity: 1, y: 0 }}
                             viewport={{ once: true }}
@@ -126,9 +126,9 @@ export default function CateringPageContent() {
                             <h3 className="font-cinzel text-2xl text-white mb-2">Gold Package</h3>
                             <div className="text-gold font-montserrat font-bold text-3xl mb-6">$35 <span className="text-sm font-normal text-gray-500">/ person</span></div>
                             <p className="text-gray-500 text-xs mb-8 font-montserrat uppercase tracking-wider">Ideal for Dinners</p>
-                            
+
                             <div className="w-full h-[1px] bg-gold/20 mb-8" />
-                            
+
                             <ul className="space-y-4 text-gray-300 font-montserrat text-sm mb-10">
                                 <li className="flex gap-3"><Check className="text-gold w-4 h-4 shrink-0" /> 3 Appetizers</li>
                                 <li className="flex gap-3"><Check className="text-gold w-4 h-4 shrink-0" /> 3 Main Curries (Premium)</li>
@@ -140,7 +140,7 @@ export default function CateringPageContent() {
                         </motion.div>
 
                         {/* Platinum Package */}
-                        <motion.div 
+                        <motion.div
                             initial={{ opacity: 0, y: 20 }}
                             whileInView={{ opacity: 1, y: 0 }}
                             viewport={{ once: true }}
@@ -150,9 +150,9 @@ export default function CateringPageContent() {
                             <h3 className="font-cinzel text-2xl text-white mb-2 group-hover:text-gold transition-colors">Platinum Package</h3>
                             <div className="text-gold font-montserrat font-bold text-3xl mb-6">$45 <span className="text-sm font-normal text-gray-500">/ person</span></div>
                             <p className="text-gray-500 text-xs mb-8 font-montserrat uppercase tracking-wider">The Royal Feast</p>
-                            
+
                             <div className="w-full h-[1px] bg-white/10 mb-8" />
-                            
+
                             <ul className="space-y-4 text-gray-400 font-montserrat text-sm mb-10">
                                 <li className="flex gap-3"><Check className="text-gold w-4 h-4 shrink-0" /> 4 Appetizers</li>
                                 <li className="flex gap-3"><Check className="text-gold w-4 h-4 shrink-0" /> 4 Main Curries (Inc. Seafood/Goat)</li>
@@ -163,9 +163,9 @@ export default function CateringPageContent() {
                             </ul>
                         </motion.div>
                     </div>
-                    
+
                     <div className="text-center mt-12">
-                         <p className="text-gray-500 text-sm font-montserrat italic">
+                        <p className="text-gray-500 text-sm font-montserrat italic">
                             * Minimum order of 25 people required for catering packages. Prices subject to change.
                         </p>
                     </div>
@@ -183,25 +183,25 @@ export default function CateringPageContent() {
                         />
                         <div className="absolute inset-0 bg-gradient-to-r from-black via-black/80 to-black/60" />
                     </div>
-                    
+
                     <div className="relative z-10 max-w-4xl mx-auto text-center px-4">
                         <h2 className="font-cinzel text-4xl md:text-5xl text-white mb-6">Ready to Impress Your Guests?</h2>
                         <p className="text-gray-300 font-montserrat text-lg mb-10 leading-relaxed">
-                            Don't settle for ordinary food. Let us create a culinary experience that your guests will talk about for years. 
+                            Don't settle for ordinary food. Let us create a culinary experience that your guests will talk about for years.
                             Custom menus available upon request.
                         </p>
                         <div className="flex flex-col sm:flex-row items-center justify-center gap-6">
-                            <a 
-                                href="tel:+17028975555" 
+                            <a
+                                href="tel:+17029164083"
                                 className="group relative px-10 py-5 bg-gold overflow-hidden transition-all duration-500 hover:shadow-lg hover:shadow-gold/30"
                             >
                                 <div className="absolute inset-0 bg-gradient-to-r from-amber-500 to-gold opacity-0 group-hover:opacity-100 transition-opacity duration-500" />
                                 <span className="relative z-10 font-montserrat font-bold tracking-[0.2em] uppercase text-black flex items-center gap-3">
-                                    <Phone size={20} /> (702) 897-5555
+                                    <Phone size={20} /> (702) 916-4083
                                 </span>
                             </a>
-                            <Link 
-                                href="/contact" 
+                            <Link
+                                href="/contact"
                                 className="px-10 py-5 border border-white/30 hover:border-gold text-white hover:text-gold font-montserrat font-bold tracking-[0.2em] uppercase transition-all duration-300"
                             >
                                 Email Inquiry

@@ -62,7 +62,7 @@ export default function ContactPageContent() {
                                     <div>
                                         <h3 className="font-cinzel text-xl text-white mb-2">Phone</h3>
                                         <p className="text-gray-400 font-montserrat">
-                                            702-897-5555<br />
+                                            (702) 916-4083<br />
                                             725-999-2736
                                         </p>
                                     </div>

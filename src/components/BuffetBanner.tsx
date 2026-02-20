@@ -22,7 +22,7 @@ export default function BuffetBanner() {
               <span className="text-gold">★</span>
               <span>Best Indian Buffet in Las Vegas</span>
               <span className="text-gold">★</span>
-              <span>Discounts for Truck/Taxi/Uber Drivers</span>
+              <span>15% Off for Truck/Taxi/Uber Drivers</span>
             </span>
           ))}
         </motion.div>

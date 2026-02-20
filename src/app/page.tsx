@@ -5,16 +5,17 @@ import InfoSection from "@/components/InfoSection";
 import Footer from "@/components/Footer";
 import FeaturedDish from "@/components/FeaturedDish";
 import Testimonials from "@/components/Testimonials";
-import Newsletter from "@/components/Newsletter";
+import MembershipSection from "@/components/MembershipSection";
+import HookahLoungeSection from "@/components/HookahLoungeSection";
 import { client } from "@/sanity/lib/client";
 import { defineQuery } from "next-sanity";
 
 export const dynamic = 'force-dynamic';
 
 export const metadata: Metadata = {
-  title: "Pure Indian Cuisine Las Vegas | Best Indian Food Restaurant Near Airport | Buffet & Banquet Hall",
-  description: "Best Indian food in Las Vegas! Authentic North Indian cuisine, all-you-can-eat buffet, family-style dinner, and banquet hall. Located at 1405 E Sunset Rd near Las Vegas airport. Open Mon-Sat 11am-9pm, Sun 11am-8pm. Butter chicken, tandoori, biryani, vegetarian & halal options.",
-  keywords: ["Indian food Las Vegas", "Indian restaurant Las Vegas", "Best Indian food Las Vegas", "Indian buffet Las Vegas", "Indian food near me", "Indian restaurant near airport", "Butter chicken Las Vegas", "Tandoori Las Vegas", "Biryani Las Vegas", "Indian food delivery Las Vegas", "Vegetarian Indian food Las Vegas", "Halal Indian food Las Vegas", "North Indian food Las Vegas", "Indian catering Las Vegas", "Banquet hall Las Vegas", "Wedding venue Las Vegas", "Pure Indian Cuisine", "1405 E Sunset Rd", "Indian food 89119"],
+  title: "Pure Indian Cuisine | Fine Dining & Buffet Las Vegas | Best Indian Restaurant",
+  description: "Voted best Indian food in Las Vegas! Experience authentic fine dining a la carte or our famous all-you-can-eat buffet. Featuring a premium bar, banquet hall, and late-night hookah lounge. Near Las Vegas airport.",
+  keywords: ["Indian fine dining Las Vegas", "Best Indian restaurant Las Vegas", "Indian buffet Las Vegas", "Hookah lounge Las Vegas", "Pure Indian Cuisine Las Vegas", "Indian food near me"],
   openGraph: {
     title: "Pure Indian Cuisine Las Vegas | Best Indian Food Restaurant Near Airport",
     description: "Best Indian food in Las Vegas! Authentic North Indian cuisine, all-you-can-eat buffet, family-style dinner, and banquet hall. Located at 1405 E Sunset Rd near Las Vegas airport.",
@@ -167,11 +168,11 @@ export default async function Home() {
               "https://pureindiacuisine.com/images/indian-buffet-food-real.png"
             ],
             url: "https://pureindiacuisine.com",
-            telephone: "+17028975555",
+            telephone: "+17029164083",
             menu: "https://pureindiacuisine.com/menu",
             servesCuisine: ["Indian", "North Indian", "Indo-Chinese"],
             priceRange: "$$",
-            description: "Experience the best Indian food in Las Vegas. All-you-can-eat lunch & dinner buffet, fine dining a la carte menu, and premier banquet hall for weddings and events. Located near the airport.",
+            description: "Experience the best Indian fine dining and all-you-can-eat buffet in Las Vegas. From authentic a la carte curries to our legendary rotating buffet. Featuring a premium bar, banquet hall, and late-night hookah lounge.",
             address: {
               "@type": "PostalAddress",
               streetAddress: "1405 E Sunset Rd",
@@ -223,7 +224,15 @@ export default async function Home() {
                   "@type": "Offer",
                   itemOffered: {
                     "@type": "Service",
-                    name: "Lunch Buffet",
+                    name: "Fine Dining A La Carte",
+                    description: "Premium chef-curated Indian fine dining experience"
+                  }
+                },
+                {
+                  "@type": "Offer",
+                  itemOffered: {
+                    "@type": "Service",
+                    name: "Royal Indian Buffet",
                     description: "All-you-can-eat Indian buffet available daily"
                   }
                 },
@@ -317,7 +326,7 @@ export default async function Home() {
                 name: "Does Pure Indian Cuisine offer catering?",
                 acceptedAnswer: {
                   "@type": "Answer",
-                  text: "Yes! Pure Indian Cuisine provides full-service catering for weddings, corporate events, and parties. We offer live tandoor stations, chaat counters, and customized menus. Contact us at (702) 897-5555 for catering inquiries."
+                  text: "Yes! Pure Indian Cuisine provides full-service catering for weddings, corporate events, and parties. We offer live tandoor stations, chaat counters, and customized menus. Contact us at (702) 916-4083 for catering inquiries."
                 }
               },
               {
@@ -341,8 +350,10 @@ export default async function Home() {
         }}
       />
       <InfoSection />
+      <MembershipSection />
       <MenuBook menuItems={menuItems} />
       <FeaturedDish />
+      <HookahLoungeSection />
       <Testimonials />
 
       <Footer />

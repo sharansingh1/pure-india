@@ -84,7 +84,7 @@ export default function Hero() {
                             <h1 className="font-cinzel text-4xl md:text-6xl lg:text-7xl font-bold leading-none">
                                 <span className="text-white">Las Vegas' Premier</span>
                                 <br />
-                                <span className="text-transparent bg-clip-text bg-gradient-to-r from-gold via-yellow-300 to-gold glow-text">All-Day Indian Buffet</span>
+                                <span className="text-transparent bg-clip-text bg-gradient-to-r from-gold via-yellow-300 to-gold glow-text">Indian Dining & Buffet</span>
                             </h1>
 
                             <div className="relative mt-8 pl-8 border-l-4 border-gold/60 py-2">
@@ -92,8 +92,8 @@ export default function Hero() {
                                 <div className="absolute -left-[9px] bottom-0 w-4 h-4 rounded-full bg-black border-2 border-gold/60" />
 
                                 <p className="text-gray-200 text-base md:text-xl font-montserrat leading-relaxed max-w-lg">
-                                    Indulge in an authentic all-you-can-eat Indian buffet experience. From aromatic curries to sizzling tandoori, enjoy unlimited servings of our finest dishes all day long. <br />
-                                    <span className="text-sm text-gray-400 mt-2 block">Best Indian food in Las Vegas near the airport. Authentic North Indian cuisine, vegetarian options, and halal certified.</span>
+                                    Voted the <strong>Best Indian Restaurant in Las Vegas</strong>. Experience exquisite a la carte fine dining or indulge in our legendary all-you-can-eat buffet. <br />
+                                    <span className="text-sm text-gray-400 mt-2 block">Authentic flavors, royal ambience, and impeccable service near the airport. Vegetarian and Halal options available.</span>
                                 </p>
                             </div>
                         </div>
@@ -244,6 +244,24 @@ export default function Hero() {
                                     </div>
                                 </motion.div>
 
+                                {/* Membership Pop-up Badge */}
+                                <motion.div
+                                    className="absolute top-24 -right-12 bg-black border-2 border-gold p-4 rounded-xl shadow-2xl z-20 cursor-pointer"
+                                    initial={{ x: 50, opacity: 0 }}
+                                    animate={{ x: 0, opacity: 1 }}
+                                    transition={{ delay: 1.5 }}
+                                    onClick={() => document.getElementById("membership-section")?.scrollIntoView({ behavior: "smooth" })}
+                                    whileHover={{ scale: 1.05 }}
+                                >
+                                    <div className="flex items-center gap-3">
+                                        <div className="w-8 h-8 rounded-full bg-gold flex items-center justify-center text-black font-bold">4</div>
+                                        <div className="text-left">
+                                            <div className="text-gold text-[10px] font-bold tracking-widest uppercase">Buffets Monthly</div>
+                                            <div className="text-white font-cinzel font-bold">$55 / Month</div>
+                                        </div>
+                                    </div>
+                                </motion.div>
+
                                 {/* Decorative Badge - Bottom Left (Diya/Lamp) */}
                                 <motion.div
                                     className="absolute -bottom-6 -left-6 w-28 h-28 bg-gradient-to-br from-amber-600 via-gold to-amber-500 rounded-full flex items-center justify-center shadow-xl shadow-gold/30 border-2 border-amber-700"
@@ -277,18 +295,17 @@ export default function Hero() {
                                 >
                                     <div className="absolute inset-0 bg-gradient-to-r from-amber-500 to-gold opacity-0 group-hover:opacity-100 transition-opacity duration-500" />
                                     <span className="relative z-10 font-montserrat font-bold tracking-[0.2em] uppercase text-black text-sm">
-                                        Contact Us
+                                        Book Table
                                     </span>
                                 </a>
 
                                 <button
-                                    onClick={scrollToMenu}
-                                    className="group relative px-8 py-4 bg-transparent overflow-hidden transition-all duration-500 min-w-[160px]"
+                                    onClick={() => document.getElementById("membership-section")?.scrollIntoView({ behavior: "smooth" })}
+                                    className="group relative px-8 py-4 bg-white/10 overflow-hidden transition-all duration-500 min-w-[160px] border border-gold/30"
                                 >
-                                    <div className="absolute inset-0 border-2 border-gold/50 group-hover:border-gold transition-colors duration-500" />
-                                    <div className="absolute inset-0 bg-gold/10 scale-x-0 group-hover:scale-x-100 transition-transform duration-500 origin-left" />
-                                    <span className="relative z-10 font-montserrat font-medium tracking-[0.2em] uppercase text-gold-light group-hover:text-white transition-colors duration-300 text-sm">
-                                        View Buffet
+                                    <div className="absolute inset-0 bg-gold scale-x-0 group-hover:scale-x-100 transition-transform duration-500 origin-left" />
+                                    <span className="relative z-10 font-montserrat font-bold tracking-[0.2em] uppercase text-gold group-hover:text-black transition-colors duration-300 text-sm">
+                                        Buffet Club
                                     </span>
                                 </button>
                             </div>

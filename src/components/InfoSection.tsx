@@ -108,7 +108,7 @@ export default function InfoSection() {
                                         How It Works
                                     </h4>
                                     <p className="text-gray-300 font-montserrat text-sm leading-relaxed pl-4 border-l border-gold/20">
-                                        We are Las Vegas' premier <strong>All-You-Can-Eat Indian Buffet</strong>. Simply arrive and be seated by our host. You can head straight to the buffet stations to enjoy unlimited servings of our rotating selection.
+                                        Experience Las Vegas' premier <strong>Indian Dining Destination</strong>. Whether you're here for our exquisite a la carte fine dining or our famous all-you-can-eat buffet, we promise a royal feast. Simply arrive and let our host guide you to your preferred experience.
                                     </p>
                                 </div>
 
@@ -118,7 +118,7 @@ export default function InfoSection() {
                                         What's Included
                                     </h4>
                                     <p className="text-gray-300 font-montserrat text-sm leading-relaxed pl-4 border-l border-gold/20">
-                                        Your buffet price includes unlimited access to all buffet stations (Appetizers, Curries, Rice, Desserts). Fresh <strong>Naan</strong> is served directly to your table.
+                                        Choose between our chef-curated a la carte menu for a personal dining experience, or our legendary buffet for unlimited access to rotating curries, appetizers, and desserts. Fresh <strong>Naan</strong> is served directly to your table for both experiences.
                                     </p>
                                 </div>
 
@@ -150,8 +150,8 @@ export default function InfoSection() {
             <section className="py-24 bg-[#080808] text-white relative overflow-hidden text-center">
                 <div className="container mx-auto px-4 relative z-10">
                     <SectionHeading
-                        title="Experience The Luxury"
-                        subtitle="More Than Just A Buffet"
+                        title="The Royal Experience"
+                        subtitle="Fine Dining, Buffet & More"
                         centered={true}
                     />
 

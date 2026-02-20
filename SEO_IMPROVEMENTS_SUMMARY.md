@@ -84,7 +84,7 @@
    - If images don't exist, create them or update the metadata to point to existing images
 
 ### 5. **Add Business Information** (If Missing)
-   - Verify phone number: `+17028975555`
+   - Verify phone number: `+17029164083`
    - Verify address: `1405 E Sunset Rd, Las Vegas, NV 89119`
    - Verify coordinates: `36.0719, -115.1337`
    - Update if any information is incorrect
