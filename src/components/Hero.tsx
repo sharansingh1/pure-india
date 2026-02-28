@@ -3,6 +3,7 @@
 import { motion, AnimatePresence } from "framer-motion";
 import Image from "next/image";
 import { useState, useEffect } from "react";
+import { UtensilsCrossed, Wine, ChefHat, Coffee } from "lucide-react";
 
 const carouselImages = [
     {
@@ -10,20 +11,20 @@ const carouselImages = [
         alt: "Butter Chicken with Naan"
     },
     {
+        src: "/images/tandoori.jpg",
+        alt: "Tandoori Chicken"
+    },
+    {
+        src: "/images/gulab.webp",
+        alt: "Gulab Jamun"
+    },
+    {
         src: "/chickenbiryani.jpg",
         alt: "Chicken Biryani"
     },
     {
-        src: "/machurian.jpg",
-        alt: "Manchurian"
-    },
-    {
-        src: "/dessert.png",
-        alt: "Dessert"
-    },
-    {
-        src: "/mithai.png",
-        alt: "Mithai - Indian Sweets"
+        src: "/images/paneer.jpg",
+        alt: "paneer tikka masala"
     }
 ];
 
@@ -92,77 +93,114 @@ export default function Hero() {
                                 <div className="absolute -left-[9px] bottom-0 w-4 h-4 rounded-full bg-black border-2 border-gold/60" />
 
                                 <p className="text-gray-200 text-base md:text-xl font-montserrat leading-relaxed max-w-lg">
-                                    Voted the <strong>Best Indian Restaurant in Las Vegas</strong>. Experience exquisite a la carte fine dining or indulge in our legendary all-you-can-eat buffet. <br />
-                                    <span className="text-sm text-gray-400 mt-2 block">Authentic flavors, royal ambience, and impeccable service near the airport. Vegetarian and Halal options available.</span>
+                                    Savor the most authentic Indian flavors in Las Vegas. Indulge in our exquisite a la carte fine dining or explore our legendary all-you-can-eat buffet, featuring amazing dishes crafted with passion. <br />
+                                    <span className="text-sm text-gray-400 mt-2 block">Authentic flavors, royal ambience, and impeccable service near the airport. Extensive vegetarian options available.</span>
                                 </p>
                             </div>
                         </div>
 
                         {/* Now Open Announcement Box */}
+                        {/* Highlight Cards Grid */}
                         <motion.div
-                            initial={{ opacity: 0, scale: 0.9 }}
-                            animate={{ opacity: 1, scale: 1 }}
+                            initial={{ opacity: 0, y: 30 }}
+                            animate={{ opacity: 1, y: 0 }}
                             transition={{ delay: 0.6, duration: 0.8 }}
-                            className="inline-block w-full max-w-xl"
+                            className="w-full max-w-xl mt-8 grid grid-cols-2 gap-4 sm:gap-6"
                         >
-                            <div className="relative overflow-hidden bg-gradient-to-br from-amber-900/40 to-black border-2 border-gold rounded-2xl p-8 backdrop-blur-md shadow-[0_0_30px_rgba(212,175,55,0.3)] group hover:shadow-[0_0_50px_rgba(212,175,55,0.5)] transition-all duration-500">
-                                {/* Decorative Sparkles */}
-                                <div className="absolute top-0 left-0 w-full h-full overflow-hidden pointer-events-none">
-                                    <div className="absolute top-[-50%] left-[-50%] w-[200%] h-[200%] bg-[radial-gradient(circle,rgba(255,215,0,0.1)_1px,transparent_1px)] bg-[length:20px_20px] opacity-30 animate-[spin_60s_linear_infinite]" />
+                            {/* Card 1: Buffet */}
+                            <a href="/buffet" className="group relative rounded-xl hover:rounded-2xl overflow-hidden border-2 border-gold/50 hover:border-gold transition-all duration-500 shadow-[0_4px_20px_rgba(0,0,0,0.8)] hover:shadow-[0_0_40px_rgba(212,175,55,0.6)] aspect-[16/10] flex flex-col justify-end transform hover:-translate-y-2">
+                                <Image
+                                    src="/images/indian-buffet-food-real.png"
+                                    alt="Lunch & Dinner Buffet"
+                                    fill
+                                    className="object-cover group-hover:scale-110 transition-transform duration-700 saturate-150 brightness-90"
+                                />
+                                {/* Vibrant Indian Spice Gradient Overlay */}
+                                <div className="absolute inset-0 bg-gradient-to-t from-black via-[#631206]/80 to-transparent opacity-90 group-hover:opacity-80 transition-opacity duration-500" />
+
+                                {/* Royal Inner Frame */}
+                                <div className="absolute inset-3 border border-gold/10 rounded-lg pointer-events-none group-hover:border-gold/30 transition-colors duration-500" />
+
+                                {/* Ambient Glow */}
+                                <div className="absolute -top-10 -right-10 w-32 h-32 bg-gold/20 rounded-full blur-2xl group-hover:bg-orange-500/40 transition-colors duration-500" />
+
+                                <div className="relative z-10 p-5 text-center transform group-hover:-translate-y-1 transition-transform duration-500">
+                                    <h3 className="text-transparent bg-clip-text bg-gradient-to-r from-amber-200 via-gold to-yellow-500 font-cinzel font-black text-base md:text-xl leading-tight uppercase tracking-wider mb-2 drop-shadow-[0_2px_2px_rgba(0,0,0,1)]">Lunch & Dinner Buffet</h3>
+                                    {/* Placeholder for your subtext */}
+                                    <p className="text-white font-montserrat font-bold text-[10px] md:text-xs uppercase tracking-[0.2em] drop-shadow-[0_2px_4px_rgba(0,0,0,1)]">
+                                        LUNCH: 11-3 • DINNER: 5-9
+                                    </p>
+                                </div>
+                            </a>
+
+                            {/* Card 2: Happy Hour */}
+                            <a href="/contact" className="group relative rounded-xl hover:rounded-2xl overflow-hidden border-2 border-gold/50 hover:border-gold transition-all duration-500 shadow-[0_4px_20px_rgba(0,0,0,0.8)] hover:shadow-[0_0_40px_rgba(212,175,55,0.6)] aspect-[16/10] flex flex-col justify-end transform hover:-translate-y-2">
+                                <Image
+                                    src="https://images.unsplash.com/photo-1544145945-f90425340c7e?q=80&w=800&auto=format&fit=crop"
+                                    alt="Happy Hour"
+                                    fill
+                                    className="object-cover group-hover:scale-110 transition-transform duration-700 saturate-150 brightness-90"
+                                />
+                                <div className="absolute inset-0 bg-gradient-to-t from-black via-[#631206]/80 to-transparent opacity-90 group-hover:opacity-80 transition-opacity duration-500" />
+
+                                <div className="absolute inset-3 border border-gold/10 rounded-lg pointer-events-none group-hover:border-gold/30 transition-colors duration-500" />
+                                <div className="absolute -top-10 -right-10 w-32 h-32 bg-gold/20 rounded-full blur-2xl group-hover:bg-orange-500/40 transition-colors duration-500" />
+
+                                <div className="relative z-10 p-5 text-center transform group-hover:-translate-y-1 transition-transform duration-500">
+                                    <h3 className="text-transparent bg-clip-text bg-gradient-to-r from-amber-200 via-gold to-yellow-500 font-cinzel font-black text-base md:text-xl leading-tight uppercase tracking-wider mb-2 drop-shadow-[0_2px_2px_rgba(0,0,0,1)]">Happy Hour</h3>
+                                    {/* Placeholder for your subtext */}
+                                    <p className="text-white font-montserrat font-bold text-[10px] md:text-xs uppercase tracking-[0.2em] drop-shadow-[0_2px_4px_rgba(0,0,0,1)]">
+                                        EVERY DAY: 3PM - 5PM
+                                    </p>
+                                </div>
+                            </a>
+
+                            {/* Card 3: Dine-In */}
+                            <a href="/menu" className="group relative rounded-xl hover:rounded-2xl overflow-hidden border-2 border-gold/50 hover:border-gold transition-all duration-500 shadow-[0_4px_20px_rgba(0,0,0,0.8)] hover:shadow-[0_0_40px_rgba(212,175,55,0.6)] aspect-[16/10] flex flex-col justify-end transform hover:-translate-y-2">
+                                <Image
+                                    src="/butterchickenmain.jpg"
+                                    alt="A La Carte Dine-In"
+                                    fill
+                                    className="object-cover group-hover:scale-110 transition-transform duration-700 saturate-[1.2] brightness-90"
+                                />
+                                <div className="absolute inset-0 bg-gradient-to-t from-black via-[#631206]/80 to-transparent opacity-90 group-hover:opacity-80 transition-opacity duration-500" />
+
+                                <div className="absolute inset-3 border border-gold/10 rounded-lg pointer-events-none group-hover:border-gold/30 transition-colors duration-500" />
+                                <div className="absolute -top-10 -right-10 w-32 h-32 bg-gold/20 rounded-full blur-2xl group-hover:bg-orange-500/40 transition-colors duration-500" />
+
+                                <div className="relative z-10 p-5 text-center transform group-hover:-translate-y-1 transition-transform duration-500">
+                                    <h3 className="text-transparent bg-clip-text bg-gradient-to-r from-amber-200 via-gold to-yellow-500 font-cinzel font-black text-base md:text-xl leading-tight uppercase tracking-wider mb-2 drop-shadow-[0_2px_2px_rgba(0,0,0,1)]">A La Carte Dine-In</h3>
+                                    {/* Placeholder for your subtext */}
+                                    <p className="text-white font-montserrat font-bold text-[10px] md:text-xs uppercase tracking-[0.2em] drop-shadow-[0_2px_4px_rgba(0,0,0,1)]">
+                                        PREMIUM FINE DINING
+                                    </p>
+                                </div>
+                            </a>
+
+                            {/* Card 4: Weekend Breakfast */}
+                            <div className="group relative rounded-xl hover:rounded-2xl overflow-hidden border-2 border-gold/50 hover:border-gold transition-all duration-500 shadow-[0_4px_20px_rgba(0,0,0,0.8)] hover:shadow-[0_0_40px_rgba(212,175,55,0.6)] aspect-[16/10] flex flex-col justify-end transform hover:-translate-y-2 cursor-default text-center">
+                                <Image
+                                    src="/images/chole-bhature-spicy-chick-peas-600nw-1867969534.webp"
+                                    alt="Weekend Breakfast"
+                                    fill
+                                    className="object-cover group-hover:scale-110 transition-transform duration-700 saturate-150 brightness-90"
+                                />
+                                <div className="absolute inset-0 bg-gradient-to-t from-black via-[#631206]/80 to-transparent opacity-90 group-hover:opacity-80 transition-opacity duration-500" />
+
+                                <div className="absolute inset-3 border border-gold/10 rounded-lg pointer-events-none group-hover:border-gold/30 transition-colors duration-500" />
+                                <div className="absolute -top-10 -right-10 w-32 h-32 bg-gold/20 rounded-full blur-2xl group-hover:bg-orange-500/40 transition-colors duration-500" />
+
+                                {/* Vibrant Indian Red Coming Soon Badge */}
+                                <div className="absolute top-4 right-4 z-20">
+                                    <span className="inline-block px-3 py-1.5 bg-gradient-to-br from-[#991b1b] to-[#450a0a] border border-gold shadow-[0_0_20px_rgba(220,38,38,0.6)] text-white text-[8px] md:text-[10px] uppercase tracking-[0.2em] font-black rounded-full whitespace-nowrap">Coming Soon</span>
                                 </div>
 
-                                <div className="relative z-10 flex flex-col gap-6">
-                                    {/* Now Open Section */}
-                                    <div className="flex items-center gap-6">
-                                        <div className="flex-shrink-0 relative">
-                                            <div className="w-20 h-20 bg-gradient-to-br from-gold via-amber-400 to-gold rounded-full flex flex-col items-center justify-center shadow-lg shadow-gold/30 border-2 border-black">
-                                                <span className="text-black text-[10px] font-montserrat uppercase font-black leading-tight text-center">WE ARE</span>
-                                                <span className="text-black text-xl font-montserrat font-black leading-none">OPEN</span>
-                                            </div>
-                                            {/* Pulse Effect */}
-                                            <div className="absolute inset-0 w-20 h-20 bg-gold rounded-full animate-ping opacity-20" />
-                                        </div>
-                                        <div>
-                                            <h3 className="text-white font-cinzel text-2xl md:text-3xl font-bold leading-tight drop-shadow-md">
-                                                NOW <span className="text-gold glow-text">FULLY OPEN</span>
-                                            </h3>
-                                            <div className="flex flex-col gap-1 mt-2">
-                                                <p className="text-gray-200 font-montserrat text-base">
-                                                    Professional service and authentic Indian flavours are back!
-                                                </p>
-                                            </div>
-                                        </div>
-                                    </div>
-
-                                    {/* Divider */}
-                                    <div className="w-full h-[1px] bg-gradient-to-r from-transparent via-gold/50 to-transparent" />
-
-                                    {/* Daily Specials Section */}
-                                    <div className="grid grid-cols-2 gap-4">
-                                        <div className="bg-black/60 border border-gold/30 rounded-xl p-4 flex flex-col items-center justify-center text-center group-hover:border-gold/60 transition-colors">
-                                            <span className="text-gold text-[10px] font-montserrat uppercase font-bold tracking-widest mb-1">LUNCH BUFFET</span>
-                                            <div className="flex items-baseline gap-1">
-                                                <span className="text-white text-2xl font-cinzel font-bold">$17</span>
-                                                <span className="text-gold text-lg font-cinzel font-bold">.99</span>
-                                            </div>
-                                        </div>
-                                        <div className="bg-black/60 border border-gold/30 rounded-xl p-4 flex flex-col items-center justify-center text-center group-hover:border-gold/60 transition-colors">
-                                            <span className="text-gold text-[10px] font-montserrat uppercase font-bold tracking-widest mb-1">DINNER BUFFET</span>
-                                            <div className="flex items-baseline gap-1">
-                                                <span className="text-white text-2xl font-cinzel font-bold">$23</span>
-                                                <span className="text-gold text-lg font-cinzel font-bold">.99</span>
-                                            </div>
-                                        </div>
-                                    </div>
-
-                                    <div className="flex flex-col gap-1 items-center">
-                                        <p className="text-gray-300 font-montserrat text-sm font-medium">
-                                            MON-SAT: 11AM–9PM • SUN: 11AM–8PM
-                                        </p>
-                                        <p className="text-gold/80 font-montserrat text-[10px] italic uppercase tracking-wider">
-                                            *Located at 1405 E Sunset Rd, Las Vegas
-                                        </p>
-                                    </div>
+                                <div className="relative z-10 p-5 transform group-hover:-translate-y-1 transition-transform duration-500">
+                                    <h3 className="text-transparent bg-clip-text bg-gradient-to-r from-amber-200 via-gold to-yellow-500 font-cinzel font-black text-base md:text-xl leading-tight uppercase tracking-wider mb-2 drop-shadow-[0_2px_2px_rgba(0,0,0,1)]">Weekend Breakfast</h3>
+                                    {/* Placeholder for your subtext */}
+                                    <p className="text-white font-montserrat font-bold text-[10px] md:text-xs uppercase tracking-[0.2em] drop-shadow-[0_2px_4px_rgba(0,0,0,1)]">
+                                        AUTHENTIC INDIAN BREAKFAST
+                                    </p>
                                 </div>
                             </div>
                         </motion.div>
@@ -244,8 +282,8 @@ export default function Hero() {
                                     </div>
                                 </motion.div>
 
-                                {/* Membership Pop-up Badge */}
-                                <motion.div
+                                {/* Membership Pop-up Badge - Hidden for now */}
+                                {/* <motion.div
                                     className="absolute top-24 -right-12 bg-black border-2 border-gold p-4 rounded-xl shadow-2xl z-20 cursor-pointer"
                                     initial={{ x: 50, opacity: 0 }}
                                     animate={{ x: 0, opacity: 1 }}
@@ -260,7 +298,7 @@ export default function Hero() {
                                             <div className="text-white font-cinzel font-bold">$55 / Month</div>
                                         </div>
                                     </div>
-                                </motion.div>
+                                </motion.div> */}
 
                                 {/* Decorative Badge - Bottom Left (Diya/Lamp) */}
                                 <motion.div
@@ -288,28 +326,6 @@ export default function Hero() {
                             transition={{ duration: 1, delay: 0.6 }}
                             className="flex flex-col items-center gap-6 pt-12 relative z-30"
                         >
-                            <div className="flex justify-center gap-4">
-                                <a
-                                    href="/contact"
-                                    className="group relative px-8 py-4 bg-gold overflow-hidden transition-all duration-500 hover:shadow-lg hover:shadow-gold/30 min-w-[160px] text-center"
-                                >
-                                    <div className="absolute inset-0 bg-gradient-to-r from-amber-500 to-gold opacity-0 group-hover:opacity-100 transition-opacity duration-500" />
-                                    <span className="relative z-10 font-montserrat font-bold tracking-[0.2em] uppercase text-black text-sm">
-                                        Book Table
-                                    </span>
-                                </a>
-
-                                <button
-                                    onClick={() => document.getElementById("membership-section")?.scrollIntoView({ behavior: "smooth" })}
-                                    className="group relative px-8 py-4 bg-white/10 overflow-hidden transition-all duration-500 min-w-[160px] border border-gold/30"
-                                >
-                                    <div className="absolute inset-0 bg-gold scale-x-0 group-hover:scale-x-100 transition-transform duration-500 origin-left" />
-                                    <span className="relative z-10 font-montserrat font-bold tracking-[0.2em] uppercase text-gold group-hover:text-black transition-colors duration-300 text-sm">
-                                        Buffet Club
-                                    </span>
-                                </button>
-                            </div>
-
                             {/* Social Media Links */}
                             <motion.div
                                 initial={{ opacity: 0, scale: 0.9 }}
@@ -368,6 +384,6 @@ export default function Hero() {
                 <span className="text-[10px] uppercase tracking-widest text-gold/60 font-montserrat">Scroll</span>
                 <div className="w-[1px] h-16 bg-gradient-to-b from-gold/20 via-gold to-transparent" />
             </motion.div>
-        </section>
+        </section >
     );
 }

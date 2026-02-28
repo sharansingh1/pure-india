@@ -162,12 +162,20 @@ export default async function BuffetPage() {
               name: "Daily Buffet Menu",
               description: "All-you-can-eat Indian buffet with rotating selection of dishes"
             },
-            offers: {
-              "@type": "Offer",
-              name: "Lunch Buffet",
-              description: "All-you-can-eat Indian buffet available daily",
-              availability: "https://schema.org/InStock"
-            }
+            offers: [
+              {
+                "@type": "Offer",
+                name: "Lunch Buffet",
+                description: "All-you-can-eat Indian lunch buffet from 11am-3pm",
+                availability: "https://schema.org/InStock"
+              },
+              {
+                "@type": "Offer",
+                name: "Dinner Buffet",
+                description: "All-you-can-eat Indian dinner buffet from 5pm-9pm",
+                availability: "https://schema.org/InStock"
+              }
+            ]
           })
         }}
       />

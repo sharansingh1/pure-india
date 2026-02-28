@@ -4,7 +4,7 @@ import { generateBreadcrumbSchema, breadcrumbs } from "@/lib/breadcrumbs";
 
 export const metadata: Metadata = {
     title: "Contact Pure Indian Cuisine Las Vegas | Reservations & Phone Number",
-    description: "Contact Pure Indian Cuisine in Las Vegas for reservations, banquet bookings, or catering. Located at 1405 E Sunset Rd, Las Vegas, NV 89119. Phone: (702) 916-4083. Open daily 11am-10pm.",
+    description: "Contact Pure Indian Cuisine in Las Vegas for reservations, banquet bookings, or catering. Located at 1405 E Sunset Rd, Las Vegas, NV 89119. Phone: (702) 916-4083. Open Mon-Sat 11am-9pm, Sun 11am-8pm.",
     keywords: ["Contact Pure Indian Cuisine", "Indian Restaurant Reservations Las Vegas", "Banquet Booking Las Vegas", "Catering Inquiry Las Vegas", "Pure Indian Cuisine Phone Number", "Restaurant Near Airport Las Vegas"],
     openGraph: {
         title: "Contact Pure Indian Cuisine | Reservations & Inquiries Las Vegas",

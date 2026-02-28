@@ -57,7 +57,7 @@ export default function BuffetPageContent({ groupedBuffet }: { groupedBuffet: an
                             <div className="absolute top-0 left-1/2 -translate-x-1/2 w-2/3 h-[1px] bg-gradient-to-r from-transparent via-gold to-transparent opacity-50" />
 
                             <h3 className="font-cinzel text-4xl text-white mb-3 drop-shadow-lg">Lunch Buffet</h3>
-                            <p className="font-montserrat text-gold text-sm tracking-[0.2em] uppercase mb-8 font-medium">11:00 AM - 5:00 PM</p>
+                            <p className="font-montserrat text-gold text-sm tracking-[0.2em] uppercase mb-8 font-medium">11:00 AM - 3:00 PM</p>
 
                             <div className="font-cinzel text-transparent bg-clip-text bg-gradient-to-b from-gold via-amber-300 to-gold text-7xl font-bold mb-6 tracking-tight drop-shadow-lg">$17.99</div>
 
@@ -79,7 +79,7 @@ export default function BuffetPageContent({ groupedBuffet }: { groupedBuffet: an
                             <div className="absolute top-0 left-1/2 -translate-x-1/2 w-2/3 h-[1px] bg-gradient-to-r from-transparent via-gold to-transparent opacity-50" />
 
                             <h3 className="font-cinzel text-4xl text-white mb-3 drop-shadow-lg">Dinner Buffet</h3>
-                            <p className="font-montserrat text-gold text-sm tracking-[0.2em] uppercase mb-8 font-medium">5:00 PM - Closing</p>
+                            <p className="font-montserrat text-gold text-sm tracking-[0.2em] uppercase mb-8 font-medium">5:00 PM - 9:00 PM</p>
 
                             <div className="font-cinzel text-transparent bg-clip-text bg-gradient-to-b from-gold via-amber-300 to-gold text-7xl font-bold mb-6 tracking-tight drop-shadow-lg">$23.99</div>
 

@@ -20,7 +20,7 @@ import { Metadata } from "next";
 export const metadata: Metadata = {
   title: "Indian Food Menu Las Vegas | Butter Chicken, Tandoori, Biryani | Pure Indian Cuisine",
   description: "View our complete Indian food menu in Las Vegas. Authentic dishes including butter chicken, tandoori, biryani, lamb vindaloo, paneer tikka, and vegetarian options. Family-style portions. Located at 1405 E Sunset Rd.",
-  keywords: ["Indian Menu Las Vegas", "Authentic Indian Food", "Best Butter Chicken Las Vegas", "Vegetarian Indian Food", "Halal Indian Food Las Vegas", "Indian Restaurant Menu", "Tandoori Las Vegas", "Biryani Las Vegas"],
+  keywords: ["Indian Menu Las Vegas", "Authentic Indian Food", "Butter Chicken Las Vegas", "Vegetarian Indian Food", "Indian Restaurant Menu", "Tandoori Las Vegas", "Biryani Las Vegas"],
   openGraph: {
     title: "Indian Restaurant Menu Las Vegas | Authentic A La Carte Dining",
     description: "Explore our extensive menu of authentic Indian dishes. From butter chicken to lamb vindaloo, every dish is prepared fresh to order.",
@@ -114,14 +114,14 @@ export default async function MenuPage() {
   // 3. Build the grouped menu with sorted items for NON-VEG CURRY
   const groupedMenu = existingCategories.map(category => {
     let items = menuItems.filter((item: any) => item.category === category);
-    
+
     // Apply special sorting for NON-VEG CURRY
     if (category === "NON-VEG CURRY") {
       items.sort((a: any, b: any) => {
         return getMeatPriority(a.name) - getMeatPriority(b.name);
       });
     }
-    
+
     return {
       category,
       items

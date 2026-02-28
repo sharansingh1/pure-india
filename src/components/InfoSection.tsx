@@ -20,12 +20,12 @@ export default function InfoSection() {
                 </div>
 
                 <div className="container mx-auto px-4 relative z-10">
-                    <div className="grid lg:grid-cols-2 gap-16 items-start">
+                    <div className="max-w-3xl mx-auto">
 
                         {/* Left Column: Essential Details */}
                         <motion.div
-                            initial={{ opacity: 0, x: -50 }}
-                            whileInView={{ opacity: 1, x: 0 }}
+                            initial={{ opacity: 0, y: 30 }}
+                            whileInView={{ opacity: 1, y: 0 }}
                             transition={{ duration: 0.8 }}
                             viewport={{ once: true }}
                             className="space-y-12"
@@ -34,7 +34,7 @@ export default function InfoSection() {
                                 <SectionHeading
                                     title="Plan Your Visit"
                                     subtitle="What You Need to Know"
-                                    centered={false}
+                                    centered={true}
                                 />
 
                                 <div className="mt-8 space-y-8">
@@ -65,15 +65,21 @@ export default function InfoSection() {
                                         <div className="w-full">
                                             <h3 className="font-cinzel text-xl font-bold mb-4 text-white">Buffet Hours & Pricing</h3>
 
-                                            <div className="grid sm:grid-cols-2 gap-6">
+                                            <div className="grid sm:grid-cols-3 gap-6">
                                                 <div className="bg-black/40 p-4 rounded border-l-2 border-gold/50">
                                                     <h4 className="font-cinzel text-gold text-lg mb-1">Lunch</h4>
-                                                    <p className="text-white font-bold font-montserrat">Daily: 11:00 AM - 5:00 PM</p>
+                                                    <p className="text-white font-bold font-montserrat">Daily: 11:00 AM - 3:00 PM</p>
                                                     <p className="text-2xl text-gold font-bold font-montserrat mt-2">$17.99</p>
                                                 </div>
                                                 <div className="bg-black/40 p-4 rounded border-l-2 border-gold/50">
+                                                    <h4 className="font-cinzel text-gold text-lg mb-1">Happy Hour</h4>
+                                                    <p className="text-white font-bold font-montserrat">Daily: 3:00 PM - 5:00 PM</p>
+                                                    <p className="text-sm text-gold font-montserrat mt-2 italic">Drink Specials</p>
+                                                </div>
+                                                <div className="bg-black/40 p-4 rounded border-l-2 border-gold/50">
                                                     <h4 className="font-cinzel text-gold text-lg mb-1">Dinner</h4>
-                                                    <p className="text-white font-bold font-montserrat">5:00 PM - Closing</p>
+                                                    <p className="text-white font-bold font-montserrat">M-S: 5:00 PM - 9:00 PM</p>
+                                                    <p className="text-white font-bold font-montserrat">Sun: 5:00 PM - 8:00 PM</p>
                                                     <p className="text-2xl text-gold font-bold font-montserrat mt-2">$23.99</p>
                                                 </div>
                                             </div>
@@ -86,62 +92,18 @@ export default function InfoSection() {
                                         </div>
                                     </div>
                                 </div>
-                            </div>
-                        </motion.div>
 
-                        {/* Right Column: How It Works & Experience */}
-                        <motion.div
-                            initial={{ opacity: 0, x: 50 }}
-                            whileInView={{ opacity: 1, x: 0 }}
-                            transition={{ duration: 0.8, delay: 0.2 }}
-                            viewport={{ once: true }}
-                            className="space-y-8 bg-card-bg p-8 border border-gold/10 rounded-lg md:mt-12"
-                        >
-                            <h3 className="font-cinzel text-2xl text-gold mb-6 border-b border-gold/20 pb-4">
-                                The Experience
-                            </h3>
-
-                            <div className="space-y-6">
-                                <div className="space-y-2">
-                                    <h4 className="text-white font-bold font-montserrat uppercase tracking-wider text-sm flex items-center gap-2">
-                                        <span className="w-2 h-2 bg-gold rounded-full"></span>
-                                        How It Works
-                                    </h4>
-                                    <p className="text-gray-300 font-montserrat text-sm leading-relaxed pl-4 border-l border-gold/20">
-                                        Experience Las Vegas' premier <strong>Indian Dining Destination</strong>. Whether you're here for our exquisite a la carte fine dining or our famous all-you-can-eat buffet, we promise a royal feast. Simply arrive and let our host guide you to your preferred experience.
-                                    </p>
-                                </div>
-
-                                <div className="space-y-2">
-                                    <h4 className="text-white font-bold font-montserrat uppercase tracking-wider text-sm flex items-center gap-2">
-                                        <span className="w-2 h-2 bg-gold rounded-full"></span>
-                                        What's Included
-                                    </h4>
-                                    <p className="text-gray-300 font-montserrat text-sm leading-relaxed pl-4 border-l border-gold/20">
-                                        Choose between our chef-curated a la carte menu for a personal dining experience, or our legendary buffet for unlimited access to rotating curries, appetizers, and desserts. Fresh <strong>Naan</strong> is served directly to your table for both experiences.
-                                    </p>
-                                </div>
-
-                                <div className="space-y-2">
-                                    <h4 className="text-white font-bold font-montserrat uppercase tracking-wider text-sm flex items-center gap-2">
-                                        <span className="w-2 h-2 bg-gold rounded-full"></span>
-                                        Special Requirements
-                                    </h4>
-                                    <p className="text-gray-300 font-montserrat text-sm leading-relaxed pl-4 border-l border-gold/20">
-                                        We offer many <strong>Vegetarian</strong> options. All our meat is <strong>Halal</strong> certified. Please inform your server of any severe allergies. <strong>Drinks are not included</strong> in the buffet price.
-                                    </p>
-                                </div>
-
-                                <div className="pt-6 mt-6 border-t border-gold/10">
+                                <div className="pt-12 border-t border-gold/10">
                                     <Link
                                         href="/contact"
-                                        className="w-full block text-center py-3 bg-gold/10 hover:bg-gold text-gold hover:text-black border border-gold transition-all duration-300 font-montserrat font-bold uppercase tracking-widest text-sm"
+                                        className="w-full block text-center py-4 bg-gold/10 hover:bg-gold text-gold hover:text-black border border-gold transition-all duration-300 font-montserrat font-bold uppercase tracking-widest text-sm"
                                     >
                                         Contact & Directions
                                     </Link>
                                 </div>
                             </div>
                         </motion.div>
+
                     </div>
                 </div>
             </section>

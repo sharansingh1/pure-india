@@ -6,19 +6,21 @@ import Footer from "@/components/Footer";
 import FeaturedDish from "@/components/FeaturedDish";
 import Testimonials from "@/components/Testimonials";
 import MembershipSection from "@/components/MembershipSection";
-import HookahLoungeSection from "@/components/HookahLoungeSection";
+// import HookahLoungeSection from "@/components/HookahLoungeSection";
 import { client } from "@/sanity/lib/client";
 import { defineQuery } from "next-sanity";
 
 export const dynamic = 'force-dynamic';
 
 export const metadata: Metadata = {
-  title: "Pure Indian Cuisine | Fine Dining & Buffet Las Vegas | Best Indian Restaurant",
-  description: "Voted best Indian food in Las Vegas! Experience authentic fine dining a la carte or our famous all-you-can-eat buffet. Featuring a premium bar, banquet hall, and late-night hookah lounge. Near Las Vegas airport.",
-  keywords: ["Indian fine dining Las Vegas", "Best Indian restaurant Las Vegas", "Indian buffet Las Vegas", "Hookah lounge Las Vegas", "Pure Indian Cuisine Las Vegas", "Indian food near me"],
+  title: "Pure Indian Cuisine | Fine Dining & Buffet Las Vegas | Authentic Indian Restaurant",
+  //   description: "Discover amazing Indian food in Las Vegas! Experience authentic fine dining a la carte or our famous all-you-can-eat buffet. Featuring a premium bar, banquet hall, and late-night hookah lounge. Near Las Vegas airport.",
+  //   keywords: ["Indian fine dining Las Vegas", "Authentic Indian restaurant Las Vegas", "Indian buffet Las Vegas", "Hookah lounge Las Vegas", "Pure Indian Cuisine Las Vegas", "Indian food near me"],
+  description: "Discover amazing Indian food in Las Vegas! Experience authentic fine dining a la carte or our famous all-you-can-eat buffet. Featuring a premium bar and banquet hall. Near Las Vegas airport.",
+  keywords: ["Indian fine dining Las Vegas", "Authentic Indian restaurant Las Vegas", "Indian buffet Las Vegas", "Pure Indian Cuisine Las Vegas", "Indian food near me"],
   openGraph: {
-    title: "Pure Indian Cuisine Las Vegas | Best Indian Food Restaurant Near Airport",
-    description: "Best Indian food in Las Vegas! Authentic North Indian cuisine, all-you-can-eat buffet, family-style dinner, and banquet hall. Located at 1405 E Sunset Rd near Las Vegas airport.",
+    title: "Pure Indian Cuisine Las Vegas | Authentic Indian Food Restaurant Near Airport",
+    description: "Amazing Indian food in Las Vegas! Authentic North Indian cuisine, all-you-can-eat buffet, family-style dinner, and banquet hall. Located at 1405 E Sunset Rd near Las Vegas airport.",
     images: [
       {
         url: "/icon.jpg",
@@ -172,7 +174,8 @@ export default async function Home() {
             menu: "https://pureindiacuisine.com/menu",
             servesCuisine: ["Indian", "North Indian", "Indo-Chinese"],
             priceRange: "$$",
-            description: "Experience the best Indian fine dining and all-you-can-eat buffet in Las Vegas. From authentic a la carte curries to our legendary rotating buffet. Featuring a premium bar, banquet hall, and late-night hookah lounge.",
+            //             description: "Experience amazing Indian fine dining and all-you-can-eat buffet in Las Vegas. From authentic a la carte curries to our legendary rotating buffet. Featuring a premium bar, banquet hall, and late-night hookah lounge.",
+            description: "Experience amazing Indian fine dining and all-you-can-eat buffet in Las Vegas. From authentic a la carte curries to our legendary rotating buffet. Featuring a premium bar and banquet hall.",
             address: {
               "@type": "PostalAddress",
               streetAddress: "1405 E Sunset Rd",
@@ -241,7 +244,7 @@ export default async function Home() {
                   itemOffered: {
                     "@type": "Service",
                     name: "Dinner Buffet",
-                    description: "All-you-can-eat dinner buffet from 5pm-closing"
+                    description: "All-you-can-eat dinner buffet from 5pm-9pm"
                   }
                 },
                 {
@@ -283,10 +286,10 @@ export default async function Home() {
             mainEntity: [
               {
                 "@type": "Question",
-                name: "What is the best Indian restaurant in Las Vegas?",
+                name: "What is an excellent Indian restaurant in Las Vegas?",
                 acceptedAnswer: {
                   "@type": "Answer",
-                  text: "Pure Indian Cuisine is one of the best Indian restaurants in Las Vegas, offering authentic North Indian cuisine, an all-you-can-eat buffet, and family-style dining. Located at 1405 E Sunset Rd near the Las Vegas airport, we serve traditional dishes like butter chicken, tandoori, biryani, and more."
+                  text: "Pure Indian Cuisine is a premier Indian restaurant in Las Vegas, offering amazingly authentic North Indian cuisine, an all-you-can-eat buffet, and family-style dining. Located at 1405 E Sunset Rd near the Las Vegas airport, we serve traditional dishes like butter chicken, tandoori, biryani, and more."
                 }
               },
               {
@@ -302,7 +305,7 @@ export default async function Home() {
                 name: "Does Pure Indian Cuisine have a buffet?",
                 acceptedAnswer: {
                   "@type": "Answer",
-                  text: "Yes! Pure Indian Cuisine offers an all-you-can-eat lunch buffet daily from 11am-10pm. Our buffet features a rotating selection of authentic Indian dishes including curries, tandoori, biryani, dosa, and desserts."
+                  text: "Yes! Pure Indian Cuisine offers an all-you-can-eat lunch buffet daily from 11am-3pm and a dinner buffet from 5pm-9pm (until 8pm on Sundays). Our buffet features a rotating selection of authentic Indian dishes including curries, tandoori, biryani, dosa, and desserts. We also offer Happy Hour from 3pm-5pm and our full a la carte dinner service."
                 }
               },
               {
@@ -334,7 +337,7 @@ export default async function Home() {
                 name: "What are Pure Indian Cuisine's hours?",
                 acceptedAnswer: {
                   "@type": "Answer",
-                  text: "Pure Indian Cuisine is open Monday through Saturday from 11:00 AM to 9:00 PM, and Sundays from 11:00 AM to 8:00 PM. We serve lunch buffet and dinner service throughout the day."
+                  text: "Pure Indian Cuisine is open Monday through Saturday from 11:00 AM to 9:00 PM (Lunch Buffet 11-3, Happy Hour 3-5, Dinner Buffet & A La Carte 5-9), and Sundays from 11:00 AM to 8:00 PM."
                 }
               },
               {
@@ -350,10 +353,10 @@ export default async function Home() {
         }}
       />
       <InfoSection />
-      <MembershipSection />
+      {/* <MembershipSection /> */}
       <MenuBook menuItems={menuItems} />
       <FeaturedDish />
-      <HookahLoungeSection />
+      {/* <HookahLoungeSection /> */}
       <Testimonials />
 
       <Footer />
