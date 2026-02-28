@@ -74,7 +74,6 @@ export default function InfoSection() {
                                                 <div className="bg-black/40 p-4 rounded border-l-2 border-gold/50">
                                                     <h4 className="font-cinzel text-gold text-lg mb-1">Happy Hour</h4>
                                                     <p className="text-white font-bold font-montserrat">Daily: 3:00 PM - 5:00 PM</p>
-                                                    <p className="text-sm text-gold font-montserrat mt-2 italic">Drink Specials</p>
                                                 </div>
                                                 <div className="bg-black/40 p-4 rounded border-l-2 border-gold/50">
                                                     <h4 className="font-cinzel text-gold text-lg mb-1">Dinner</h4>
