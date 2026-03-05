@@ -57,36 +57,27 @@ export default function InfoSection() {
                                         </div>
                                     </div>
 
-                                    {/* Buffet Hours & Pricing Card */}
+                                    {/* Restaurant Hours Card */}
                                     <div className="flex items-start space-x-6 group p-6 bg-card-bg/50 border border-gold/10 hover:border-gold/30 rounded-lg transition-all duration-300">
                                         <div className="p-3 bg-black border border-gold/20 rounded-full text-gold shrink-0">
                                             <Clock size={24} />
                                         </div>
                                         <div className="w-full">
-                                            <h3 className="font-cinzel text-xl font-bold mb-4 text-white">Buffet Hours & Pricing</h3>
+                                            <h3 className="font-cinzel text-xl font-bold mb-4 text-white">Restaurant Hours</h3>
 
-                                            <div className="grid sm:grid-cols-3 gap-6">
+                                            <div className="grid sm:grid-cols-2 gap-6">
                                                 <div className="bg-black/40 p-4 rounded border-l-2 border-gold/50">
-                                                    <h4 className="font-cinzel text-gold text-lg mb-1">Lunch</h4>
-                                                    <p className="text-white font-bold font-montserrat">Daily: 11:00 AM - 3:00 PM</p>
-                                                    <p className="text-2xl text-gold font-bold font-montserrat mt-2">$17.99</p>
+                                                    <h4 className="font-cinzel text-gold text-lg mb-1">Dining Hours</h4>
+                                                    <p className="text-white font-bold font-montserrat tracking-wide">Mon - Sat: 11:00 AM - 9:00 PM</p>
+                                                    <p className="text-white font-bold font-montserrat tracking-wide">Sun: 11:00 AM - 8:00 PM</p>
                                                 </div>
                                                 <div className="bg-black/40 p-4 rounded border-l-2 border-gold/50">
                                                     <h4 className="font-cinzel text-gold text-lg mb-1">Happy Hour</h4>
-                                                    <p className="text-white font-bold font-montserrat">Daily: 3:00 PM - 5:00 PM</p>
-                                                </div>
-                                                <div className="bg-black/40 p-4 rounded border-l-2 border-gold/50">
-                                                    <h4 className="font-cinzel text-gold text-lg mb-1">Dinner</h4>
-                                                    <p className="text-white font-bold font-montserrat">M-S: 5:00 PM - 9:00 PM</p>
-                                                    <p className="text-white font-bold font-montserrat">Sun: 5:00 PM - 8:00 PM</p>
-                                                    <p className="text-2xl text-gold font-bold font-montserrat mt-2">$23.99</p>
+                                                    <p className="text-white font-bold font-montserrat tracking-wide">Daily: 3:00 PM - 5:00 PM</p>
                                                 </div>
                                             </div>
-                                            <p className="text-gray-400 font-montserrat text-sm mt-4 font-medium uppercase tracking-wider">
-                                                Mon-Sat: 11AM - 9PM | Sun: 11AM - 8PM
-                                            </p>
                                             <p className="text-gray-500 font-montserrat text-xs mt-4 italic">
-                                                *Prices subject to change on holidays. Walk-ins always welcome.
+                                                * Last seating 30 minutes before closing. Walk-ins always welcome.
                                             </p>
                                         </div>
                                     </div>
@@ -112,12 +103,12 @@ export default function InfoSection() {
                 <div className="container mx-auto px-4 relative z-10">
                     <SectionHeading
                         title="The Royal Experience"
-                        subtitle="Fine Dining, Buffet & More"
+                        subtitle="Fine Dining, Catering & Events"
                         centered={true}
                     />
 
                     <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-6 mt-16 text-left">
-                        {/* Royal Buffet Card */}
+                        {/* Premium Catering Card */}
                         <motion.div
                             initial={{ opacity: 0, y: 30 }}
                             whileInView={{ opacity: 1, y: 0 }}
@@ -127,23 +118,23 @@ export default function InfoSection() {
                         >
                             <div className="relative h-64 overflow-hidden">
                                 <Image
-                                    src="/images/indian-buffet-food-real.png"
-                                    alt="Royal Buffet"
+                                    src="/images/catering-hero.png"
+                                    alt="Premium Catering"
                                     fill
                                     className="object-cover group-hover:scale-110 transition-transform duration-700"
                                 />
                                 <div className="absolute inset-0 bg-gradient-to-t from-black via-black/50 to-transparent"></div>
                             </div>
                             <div className="p-8">
-                                <h3 className="font-cinzel text-2xl text-white mb-3 group-hover:text-gold transition-colors">Royal Indian Buffet</h3>
+                                <h3 className="font-cinzel text-2xl text-white mb-3 group-hover:text-gold transition-colors">Premium Catering</h3>
                                 <p className="text-gray-400 font-montserrat text-sm leading-relaxed mb-6">
-                                    Unlimited tandoori chicken, butter chicken, goat curry, and more.
+                                    Bring the flavors of Pure Indian to your next event with our custom catering.
                                 </p>
                                 <Link
-                                    href="/buffet"
+                                    href="/catering"
                                     className="inline-block font-montserrat text-xs tracking-widest uppercase text-gold hover:text-white transition-colors border-b border-gold/30 hover:border-white pb-1"
                                 >
-                                    View Menu
+                                    Learn More
                                 </Link>
                             </div>
                         </motion.div>

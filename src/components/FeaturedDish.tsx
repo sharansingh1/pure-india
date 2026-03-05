@@ -54,7 +54,7 @@ export default function FeaturedDish() {
 
                         <div className="pt-8">
                             <Link href="/menu" className="inline-block border-b border-gold text-gold pb-1 font-montserrat uppercase tracking-widest hover:text-white hover:border-white transition-all duration-300">
-                                View Full Buffet
+                                View Full Menu
                             </Link>
                         </div>
                     </motion.div>

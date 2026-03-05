@@ -18,12 +18,12 @@ const MENU_QUERY = defineQuery(`*[_type == "menuItem"]{
 import { Metadata } from "next";
 
 export const metadata: Metadata = {
-  title: "Indian Food Menu Las Vegas | Butter Chicken, Tandoori, Biryani | Pure Indian Cuisine",
-  description: "View our complete Indian food menu in Las Vegas. Authentic dishes including butter chicken, tandoori, biryani, lamb vindaloo, paneer tikka, and vegetarian options. Family-style portions. Located at 1405 E Sunset Rd.",
-  keywords: ["Indian Menu Las Vegas", "Authentic Indian Food", "Butter Chicken Las Vegas", "Vegetarian Indian Food", "Indian Restaurant Menu", "Tandoori Las Vegas", "Biryani Las Vegas"],
+  title: "A La Carte Indian Menu Las Vegas | Fine Dining | Pure Indian Cuisine",
+  description: "View our authentic Indian a la carte menu in Las Vegas. Featuring butter chicken, tandoori, biryani, and vegetarian options. Prepared fresh to order. Located at 1405 E Sunset Rd.",
+  keywords: ["Indian Menu Las Vegas", "Authentic Indian Food", "A La Carte Indian Menu", "Butter Chicken Las Vegas", "Vegetarian Indian Food", "Indian Restaurant Menu"],
   openGraph: {
     title: "Indian Restaurant Menu Las Vegas | Authentic A La Carte Dining",
-    description: "Explore our extensive menu of authentic Indian dishes. From butter chicken to lamb vindaloo, every dish is prepared fresh to order.",
+    description: "Explore our extensive a la carte menu of authentic Indian dishes. From butter chicken to lamb vindaloo, every dish is prepared fresh to order.",
     images: [
       {
         url: "/menu-highlight.png",
@@ -36,7 +36,7 @@ export const metadata: Metadata = {
   twitter: {
     card: "summary_large_image",
     title: "Indian Restaurant Menu Las Vegas | Authentic A La Carte Dining",
-    description: "Explore our extensive menu of authentic Indian dishes. From butter chicken to lamb vindaloo, every dish is prepared fresh to order.",
+    description: "Explore our extensive a la carte menu of authentic Indian dishes. From butter chicken to lamb vindaloo, every dish is prepared fresh to order.",
     images: ["/menu-highlight.png"],
   },
   alternates: {

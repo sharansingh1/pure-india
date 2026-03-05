@@ -19,11 +19,11 @@ const montserrat = Montserrat({
 export const metadata: Metadata = {
   metadataBase: new URL("https://pureindiacuisine.com"),
   title: {
-    default: "Pure Indian Cuisine Las Vegas | Authentic Indian Food Restaurant Near Airport | Buffet & Banquet Hall",
+    default: "Pure Indian Cuisine Las Vegas | Authentic Indian Food Restaurant Near Airport | Fine Dining & Banquet Hall",
     template: "%s | Pure Indian Cuisine Las Vegas"
   },
-  description: "Amazing Indian food in Las Vegas! Authentic North Indian cuisine, all-you-can-eat buffet, family-style dinner, and banquet hall. Located at 1405 E Sunset Rd near Las Vegas airport. Open Mon-Sat 11am-9pm, Sun 11am-8pm. Butter chicken, tandoori, biryani, and vegetarian options.",
-  keywords: ["Indian food Las Vegas", "Indian restaurant Las Vegas", "Authentic Indian food Las Vegas", "Indian buffet Las Vegas", "Indian food near me", "Indian restaurant near airport", "Butter chicken Las Vegas", "Tandoori Las Vegas", "Biryani Las Vegas", "Indian food delivery Las Vegas", "Vegetarian Indian food Las Vegas", "North Indian food Las Vegas", "Indian catering Las Vegas", "Banquet hall Las Vegas", "Wedding venue Las Vegas", "Pure Indian Cuisine", "1405 E Sunset Rd", "Indian food 89119"],
+  description: "Amazing Indian food in Las Vegas! Authentic North Indian cuisine, premium a la carte dining, and banquet hall. Located at 1405 E Sunset Rd near Las Vegas airport. Open Mon-Sat 11am-9pm, Sun 11am-8pm. Butter chicken, tandoori, biryani, and vegetarian options.",
+  keywords: ["Indian food Las Vegas", "Indian restaurant Las Vegas", "Authentic Indian food Las Vegas", "Fine Dining Indian Las Vegas", "Indian food near me", "Indian restaurant near airport", "Butter chicken Las Vegas", "Tandoori Las Vegas", "Biryani Las Vegas", "Indian food delivery Las Vegas", "Vegetarian Indian food Las Vegas", "North Indian food Las Vegas", "Indian catering Las Vegas", "Banquet hall Las Vegas", "Wedding venue Las Vegas", "Pure Indian Cuisine", "1405 E Sunset Rd", "Indian food 89119"],
   authors: [{ name: "Pure Indian Cuisine" }],
   creator: "Pure Indian Cuisine",
   publisher: "Pure Indian Cuisine",
@@ -54,7 +54,7 @@ export const metadata: Metadata = {
     url: "https://pureindiacuisine.com",
     siteName: "Pure Indian Cuisine",
     title: "Pure Indian Cuisine Las Vegas | Authentic Indian Food Restaurant Near Airport",
-    description: "Amazing Indian food in Las Vegas! Authentic North Indian cuisine, all-you-can-eat buffet, family-style dinner, and banquet hall. Located at 1405 E Sunset Rd near Las Vegas airport. Open Mon-Sat 11am-9pm, Sun 11am-8pm.",
+    description: "Amazing Indian food in Las Vegas! Authentic North Indian cuisine, premium a la carte dining, and banquet hall. Located at 1405 E Sunset Rd near Las Vegas airport. Open Mon-Sat 11am-9pm, Sun 11am-8pm.",
     images: [
       {
         url: "/icon.jpg",
@@ -73,7 +73,7 @@ export const metadata: Metadata = {
   twitter: {
     card: "summary_large_image",
     title: "Pure Indian Cuisine Las Vegas | Authentic Indian Food Restaurant Near Airport",
-    description: "Amazing Indian food in Las Vegas! Authentic North Indian cuisine, all-you-can-eat buffet, family-style dinner, and banquet hall. Open Mon-Sat 11am-9pm, Sun 11am-8pm.",
+    description: "Amazing Indian food in Las Vegas! Authentic North Indian cuisine, premium a la carte dining, and banquet hall. Open Mon-Sat 11am-9pm, Sun 11am-8pm.",
     images: ["/icon.jpg", "/images/hero-background.jpg"],
     creator: "@pureindiancuisinevegas",
     site: "@pureindiancuisinevegas",
@@ -85,7 +85,7 @@ export const metadata: Metadata = {
     google: "7eenxrb-UaXIQ4DLnFxcxULAkx959LSRrOj2nN5tX3o",
   },
   category: "Restaurant",
-  classification: "Indian Restaurant, Buffet, Banquet Hall, Catering",
+  classification: "Indian Restaurant, Fine Dining, Banquet Hall, Catering",
   other: {
     "geo.region": "US-NV",
     "geo.placename": "Las Vegas",
@@ -104,7 +104,7 @@ export default function RootLayout({
       <body
         className={`${cinzel.variable} ${montserrat.variable} antialiased bg-black text-white`}
       >
-        <BuffetBanner />
+        {/* <BuffetBanner /> */}
         <NavbarWrapper />
         {children}
       </body>

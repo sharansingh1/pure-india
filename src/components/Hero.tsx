@@ -23,7 +23,7 @@ const carouselImages = [
         alt: "Chicken Biryani"
     },
     {
-        src: "/images/paneer.jpg",
+        src: "/images/paneer-hero.jpg",
         alt: "paneer tikka masala"
     }
 ];
@@ -85,7 +85,7 @@ export default function Hero() {
                             <h1 className="font-cinzel text-4xl md:text-6xl lg:text-7xl font-bold leading-none">
                                 <span className="text-white">Las Vegas' Premier</span>
                                 <br />
-                                <span className="text-transparent bg-clip-text bg-gradient-to-r from-gold via-yellow-300 to-gold glow-text">Indian Dining & Buffet</span>
+                                <span className="text-transparent bg-clip-text bg-gradient-to-r from-gold via-yellow-300 to-gold glow-text">Indian Fine Dining</span>
                             </h1>
 
                             <div className="relative mt-8 pl-8 border-l-4 border-gold/60 py-2">
@@ -93,7 +93,7 @@ export default function Hero() {
                                 <div className="absolute -left-[9px] bottom-0 w-4 h-4 rounded-full bg-black border-2 border-gold/60" />
 
                                 <p className="text-gray-200 text-base md:text-xl font-montserrat leading-relaxed max-w-lg">
-                                    Savor the most authentic Indian flavors in Las Vegas. Indulge in our exquisite a la carte fine dining or explore our legendary all-you-can-eat buffet, featuring amazing dishes crafted with passion. <br />
+                                    Savor the most authentic Indian flavors in Las Vegas. Indulge in our exquisite a la carte fine dining, featuring amazing dishes crafted with passion, tradition, and the finest spices. <br />
                                     <span className="text-sm text-gray-400 mt-2 block">Authentic flavors, royal ambience, and impeccable service near the airport. Extensive vegetarian options available.</span>
                                 </p>
                             </div>
@@ -107,13 +107,13 @@ export default function Hero() {
                             transition={{ delay: 0.6, duration: 0.8 }}
                             className="w-full max-w-xl mt-8 grid grid-cols-2 gap-4 sm:gap-6"
                         >
-                            {/* Card 1: Buffet */}
-                            <a href="/buffet" className="group relative rounded-xl hover:rounded-2xl overflow-hidden border-2 border-gold/50 hover:border-gold transition-all duration-500 shadow-[0_4px_20px_rgba(0,0,0,0.8)] hover:shadow-[0_0_40px_rgba(212,175,55,0.6)] aspect-[16/10] flex flex-col justify-end transform hover:-translate-y-2">
+                            {/* Card 1: Banquet */}
+                            <a href="/banquet" className="group relative rounded-xl hover:rounded-2xl overflow-hidden border-2 border-gold/50 hover:border-gold transition-all duration-500 shadow-[0_4px_20px_rgba(0,0,0,0.8)] hover:shadow-[0_0_40px_rgba(212,175,55,0.6)] aspect-[16/10] flex flex-col justify-end transform hover:-translate-y-2">
                                 <Image
-                                    src="/images/indian-buffet-food-real.png"
-                                    alt="Lunch & Dinner Buffet"
+                                    src="/images/banquet-hall.png"
+                                    alt="Private Banquet Hall"
                                     fill
-                                    className="object-cover group-hover:scale-110 transition-transform duration-700 saturate-150 brightness-90"
+                                    className="object-cover group-hover:scale-110 transition-transform duration-700 saturate-150 brightness-75"
                                 />
                                 {/* Vibrant Indian Spice Gradient Overlay */}
                                 <div className="absolute inset-0 bg-gradient-to-t from-black via-[#631206]/80 to-transparent opacity-90 group-hover:opacity-80 transition-opacity duration-500" />
@@ -125,10 +125,10 @@ export default function Hero() {
                                 <div className="absolute -top-10 -right-10 w-32 h-32 bg-gold/20 rounded-full blur-2xl group-hover:bg-orange-500/40 transition-colors duration-500" />
 
                                 <div className="relative z-10 p-5 text-center transform group-hover:-translate-y-1 transition-transform duration-500">
-                                    <h3 className="text-transparent bg-clip-text bg-gradient-to-r from-amber-200 via-gold to-yellow-500 font-cinzel font-black text-base md:text-xl leading-tight uppercase tracking-wider mb-2 drop-shadow-[0_2px_2px_rgba(0,0,0,1)]">Lunch & Dinner Buffet</h3>
+                                    <h3 className="text-transparent bg-clip-text bg-gradient-to-r from-amber-200 via-gold to-yellow-500 font-cinzel font-black text-base md:text-xl leading-tight uppercase tracking-wider mb-2 drop-shadow-[0_2px_2px_rgba(0,0,0,1)]">Banquet Hall</h3>
                                     {/* Placeholder for your subtext */}
                                     <p className="text-white font-montserrat font-bold text-[10px] md:text-xs uppercase tracking-[0.2em] drop-shadow-[0_2px_4px_rgba(0,0,0,1)]">
-                                        LUNCH: 11-3 • DINNER: 5-9
+                                        PRIVATE EVENTS & PARTIES
                                     </p>
                                 </div>
                             </a>
@@ -203,6 +203,27 @@ export default function Hero() {
                                     </p>
                                 </div>
                             </div>
+
+                            {/* Card 5: Lunch Buffet */}
+                            <a href="/menu" className="col-span-2 group relative rounded-xl hover:rounded-2xl overflow-hidden border-2 border-gold/50 hover:border-gold transition-all duration-500 shadow-[0_4px_20px_rgba(0,0,0,0.8)] hover:shadow-[0_0_40px_rgba(212,175,55,0.6)] aspect-[21/9] sm:aspect-[24/7] flex flex-col justify-end transform hover:-translate-y-2">
+                                <Image
+                                    src="/images/indian-buffet-food-real.png"
+                                    alt="Daily Lunch Buffet"
+                                    fill
+                                    className="object-cover group-hover:scale-110 transition-transform duration-700 saturate-150 brightness-90"
+                                />
+                                <div className="absolute inset-0 bg-gradient-to-t from-black via-[#631206]/80 to-transparent opacity-90 group-hover:opacity-80 transition-opacity duration-500" />
+
+                                <div className="absolute inset-3 border border-gold/10 rounded-lg pointer-events-none group-hover:border-gold/30 transition-colors duration-500" />
+                                <div className="absolute -top-10 -right-10 w-32 h-32 bg-gold/20 rounded-full blur-2xl group-hover:bg-orange-500/40 transition-colors duration-500" />
+
+                                <div className="relative z-10 p-5 text-center transform group-hover:-translate-y-1 transition-transform duration-500">
+                                    <h3 className="text-transparent bg-clip-text bg-gradient-to-r from-amber-200 via-gold to-yellow-500 font-cinzel font-black text-lg md:text-2xl leading-tight uppercase tracking-wider mb-2 drop-shadow-[0_2px_2px_rgba(0,0,0,1)]">Daily Lunch Buffet</h3>
+                                    <p className="text-white font-montserrat font-bold text-[10px] md:text-xs uppercase tracking-[0.2em] drop-shadow-[0_2px_4px_rgba(0,0,0,1)]">
+                                        EVERY DAY: 11AM - 3PM
+                                    </p>
+                                </div>
+                            </a>
                         </motion.div>
 
 
