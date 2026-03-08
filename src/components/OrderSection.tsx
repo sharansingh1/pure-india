@@ -33,6 +33,16 @@ const orderOptions = [
         cta: "Order UberEats",
         color: "from-green-600 to-green-800",
         highlight: false
+    },
+    {
+        name: "Call to Order",
+        description: "+1 (702) 916-4083",
+        icon: <Phone className="w-8 h-8" />,
+        link: "tel:+17029164083",
+        cta: "Call Now",
+        color: "from-gray-700 to-black",
+        highlight: false,
+        noCta: true
     }
 ];
 
@@ -106,11 +116,13 @@ export default function OrderSection() {
                                 {option.description}
                             </p>
 
-                            <div className={`mt-auto flex items-center justify-between text-sm font-bold uppercase tracking-widest
-                                ${option.highlight ? "text-gold" : "text-gray-400 group-hover:text-gold"} transition-colors`}>
-                                <span>{option.cta}</span>
-                                <ExternalLink size={16} />
-                            </div>
+                            {!option.noCta && (
+                                <div className={`mt-auto flex items-center justify-between text-sm font-bold uppercase tracking-widest
+                                    ${option.highlight ? "text-gold" : "text-gray-400 group-hover:text-gold"} transition-colors`}>
+                                    <span>{option.cta}</span>
+                                    <ExternalLink size={16} />
+                                </div>
+                            )}
 
                             {/* Badge for highlight */}
                             {option.highlight && (
