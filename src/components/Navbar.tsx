@@ -63,6 +63,22 @@ export default function Navbar() {
                         ))}
                     </nav>
 
+                    {/* Order Now Button (Desktop) */}
+                    <div className="hidden lg:block">
+                        <button
+                            onClick={() => {
+                                if (pathname === '/') {
+                                    document.getElementById("order-section")?.scrollIntoView({ behavior: "smooth" });
+                                } else {
+                                    window.location.href = '/#order-section';
+                                }
+                            }}
+                            className="px-6 py-2.5 bg-gold hover:bg-yellow-500 text-black text-[10px] font-black uppercase tracking-[0.2em] rounded-full transition-all duration-300 shadow-[0_0_15px_rgba(212,175,55,0.3)] hover:scale-105 active:scale-95"
+                        >
+                            Order Now
+                        </button>
+                    </div>
+
                     {/* Mobile Menu Button */}
                     <button
                         onClick={() => setIsOpen(!isOpen)}
@@ -100,6 +116,28 @@ export default function Navbar() {
                                     </Link>
                                 </motion.div>
                             ))}
+                            <motion.div
+                                initial={{ opacity: 0, scale: 0.9 }}
+                                animate={{ opacity: 1, scale: 1 }}
+                                transition={{ delay: navLinks.length * 0.1 }}
+                                className="pt-4"
+                            >
+                                <button
+                                    onClick={() => {
+                                        setIsOpen(false);
+                                        setTimeout(() => {
+                                            if (pathname === '/') {
+                                                document.getElementById("order-section")?.scrollIntoView({ behavior: "smooth" });
+                                            } else {
+                                                window.location.href = '/#order-section';
+                                            }
+                                        }, 300);
+                                    }}
+                                    className="px-12 py-4 bg-gold text-black font-cinzel font-bold text-xl uppercase tracking-widest rounded-full"
+                                >
+                                    Order Now
+                                </button>
+                            </motion.div>
                         </nav>
                     </motion.div>
                 )}

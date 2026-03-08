@@ -1,0 +1,1030 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Pure Indian Cuisine — Menu</title>
+    <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@400;500;600;700&family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;0,600;1,300;1,400&family=Montserrat:wght@300;400;500;600&display=swap" rel="stylesheet">
+    <style>
+        :root {
+            --gold: #B8860B;
+            --gold-light: #D4AF37;
+            --gold-pale: #F5E6B8;
+            --cream: #FDF8F0;
+            --cream-dark: #F0E6D3;
+            --black: #1A1A1A;
+            --dark: #2C2C2C;
+            --gray: #6B6B6B;
+            --gray-light: #9A9A9A;
+            --border: #E0D5C1;
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        @page {
+            size: letter;
+            margin: 0.5in 0.6in;
+        }
+
+        body {
+            font-family: 'Cormorant Garamond', 'Georgia', serif;
+            background: var(--cream);
+            color: var(--black);
+            line-height: 1.5;
+            -webkit-print-color-adjust: exact;
+            print-color-adjust: exact;
+        }
+
+        /* ─── COVER PAGE ─── */
+        .cover-page {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            min-height: 100vh;
+            text-align: center;
+            padding: 2rem;
+            page-break-after: always;
+            background: linear-gradient(180deg, #0D0D0D 0%, #1A1410 50%, #0D0D0D 100%);
+            position: relative;
+            overflow: hidden;
+        }
+
+        .cover-page::before {
+            content: '';
+            position: absolute;
+            top: 40px;
+            left: 40px;
+            right: 40px;
+            bottom: 40px;
+            border: 1px solid var(--gold-light);
+            opacity: 0.4;
+        }
+
+        .cover-page::after {
+            content: '';
+            position: absolute;
+            top: 50px;
+            left: 50px;
+            right: 50px;
+            bottom: 50px;
+            border: 1px solid var(--gold-light);
+            opacity: 0.2;
+        }
+
+        .cover-ornament {
+            width: 120px;
+            height: 1px;
+            background: linear-gradient(90deg, transparent, var(--gold-light), transparent);
+            margin: 20px auto;
+        }
+
+        .cover-ornament.thick {
+            height: 2px;
+            width: 200px;
+        }
+
+        .cover-diamond {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 16px;
+            margin: 16px 0;
+        }
+
+        .cover-diamond .line {
+            width: 80px;
+            height: 1px;
+            background: var(--gold-light);
+            opacity: 0.5;
+        }
+
+        .cover-diamond .diamond {
+            width: 8px;
+            height: 8px;
+            background: var(--gold-light);
+            transform: rotate(45deg);
+            opacity: 0.7;
+        }
+
+        .cover-title {
+            font-family: 'Cinzel', serif;
+            font-size: 52px;
+            font-weight: 700;
+            color: var(--gold-light);
+            letter-spacing: 8px;
+            text-transform: uppercase;
+            line-height: 1.2;
+            position: relative;
+            z-index: 1;
+        }
+
+        .cover-subtitle {
+            font-family: 'Cinzel', serif;
+            font-size: 18px;
+            font-weight: 400;
+            color: var(--gold-pale);
+            letter-spacing: 10px;
+            text-transform: uppercase;
+            margin-top: 8px;
+            position: relative;
+            z-index: 1;
+        }
+
+        .cover-tagline {
+            font-family: 'Cormorant Garamond', serif;
+            font-size: 17px;
+            font-style: italic;
+            color: #C9B896;
+            letter-spacing: 2px;
+            margin-top: 30px;
+            position: relative;
+            z-index: 1;
+            font-weight: 300;
+        }
+
+        .cover-menu-label {
+            font-family: 'Cinzel', serif;
+            font-size: 36px;
+            font-weight: 400;
+            color: var(--gold-pale);
+            letter-spacing: 16px;
+            text-transform: uppercase;
+            margin-top: 50px;
+            position: relative;
+            z-index: 1;
+        }
+
+        .cover-address {
+            font-family: 'Montserrat', sans-serif;
+            font-size: 10px;
+            color: #8B7D6B;
+            letter-spacing: 4px;
+            text-transform: uppercase;
+            margin-top: 50px;
+            position: relative;
+            z-index: 1;
+            line-height: 2.2;
+        }
+
+        /* ─── MENU PAGES ─── */
+        .menu-page {
+            padding: 30px 20px;
+            page-break-after: always;
+            min-height: 100vh;
+        }
+
+        .menu-page:last-child {
+            page-break-after: avoid;
+        }
+
+        /* ─── PAGE HEADER ─── */
+        .page-header {
+            text-align: center;
+            margin-bottom: 8px;
+            padding-bottom: 6px;
+        }
+
+        .page-header-name {
+            font-family: 'Cinzel', serif;
+            font-size: 11px;
+            letter-spacing: 6px;
+            color: var(--gold);
+            text-transform: uppercase;
+            font-weight: 500;
+        }
+
+        .page-header-line {
+            width: 60px;
+            height: 1px;
+            background: linear-gradient(90deg, transparent, var(--gold), transparent);
+            margin: 6px auto;
+        }
+
+        /* ─── CATEGORY SECTIONS ─── */
+        .category {
+            margin-bottom: 30px;
+        }
+
+        .category-header {
+            text-align: center;
+            margin-bottom: 18px;
+            position: relative;
+        }
+
+        .category-title {
+            font-family: 'Cinzel', serif;
+            font-size: 24px;
+            font-weight: 600;
+            color: var(--black);
+            letter-spacing: 5px;
+            text-transform: uppercase;
+            display: inline-block;
+            position: relative;
+            padding: 0 20px;
+        }
+
+        .category-divider {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 12px;
+            margin-top: 8px;
+        }
+
+        .category-divider .line {
+            width: 60px;
+            height: 1px;
+            background: var(--gold);
+        }
+
+        .category-divider .dot {
+            width: 5px;
+            height: 5px;
+            background: var(--gold);
+            transform: rotate(45deg);
+        }
+
+        /* ─── MENU ITEMS ─── */
+        .menu-items {
+            max-width: 680px;
+            margin: 0 auto;
+        }
+
+        .menu-item {
+            margin-bottom: 16px;
+            padding-bottom: 14px;
+            border-bottom: 1px solid rgba(0,0,0,0.04);
+        }
+
+        .menu-item:last-child {
+            border-bottom: none;
+        }
+
+        .item-row {
+            display: flex;
+            align-items: baseline;
+            gap: 8px;
+        }
+
+        .item-name {
+            font-family: 'Cormorant Garamond', serif;
+            font-size: 18px;
+            font-weight: 600;
+            color: var(--black);
+            white-space: nowrap;
+        }
+
+        .item-dots {
+            flex: 1;
+            border-bottom: 1px dotted var(--border);
+            min-width: 30px;
+            margin-bottom: 4px;
+        }
+
+        .item-price {
+            font-family: 'Montserrat', sans-serif;
+            font-size: 14px;
+            font-weight: 600;
+            color: var(--gold);
+            white-space: nowrap;
+        }
+
+        .item-description {
+            font-family: 'Cormorant Garamond', serif;
+            font-size: 13.5px;
+            font-weight: 400;
+            color: var(--gray);
+            font-style: italic;
+            line-height: 1.5;
+            margin-top: 4px;
+            padding-right: 60px;
+        }
+
+        /* ─── TWO COLUMN LAYOUT ─── */
+        .two-col {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 30px 50px;
+            max-width: 760px;
+            margin: 0 auto;
+        }
+
+        .two-col .menu-item {
+            margin-bottom: 12px;
+            padding-bottom: 10px;
+        }
+
+        .two-col .item-description {
+            padding-right: 0;
+        }
+
+        /* ─── SECTION DIVIDER ─── */
+        .section-break {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 12px;
+            margin: 35px 0;
+        }
+
+        .section-break .line {
+            width: 100px;
+            height: 1px;
+            background: linear-gradient(90deg, transparent, var(--border), transparent);
+        }
+
+        .section-break .ornament {
+            font-size: 14px;
+            color: var(--gold);
+        }
+
+        /* ─── FOOTER NOTE ─── */
+        .footer-note {
+            text-align: center;
+            margin-top: 40px;
+            padding-top: 25px;
+            border-top: 1px solid var(--border);
+        }
+
+        .footer-note p {
+            font-family: 'Cormorant Garamond', serif;
+            font-size: 13px;
+            font-style: italic;
+            color: var(--gray-light);
+            margin-bottom: 4px;
+            line-height: 1.6;
+        }
+
+        .footer-note .restaurant-info {
+            margin-top: 16px;
+            font-family: 'Montserrat', sans-serif;
+            font-size: 9px;
+            letter-spacing: 3px;
+            color: var(--gold);
+            text-transform: uppercase;
+        }
+
+        /* ─── VEG INDICATOR ─── */
+        .veg-badge {
+            display: inline-block;
+            width: 10px;
+            height: 10px;
+            border: 1.5px solid #2E8B57;
+            border-radius: 1px;
+            position: relative;
+            margin-left: 6px;
+            top: -1px;
+        }
+
+        .veg-badge::after {
+            content: '';
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            width: 5px;
+            height: 5px;
+            background: #2E8B57;
+            border-radius: 50%;
+        }
+
+        /* ─── PRINT STYLES ─── */
+        @media print {
+            body {
+                background: white;
+            }
+
+            .cover-page {
+                background: #0D0D0D !important;
+                -webkit-print-color-adjust: exact;
+                print-color-adjust: exact;
+            }
+
+            .no-break {
+                page-break-inside: avoid;
+            }
+
+            .page-break {
+                page-break-before: always;
+            }
+        }
+
+        /* ─── SCREEN HELPER ─── */
+        @media screen {
+            .print-instructions {
+                position: fixed;
+                top: 0;
+                left: 0;
+                right: 0;
+                background: #1A1A1A;
+                color: #D4AF37;
+                text-align: center;
+                padding: 12px 20px;
+                font-family: 'Montserrat', sans-serif;
+                font-size: 13px;
+                z-index: 9999;
+                letter-spacing: 1px;
+                box-shadow: 0 4px 20px rgba(0,0,0,0.3);
+            }
+
+            .print-instructions strong {
+                color: white;
+            }
+
+            body {
+                padding-top: 50px;
+            }
+        }
+
+        @media print {
+            .print-instructions {
+                display: none;
+            }
+
+            body {
+                padding-top: 0;
+            }
+        }
+    </style>
+</head>
+<body>
+
+    <div class="print-instructions">
+        To save as PDF: Press <strong>Ctrl + P</strong> → Select <strong>"Save as PDF"</strong> → Set margins to <strong>"None"</strong> → Check <strong>"Background graphics"</strong> → Save
+    </div>
+
+    <!-- ═══════════════════ COVER PAGE ═══════════════════ -->
+    <div class="cover-page">
+        <div class="cover-diamond">
+            <span class="line"></span>
+            <span class="diamond"></span>
+            <span class="line"></span>
+        </div>
+
+        <div class="cover-title">Pure Indian</div>
+        <div class="cover-subtitle">Cuisine</div>
+
+        <div class="cover-ornament thick"></div>
+
+        <div class="cover-tagline">"The Art of Traditional Spices"</div>
+
+        <div class="cover-menu-label">Menu</div>
+
+        <div class="cover-ornament"></div>
+
+        <div class="cover-address">
+            1405 E Sunset Rd, Las Vegas, NV 89119<br>
+            pureindiacuisine.com
+        </div>
+    </div>
+
+    <!-- ═══════════════════ PAGE 2: APPETIZERS & INDO-CHINESE ═══════════════════ -->
+    <div class="menu-page">
+        <div class="page-header">
+            <div class="page-header-name">Pure Indian Cuisine</div>
+            <div class="page-header-line"></div>
+        </div>
+
+        <!-- APPETIZERS -->
+        <div class="category">
+            <div class="category-header">
+                <div class="category-title">Appetizers</div>
+                <div class="category-divider">
+                    <span class="line"></span>
+                    <span class="dot"></span>
+                    <span class="line"></span>
+                </div>
+            </div>
+
+            <div class="menu-items">
+                <div class="menu-item no-break">
+                    <div class="item-row">
+                        <span class="item-name">Halwa Puri</span>
+                        <span class="item-dots"></span>
+                        <span class="item-price">$10.00</span>
+                    </div>
+                </div>
+
+                <div class="menu-item no-break">
+                    <div class="item-row">
+                        <span class="item-name">Pani Puri</span>
+                        <span class="item-dots"></span>
+                        <span class="item-price">$7.99</span>
+                    </div>
+                </div>
+
+                <div class="menu-item no-break">
+                    <div class="item-row">
+                        <span class="item-name">Fish Pakora</span>
+                        <span class="item-dots"></span>
+                        <span class="item-price">$14.99</span>
+                    </div>
+                </div>
+
+                <div class="menu-item no-break">
+                    <div class="item-row">
+                        <span class="item-name">Assorted Veg Pakora Platter <span class="veg-badge"></span></span>
+                        <span class="item-dots"></span>
+                        <span class="item-price">$12.00</span>
+                    </div>
+                    <div class="item-description">A variety of savory Indian fritters, deep-fried in a spiced chickpea batter for a crispy exterior and tender inside – including potatoes, onions, cauliflower, spinach, and paneer. Served with mint-coriander and tamarind chutneys.</div>
+                </div>
+
+                <div class="menu-item no-break">
+                    <div class="item-row">
+                        <span class="item-name">Veg Samosa <span class="veg-badge"></span></span>
+                        <span class="item-dots"></span>
+                        <span class="item-price">$10.00</span>
+                    </div>
+                    <div class="item-description">Crispy, golden-fried triangular pastry filled with spiced potatoes, peas, and aromatic herbs. 4 samosas served with tangy tamarind and spicy green chutneys.</div>
+                </div>
+
+                <div class="menu-item no-break">
+                    <div class="item-row">
+                        <span class="item-name">Punjabi Style Chole Bhature <span class="veg-badge"></span></span>
+                        <span class="item-dots"></span>
+                        <span class="item-price">$10.00</span>
+                    </div>
+                    <div class="item-description">Tender chickpeas slow-cooked in an aromatic, tangy gravy with traditional spices. Paired with light, golden-fried bhature. Served with pickled vegetables and sliced red onions.</div>
+                </div>
+            </div>
+        </div>
+
+        <div class="section-break">
+            <span class="line"></span>
+            <span class="ornament">✦</span>
+            <span class="line"></span>
+        </div>
+
+        <!-- INDO-CHINESE -->
+        <div class="category">
+            <div class="category-header">
+                <div class="category-title">Indo-Chinese</div>
+                <div class="category-divider">
+                    <span class="line"></span>
+                    <span class="dot"></span>
+                    <span class="line"></span>
+                </div>
+            </div>
+
+            <div class="menu-items">
+                <div class="menu-item no-break">
+                    <div class="item-row">
+                        <span class="item-name">Chili Chicken</span>
+                        <span class="item-dots"></span>
+                        <span class="item-price">$18.00</span>
+                    </div>
+                </div>
+
+                <div class="menu-item no-break">
+                    <div class="item-row">
+                        <span class="item-name">Chilli Paneer <span class="veg-badge"></span></span>
+                        <span class="item-dots"></span>
+                        <span class="item-price">$18.00</span>
+                    </div>
+                    <div class="item-description">Crispy, golden-fried cubes of Indian cottage cheese tossed in a spicy, tangy Indo-Chinese sauce with bell peppers and onions.</div>
+                </div>
+
+                <div class="menu-item no-break">
+                    <div class="item-row">
+                        <span class="item-name">Veg Fried Rice <span class="veg-badge"></span></span>
+                        <span class="item-dots"></span>
+                        <span class="item-price">$15.00</span>
+                    </div>
+                    <div class="item-description">Seasonal vegetables and long-grain basmati rice, wok-tossed with ginger, garlic, green chilies, and our signature Indo-Chinese sauces.</div>
+                </div>
+
+                <div class="menu-item no-break">
+                    <div class="item-row">
+                        <span class="item-name">Chicken Fried Rice</span>
+                        <span class="item-dots"></span>
+                        <span class="item-price">$18.00</span>
+                    </div>
+                    <div class="item-description">Basmati rice with tender chicken, scrambled egg, and crisp vegetables wok-tossed with soy sauce, ginger, garlic, and green onions.</div>
+                </div>
+            </div>
+        </div>
+
+        <div class="section-break">
+            <span class="line"></span>
+            <span class="ornament">✦</span>
+            <span class="line"></span>
+        </div>
+
+        <!-- GRILLS -->
+        <div class="category">
+            <div class="category-header">
+                <div class="category-title">Grills</div>
+                <div class="category-divider">
+                    <span class="line"></span>
+                    <span class="dot"></span>
+                    <span class="line"></span>
+                </div>
+            </div>
+
+            <div class="menu-items">
+                <div class="menu-item no-break">
+                    <div class="item-row">
+                        <span class="item-name">Tandoori Chicken</span>
+                        <span class="item-dots"></span>
+                        <span class="item-price">$17.99</span>
+                    </div>
+                    <div class="item-description">Whole chicken marinated in yogurt and spices, grilled to perfection in our tandoor oven.</div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- ═══════════════════ PAGE 3: VEG CURRY & NON-VEG CURRY ═══════════════════ -->
+    <div class="menu-page">
+        <div class="page-header">
+            <div class="page-header-name">Pure Indian Cuisine</div>
+            <div class="page-header-line"></div>
+        </div>
+
+        <!-- VEG CURRY -->
+        <div class="category">
+            <div class="category-header">
+                <div class="category-title">Veg Curry</div>
+                <div class="category-divider">
+                    <span class="line"></span>
+                    <span class="dot"></span>
+                    <span class="line"></span>
+                </div>
+            </div>
+
+            <div class="menu-items">
+                <div class="menu-item no-break">
+                    <div class="item-row">
+                        <span class="item-name">Aloo Gobhi Sabzi <span class="veg-badge"></span></span>
+                        <span class="item-dots"></span>
+                        <span class="item-price">$17.00</span>
+                    </div>
+                    <div class="item-description">Tender cauliflower florets and potatoes, slow-cooked with aromatic spices, onions, and tomatoes.</div>
+                </div>
+
+                <div class="menu-item no-break">
+                    <div class="item-row">
+                        <span class="item-name">Dal Makhani <span class="veg-badge"></span></span>
+                        <span class="item-dots"></span>
+                        <span class="item-price">$17.00</span>
+                    </div>
+                    <div class="item-description">Rich and creamy slow-cooked black lentils and kidney beans, finished with butter and cream.</div>
+                </div>
+
+                <div class="menu-item no-break">
+                    <div class="item-row">
+                        <span class="item-name">Traditional Saag <span class="veg-badge"></span></span>
+                        <span class="item-dots"></span>
+                        <span class="item-price">$18.00</span>
+                    </div>
+                    <div class="item-description">Organic spinach and mustard greens, cooked with traditional spices and pureed to silky perfection.</div>
+                </div>
+
+                <div class="menu-item no-break">
+                    <div class="item-row">
+                        <span class="item-name">Butter Paneer <span class="veg-badge"></span></span>
+                        <span class="item-dots"></span>
+                        <span class="item-price">$18.00</span>
+                    </div>
+                    <div class="item-description">Succulent cubes of homemade cottage cheese in a velvety tomato, onion, and cashew-based gravy, finished with butter and cream.</div>
+                </div>
+
+                <div class="menu-item no-break">
+                    <div class="item-row">
+                        <span class="item-name">Malai Kofta <span class="veg-badge"></span></span>
+                        <span class="item-dots"></span>
+                        <span class="item-price">$20.00</span>
+                    </div>
+                    <div class="item-description">Soft, melt-in-your-mouth dumplings of paneer and mashed potatoes, subtly spiced and deep-fried until golden. A royal North Indian delicacy.</div>
+                </div>
+
+                <div class="menu-item no-break">
+                    <div class="item-row">
+                        <span class="item-name">Chana Masala <span class="veg-badge"></span></span>
+                        <span class="item-dots"></span>
+                        <span class="item-price">$17.00</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="section-break">
+            <span class="line"></span>
+            <span class="ornament">✦</span>
+            <span class="line"></span>
+        </div>
+
+        <!-- NON-VEG CURRY -->
+        <div class="category">
+            <div class="category-header">
+                <div class="category-title">Non-Veg Curry</div>
+                <div class="category-divider">
+                    <span class="line"></span>
+                    <span class="dot"></span>
+                    <span class="line"></span>
+                </div>
+            </div>
+
+            <div class="menu-items">
+                <div class="menu-item no-break">
+                    <div class="item-row">
+                        <span class="item-name">Traditional Chicken Curry</span>
+                        <span class="item-dots"></span>
+                        <span class="item-price">$20.00</span>
+                    </div>
+                    <div class="item-description">Tender chicken in an aromatic, home-style onion and tomato gravy with freshly ground spices and fresh coriander.</div>
+                </div>
+
+                <div class="menu-item no-break">
+                    <div class="item-row">
+                        <span class="item-name">Mango Chicken Curry</span>
+                        <span class="item-dots"></span>
+                        <span class="item-price">$20.00</span>
+                    </div>
+                    <div class="item-description">Boneless chicken in a rich, creamy ripe mango purée sauce with mild Indian spices, ginger, and garlic.</div>
+                </div>
+
+                <div class="menu-item no-break">
+                    <div class="item-row">
+                        <span class="item-name">Coconut Chicken Curry</span>
+                        <span class="item-dots"></span>
+                        <span class="item-price">$20.00</span>
+                    </div>
+                    <div class="item-description">Tender chicken in a rich, creamy, tomato-based coconut sauce with traditional Indian spices.</div>
+                </div>
+
+                <div class="menu-item no-break">
+                    <div class="item-row">
+                        <span class="item-name">Classic Butter Chicken</span>
+                        <span class="item-dots"></span>
+                        <span class="item-price">$20.00</span>
+                    </div>
+                    <div class="item-description">Tandoori chicken simmered in a velvety smooth, mildly spiced tomato and cream makhani sauce. A true Indian classic.</div>
+                </div>
+
+                <div class="menu-item no-break">
+                    <div class="item-row">
+                        <span class="item-name">Chicken Tikka Masala</span>
+                        <span class="item-dots"></span>
+                        <span class="item-price">$20.00</span>
+                    </div>
+                    <div class="item-description">Marinated chicken in a rich, creamy tomato-based sauce infused with aromatic spices. Perfect with naan or over fluffy rice.</div>
+                </div>
+
+                <div class="menu-item no-break">
+                    <div class="item-row">
+                        <span class="item-name">Authentic Goat Curry</span>
+                        <span class="item-dots"></span>
+                        <span class="item-price">$22.00</span>
+                    </div>
+                    <div class="item-description">Tender goat meat simmered in a rich, spicy gravy with bold flavors and aromatic spices.</div>
+                </div>
+
+                <div class="menu-item no-break">
+                    <div class="item-row">
+                        <span class="item-name">Shrimp Curry</span>
+                        <span class="item-dots"></span>
+                        <span class="item-price">$22.00</span>
+                    </div>
+                </div>
+
+                <div class="menu-item no-break">
+                    <div class="item-row">
+                        <span class="item-name">Fish Curry</span>
+                        <span class="item-dots"></span>
+                        <span class="item-price">$22.00</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- ═══════════════════ PAGE 4: RICE, BREADS, DRINKS, DESSERT ═══════════════════ -->
+    <div class="menu-page">
+        <div class="page-header">
+            <div class="page-header-name">Pure Indian Cuisine</div>
+            <div class="page-header-line"></div>
+        </div>
+
+        <!-- RICE -->
+        <div class="category">
+            <div class="category-header">
+                <div class="category-title">Rice</div>
+                <div class="category-divider">
+                    <span class="line"></span>
+                    <span class="dot"></span>
+                    <span class="line"></span>
+                </div>
+            </div>
+
+            <div class="menu-items">
+                <div class="menu-item no-break">
+                    <div class="item-row">
+                        <span class="item-name">Classic Veg Biryani <span class="veg-badge"></span></span>
+                        <span class="item-dots"></span>
+                        <span class="item-price">$15.00</span>
+                    </div>
+                    <div class="item-description">Aromatic basmati rice packed with vibrant, spiced vegetables. A hearty vegetarian classic.</div>
+                </div>
+
+                <div class="menu-item no-break">
+                    <div class="item-row">
+                        <span class="item-name">Chicken Biryani</span>
+                        <span class="item-dots"></span>
+                        <span class="item-price">$18.00</span>
+                    </div>
+                    <div class="item-description">Fragrant basmati rice layered with juicy, spiced chicken and aromatic herbs. A South Asian classic.</div>
+                </div>
+
+                <div class="menu-item no-break">
+                    <div class="item-row">
+                        <span class="item-name">Plain Basmati Rice <span class="veg-badge"></span></span>
+                        <span class="item-dots"></span>
+                        <span class="item-price">$7.00</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="section-break">
+            <span class="line"></span>
+            <span class="ornament">✦</span>
+            <span class="line"></span>
+        </div>
+
+        <!-- BREADS -->
+        <div class="category">
+            <div class="category-header">
+                <div class="category-title">Breads</div>
+                <div class="category-divider">
+                    <span class="line"></span>
+                    <span class="dot"></span>
+                    <span class="line"></span>
+                </div>
+            </div>
+
+            <div class="menu-items">
+                <div class="menu-item no-break">
+                    <div class="item-row">
+                        <span class="item-name">Tandoori Roti <span class="veg-badge"></span></span>
+                        <span class="item-dots"></span>
+                        <span class="item-price">$5.00</span>
+                    </div>
+                </div>
+
+                <div class="menu-item no-break">
+                    <div class="item-row">
+                        <span class="item-name">Butter Naan <span class="veg-badge"></span></span>
+                        <span class="item-dots"></span>
+                        <span class="item-price">$5.00</span>
+                    </div>
+                    <div class="item-description">Soft, pillowy flatbread baked in our clay tandoor oven, brushed with generous amounts of butter.</div>
+                </div>
+
+                <div class="menu-item no-break">
+                    <div class="item-row">
+                        <span class="item-name">Garlic Naan <span class="veg-badge"></span></span>
+                        <span class="item-dots"></span>
+                        <span class="item-price">$5.00</span>
+                    </div>
+                    <div class="item-description">Traditional flatbread with fresh garlic and cilantro.</div>
+                </div>
+            </div>
+        </div>
+
+        <div class="section-break">
+            <span class="line"></span>
+            <span class="ornament">✦</span>
+            <span class="line"></span>
+        </div>
+
+        <!-- DRINKS -->
+        <div class="category">
+            <div class="category-header">
+                <div class="category-title">Drinks</div>
+                <div class="category-divider">
+                    <span class="line"></span>
+                    <span class="dot"></span>
+                    <span class="line"></span>
+                </div>
+            </div>
+
+            <div class="menu-items">
+                <div class="menu-item no-break">
+                    <div class="item-row">
+                        <span class="item-name">Rooh Afza</span>
+                        <span class="item-dots"></span>
+                        <span class="item-price">$4.00</span>
+                    </div>
+                </div>
+
+                <div class="menu-item no-break">
+                    <div class="item-row">
+                        <span class="item-name">Soda (Coke, Diet Coke, Sprite, Fanta)</span>
+                        <span class="item-dots"></span>
+                        <span class="item-price">$3.50</span>
+                    </div>
+                </div>
+
+                <div class="menu-item no-break">
+                    <div class="item-row">
+                        <span class="item-name">Mango Lassi <span class="veg-badge"></span></span>
+                        <span class="item-dots"></span>
+                        <span class="item-price">$5.00</span>
+                    </div>
+                    <div class="item-description">Thick yogurt-based drink blended with sweet mango pulp, served chilled.</div>
+                </div>
+
+                <div class="menu-item no-break">
+                    <div class="item-row">
+                        <span class="item-name">Traditional Pure Indian Chai</span>
+                        <span class="item-dots"></span>
+                        <span class="item-price">$4.00</span>
+                    </div>
+                    <div class="item-description">Strong black tea with cardamom, ginger, cinnamon, and cloves, simmered with milk and sweetened to perfection.</div>
+                </div>
+            </div>
+        </div>
+
+        <div class="section-break">
+            <span class="line"></span>
+            <span class="ornament">✦</span>
+            <span class="line"></span>
+        </div>
+
+        <!-- DESSERT -->
+        <div class="category">
+            <div class="category-header">
+                <div class="category-title">Dessert</div>
+                <div class="category-divider">
+                    <span class="line"></span>
+                    <span class="dot"></span>
+                    <span class="line"></span>
+                </div>
+            </div>
+
+            <div class="menu-items">
+                <div class="menu-item no-break">
+                    <div class="item-row">
+                        <span class="item-name">Suji Ka Halwa <span class="veg-badge"></span></span>
+                        <span class="item-dots"></span>
+                        <span class="item-price">$12.00</span>
+                    </div>
+                    <div class="item-description">Warm Indian semolina pudding with vanilla ice cream, topped with ghee-roasted nuts, whip cream, and cherry.</div>
+                </div>
+
+                <div class="menu-item no-break">
+                    <div class="item-row">
+                        <span class="item-name">Gulab Jamun Ice Cream Sundae <span class="veg-badge"></span></span>
+                        <span class="item-dots"></span>
+                        <span class="item-price">$10.00</span>
+                    </div>
+                    <div class="item-description">Warm syrup-soaked gulab jamuns with vanilla ice cream, brownies, Oreo cookies, whip cream, cherry, and walnuts.</div>
+                </div>
+
+                <div class="menu-item no-break">
+                    <div class="item-row">
+                        <span class="item-name">Jalebi with Ice Cream <span class="veg-badge"></span></span>
+                        <span class="item-dots"></span>
+                        <span class="item-price">$10.99</span>
+                    </div>
+                </div>
+
+                <div class="menu-item no-break">
+                    <div class="item-row">
+                        <span class="item-name">Gulab Jamun – 3 Pc <span class="veg-badge"></span></span>
+                        <span class="item-dots"></span>
+                        <span class="item-price">$6.99</span>
+                    </div>
+                </div>
+
+                <div class="menu-item no-break">
+                    <div class="item-row">
+                        <span class="item-name">Gulab Jamun with Ice Cream <span class="veg-badge"></span></span>
+                        <span class="item-dots"></span>
+                        <span class="item-price">$10.99</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- FOOTER -->
+        <div class="footer-note">
+            <p>All dishes are prepared fresh to order. Please allow sufficient time for the best experience.</p>
+            <p>Please inform your server of any allergies or dietary restrictions.</p>
+            <p>An 18% gratuity will be added to parties of 6 or more.</p>
+            <p style="margin-top: 8px;"><span class="veg-badge" style="margin-right: 6px; margin-left: 0;"></span> indicates vegetarian</p>
+            <div class="restaurant-info">
+                1405 E Sunset Rd, Las Vegas, NV 89119 &nbsp;•&nbsp; pureindiacuisine.com
+            </div>
+        </div>
+    </div>
+
+</body>
+</html>

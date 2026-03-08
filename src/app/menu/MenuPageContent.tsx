@@ -3,109 +3,172 @@
 import { motion } from "framer-motion";
 import Link from "next/link";
 
+// Define a layout plan: which categories go in left column vs right column
+// Balanced for roughly equal visual weight on each side
+const LEFT_CATEGORIES = [
+    "APPETIZERS",
+    "INDO-CHINESE",
+    "NON-VEG CURRY",
+    "BREADS",
+    "DRINKS",
+];
+
+const RIGHT_CATEGORIES = [
+    "VEG CURRY",
+    "GRILLS",
+    "RICE",
+    "DESSERT",
+];
+
 export default function MenuPageContent({ groupedMenu }: { groupedMenu: any[] }) {
+    const leftMenu = LEFT_CATEGORIES
+        .map(cat => groupedMenu.find((g: any) => g.category === cat))
+        .filter(Boolean);
+
+    const rightMenu = RIGHT_CATEGORIES
+        .map(cat => groupedMenu.find((g: any) => g.category === cat))
+        .filter(Boolean);
+
+    // Any categories not in either list go at the bottom
+    const assignedCats = [...LEFT_CATEGORIES, ...RIGHT_CATEGORIES];
+    const extraMenu = groupedMenu.filter((g: any) => !assignedCats.includes(g.category));
+
     return (
-        <main className="min-h-screen pt-32 pb-20 bg-black text-white">
-            <div className="container mx-auto px-4 max-w-4xl">
-                <div className="text-center mb-16">
-                    <h1 className="font-cinzel text-5xl md:text-7xl text-white font-bold mb-6 tracking-tight">Our <span className="text-gold-gradient">Menu</span></h1>
-                    <p className="text-gold font-montserrat tracking-[0.3em] uppercase text-xs mb-8">Authentic Indian Cuisine • A La Carte Excellence</p>
+        <main className="menu-page">
+            {/* ── Hero ── */}
+            <div className="menu-hero">
+                <motion.div
+                    initial={{ opacity: 0, y: 20 }}
+                    animate={{ opacity: 1, y: 0 }}
+                    transition={{ duration: 0.7 }}
+                    className="menu-hero-content"
+                >
+                    <p className="menu-hero-eyebrow">Pure Indian Cuisine</p>
+                    <h1 className="menu-hero-title">
+                        Our <span className="text-gold-gradient">Menu</span>
+                    </h1>
+                    <div className="menu-hero-divider">
+                        <div className="menu-hero-divider-line" />
+                        <span className="menu-hero-divider-diamond">◆</span>
+                        <div className="menu-hero-divider-line" />
+                    </div>
+                    <p className="menu-hero-subtitle">
+                        Authentic A La Carte Dining &bull; Prepared Fresh to Order
+                    </p>
+                    <div className="menu-legend">
+                        <span className="menu-legend-item">
+                            <span className="menu-veg-dot" /> Vegetarian
+                        </span>
+                        <span className="menu-legend-item">
+                            <span className="menu-spicy">🌶</span> Spicy
+                        </span>
+                    </div>
+                </motion.div>
+            </div>
 
-                    {/* New Description Section */}
-                    <div className="max-w-3xl mx-auto mb-16">
-                        <div className="relative bg-gradient-to-b from-white/5 to-transparent border-t border-b border-gold/30 p-10 backdrop-blur-md shadow-[0_0_30px_rgba(212,175,55,0.05)]">
-                            <div className="absolute top-0 left-1/2 -translate-x-1/2 -translate-y-1/2 w-12 h-12 bg-black flex items-center justify-center border border-gold/50 rotate-45 shadow-[0_0_15px_rgba(212,175,55,0.3)]">
-                                <div className="w-8 h-8 border border-gold/30" />
-                            </div>
+            {/* ── Menu Grid ── */}
+            <div className="menu-container">
+                {/* Decorative top border */}
+                <div className="menu-top-border">
+                    <div className="menu-top-border-line" />
+                    <span className="menu-top-border-ornament">❖</span>
+                    <div className="menu-top-border-line" />
+                </div>
 
-                            <p className="text-transparent bg-clip-text bg-gradient-to-r from-gold via-amber-200 to-gold font-cinzel text-2xl md:text-3xl leading-relaxed italic mb-6 pt-4 drop-shadow-sm font-bold">
-                                "The Art of Traditional Spices"
-                            </p>
-                            <p className="text-gray-200 font-montserrat text-sm md:text-lg leading-relaxed tracking-wide mb-6">
-                                Embark on a culinary journey through the heart of India. Every dish is a masterpiece, prepared fresh to order using time-honored techniques and the finest hand-picked spices. From our roaring tandoor ovens to our slow-simmered curries, experience the vibrant soul of Indian cuisine in an atmosphere of royal elegance.
-                            </p>
+                <div className="menu-grid">
+                    {/* Left Column */}
+                    <div className="menu-column">
+                        {leftMenu.map((category: any, index: number) => (
+                            <MenuCategory key={category.category} category={category} index={index} />
+                        ))}
+                    </div>
 
-                            <div className="flex items-center justify-center gap-6">
-                                <div className="h-[1px] w-20 bg-gradient-to-r from-transparent to-gold/50" />
-                                <span className="text-gold text-[10px] uppercase tracking-[0.4em] font-bold glow-text">A La Carte Dining Only</span>
-                                <div className="h-[1px] w-20 bg-gradient-to-l from-transparent to-gold/50" />
-                            </div>
-                        </div>
+                    {/* Center Divider (desktop only) */}
+                    <div className="menu-center-divider" />
+
+                    {/* Right Column */}
+                    <div className="menu-column">
+                        {rightMenu.map((category: any, index: number) => (
+                            <MenuCategory key={category.category} category={category} index={index} />
+                        ))}
                     </div>
                 </div>
 
-                {groupedMenu.map((category, index) => (
-                    <motion.div
-                        key={index}
-                        initial={{ opacity: 0, y: 30 }}
-                        whileInView={{ opacity: 1, y: 0 }}
-                        viewport={{ once: true }}
-                        transition={{ duration: 0.6, delay: index * 0.1 }}
-                        className="mb-24"
-                    >
-                        <div className="flex items-center gap-6 mb-12 justify-center">
-                            <div className="h-[1px] flex-grow max-w-[100px] bg-gradient-to-r from-transparent to-gold/40" />
-                            <div className="text-center px-4">
-                                <h2 className="font-cinzel text-3xl md:text-5xl text-gold-gradient tracking-wider uppercase font-bold">
-                                    {category.category === "GRILLS" || category.category === "GRILLED" || category.category === "GRILLES" ? "GRILLS" : category.category}
-                                </h2>
-                            </div>
-                            <div className="h-[1px] flex-grow max-w-[100px] bg-gradient-to-l from-transparent to-gold/40" />
-                        </div>
-
-                        <div className="grid gap-12">
-                            {category.items.map((item: any, idx: number) => (
-                                <div key={idx} className="group relative">
-                                    <div className="flex justify-between items-baseline mb-3">
-                                        <div className="flex items-center gap-3">
-                                            <h3 className="font-cinzel text-xl md:text-2xl font-bold text-white group-hover:text-gold transition-colors duration-300">
-                                                {item.name}
-                                            </h3>
-                                            {item.isVegetarian && (
-                                                <span className="w-2 h-2 rounded-full bg-green-500 shadow-[0_0_8px_rgba(34,197,94,0.6)]" title="Vegetarian" />
-                                            )}
-                                            {item.isSpicy && (
-                                                <span className="text-red-500 text-xs" title="Spicy">🌶️</span>
-                                            )}
-                                        </div>
-                                        <div className="flex-grow mx-4 border-b border-dotted border-white/10 group-hover:border-gold/30 transition-colors" />
-                                        <span className="font-montserrat font-bold text-xl text-gold">
-                                            {/* If price contains a slash, take the first value (standard/single portion) */}
-                                            {item.price?.includes('/') ? item.price.split('/')[0].trim() : item.price}
-                                        </span>
-                                    </div>
-                                    <p className="text-gray-400 font-montserrat text-sm md:text-base leading-relaxed max-w-2xl group-hover:text-gray-300 transition-colors">
-                                        {item.description}
-                                    </p>
-                                </div>
-                            ))}
-                        </div>
-                    </motion.div>
-                ))}
-
-                <div className="text-center mt-24 pt-12 border-t border-white/10">
-                    <div className="mb-10 opacity-70">
-                        <p className="text-gray-400 text-sm font-montserrat italic mb-2">
-                            * All our dishes are prepared fresh. Please allow sufficient time for the best experience.
-                        </p>
-                        <p className="text-gray-400 text-sm font-montserrat italic">
-                            * Please inform your server of any allergies or dietary restrictions.
-                        </p>
-                        <p className="text-gray-400 text-sm font-montserrat italic">
-                            * An 18% gratuity will be added to parties of 6 or more.
-                        </p>
+                {/* Overflow categories (full-width) */}
+                {extraMenu.length > 0 && (
+                    <div className="menu-extra">
+                        {extraMenu.map((category: any, index: number) => (
+                            <MenuCategory key={category.category} category={category} index={index} />
+                        ))}
                     </div>
+                )}
 
-                    <div className="flex flex-col sm:flex-row items-center justify-center gap-6">
-                        <button className="min-w-[200px] px-8 py-4 bg-gold text-black hover:bg-white transition-all duration-300 font-montserrat font-bold uppercase tracking-widest text-xs shadow-[0_10px_20px_rgba(212,175,55,0.2)]">
-                            Download PDF Menu
-                        </button>
-                        <Link href="/contact" className="min-w-[200px] px-8 py-4 border border-gold text-gold hover:bg-gold hover:text-black transition-all duration-300 font-montserrat font-bold uppercase tracking-widest text-xs">
+                {/* Decorative bottom border */}
+                <div className="menu-top-border" style={{ marginTop: '2.5rem' }}>
+                    <div className="menu-top-border-line" />
+                    <span className="menu-top-border-ornament">❖</span>
+                    <div className="menu-top-border-line" />
+                </div>
+
+                {/* Footer */}
+                <div className="menu-footer">
+                    <div className="menu-footer-notes">
+                        <p>* All dishes are prepared fresh. Please allow sufficient time.</p>
+                        <p>* Please inform your server of any allergies or dietary restrictions.</p>
+                    </div>
+                    <div className="menu-footer-actions">
+                        <Link href="/contact" className="menu-btn-secondary">
                             Plan A Visit
                         </Link>
                     </div>
                 </div>
             </div>
         </main>
+    );
+}
+
+/* ── Category Block ── */
+function MenuCategory({ category, index }: { category: any; index: number }) {
+    const displayName =
+        category.category === "GRILLS" ||
+            category.category === "GRILLED" ||
+            category.category === "GRILLES"
+            ? "GRILLS"
+            : category.category;
+
+    return (
+        <motion.div
+            initial={{ opacity: 0, y: 15 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true, margin: "-30px" }}
+            transition={{ duration: 0.45, delay: index * 0.06 }}
+            className="menu-category"
+        >
+            <div className="menu-category-header">
+                <div className="menu-category-line" />
+                <h2 className="menu-category-title">{displayName}</h2>
+                <div className="menu-category-line" />
+            </div>
+
+            <div className="menu-items">
+                {category.items.map((item: any, idx: number) => (
+                    <div key={idx} className="menu-item">
+                        <div className="menu-item-row">
+                            <span className="menu-item-name">
+                                {item.name?.trim()}
+                                {item.isVegetarian && <span className="menu-veg-dot" title="Vegetarian" />}
+                                {item.isSpicy && <span className="menu-spicy" title="Spicy">🌶</span>}
+                            </span>
+                            <span className="menu-item-dots" />
+                            <span className="menu-item-price">
+                                {item.price?.includes("/")
+                                    ? item.price.split("/")[0].trim()
+                                    : item.price}
+                            </span>
+                        </div>
+                    </div>
+                ))}
+            </div>
+        </motion.div>
     );
 }

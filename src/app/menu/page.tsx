@@ -2,6 +2,7 @@ import { client } from "@/sanity/lib/client";
 import { defineQuery } from "next-sanity";
 import MenuPageContent from "./MenuPageContent";
 import { generateBreadcrumbSchema, breadcrumbs } from "@/lib/breadcrumbs";
+import "./menu.css";
 
 export const dynamic = 'force-dynamic';
 

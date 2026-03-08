@@ -3,7 +3,7 @@
 import { motion, AnimatePresence } from "framer-motion";
 import Image from "next/image";
 import { useState, useEffect } from "react";
-import { UtensilsCrossed, Wine, ChefHat, Coffee } from "lucide-react";
+import { UtensilsCrossed, Wine, ChefHat, Coffee, ShoppingBag } from "lucide-react";
 
 const carouselImages = [
     {
@@ -96,6 +96,24 @@ export default function Hero() {
                                     Savor the most authentic Indian flavors in Las Vegas. Indulge in our exquisite a la carte fine dining, featuring amazing dishes crafted with passion, tradition, and the finest spices. <br />
                                     <span className="text-sm text-gray-400 mt-2 block">Authentic flavors, royal ambience, and impeccable service near the airport. Extensive vegetarian options available.</span>
                                 </p>
+                            </div>
+
+                            {/* Primary CTA Buttons */}
+                            <div className="flex flex-wrap gap-4 pt-4">
+                                <button
+                                    onClick={() => document.getElementById("order-section")?.scrollIntoView({ behavior: "smooth" })}
+                                    className="px-8 py-4 bg-gold hover:bg-yellow-500 text-black font-montserrat font-black uppercase tracking-widest rounded-full transition-all duration-300 shadow-[0_0_20px_rgba(212,175,55,0.4)] hover:shadow-[0_0_30px_rgba(212,175,55,0.6)] hover:scale-105 active:scale-95 flex items-center gap-2 group"
+                                >
+                                    <ShoppingBag size={20} className="group-hover:animate-bounce" />
+                                    Order Online
+                                </button>
+                                <a
+                                    href="/menu"
+                                    className="px-8 py-4 bg-transparent border-2 border-white/30 hover:border-gold text-white hover:text-gold font-montserrat font-black uppercase tracking-widest rounded-full transition-all duration-300 backdrop-blur-sm flex items-center gap-2 group"
+                                >
+                                    <UtensilsCrossed size={20} className="group-hover:rotate-12 transition-transform" />
+                                    View Menu
+                                </a>
                             </div>
                         </div>
 

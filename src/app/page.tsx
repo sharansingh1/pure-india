@@ -6,6 +6,7 @@ import Footer from "@/components/Footer";
 import FeaturedDish from "@/components/FeaturedDish";
 import Testimonials from "@/components/Testimonials";
 import MembershipSection from "@/components/MembershipSection";
+import OrderSection from "@/components/OrderSection";
 // import HookahLoungeSection from "@/components/HookahLoungeSection";
 import { client } from "@/sanity/lib/client";
 import { defineQuery } from "next-sanity";
@@ -155,6 +156,7 @@ export default async function Home() {
   return (
     <main className="min-h-screen bg-black">
       <Hero />
+      <OrderSection />
       <script
         type="application/ld+json"
         dangerouslySetInnerHTML={{
