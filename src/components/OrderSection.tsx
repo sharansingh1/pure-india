@@ -33,15 +33,6 @@ const orderOptions = [
         cta: "Order UberEats",
         color: "from-green-600 to-green-800",
         highlight: false
-    },
-    {
-        name: "Call to Order",
-        description: "+1 (702) 916-4083",
-        icon: <Phone className="w-8 h-8" />,
-        link: "tel:+17029164083",
-        cta: "Call Now",
-        color: "from-gray-700 to-black",
-        highlight: false
     }
 ];
 
