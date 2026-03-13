@@ -14,7 +14,7 @@ export default function CateringPageContent() {
                 <div className="absolute inset-0 z-0">
                     <Image
                         src="/images/indian-buffet-food-real.png"
-                        alt="Catering Buffet Spread"
+                        alt="Exquisite Indian Catering Feast"
                         fill
                         className="object-cover opacity-60"
                         priority

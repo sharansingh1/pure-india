@@ -123,7 +123,7 @@ export default function Hero() {
                             initial={{ opacity: 0, y: 30 }}
                             animate={{ opacity: 1, y: 0 }}
                             transition={{ delay: 0.6, duration: 0.8 }}
-                            className="w-full max-w-xl mt-8 grid grid-cols-2 gap-4 sm:gap-6"
+                            className="w-full max-w-2xl mt-8 grid grid-cols-1 sm:grid-cols-3 gap-4 sm:gap-6"
                         >
                             {/* Card 1: Banquet */}
                             <a href="/banquet" className="group relative rounded-xl hover:rounded-2xl overflow-hidden border-2 border-gold/50 hover:border-gold transition-all duration-500 shadow-[0_4px_20px_rgba(0,0,0,0.8)] hover:shadow-[0_0_40px_rgba(212,175,55,0.6)] aspect-[16/10] flex flex-col justify-end transform hover:-translate-y-2">
@@ -151,27 +151,7 @@ export default function Hero() {
                                 </div>
                             </a>
 
-                            {/* Card 2: Happy Hour */}
-                            <a href="/contact" className="group relative rounded-xl hover:rounded-2xl overflow-hidden border-2 border-gold/50 hover:border-gold transition-all duration-500 shadow-[0_4px_20px_rgba(0,0,0,0.8)] hover:shadow-[0_0_40px_rgba(212,175,55,0.6)] aspect-[16/10] flex flex-col justify-end transform hover:-translate-y-2">
-                                <Image
-                                    src="https://images.unsplash.com/photo-1544145945-f90425340c7e?q=80&w=800&auto=format&fit=crop"
-                                    alt="Happy Hour"
-                                    fill
-                                    className="object-cover group-hover:scale-110 transition-transform duration-700 saturate-150 brightness-90"
-                                />
-                                <div className="absolute inset-0 bg-gradient-to-t from-black via-[#631206]/80 to-transparent opacity-90 group-hover:opacity-80 transition-opacity duration-500" />
 
-                                <div className="absolute inset-3 border border-gold/10 rounded-lg pointer-events-none group-hover:border-gold/30 transition-colors duration-500" />
-                                <div className="absolute -top-10 -right-10 w-32 h-32 bg-gold/20 rounded-full blur-2xl group-hover:bg-orange-500/40 transition-colors duration-500" />
-
-                                <div className="relative z-10 p-5 text-center transform group-hover:-translate-y-1 transition-transform duration-500">
-                                    <h3 className="text-transparent bg-clip-text bg-gradient-to-r from-amber-200 via-gold to-yellow-500 font-cinzel font-black text-base md:text-xl leading-tight uppercase tracking-wider mb-2 drop-shadow-[0_2px_2px_rgba(0,0,0,1)]">Happy Hour</h3>
-                                    {/* Placeholder for your subtext */}
-                                    <p className="text-white font-montserrat font-bold text-[10px] md:text-xs uppercase tracking-[0.2em] drop-shadow-[0_2px_4px_rgba(0,0,0,1)]">
-                                        EVERY DAY: 3PM - 5PM
-                                    </p>
-                                </div>
-                            </a>
 
                             {/* Card 3: Dine-In */}
                             <a href="/menu" className="group relative rounded-xl hover:rounded-2xl overflow-hidden border-2 border-gold/50 hover:border-gold transition-all duration-500 shadow-[0_4px_20px_rgba(0,0,0,0.8)] hover:shadow-[0_0_40px_rgba(212,175,55,0.6)] aspect-[16/10] flex flex-col justify-end transform hover:-translate-y-2">
@@ -222,26 +202,7 @@ export default function Hero() {
                                 </div>
                             </div>
 
-                            {/* Card 5: Lunch Buffet */}
-                            <a href="/menu" className="col-span-2 group relative rounded-xl hover:rounded-2xl overflow-hidden border-2 border-gold/50 hover:border-gold transition-all duration-500 shadow-[0_4px_20px_rgba(0,0,0,0.8)] hover:shadow-[0_0_40px_rgba(212,175,55,0.6)] aspect-[21/9] sm:aspect-[24/7] flex flex-col justify-end transform hover:-translate-y-2">
-                                <Image
-                                    src="/images/indian-buffet-food-real.png"
-                                    alt="Daily Lunch Buffet"
-                                    fill
-                                    className="object-cover group-hover:scale-110 transition-transform duration-700 saturate-150 brightness-90"
-                                />
-                                <div className="absolute inset-0 bg-gradient-to-t from-black via-[#631206]/80 to-transparent opacity-90 group-hover:opacity-80 transition-opacity duration-500" />
 
-                                <div className="absolute inset-3 border border-gold/10 rounded-lg pointer-events-none group-hover:border-gold/30 transition-colors duration-500" />
-                                <div className="absolute -top-10 -right-10 w-32 h-32 bg-gold/20 rounded-full blur-2xl group-hover:bg-orange-500/40 transition-colors duration-500" />
-
-                                <div className="relative z-10 p-5 text-center transform group-hover:-translate-y-1 transition-transform duration-500">
-                                    <h3 className="text-transparent bg-clip-text bg-gradient-to-r from-amber-200 via-gold to-yellow-500 font-cinzel font-black text-lg md:text-2xl leading-tight uppercase tracking-wider mb-2 drop-shadow-[0_2px_2px_rgba(0,0,0,1)]">Daily Lunch Buffet</h3>
-                                    <p className="text-white font-montserrat font-bold text-[10px] md:text-xs uppercase tracking-[0.2em] drop-shadow-[0_2px_4px_rgba(0,0,0,1)]">
-                                        EVERY DAY: 11AM - 3PM
-                                    </p>
-                                </div>
-                            </a>
                         </motion.div>
 
 
@@ -321,23 +282,7 @@ export default function Hero() {
                                     </div>
                                 </motion.div>
 
-                                {/* Membership Pop-up Badge - Hidden for now */}
-                                {/* <motion.div
-                                    className="absolute top-24 -right-12 bg-black border-2 border-gold p-4 rounded-xl shadow-2xl z-20 cursor-pointer"
-                                    initial={{ x: 50, opacity: 0 }}
-                                    animate={{ x: 0, opacity: 1 }}
-                                    transition={{ delay: 1.5 }}
-                                    onClick={() => document.getElementById("membership-section")?.scrollIntoView({ behavior: "smooth" })}
-                                    whileHover={{ scale: 1.05 }}
-                                >
-                                    <div className="flex items-center gap-3">
-                                        <div className="w-8 h-8 rounded-full bg-gold flex items-center justify-center text-black font-bold">4</div>
-                                        <div className="text-left">
-                                            <div className="text-gold text-[10px] font-bold tracking-widest uppercase">Buffets Monthly</div>
-                                            <div className="text-white font-cinzel font-bold">$55 / Month</div>
-                                        </div>
-                                    </div>
-                                </motion.div> */}
+
 
                                 {/* Decorative Badge - Bottom Left (Diya/Lamp) */}
                                 <motion.div

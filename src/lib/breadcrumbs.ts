@@ -17,10 +17,6 @@ export const breadcrumbs = {
   home: [
     { name: "Home", url: "https://pureindiacuisine.com" }
   ],
-  buffet: [
-    { name: "Home", url: "https://pureindiacuisine.com" },
-    { name: "Buffet", url: "https://pureindiacuisine.com/buffet" }
-  ],
   menu: [
     { name: "Home", url: "https://pureindiacuisine.com" },
     { name: "Menu", url: "https://pureindiacuisine.com/menu" }

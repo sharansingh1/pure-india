@@ -5,7 +5,6 @@ import InfoSection from "@/components/InfoSection";
 import Footer from "@/components/Footer";
 import FeaturedDish from "@/components/FeaturedDish";
 import Testimonials from "@/components/Testimonials";
-import MembershipSection from "@/components/MembershipSection";
 import OrderSection from "@/components/OrderSection";
 // import HookahLoungeSection from "@/components/HookahLoungeSection";
 import { client } from "@/sanity/lib/client";
@@ -35,124 +34,7 @@ export const metadata: Metadata = {
 };
 
 
-const BUFFET_QUERY = defineQuery(`*[_type == "buffetItem"]{
-  name,
-  description,
-  category,
-  "imageUrl": image.asset->url,
-  isVegetarian,
-  isSpicy
-}`);
-
-const PLACEHOLDER_NEW_SECTIONS = [
-  // Indo-Chinese
-  {
-    name: "Veg Manchurian",
-    description: "Crispy vegetable balls in tangy Indo-Chinese sauce",
-    category: "INDO-CHINESE",
-    isVegetarian: true,
-    isSpicy: true
-  },
-  {
-    name: "Chicken Manchurian",
-    description: "Crispy chicken in tangy Indo-Chinese sauce",
-    category: "INDO-CHINESE",
-    isVegetarian: false,
-    isSpicy: true
-  },
-];
-
-// Helper to determine meat priority
-const getMeatPriority = (name: string) => {
-  const lowerName = name.toLowerCase();
-  if (lowerName.includes('chicken')) return 1;
-  if (lowerName.includes('goat')) return 2;
-  if (lowerName.includes('lamb')) return 3;
-  if (lowerName.includes('shrimp') || lowerName.includes('prawn')) return 4;
-  if (lowerName.includes('fish')) return 5;
-  if (lowerName.includes('egg')) return 6;
-  return 99; // All others
-};
-
 export default async function Home() {
-  // Fetch buffet items (same as buffet page)
-  const fetchedBuffetItems = await client.fetch(BUFFET_QUERY, {}, { next: { revalidate: 0 } });
-
-  // Map old category names to new ones
-  const mappedItems = fetchedBuffetItems.map((item: any) => {
-    let category = item.category;
-    // Combine both appetizer categories into one
-    if (category === "APPETIZERS – VEG" || category === "APPETIZERS – NON-VEG") {
-      category = "APPETIZERS";
-    }
-    // Rename BREAD to BREADS
-    if (category === "BREAD") {
-      category = "BREADS";
-    }
-    return { ...item, category };
-  });
-
-  // Merge with placeholder items and filter out INDIAN BURGERS
-  const buffetItems = [...mappedItems, ...PLACEHOLDER_NEW_SECTIONS].filter(
-    (item: any) => item.category !== "INDIAN BURGERS"
-  );
-
-  // Define the preferred order for categories
-  const order = [
-    "APPETIZERS",
-    "INDO-CHINESE",
-    "VEG CURRY",
-    "NON-VEG CURRY",
-    "BIRYANI",
-    "RICE",
-    "DOSA",
-    "BREADS",
-    "KIDS MENU",
-    "DRINKS",
-    "DESSERT"
-  ];
-
-  // Get all unique categories that actually exist in the data
-  const existingCategories = Array.from(new Set(buffetItems.map((item: any) => item.category)));
-
-  // Sort these categories based on our preferred order
-  existingCategories.sort((a: any, b: any) => {
-    const indexA = order.indexOf(a);
-    const indexB = order.indexOf(b);
-    // If both are in the list, sort by index
-    if (indexA !== -1 && indexB !== -1) return indexA - indexB;
-    // If one is not in the list, put it at the end
-    if (indexA === -1) return 1;
-    if (indexB === -1) return -1;
-    return 0;
-  });
-
-  // Build the grouped menu with sorted items for NON-VEG CURRY
-  const groupedBuffet = existingCategories.map(category => {
-    let items = buffetItems.filter((item: any) => item.category === category);
-
-    // Apply special sorting for NON-VEG CURRY
-    if (category === "NON-VEG CURRY") {
-      items.sort((a: any, b: any) => {
-        return getMeatPriority(a.name) - getMeatPriority(b.name);
-      });
-    }
-
-    return {
-      category,
-      items
-    };
-  });
-
-  // Transform to menu book format
-  const menuItems = groupedBuffet.map(category => ({
-    category: category.category,
-    items: category.items.map((item: any) => ({
-      name: item.name,
-      price: "",
-      description: item.description || ""
-    }))
-  }));
   return (
     <main className="min-h-screen bg-black">
       <Hero />
@@ -167,15 +49,13 @@ export default async function Home() {
             name: "Pure Indian Cuisine",
             image: [
               "https://pureindiacuisine.com/images/hero-background.jpg",
-              "https://pureindiacuisine.com/images/restaurant-interior.png",
-              "https://pureindiacuisine.com/images/indian-buffet-food-real.png"
+              "https://pureindiacuisine.com/images/restaurant-interior.png"
             ],
             url: "https://pureindiacuisine.com",
             telephone: "+17029164083",
             menu: "https://pureindiacuisine.com/menu",
             servesCuisine: ["Indian", "North Indian", "Indo-Chinese"],
             priceRange: "$$",
-            //             description: "Experience amazing Indian fine dining and all-you-can-eat buffet in Las Vegas. From authentic a la carte curries to our legendary rotating buffet. Featuring a premium bar, banquet hall, and late-night hookah lounge.",
             description: "Experience amazing Indian fine dining in Las Vegas. From authentic a la carte curries to our premium bar and banquet hall.",
             address: {
               "@type": "PostalAddress",
@@ -203,15 +83,15 @@ export default async function Home() {
             openingHoursSpecification: [
               {
                 "@type": "OpeningHoursSpecification",
-                dayOfWeek: ["Monday", "Tuesday", "Wednesday", "Thursday", "Friday", "Saturday"],
+                dayOfWeek: ["Monday", "Tuesday", "Wednesday", "Thursday", "Friday", "Saturday", "Sunday"],
                 opens: "11:00",
-                closes: "21:00"
+                closes: "15:00"
               },
               {
                 "@type": "OpeningHoursSpecification",
-                dayOfWeek: ["Sunday"],
-                opens: "11:00",
-                closes: "20:00"
+                dayOfWeek: ["Monday", "Tuesday", "Wednesday", "Thursday", "Friday", "Saturday", "Sunday"],
+                opens: "18:00",
+                closes: "21:00"
               }
             ],
             hasMenu: {
@@ -314,7 +194,7 @@ export default async function Home() {
                 name: "What are Pure Indian Cuisine's hours?",
                 acceptedAnswer: {
                   "@type": "Answer",
-                  text: "Pure Indian Cuisine is open Monday through Saturday from 11:00 AM to 9:00 PM (Happy Hour 3-5), and Sundays from 11:00 AM to 8:00 PM."
+                  text: "Pure Indian Cuisine is open daily from 11:00 AM to 3:00 PM and 6:00 PM to 9:00 PM."
                 }
               },
               {
@@ -330,7 +210,6 @@ export default async function Home() {
         }}
       />
       <InfoSection />
-      {/* <MembershipSection /> */}
       {/* <MenuBook menuItems={menuItems} /> */}
       <FeaturedDish />
       {/* <HookahLoungeSection /> */}

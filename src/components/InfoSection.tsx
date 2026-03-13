@@ -65,15 +65,12 @@ export default function InfoSection() {
                                         <div className="w-full">
                                             <h3 className="font-cinzel text-xl font-bold mb-4 text-white">Restaurant Hours</h3>
 
-                                            <div className="grid sm:grid-cols-2 gap-6">
+                                            <div className="grid gap-6">
                                                 <div className="bg-black/40 p-4 rounded border-l-2 border-gold/50">
                                                     <h4 className="font-cinzel text-gold text-lg mb-1">Dining Hours</h4>
-                                                    <p className="text-white font-bold font-montserrat tracking-wide">Mon - Sat: 11:00 AM - 9:00 PM</p>
-                                                    <p className="text-white font-bold font-montserrat tracking-wide">Sun: 11:00 AM - 8:00 PM</p>
-                                                </div>
-                                                <div className="bg-black/40 p-4 rounded border-l-2 border-gold/50">
-                                                    <h4 className="font-cinzel text-gold text-lg mb-1">Happy Hour</h4>
-                                                    <p className="text-white font-bold font-montserrat tracking-wide">Daily: 3:00 PM - 5:00 PM</p>
+                                                    <p className="text-white font-bold font-montserrat tracking-wide">11:00 AM - 3:00 PM</p>
+                                                    <p className="text-white font-bold font-montserrat tracking-wide">6:00 PM - 9:00 PM</p>
+                                                    <p className="text-white/60 text-sm mt-1">Daily</p>
                                                 </div>
                                             </div>
                                             <p className="text-gray-500 font-montserrat text-xs mt-4 italic">

@@ -126,8 +126,7 @@ export default function ContactPageContent() {
                         <div>
                             <h2 className="font-cinzel text-3xl text-gold-gradient mb-8">Hours</h2>
                             <div>
-                                <p className="text-gray-400 text-sm font-montserrat">Mon - Sat: 11 AM - 9 PM</p>
-                                <p className="text-gray-400 text-sm font-montserrat">Sunday: 11 AM - 8 PM</p>
+                                <p className="text-gray-400 text-sm font-montserrat">Daily: 11 AM - 3 PM & 6 PM - 9 PM</p>
                             </div>
                         </div>
                     </motion.div>
