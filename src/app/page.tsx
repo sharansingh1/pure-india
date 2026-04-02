@@ -6,6 +6,7 @@ import Footer from "@/components/Footer";
 import FeaturedDish from "@/components/FeaturedDish";
 import Testimonials from "@/components/Testimonials";
 import OrderSection from "@/components/OrderSection";
+import ConventionSection from "@/components/ConventionSection";
 // import HookahLoungeSection from "@/components/HookahLoungeSection";
 import { client } from "@/sanity/lib/client";
 import { defineQuery } from "next-sanity";
@@ -39,6 +40,7 @@ export default async function Home() {
     <main className="min-h-screen bg-black">
       <Hero />
       <OrderSection />
+      <ConventionSection />
       <script
         type="application/ld+json"
         dangerouslySetInnerHTML={{
@@ -52,7 +54,7 @@ export default async function Home() {
               "https://pureindiacuisine.com/images/restaurant-interior.png"
             ],
             url: "https://pureindiacuisine.com",
-            telephone: "+17029164083",
+            telephone: "+17028975555",
             menu: "https://pureindiacuisine.com/menu",
             servesCuisine: ["Indian", "North Indian", "Indo-Chinese"],
             priceRange: "$$",

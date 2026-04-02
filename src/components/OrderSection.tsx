@@ -36,9 +36,9 @@ const orderOptions = [
     },
     {
         name: "Call to Order",
-        description: "+1 (702) 916-4083",
+        description: "+1 (702) 897-5555",
         icon: <Phone className="w-8 h-8" />,
-        link: "tel:+17029164083",
+        link: "tel:+17028975555",
         cta: "Call Now",
         color: "from-gray-700 to-black",
         highlight: false,
