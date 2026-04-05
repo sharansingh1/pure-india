@@ -123,7 +123,7 @@ export default function Hero() {
                             initial={{ opacity: 0, y: 30 }}
                             animate={{ opacity: 1, y: 0 }}
                             transition={{ delay: 0.6, duration: 0.8 }}
-                            className="w-full max-w-2xl mt-8 grid grid-cols-1 sm:grid-cols-3 gap-4 sm:gap-6"
+                            className="w-full max-w-2xl mt-8 grid grid-cols-2 sm:grid-cols-2 lg:grid-cols-4 gap-4 sm:gap-6"
                         >
                             {/* Card 1: Banquet */}
                             <a href="/banquet" className="group relative rounded-xl hover:rounded-2xl overflow-hidden border-2 border-gold/50 hover:border-gold transition-all duration-500 shadow-[0_4px_20px_rgba(0,0,0,0.8)] hover:shadow-[0_0_40px_rgba(212,175,55,0.6)] aspect-[16/10] flex flex-col justify-end transform hover:-translate-y-2">
@@ -175,7 +175,28 @@ export default function Hero() {
                                 </div>
                             </a>
 
-                            {/* Card 4: Weekend Breakfast */}
+                            {/* Card 4: Lunch Buffet */}
+                            <a href="/menu" className="group relative rounded-xl hover:rounded-2xl overflow-hidden border-2 border-gold/50 hover:border-gold transition-all duration-500 shadow-[0_4px_20px_rgba(0,0,0,0.8)] hover:shadow-[0_0_40px_rgba(212,175,55,0.6)] aspect-[16/10] flex flex-col justify-end transform hover:-translate-y-2">
+                                <Image
+                                    src="/images/tandoori.jpg"
+                                    alt="Lunch Buffet"
+                                    fill
+                                    className="object-cover group-hover:scale-110 transition-transform duration-700 saturate-[1.3] brightness-75"
+                                />
+                                <div className="absolute inset-0 bg-gradient-to-t from-black via-[#631206]/80 to-transparent opacity-90 group-hover:opacity-80 transition-opacity duration-500" />
+
+                                <div className="absolute inset-3 border border-gold/10 rounded-lg pointer-events-none group-hover:border-gold/30 transition-colors duration-500" />
+                                <div className="absolute -top-10 -right-10 w-32 h-32 bg-gold/20 rounded-full blur-2xl group-hover:bg-orange-500/40 transition-colors duration-500" />
+
+                                <div className="relative z-10 p-5 text-center transform group-hover:-translate-y-1 transition-transform duration-500">
+                                    <h3 className="text-transparent bg-clip-text bg-gradient-to-r from-amber-200 via-gold to-yellow-500 font-cinzel font-black text-base md:text-xl leading-tight uppercase tracking-wider mb-2 drop-shadow-[0_2px_2px_rgba(0,0,0,1)]">Lunch Buffet</h3>
+                                    <p className="text-white font-montserrat font-bold text-[10px] md:text-xs uppercase tracking-[0.2em] drop-shadow-[0_2px_4px_rgba(0,0,0,1)]">
+                                        11AM – 3PM DAILY
+                                    </p>
+                                </div>
+                            </a>
+
+                            {/* Card 5: Weekend Breakfast */}
                             <div className="group relative rounded-xl hover:rounded-2xl overflow-hidden border-2 border-gold/50 hover:border-gold transition-all duration-500 shadow-[0_4px_20px_rgba(0,0,0,0.8)] hover:shadow-[0_0_40px_rgba(212,175,55,0.6)] aspect-[16/10] flex flex-col justify-end transform hover:-translate-y-2 cursor-default text-center">
                                 <Image
                                     src="/images/chole-bhature-spicy-chick-peas-600nw-1867969534.webp"
