@@ -60,6 +60,8 @@ export default function Hero() {
                 <div className="absolute inset-0 bg-gradient-to-r from-black/60 via-black/40 to-transparent" />
                 <div className="absolute inset-0 bg-gradient-to-t from-black/70 via-transparent to-black/30" />
             </div>
+            {/* Closed Notice */}
+            <div className="absolute top-0 left-0 w-full bg-red-600 text-white text-center py-2 font-bold">We are closed on 04/11/2026</div>
 
             {/* Main Content Grid */}
             <div className="relative z-10 container mx-auto px-4 min-h-screen flex items-center">
@@ -123,7 +125,7 @@ export default function Hero() {
                             initial={{ opacity: 0, y: 30 }}
                             animate={{ opacity: 1, y: 0 }}
                             transition={{ delay: 0.6, duration: 0.8 }}
-                            className="w-full max-w-2xl mt-8 grid grid-cols-2 sm:grid-cols-2 lg:grid-cols-4 gap-4 sm:gap-6"
+                            className="w-full max-w-2xl mt-8 grid grid-cols-2 gap-4 sm:gap-6"
                         >
                             {/* Card 1: Banquet */}
                             <a href="/banquet" className="group relative rounded-xl hover:rounded-2xl overflow-hidden border-2 border-gold/50 hover:border-gold transition-all duration-500 shadow-[0_4px_20px_rgba(0,0,0,0.8)] hover:shadow-[0_0_40px_rgba(212,175,55,0.6)] aspect-[16/10] flex flex-col justify-end transform hover:-translate-y-2">
