@@ -1,171 +1,170 @@
-export const menuItems = [
+export interface MenuItemData {
+    name: string;
+    price: string;
+    description?: string;
+    isVegetarian?: boolean;
+    featured?: boolean;
+}
+
+export interface MenuCategoryData {
+    category: string;
+    note?: string;
+    items: MenuItemData[];
+}
+
+export const menuItems: MenuCategoryData[] = [
     {
         category: "APPETIZERS",
         items: [
-            // Veg
-            { name: "Masala Papad", price: "", description: "" },
-            { name: "Paani Poori", price: "", description: "" },
-            { name: "Veg Pakora Basket", price: "", description: "" },
-            { name: "Veg Samosa", price: "", description: "" },
-            { name: "Bread Pakora", price: "", description: "" },
-            { name: "Samosa Chaat", price: "", description: "" },
-            { name: "Bhailpuri Chaat", price: "", description: "" },
-            { name: "Chole Puri/Bhature", price: "", description: "" },
-            { name: "Gobi Manchurian", price: "", description: "" },
-            { name: "Chilli Paneer", price: "", description: "" },
-            // Non-Veg
-            { name: "Egg Bhurji", price: "", description: "" },
-            { name: "Egg Masala Omelette", price: "", description: "" },
-            { name: "Chilli Chicken", price: "", description: "" },
-            { name: "Chicken Pakora Basket", price: "", description: "" },
-            { name: "Fish Pakora Basket", price: "", description: "" },
-            { name: "Chicken Malai Tikka", price: "", description: "" },
-            { name: "Chicken Sheekh Kabab", price: "", description: "" },
-            { name: "Lamb Sheekh Kabab", price: "", description: "" },
-            { name: "Tandoori Chicken Leg Quarter", price: "", description: "" },
-            { name: "Royal Grill Platter", price: "", description: "" },
+            { name: "Halwa Puri", price: "$9.99", isVegetarian: true },
+            { name: "Pani Puri", price: "$7.99" },
+            { name: "Fish Pakora", price: "$14.99" },
+            { name: "Assorted Veg Pakora Platter", price: "$11.99", isVegetarian: true },
+            { name: "Veg Samosa", price: "$5.99", description: "2pc", isVegetarian: true },
+            { name: "Punjabi Style Chole Bhature", price: "$9.99", isVegetarian: true },
+            { name: "Wings and French Fries", price: "$15.00" },
         ]
     },
     {
         category: "INDO-CHINESE",
         items: [
-            { name: "Veg Manchurian", price: "", description: "Crispy vegetable balls in tangy Indo-Chinese sauce" },
-        ]
-    },
-    {
-        category: "INDIAN BURGERS",
-        items: [
-            { name: "Tandoori Chicken Burger", price: "", description: "Juicy tandoori chicken patty with mint chutney" },
-        ]
-    },
-    {
-        category: "GRILLS",
-        items: [
-            { name: "Tandoori Chicken (Full)", price: "", description: "Whole chicken marinated in yogurt and spices, grilled to perfection" },
-        ]
-    },
-    {
-        category: "VEG CURRY",
-        items: [
-            { name: "Dal Tadka", price: "", description: "" },
-            { name: "Dal Makhani Tadka", price: "", description: "" },
-            { name: "Chana Dal Tadka", price: "", description: "" },
-            { name: "Moog Dal Tadka", price: "", description: "" },
-            { name: "Dal Palak", price: "", description: "" },
-            { name: "Saag Paneer", price: "", description: "" },
-            { name: "Paneer Kadai", price: "", description: "" },
-            { name: "Paneer Tikka Masala", price: "", description: "" },
-            { name: "Malai Kofta", price: "", description: "" },
-            { name: "Bhindi Masala", price: "", description: "" },
-            { name: "Chana Masala", price: "", description: "" },
-            { name: "Rajma Masala", price: "", description: "" },
-            { name: "Mix Veg Curry", price: "", description: "" },
-            { name: "Baigan Bherta", price: "", description: "" },
-            { name: "Soyabean Curry Masala", price: "", description: "" },
-            { name: "Punjabi Khadi Pakora", price: "", description: "" },
-            { name: "Aloo Gobhi", price: "", description: "" },
-            { name: "Aloo Matar", price: "", description: "" },
-            { name: "Aloo Palak", price: "", description: "" },
-            { name: "Aloo Baingan", price: "", description: "" },
-            { name: "Aloo Methi", price: "", description: "" },
-            { name: "Aloo Mushrom Curry", price: "", description: "" },
+            { name: "Chili Chicken", price: "$16.99" },
+            { name: "Chili Paneer", price: "$15.99", isVegetarian: true },
+            { name: "Veg Fried Rice", price: "$14.99", isVegetarian: true },
+            { name: "Chicken Fried Rice", price: "$16.99" },
+            { name: "Veg Chow Mein", price: "$12.99", isVegetarian: true },
+            { name: "Chicken Chow Mein", price: "$14.99" },
+            { name: "Momos", price: "$9.99" },
         ]
     },
     {
         category: "NON-VEG CURRY",
         items: [
-            { name: "Chicken Curry", price: "", description: "" },
-            { name: "Chicken Vindaloo", price: "", description: "" },
-            { name: "Mango Chicken", price: "", description: "" },
-            { name: "Chicken Saag", price: "", description: "" },
-            { name: "Chicken Coconut Curry", price: "", description: "" },
-            { name: "Butter Chicken", price: "", description: "" },
-            { name: "Chicken Tikka Masala", price: "", description: "" },
-            { name: "Chicken Kadai", price: "", description: "" },
-            { name: "Chicken Sausage Curry", price: "", description: "" },
-            { name: "Goat Curry", price: "", description: "" },
-            { name: "Goat Kadai", price: "", description: "" },
-            { name: "Goat Vindaloo", price: "", description: "" },
-            { name: "Lamb Curry", price: "", description: "" },
-            { name: "Lamb Kadai", price: "", description: "" },
-            { name: "Lamb Vindaloo", price: "", description: "" },
-            { name: "Shrimp Curry", price: "", description: "" },
-            { name: "Fish Curry", price: "", description: "" },
-            { name: "Egg Curry", price: "", description: "" },
+            { name: "Chicken Curry", price: "$19.99" },
+            { name: "Mango Chicken Curry", price: "$19.99" },
+            { name: "Coconut Chicken Curry", price: "$19.99" },
+            { name: "Butter Chicken", price: "$19.99" },
+            { name: "Chicken Tikka Masala", price: "$19.99" },
+            { name: "Goat Curry", price: "$21.99" },
+            { name: "Shrimp Curry", price: "$21.99" },
+            { name: "Fish Curry", price: "$21.99" },
         ]
     },
     {
-        category: "BIRYANI",
+        category: "VEG CURRY",
         items: [
-            { name: "Egg Biryani", price: "", description: "" },
-            { name: "Veg Biryani", price: "", description: "" },
-            { name: "Chicken Biryani", price: "", description: "" },
-            { name: "Goat Biryani", price: "", description: "" },
-            { name: "Lamb Biryani", price: "", description: "" },
-            { name: "Hyderabadi Chicken Biryani", price: "", description: "" },
-            { name: "Vijayawada Chicken Biryani", price: "", description: "" },
+            { name: "Aloo Gobi Sabzi", price: "$16.99", isVegetarian: true },
+            { name: "Dal Tadka", price: "$16.99", isVegetarian: true },
+            { name: "Dal Makhani", price: "$16.99", isVegetarian: true },
+            { name: "Saag, No Paneer", price: "$16.99", isVegetarian: true },
+            { name: "Saag Paneer", price: "$17.99", isVegetarian: true },
+            { name: "Butter Paneer", price: "$17.99", isVegetarian: true },
+            { name: "Malai Kofta", price: "$17.99", isVegetarian: true },
+            { name: "Chana Masala", price: "$16.99", isVegetarian: true },
+            { name: "Soya Chaap Masala", price: "$15.99", isVegetarian: true },
+            { name: "Tofu Masala", price: "$12.99", isVegetarian: true },
+            { name: "Vegan Chicken Masala", price: "$15.99", isVegetarian: true },
+        ]
+    },
+    {
+        category: "GRILLS",
+        items: [
+            { name: "Seekh Kabob", price: "$17.99" },
+            { name: "Malai Tikka", price: "$17.99" },
+            { name: "Chicken Tikka", price: "$17.99" },
+            { name: "Tandoori Chicken", price: "$17.99" },
         ]
     },
     {
         category: "RICE",
         items: [
-            { name: "Veg Fried Rice", price: "", description: "" },
-            { name: "Egg Fried Rice", price: "", description: "" },
-            { name: "Chicken Fried Rice", price: "", description: "" },
-            { name: "Jeera Rice", price: "", description: "" },
-            { name: "Matar Pulao", price: "", description: "" },
-        ]
-    },
-    {
-        category: "DOSA",
-        items: [
-            { name: "Plain Dosa", price: "", description: "" },
-            { name: "Masala Dosa", price: "", description: "" },
-            { name: "Mysore Masala Dosa", price: "", description: "" },
+            { name: "Veg Biryani", price: "$14.99", isVegetarian: true },
+            { name: "Chicken Biryani", price: "$16.99" },
+            { name: "Plain Basmati Rice", price: "$4.99", isVegetarian: true },
         ]
     },
     {
         category: "BREADS",
         items: [
-            { name: "Butter Tava Roti", price: "", description: "" },
-            { name: "Butter Tandoor Roti", price: "", description: "" },
-            { name: "Plain Naan", price: "", description: "" },
-            { name: "Butter Naan", price: "", description: "" },
-            { name: "Garlic Naan", price: "", description: "" },
-            { name: "Aloo/Gobi Parantha", price: "", description: "" },
-            { name: "Paneer Paratha", price: "", description: "" },
+            { name: "Tandoori Roti", price: "$4.99" },
+            { name: "Butter Naan", price: "$4.99" },
+            { name: "Garlic Naan", price: "$4.99" },
+            { name: "Garlic Chili Naan", price: "$4.99" },
+            { name: "Paratha", price: "$7.99", description: "Choice of Aloo, Gobi, Methi, or Paneer — served with yogurt" },
+            { name: "Kulcha", price: "$7.99", description: "Choice of Amritsari, Onion, Paneer, or Potato — served with yogurt" },
+            { name: "Bhatura", price: "$4.99" },
         ]
     },
     {
-        category: "KIDS MENU",
+        category: "MEDITERRANEAN",
         items: [
-            { name: "French Fries", price: "", description: "" },
-            { name: "Chicken Nuggets", price: "", description: "" },
-            { name: "Cheese Naan", price: "", description: "" },
-            { name: "Mac & Cheese", price: "", description: "" },
+            { name: "Chicken Seekh Kebab", price: "$17.99", description: "Served with rice, naan, salad" },
+            { name: "Lamb Seekh Kabob", price: "$17.99", description: "Served with rice, naan, salad" },
+            { name: "Veggie Kabob", price: "$12.99", description: "Served with rice, naan, salad" },
+            { name: "Chicken Shish Kabob", price: "$17.99", description: "Served with rice, naan, salad" },
+            { name: "Lamb Shish Kabob", price: "$17.99", description: "Served with rice, naan, salad" },
+            { name: "Chicken Shawarma Platter", price: "$17.99" },
+            { name: "Falafel Platter", price: "$16.99" },
+            { name: "Hummus", price: "$9.99" },
+            { name: "Greek Salad", price: "$9.99" },
+            { name: "Baba Ganoush", price: "$10.99" },
+        ]
+    },
+    {
+        category: "DESSERTS",
+        items: [
+            { name: "Suji Ka Halwa", price: "$7.99" },
+            { name: "Gulab Jamun Ice Cream Sundae", price: "$10.99" },
+            { name: "Jalebi Ice Cream Sundae", price: "$10.99" },
+            { name: "Gulab Jamun", price: "$6.99", description: "3pc" },
+            { name: "Ras Malai", price: "$6.99", description: "3pc" },
+            { name: "Ras Gulla", price: "$6.99", description: "3pc" },
+            { name: "Cham Cham", price: "$6.99", description: "3pc" },
+            { name: "Rabri Malai Doodh", price: "$9.99" },
+            { name: "Khoya Doodh", price: "$9.99" },
+            { name: "Jalebi Doodh", price: "$9.99" },
         ]
     },
     {
         category: "DRINKS",
         items: [
-            { name: "Water Bottle", price: "", description: "" },
-            { name: "Soda (Coke, Sprite, Fanta)", price: "", description: "" },
-            { name: "Mango Lassi", price: "", description: "" },
-            { name: "Salty Lassi", price: "", description: "" },
-            { name: "Sweet Lassi", price: "", description: "" },
-            { name: "Lemon Lassi", price: "", description: "" },
-            { name: "Chai", price: "", description: "" },
-            { name: "Milk Coffee", price: "", description: "" },
+            { name: "Rooh Afza", price: "$3.99" },
+            { name: "Soda", price: "$3.99", description: "Coke, Diet Coke, Sprite, or Fanta" },
+            { name: "Mango Lassi", price: "$6.99" },
+            { name: "Chai", price: "$3.99" },
+            { name: "Coffee", price: "$3.99" },
+            { name: "Sweet Lassi", price: "$5.99" },
+            { name: "Salted Lassi", price: "$5.99" },
         ]
     },
     {
-        category: "DESSERT",
+        category: "MEAL SPECIALS",
+        note: "Full-size restaurant portions — separate from our ToGo Boxes. Offers cannot be combined with other promotions or discounts.",
         items: [
-            { name: "Gulab Jamun", price: "", description: "" },
-            { name: "Ras Malai", price: "", description: "" },
-            { name: "Ras Gulla", price: "", description: "" },
-            { name: "Kheer", price: "", description: "" },
-            { name: "Gajar Ka Halwa", price: "", description: "" },
+            {
+                name: "1-Entrée Meal Special",
+                price: "$23.99",
+                description: "Full-size entrée with basmati rice, naan & side salad. Choice of any vegetarian entrée, Chicken Curry, Mango Chicken Curry, Coconut Chicken Curry, Butter Chicken, or Chicken Tikka Masala. Premium entrées (Goat, Shrimp, Fish Curry) +$2",
+            },
+            {
+                name: "2-Entrée Meal Special",
+                price: "$41.99",
+                featured: true,
+                description: "Two full-size entrées with 2 basmati rice, 2 naan & a large side salad. Choose any 2 — duplicates allowed. Premium entrées (Goat, Shrimp, Fish Curry) +$2 each",
+            },
+            {
+                name: "3-Entrée Meal Special",
+                price: "$59.99",
+                description: "Three full-size entrées with 3 basmati rice, 3 naan & a large side salad. Choose any 3 — duplicates allowed. Premium entrées (Goat, Shrimp, Fish Curry) +$2 each",
+            },
         ]
-    }
+    },
+    {
+        category: "TOGO BOX",
+        items: [
+            { name: "Veg Box", price: "$14.99", description: "2 veg entrées, basmati rice, 1 naan, side salad", isVegetarian: true },
+            { name: "Non-Veg Box", price: "$16.99", description: "2 non-veg entrées, basmati rice, 1 naan, side salad" },
+            { name: "Mixed Box", price: "$15.99", description: "1 non-veg entrée, 1 veg entrée, basmati rice, 1 naan, side salad" },
+        ]
+    },
 ];
