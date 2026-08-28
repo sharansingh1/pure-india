@@ -17,7 +17,8 @@ const RIGHT_CATEGORIES = [
     "VEG CURRY",
     "GRILLS",
     "RICE",
-    "DESSERT",
+    "MEDITERRANEAN",
+    "DESSERTS",
 ];
 
 export default function MenuPageContent({ groupedMenu }: { groupedMenu: any[] }) {
@@ -134,7 +135,9 @@ function MenuCategory({ category, index }: { category: any; index: number }) {
             category.category === "GRILLED" ||
             category.category === "GRILLES"
             ? "GRILLS"
-            : category.category;
+            : category.category === "TOGO BOX"
+                ? "TO-GO BOX"
+                : category.category;
 
     return (
         <motion.div
@@ -150,11 +153,16 @@ function MenuCategory({ category, index }: { category: any; index: number }) {
                 <div className="menu-category-line" />
             </div>
 
+            {category.note && (
+                <p className="menu-category-note">{category.note}</p>
+            )}
+
             <div className="menu-items">
                 {category.items.map((item: any, idx: number) => (
                     <div key={idx} className="menu-item">
                         <div className="menu-item-row">
                             <span className="menu-item-name">
+                                {item.featured && <span className="menu-star" title="Popular">★</span>}
                                 {item.name?.trim()}
                                 {item.isVegetarian && <span className="menu-veg-dot" title="Vegetarian" />}
                                 {item.isSpicy && <span className="menu-spicy" title="Spicy">🌶</span>}
@@ -166,6 +174,9 @@ function MenuCategory({ category, index }: { category: any; index: number }) {
                                     : item.price}
                             </span>
                         </div>
+                        {item.description && (
+                            <p className="menu-item-description">{item.description}</p>
+                        )}
                     </div>
                 ))}
             </div>

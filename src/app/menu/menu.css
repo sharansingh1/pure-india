@@ -237,6 +237,22 @@
     white-space: nowrap;
 }
 
+.menu-category-note {
+    font-family: var(--font-montserrat), sans-serif;
+    font-size: 0.7rem;
+    font-style: italic;
+    letter-spacing: 0.03em;
+    color: rgba(212, 175, 55, 0.7);
+    text-align: center;
+    margin: -0.5rem 0 1.25rem;
+}
+
+.menu-star {
+    color: var(--gold);
+    font-size: 0.8rem;
+    flex-shrink: 0;
+}
+
 /* ── Menu Items ── */
 .menu-items {
     display: flex;
@@ -311,6 +327,16 @@
     color: var(--gold);
     white-space: nowrap;
     flex-shrink: 0;
+}
+
+.menu-item-description {
+    font-family: var(--font-montserrat), sans-serif;
+    font-size: 0.72rem;
+    font-style: italic;
+    line-height: 1.4;
+    color: rgba(245, 245, 240, 0.45);
+    margin-top: 0.15rem;
+    white-space: normal;
 }
 
 /* ── Extra sections (full width fallback) ── */

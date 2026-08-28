@@ -60,9 +60,6 @@ export default function Hero() {
                 <div className="absolute inset-0 bg-gradient-to-r from-black/60 via-black/40 to-transparent" />
                 <div className="absolute inset-0 bg-gradient-to-t from-black/70 via-transparent to-black/30" />
             </div>
-            {/* Closed Notice */}
-            <div className="absolute top-0 left-0 w-full bg-red-600 text-white text-center py-2 font-bold">We are closed on 04/11/2026</div>
-
             {/* Main Content Grid */}
             <div className="relative z-10 container mx-auto px-4 min-h-screen flex items-center">
                 <div className="grid lg:grid-cols-2 gap-12 items-center w-full py-20 md:py-32">
