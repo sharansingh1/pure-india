@@ -98,13 +98,13 @@ export const menuItems: MenuCategoryData[] = [
     {
         category: "MEDITERRANEAN",
         items: [
-            { name: "Chicken Seekh Kebab", price: "$17.99", description: "Served with rice, naan, salad" },
-            { name: "Lamb Seekh Kabob", price: "$17.99", description: "Served with rice, naan, salad" },
-            { name: "Veggie Kabob", price: "$12.99", description: "Served with rice, naan, salad" },
-            { name: "Chicken Shish Kabob", price: "$17.99", description: "Served with rice, naan, salad" },
-            { name: "Lamb Shish Kabob", price: "$17.99", description: "Served with rice, naan, salad" },
-            { name: "Chicken Shawarma Platter", price: "$17.99" },
-            { name: "Falafel Platter", price: "$16.99" },
+            { name: "Chicken Seekh Kebab Platter", price: "$17.99", description: "Served with rice, naan, salad" },
+            { name: "Lamb Seekh Kabob Platter", price: "$19.99", description: "Served with rice, naan, salad" },
+            { name: "Veggie Kabob Platter", price: "$12.99", description: "Served with rice, naan, salad" },
+            { name: "Chicken Shish Kabob Platter", price: "$17.99", description: "Served with rice, naan, salad" },
+            { name: "Lamb Shish Kabob Platter", price: "$19.99", description: "Served with rice, naan, salad" },
+            { name: "Chicken Shawarma Platter", price: "$17.99", description: "Served with rice, naan, salad" },
+            { name: "Falafel Platter", price: "$16.99", description: "Served with rice, naan, salad" },
             { name: "Hummus", price: "$9.99" },
             { name: "Greek Salad", price: "$9.99" },
             { name: "Baba Ganoush", price: "$10.99" },
@@ -162,9 +162,9 @@ export const menuItems: MenuCategoryData[] = [
     {
         category: "TOGO BOX",
         items: [
-            { name: "Veg Box", price: "$14.99", description: "2 veg entrées, basmati rice, 1 naan, side salad", isVegetarian: true },
-            { name: "Non-Veg Box", price: "$16.99", description: "2 non-veg entrées, basmati rice, 1 naan, side salad" },
-            { name: "Mixed Box", price: "$15.99", description: "1 non-veg entrée, 1 veg entrée, basmati rice, 1 naan, side salad" },
+            { name: "Veg Box", price: "$14.99", description: "Two vegetarian favorites paired together in one perfectly portioned meal, with basmati rice, naan and a side salad, all packed into one convenient box.", isVegetarian: true },
+            { name: "Non-Veg Box", price: "$16.99", description: "Two non vegetarian favorites paired together in one perfectly portioned meal, with basmati rice, naan and a side salad, all packed into one convenient box." },
+            { name: "Mixed Box", price: "$15.99", description: "One vegetarian and one non vegetarian favorite paired together in one perfectly portioned meal, with basmati rice, naan and a side salad, all packed into one convenient box." },
         ]
     },
 ];
