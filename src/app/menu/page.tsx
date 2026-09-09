@@ -1,9 +1,25 @@
-import { menuItems } from "@/data/menu";
+import { client } from "@/sanity/lib/client";
+import { defineQuery } from "next-sanity";
 import MenuPageContent from "./MenuPageContent";
 import { generateBreadcrumbSchema, breadcrumbs } from "@/lib/breadcrumbs";
 import "./menu.css";
 
 import { Metadata } from "next";
+
+// The Sanity dataset is kept in sync with Clover (name/price/category) by
+// /api/sync-clover, running on a schedule. Refetch here every few minutes so
+// the page reflects Clover changes without needing a redeploy.
+export const revalidate = 60;
+
+const MENU_QUERY = defineQuery(`*[_type == "menuItem"]{
+  name,
+  price,
+  description,
+  category,
+  isVegetarian,
+  isSpicy,
+  featured
+}`);
 
 export const metadata: Metadata = {
   title: "A La Carte Indian Menu Las Vegas | Fine Dining | Pure Indian Cuisine",
@@ -32,8 +48,54 @@ export const metadata: Metadata = {
   },
 };
 
-export default function MenuPage() {
-  const groupedMenu = menuItems;
+// Best-effort display order. Categories Clover adds later that aren't listed
+// here just get appended at the end rather than being dropped.
+const PREFERRED_ORDER = [
+  "APPETIZERS",
+  "INDO-CHINESE",
+  "NON-VEG CURRY",
+  "VEG CURRY",
+  "GRILLS",
+  "RICE",
+  "BREADS",
+  "MEDITERRANEAN",
+  "DESSERTS",
+  "DRINKS",
+  "MEAL SPECIALS",
+  "TOGO BOX",
+];
+
+// Freeform notes shown under a category header. Not part of Clover — purely
+// a website presentation detail, so it's kept here rather than in Sanity.
+const CATEGORY_NOTES: Record<string, string> = {
+  "MEAL SPECIALS":
+    "Full-size restaurant portions — separate from our ToGo Boxes. Offers cannot be combined with other promotions or discounts.",
+};
+
+export default async function MenuPage() {
+  const rawItems: any[] = await client.fetch(MENU_QUERY);
+
+  const byCategory = new Map<string, any[]>();
+  for (const item of rawItems) {
+    const key = (item.category || "OTHER").trim();
+    if (!byCategory.has(key)) byCategory.set(key, []);
+    byCategory.get(key)!.push(item);
+  }
+
+  const categoryNames = Array.from(byCategory.keys());
+  categoryNames.sort((a, b) => {
+    const ia = PREFERRED_ORDER.indexOf(a.toUpperCase());
+    const ib = PREFERRED_ORDER.indexOf(b.toUpperCase());
+    if (ia !== -1 && ib !== -1) return ia - ib;
+    if (ia === -1 && ib === -1) return a.localeCompare(b);
+    return ia === -1 ? 1 : -1;
+  });
+
+  const groupedMenu = categoryNames.map((category) => ({
+    category,
+    note: CATEGORY_NOTES[category.toUpperCase()],
+    items: byCategory.get(category)!,
+  }));
 
   return (
     <>

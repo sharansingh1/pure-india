@@ -63,6 +63,19 @@ export const menuItem = defineType({
         title: 'Is Spicy?',
         type: 'boolean',
         initialValue: false
+    }),
+    defineField({
+        name: 'featured',
+        title: 'Featured (shows a star)',
+        type: 'boolean',
+        initialValue: false
+    }),
+    defineField({
+        name: 'cloverId',
+        title: 'Clover Item ID',
+        type: 'string',
+        readOnly: true,
+        description: 'Set automatically by the Clover sync. Items with this set have their name/price/category kept in sync with Clover automatically — only description, vegetarian/spicy, featured, and image are safe to edit here. Leave blank for menu items that only exist on the website (e.g. combo specials).',
     })
   ],
   preview: {

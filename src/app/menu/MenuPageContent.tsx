@@ -3,36 +3,34 @@
 import { motion } from "framer-motion";
 import Link from "next/link";
 
-// Define a layout plan: which categories go in left column vs right column
-// Balanced for roughly equal visual weight on each side
-const LEFT_CATEGORIES = [
-    "APPETIZERS",
-    "INDO-CHINESE",
-    "NON-VEG CURRY",
-    "BREADS",
-    "DRINKS",
-];
+// Categories that always render full-width (long-form descriptions read
+// better with the extra horizontal room) rather than being auto-balanced
+// into the two columns below.
+const FULL_WIDTH_CATEGORIES = ["MEAL SPECIALS"];
 
-const RIGHT_CATEGORIES = [
-    "VEG CURRY",
-    "GRILLS",
-    "RICE",
-    "MEDITERRANEAN",
-    "DESSERTS",
-];
+const norm = (s: string) => (s || "").trim().toUpperCase();
 
 export default function MenuPageContent({ groupedMenu }: { groupedMenu: any[] }) {
-    const leftMenu = LEFT_CATEGORIES
-        .map(cat => groupedMenu.find((g: any) => g.category === cat))
-        .filter(Boolean);
+    // Menu content is synced live from Clover, so category names/casing/order
+    // aren't fully under our control — auto-balance into two columns by
+    // running item count instead of matching against a fixed category list.
+    const extraMenu = groupedMenu.filter((g: any) => FULL_WIDTH_CATEGORIES.includes(norm(g.category)));
+    const columnCategories = groupedMenu.filter((g: any) => !FULL_WIDTH_CATEGORIES.includes(norm(g.category)));
 
-    const rightMenu = RIGHT_CATEGORIES
-        .map(cat => groupedMenu.find((g: any) => g.category === cat))
-        .filter(Boolean);
-
-    // Any categories not in either list go at the bottom
-    const assignedCats = [...LEFT_CATEGORIES, ...RIGHT_CATEGORIES];
-    const extraMenu = groupedMenu.filter((g: any) => !assignedCats.includes(g.category));
+    const leftMenu: any[] = [];
+    const rightMenu: any[] = [];
+    let leftWeight = 0;
+    let rightWeight = 0;
+    for (const cat of columnCategories) {
+        const weight = cat.items?.length ?? 0;
+        if (leftWeight <= rightWeight) {
+            leftMenu.push(cat);
+            leftWeight += weight;
+        } else {
+            rightMenu.push(cat);
+            rightWeight += weight;
+        }
+    }
 
     return (
         <main className="menu-page">
@@ -130,12 +128,11 @@ export default function MenuPageContent({ groupedMenu }: { groupedMenu: any[] })
 
 /* ── Category Block ── */
 function MenuCategory({ category, index }: { category: any; index: number }) {
+    const normCat = norm(category.category);
     const displayName =
-        category.category === "GRILLS" ||
-            category.category === "GRILLED" ||
-            category.category === "GRILLES"
+        ["GRILLS", "GRILLED", "GRILLES"].includes(normCat)
             ? "GRILLS"
-            : category.category === "TOGO BOX"
+            : ["TOGO BOX", "TO-GO BOX", "TO GO BOX"].includes(normCat)
                 ? "TO-GO BOX"
                 : category.category;
 
