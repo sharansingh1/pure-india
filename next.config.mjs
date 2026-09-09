@@ -12,6 +12,20 @@ const nextConfig = {
     compress: true,
     poweredByHeader: false,
     generateEtags: true,
+    async redirects() {
+        return [
+            {
+                source: '/menu',
+                destination: '/food-menu',
+                permanent: true,
+            },
+            {
+                source: '/banquet',
+                destination: '/party',
+                permanent: true,
+            },
+        ];
+    },
     async headers() {
         return [
             {

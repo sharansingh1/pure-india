@@ -28,7 +28,7 @@ export const metadata: Metadata = {
     images: ["/menu-highlight.png"],
   },
   alternates: {
-    canonical: "https://pureindiacuisine.com/menu",
+    canonical: "https://pureindiacuisine.com/food-menu",
   },
 };
 
@@ -43,10 +43,10 @@ export default function MenuPage() {
           __html: JSON.stringify({
             "@context": "https://schema.org",
             "@type": "Menu",
-            "@id": "https://pureindiacuisine.com/menu",
+            "@id": "https://pureindiacuisine.com/food-menu",
             name: "Pure Indian Cuisine Menu",
             description: "Extensive menu of authentic Indian dishes including butter chicken, lamb vindaloo, biryani, tandoori, and vegetarian options.",
-            url: "https://pureindiacuisine.com/menu",
+            url: "https://pureindiacuisine.com/food-menu",
             image: "https://pureindiacuisine.com/menu-highlight.png",
             hasMenuSection: groupedMenu.map((category) => ({
               "@type": "MenuSection",

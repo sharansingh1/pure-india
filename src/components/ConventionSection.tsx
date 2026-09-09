@@ -64,7 +64,7 @@ export default function ConventionSection() {
                                 <Link href="/contact" className="w-full sm:w-auto px-8 py-4 bg-gradient-to-r from-gold to-amber-600 text-black font-bold uppercase tracking-widest rounded-sm hover:from-white hover:to-gray-200 transition-all duration-300 text-center text-sm shadow-[0_0_20px_rgba(212,175,55,0.3)] hover:shadow-[0_0_25px_rgba(255,255,255,0.5)]">
                                     Book a Table / Event
                                 </Link>
-                                <Link href="/menu" className="w-full sm:w-auto px-8 py-4 bg-transparent border-2 border-white/20 text-white font-bold uppercase tracking-widest rounded-sm hover:border-gold hover:text-gold transition-all duration-300 text-center text-sm">
+                                <Link href="/food-menu" className="w-full sm:w-auto px-8 py-4 bg-transparent border-2 border-white/20 text-white font-bold uppercase tracking-widest rounded-sm hover:border-gold hover:text-gold transition-all duration-300 text-center text-sm">
                                     View Menu
                                 </Link>
                             </div>

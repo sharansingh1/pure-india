@@ -55,7 +55,7 @@ export default async function Home() {
             ],
             url: "https://pureindiacuisine.com",
             telephone: "+17028975555",
-            menu: "https://pureindiacuisine.com/menu",
+            menu: "https://pureindiacuisine.com/food-menu",
             servesCuisine: ["Indian", "North Indian", "Indo-Chinese"],
             priceRange: "$$",
             description: "Experience amazing Indian fine dining in Las Vegas. From authentic a la carte curries to our premium bar and banquet hall.",
@@ -98,9 +98,9 @@ export default async function Home() {
             ],
             hasMenu: {
               "@type": "Menu",
-              "@id": "https://pureindiacuisine.com/menu",
+              "@id": "https://pureindiacuisine.com/food-menu",
               name: "Pure Indian Cuisine Menu",
-              url: "https://pureindiacuisine.com/menu"
+              url: "https://pureindiacuisine.com/food-menu"
             },
             hasOfferCatalog: {
               "@type": "OfferCatalog",

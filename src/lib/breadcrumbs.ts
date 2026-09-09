@@ -19,11 +19,11 @@ export const breadcrumbs = {
   ],
   menu: [
     { name: "Home", url: "https://pureindiacuisine.com" },
-    { name: "Menu", url: "https://pureindiacuisine.com/menu" }
+    { name: "Menu", url: "https://pureindiacuisine.com/food-menu" }
   ],
   banquet: [
     { name: "Home", url: "https://pureindiacuisine.com" },
-    { name: "Banquet", url: "https://pureindiacuisine.com/banquet" }
+    { name: "Banquet", url: "https://pureindiacuisine.com/party" }
   ],
   catering: [
     { name: "Home", url: "https://pureindiacuisine.com" },

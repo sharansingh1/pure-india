@@ -107,7 +107,7 @@ export default function Hero() {
                                     Order Online
                                 </button>
                                 <a
-                                    href="/menu"
+                                    href="/food-menu"
                                     className="px-8 py-4 bg-transparent border-2 border-white/30 hover:border-gold text-white hover:text-gold font-montserrat font-black uppercase tracking-widest rounded-full transition-all duration-300 backdrop-blur-sm flex items-center gap-2 group"
                                 >
                                     <UtensilsCrossed size={20} className="group-hover:rotate-12 transition-transform" />
@@ -125,7 +125,7 @@ export default function Hero() {
                             className="w-full max-w-2xl mt-8 grid grid-cols-2 gap-4 sm:gap-6"
                         >
                             {/* Card 1: Banquet */}
-                            <a href="/banquet" className="group relative rounded-xl hover:rounded-2xl overflow-hidden border-2 border-gold/50 hover:border-gold transition-all duration-500 shadow-[0_4px_20px_rgba(0,0,0,0.8)] hover:shadow-[0_0_40px_rgba(212,175,55,0.6)] aspect-[16/10] flex flex-col justify-end transform hover:-translate-y-2">
+                            <a href="/party" className="group relative rounded-xl hover:rounded-2xl overflow-hidden border-2 border-gold/50 hover:border-gold transition-all duration-500 shadow-[0_4px_20px_rgba(0,0,0,0.8)] hover:shadow-[0_0_40px_rgba(212,175,55,0.6)] aspect-[16/10] flex flex-col justify-end transform hover:-translate-y-2">
                                 <Image
                                     src="/images/banquet-hall.png"
                                     alt="Private Banquet Hall"
@@ -153,7 +153,7 @@ export default function Hero() {
 
 
                             {/* Card 3: Dine-In */}
-                            <a href="/menu" className="group relative rounded-xl hover:rounded-2xl overflow-hidden border-2 border-gold/50 hover:border-gold transition-all duration-500 shadow-[0_4px_20px_rgba(0,0,0,0.8)] hover:shadow-[0_0_40px_rgba(212,175,55,0.6)] aspect-[16/10] flex flex-col justify-end transform hover:-translate-y-2">
+                            <a href="/food-menu" className="group relative rounded-xl hover:rounded-2xl overflow-hidden border-2 border-gold/50 hover:border-gold transition-all duration-500 shadow-[0_4px_20px_rgba(0,0,0,0.8)] hover:shadow-[0_0_40px_rgba(212,175,55,0.6)] aspect-[16/10] flex flex-col justify-end transform hover:-translate-y-2">
                                 <Image
                                     src="/butterchickenmain.jpg"
                                     alt="A La Carte Dine-In"
@@ -175,7 +175,7 @@ export default function Hero() {
                             </a>
 
                             {/* Card 4: Lunch Buffet */}
-                            <a href="/menu" className="group relative rounded-xl hover:rounded-2xl overflow-hidden border-2 border-gold/50 hover:border-gold transition-all duration-500 shadow-[0_4px_20px_rgba(0,0,0,0.8)] hover:shadow-[0_0_40px_rgba(212,175,55,0.6)] aspect-[16/10] flex flex-col justify-end transform hover:-translate-y-2">
+                            <a href="/food-menu" className="group relative rounded-xl hover:rounded-2xl overflow-hidden border-2 border-gold/50 hover:border-gold transition-all duration-500 shadow-[0_4px_20px_rgba(0,0,0,0.8)] hover:shadow-[0_0_40px_rgba(212,175,55,0.6)] aspect-[16/10] flex flex-col justify-end transform hover:-translate-y-2">
                                 <Image
                                     src="/images/tandoori.jpg"
                                     alt="Lunch Buffet"

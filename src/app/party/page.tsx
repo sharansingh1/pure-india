@@ -25,7 +25,7 @@ export const metadata: Metadata = {
     images: ["/images/banquet-hall.png"],
   },
   alternates: {
-    canonical: "https://pureindiacuisine.com/banquet",
+    canonical: "https://pureindiacuisine.com/party",
   },
 };
 
@@ -38,10 +38,10 @@ export default function BanquetPage() {
             __html: JSON.stringify({
               "@context": "https://schema.org",
               "@type": "EventVenue",
-              "@id": "https://pureindiacuisine.com/banquet",
+              "@id": "https://pureindiacuisine.com/party",
               name: "Pure Indian Cuisine Banquet Hall",
               description: "Elegant banquet hall in Las Vegas perfect for weddings, corporate events, and parties. Capacity for 500 guests with full catering services.",
-              url: "https://pureindiacuisine.com/banquet",
+              url: "https://pureindiacuisine.com/party",
               image: "https://pureindiacuisine.com/images/banquet-hall.png",
               address: {
                 "@type": "PostalAddress",

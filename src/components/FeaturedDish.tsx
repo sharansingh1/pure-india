@@ -53,7 +53,7 @@ export default function FeaturedDish() {
                         </p>
 
                         <div className="pt-8">
-                            <Link href="/menu" className="inline-block border-b border-gold text-gold pb-1 font-montserrat uppercase tracking-widest hover:text-white hover:border-white transition-all duration-300">
+                            <Link href="/food-menu" className="inline-block border-b border-gold text-gold pb-1 font-montserrat uppercase tracking-widest hover:text-white hover:border-white transition-all duration-300">
                                 View Full Menu
                             </Link>
                         </div>
