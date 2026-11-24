@@ -96,21 +96,6 @@ export const menuItems: MenuCategoryData[] = [
         ]
     },
     {
-        category: "MEDITERRANEAN",
-        items: [
-            { name: "Chicken Seekh Kebab Platter", price: "$17.99", description: "Served with rice, naan, salad" },
-            { name: "Lamb Seekh Kabob Platter", price: "$19.99", description: "Served with rice, naan, salad" },
-            { name: "Veggie Kabob Platter", price: "$12.99", description: "Served with rice, naan, salad" },
-            { name: "Chicken Shish Kabob Platter", price: "$17.99", description: "Served with rice, naan, salad" },
-            { name: "Lamb Shish Kabob Platter", price: "$19.99", description: "Served with rice, naan, salad" },
-            { name: "Chicken Shawarma Platter", price: "$17.99", description: "Served with rice, naan, salad" },
-            { name: "Falafel Platter", price: "$16.99", description: "Served with rice, naan, salad" },
-            { name: "Hummus", price: "$9.99" },
-            { name: "Greek Salad", price: "$9.99" },
-            { name: "Baba Ganoush", price: "$10.99" },
-        ]
-    },
-    {
         category: "DESSERTS",
         items: [
             { name: "Suji Ka Halwa", price: "$7.99" },

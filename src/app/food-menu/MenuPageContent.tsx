@@ -17,7 +17,6 @@ const RIGHT_CATEGORIES = [
     "VEG CURRY",
     "GRILLS",
     "RICE",
-    "MEDITERRANEAN",
     "DESSERTS",
 ];
 
